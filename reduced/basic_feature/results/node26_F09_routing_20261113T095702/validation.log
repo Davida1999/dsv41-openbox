@@ -1,0 +1,40 @@
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:13: FutureWarning: triton.language.extra.cann.extension.atan2 is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.atan2 instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.atan2")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:35: FutureWarning: triton.language.extra.cann.extension.isfinited is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.isfinited instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.isfinited")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:49: FutureWarning: triton.language.extra.cann.extension.finitef is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.finitef instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.finitef")
+Traceback (most recent call last):
+  File "/mnt/share/c00954197/workspace/dsv41-kx/basic_feature/scripts/check_routing.py", line 5, in <module>
+    p=argparse.ArgumentParser();p.add_argument('case');p.add_argument('out');a=p.parse_args();c=config(a.case);run(c,a.out)
+                                                                                                               ^^^^^^^^^^^^
+  File "/mnt/share/c00954197/workspace/dsv41-kx/basic_feature/scripts/check_inference.py", line 17, in run
+    with concurrent.futures.ThreadPoolExecutor(max_workers=2) as pool:parallel=list(pool.map(lambda x:generate(c,x),prompts[:2]))
+                                                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python3.12.16/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python3.12.16/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python3.12.16/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python3.12.16/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/python3.12.16/lib/python3.12/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/share/c00954197/workspace/dsv41-kx/basic_feature/scripts/check_inference.py", line 17, in <lambda>
+    with concurrent.futures.ThreadPoolExecutor(max_workers=2) as pool:parallel=list(pool.map(lambda x:generate(c,x),prompts[:2]))
+                                                                                                      ^^^^^^^^^^^^^
+  File "/mnt/share/c00954197/workspace/dsv41-kx/basic_feature/scripts/check_inference.py", line 5, in generate
+    start=time.monotonic();r=request(c,'/inference/v1/generate',{'token_ids':ids,'output_mode':'tokens','stream':False,'sampling_params':{'temperature':0,'seed':c['seed'],'max_tokens':max_tokens or c['max_tokens'],'logprobs':1}})
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/share/c00954197/workspace/dsv41-kx/basic_feature/scripts/common.py", line 8, in request
+    r=requests.request('GET' if payload is None else 'POST',f"http://{c['host']}:{c['port']}"+path,json=payload,timeout=c['timeout']);r.raise_for_status()
+                                                                                                                                      ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python3.12.16/lib/python3.12/site-packages/requests/models.py", line 1167, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 500 Server Error: Internal Server Error for url: http://127.0.0.1:18241/inference/v1/generate
+[ERROR] 2026-11-13-02:03:11 (PID:264815, Device:-1, RankID:-1) ERR99999 UNKNOWN applicaiton exception

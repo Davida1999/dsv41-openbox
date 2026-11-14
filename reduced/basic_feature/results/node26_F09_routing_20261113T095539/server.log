@@ -1,0 +1,50 @@
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:13: FutureWarning: triton.language.extra.cann.extension.atan2 is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.atan2 instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.atan2")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:35: FutureWarning: triton.language.extra.cann.extension.isfinited is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.isfinited instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.isfinited")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:49: FutureWarning: triton.language.extra.cann.extension.finitef is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.finitef instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.finitef")
+(MainProcess pid=258948) INFO 11-13 01:55:52 [serve.py:127] Defaulting api_server_count to data_parallel_size (8).
+(MainProcess pid=258948) INFO 11-13 01:55:52 [api_utils.py:347] 
+(MainProcess pid=258948) INFO 11-13 01:55:52 [api_utils.py:347]        █     █     █▄   ▄█
+(MainProcess pid=258948) INFO 11-13 01:55:52 [api_utils.py:347]  ▄▄ ▄█ █     █     █ ▀▄▀ █  version 0.32.0
+(MainProcess pid=258948) INFO 11-13 01:55:52 [api_utils.py:347]   █▄█▀ █     █     █     █  model   /mnt/share/g00815994/dsv41/DeepSeek-V4.1-Flash-top32-bf16-runtime-codex-20261030
+(MainProcess pid=258948) INFO 11-13 01:55:52 [api_utils.py:347]    ▀▀  ▀▀▀▀▀ ▀▀▀▀▀ ▀     ▀
+(MainProcess pid=258948) INFO 11-13 01:55:52 [api_utils.py:347] 
+(MainProcess pid=258948) INFO 11-13 01:55:52 [api_utils.py:286] non-default args: {'model_tag': '/mnt/share/g00815994/dsv41/DeepSeek-V4.1-Flash-top32-bf16-runtime-codex-20261030', 'api_server_count': 8, 'enable_scale_out': True, 'host': '127.0.0.1', 'port': 18241, 'model': '/mnt/share/g00815994/dsv41/DeepSeek-V4.1-Flash-top32-bf16-runtime-codex-20261030', 'tokenizer_mode': 'deepseek_v41', 'dtype': 'bfloat16', 'seed': 42, 'max_model_len': 8192, 'enforce_eager': True, 'enable_return_routed_experts': True, 'served_model_name': ['dsv41-basic'], 'data_parallel_size': 8, 'enable_expert_parallel': True, 'worker_extension_cls': 'worker_probe.Probe', 'block_size': 128, 'gpu_memory_utilization': 0.85, 'enable_prefix_caching': False, 'max_num_batched_tokens': 8192, 'max_num_seqs': 2, 'enable_chunked_prefill': False, 'async_scheduling': False}
+(MainProcess pid=258948) INFO 11-13 01:55:52 [model.py:733] Resolved architecture: DeepseekV41ForCausalLM
+(MainProcess pid=258948) INFO 11-13 01:55:52 [model.py:2152] Using max model len 8192
+(MainProcess pid=258948) WARNING 11-13 01:55:52 [arg_utils.py:3005] This model does not officially support disabling chunked prefill. Disabling this manually may cause the engine to crash or produce incorrect outputs.
+(MainProcess pid=258948) WARNING 11-13 01:55:52 [vllm.py:1703] Enforce eager set, disabling torch.compile, CUDAGraphs, and JIT kernel warmup. This is equivalent to setting -cc.mode=none -cc.cudagraph_mode=none and --kernel_config.enable_jit_warmup=False
+(MainProcess pid=258948) WARNING 11-13 01:55:52 [vllm.py:1727] Inductor compilation was disabled by user settings, optimizations settings that are only active during inductor compilation will be ignored.
+(MainProcess pid=258948) INFO 11-13 01:55:52 [kernel.py:467] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['native'], fused_add_rms_norm=['native'], gelu_and_mul_sparse=['native'])
+(MainProcess pid=258948) INFO 11-13 01:55:52 [vllm.py:1929] Cudagraph is disabled under eager mode
+(MainProcess pid=258948) INFO 11-13 01:55:52 [mrv2_utils.py:91] VLLM_USE_V2_MODEL_RUNNER=True is set; using Model Runner V2.
+(MainProcess pid=258948) INFO 11-13 01:55:52 [utils.py:215] No ModelSlim quantization signature detected from model files for "/mnt/share/g00815994/dsv41/DeepSeek-V4.1-Flash-top32-bf16-runtime-codex-20261030". To force a quantization method, pass "--quantization <method>" explicitly.
+(MainProcess pid=258948) WARNING 11-13 01:55:52 [platform.py:863] GPU-specific parameter is not supported on Ascend. parameter=disable_cascade_attn, value=True, action: resetting to False.
+(MainProcess pid=258948) INFO 11-13 01:55:52 [platform.py:1077] The timeout interval of the HCCL operator is 1836s. Timeout in seconds for execute_model RPC calls in multiprocessing must be greater than 1836s, Set VLLM_EXECUTE_MODEL_TIMEOUT_SECONDS=3000
+(MainProcess pid=258948) INFO 11-13 01:55:53 [ascend_config.py:339] Dynamic EPLB is False
+(MainProcess pid=258948) INFO 11-13 01:55:53 [ascend_config.py:340] The number of redundant experts is 0
+(MainProcess pid=258948) INFO 11-13 01:55:53 [ascend_config.py:764] FlashComm1 is disabled. Using flashinfer_all2allv as the all2all backend.
+(MainProcess pid=258948) INFO 11-13 01:55:53 [platform.py:1368] Compilation disabled, using eager mode by default
+(MainProcess pid=258948) INFO 11-13 01:55:53 [platform.py:1678] Set PYTORCH_NPU_ALLOC_CONF=expandable_segments:True
+Traceback (most recent call last):
+  File "/usr/local/python3.12.16/bin/vllm", line 6, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/vllm-workspace/vllm/vllm/entrypoints/cli/main.py", line 120, in main
+    args.dispatch_function(args)
+  File "/vllm-workspace/vllm/vllm/entrypoints/cli/serve.py", line 152, in cmd
+    run_multi_api_server(args)
+  File "/vllm-workspace/vllm/vllm/entrypoints/cli/serve.py", line 313, in run_multi_api_server
+    vllm_config = engine_args.create_engine_config(usage_context=usage_context)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/vllm-workspace/vllm/vllm/engine/arg_utils.py", line 2838, in create_engine_config
+    config = VllmConfig(
+             ^^^^^^^^^^^
+  File "/usr/local/python3.12.16/lib/python3.12/site-packages/pydantic/_internal/_dataclasses.py", line 121, in __init__
+    s.__pydantic_validator__.validate_python(ArgsKwargs(args, kwargs), self_instance=s)
+pydantic_core._pydantic_core.ValidationError: 1 validation error for VllmConfig
+  Value error, AuxOutput Connector requires prefix caching. [type=value_error, input_value=ArgsKwargs((), {'model_co... 'shutdown_timeout': 0}), input_type=ArgsKwargs]
+    For further information visit https://errors.pydantic.dev/2.14/v/value_error
+[ERROR] 2026-11-13-01:55:53 (PID:258948, Device:-1, RankID:-1) ERR99999 UNKNOWN applicaiton exception

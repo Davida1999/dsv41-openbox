@@ -1,0 +1,1 @@
+CalledProcessError(1, ['/usr/local/python3.12.16/bin/python', '/mnt/share/c00954197/workspace/dsv41-kx/basic_feature/scripts/serve.py', 'F01_basic', '/mnt/share/c00954197/workspace/dsv41-kx/basic_feature/results/node26_F01_basic_20261113T092803', '--launch'])

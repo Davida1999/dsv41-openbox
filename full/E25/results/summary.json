@@ -1,0 +1,56 @@
+{
+  "experiment": "E25",
+  "runtime": "CANN 9.3.0",
+  "model": "/mnt/share/c00954197/workspace/dsv41-flash-bf16",
+  "engram": {
+    "cpu_offload": true,
+    "dp_shared_memory": true
+  },
+  "async_scheduling": false,
+  "scenario": "4096 text tokens + one 1920x1080 image -> 32768 output tokens",
+  "requests_per_round": 64,
+  "max_concurrency": 64,
+  "results": [
+    {
+      "round": 1,
+      "successful_requests": 64.0,
+      "failed_requests": 0.0,
+      "duration_s": 1400.8,
+      "input_tokens": 327233.0,
+      "output_tokens": 2097152.0,
+      "output_tokens_per_s": 1497.11,
+      "mean_ttft_ms": 19288.39,
+      "mean_tpot_ms": 42.11,
+      "mean_itl_ms": 42.11,
+      "p99_itl_ms": 44.1
+    },
+    {
+      "round": 2,
+      "successful_requests": 64.0,
+      "failed_requests": 0.0,
+      "duration_s": 1378.84,
+      "input_tokens": 327233.0,
+      "output_tokens": 2097152.0,
+      "output_tokens_per_s": 1520.95,
+      "mean_ttft_ms": 8386.64,
+      "mean_tpot_ms": 41.8,
+      "mean_itl_ms": 41.8,
+      "p99_itl_ms": 43.72
+    },
+    {
+      "round": 3,
+      "successful_requests": 64.0,
+      "failed_requests": 0.0,
+      "duration_s": 1370.71,
+      "input_tokens": 327233.0,
+      "output_tokens": 2097152.0,
+      "output_tokens_per_s": 1529.98,
+      "mean_ttft_ms": 6646.62,
+      "mean_tpot_ms": 41.61,
+      "mean_itl_ms": 41.61,
+      "p99_itl_ms": 43.33
+    }
+  ],
+  "total_generated_tokens": 6291456.0,
+  "fp8_override_attempted": false
+}

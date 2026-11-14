@@ -1,0 +1,1 @@
+CalledProcessError(1, ['bash', '/mnt/share/c00954197/workspace/dsv41-kx/basic_feature/scripts/run_case.sh', 'F12_sleep2', '/mnt/share/c00954197/workspace/dsv41-kx/basic_feature/results/node26_F12_sleep2_20261113T101611'])

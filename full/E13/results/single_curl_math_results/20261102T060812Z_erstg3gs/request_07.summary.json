@@ -1,0 +1,49 @@
+{
+  "index": 7,
+  "http_status": "200",
+  "curl_exit": 0,
+  "elapsed_seconds": 0.2876544000173453,
+  "started_utc": "2026-11-02T06:08:22.476857+00:00",
+  "request_sha256": "6117623a1d83936f97bcb0f98ad2e703f44bdda7379097df470440a845051642",
+  "text": "579",
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 17,
+    "total_tokens": 19,
+    "completion_tokens": 2,
+    "prompt_tokens_details": null,
+    "completion_tokens_details": null
+  },
+  "logprobs": {
+    "text_offset": [
+      0,
+      3
+    ],
+    "token_logprobs": [
+      -0.22002601623535156,
+      -0.33594703674316406
+    ],
+    "tokens": [
+      "579",
+      "<｜end▁of▁sentence｜>"
+    ],
+    "top_logprobs": [
+      {
+        "579": -0.22002601623535156,
+        "<｜end▁of▁sentence｜>": -1.7200260162353516,
+        "123": -4.720026016235352,
+        " ": -6.845026016235352,
+        "```": -7.095026016235352
+      },
+      {
+        "<｜end▁of▁sentence｜>": -0.33594703674316406,
+        "\n": -1.710947036743164,
+        "。": -2.710947036743164,
+        "。\n": -3.710947036743164,
+        "\n\n": -5.210947036743164
+      }
+    ]
+  },
+  "correct_exact": true,
+  "logprobs_present": true
+}

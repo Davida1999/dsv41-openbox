@@ -1,0 +1,130 @@
+E13：单 curl 连续 10 次数学推理一致性测试
+问题：计算 123 + 456，只输出整数答案。标准答案：579。
+每次等待响应完成后再发送下一次；temperature=0、top_p=1、top_k=-1、seed=42；logprobs=5。
+log p 为自然对数概率；附表中的 exp(log p) 是对应概率。
+本测试验证单请求重复运行一致性，不验证不同 batch 大小之间的一致性。
+保留现有服务缓存；请求可能分配到不同 DP Engine，未进行 rank 固定。
+仅比较生成文本及 logprobs；响应 ID、时间戳不参与一致性比较。
+完整原始响应、逐次请求概要和前后 metrics 均保存在本目录。
+
+{
+  "completed": 10,
+  "failed": 0,
+  "correct_exact_count": 10,
+  "all_text_identical": true,
+  "all_token_strings_identical": true,
+  "all_selected_token_logprobs_exactly_identical": true,
+  "all_top5_logprobs_exactly_identical": true,
+  "max_abs_selected_logprob_delta": 0.0
+}
+
+===== 第 1 次 =====
+HTTP=200 耗时=4.599508s
+完整生成内容：
+579
+finish_reason: stop
+usage: {"prompt_tokens": 17, "total_tokens": 19, "completion_tokens": 2, "prompt_tokens_details": null, "completion_tokens_details": null}
+token[0]='579' log_p=-0.22002601623535156 p=0.8024979197161445
+  top5: {"579": -0.22002601623535156, "<｜end▁of▁sentence｜>": -1.7200260162353516, "123": -4.720026016235352, " ": -6.845026016235352, "```": -7.095026016235352}
+token[1]='<｜end▁of▁sentence｜>' log_p=-0.33594703674316406 p=0.7146609555854663
+  top5: {"<｜end▁of▁sentence｜>": -0.33594703674316406, "\n": -1.710947036743164, "。": -2.710947036743164, "。\n": -3.710947036743164, "\n\n": -5.210947036743164}
+
+===== 第 2 次 =====
+HTTP=200 耗时=4.568862s
+完整生成内容：
+579
+finish_reason: stop
+usage: {"prompt_tokens": 17, "total_tokens": 19, "completion_tokens": 2, "prompt_tokens_details": null, "completion_tokens_details": null}
+token[0]='579' log_p=-0.22002601623535156 p=0.8024979197161445
+  top5: {"579": -0.22002601623535156, "<｜end▁of▁sentence｜>": -1.7200260162353516, "123": -4.720026016235352, " ": -6.845026016235352, "```": -7.095026016235352}
+token[1]='<｜end▁of▁sentence｜>' log_p=-0.33594703674316406 p=0.7146609555854663
+  top5: {"<｜end▁of▁sentence｜>": -0.33594703674316406, "\n": -1.710947036743164, "。": -2.710947036743164, "。\n": -3.710947036743164, "\n\n": -5.210947036743164}
+
+===== 第 3 次 =====
+HTTP=200 耗时=0.298520s
+完整生成内容：
+579
+finish_reason: stop
+usage: {"prompt_tokens": 17, "total_tokens": 19, "completion_tokens": 2, "prompt_tokens_details": null, "completion_tokens_details": null}
+token[0]='579' log_p=-0.22002601623535156 p=0.8024979197161445
+  top5: {"579": -0.22002601623535156, "<｜end▁of▁sentence｜>": -1.7200260162353516, "123": -4.720026016235352, " ": -6.845026016235352, "```": -7.095026016235352}
+token[1]='<｜end▁of▁sentence｜>' log_p=-0.33594703674316406 p=0.7146609555854663
+  top5: {"<｜end▁of▁sentence｜>": -0.33594703674316406, "\n": -1.710947036743164, "。": -2.710947036743164, "。\n": -3.710947036743164, "\n\n": -5.210947036743164}
+
+===== 第 4 次 =====
+HTTP=200 耗时=0.294912s
+完整生成内容：
+579
+finish_reason: stop
+usage: {"prompt_tokens": 17, "total_tokens": 19, "completion_tokens": 2, "prompt_tokens_details": null, "completion_tokens_details": null}
+token[0]='579' log_p=-0.22002601623535156 p=0.8024979197161445
+  top5: {"579": -0.22002601623535156, "<｜end▁of▁sentence｜>": -1.7200260162353516, "123": -4.720026016235352, " ": -6.845026016235352, "```": -7.095026016235352}
+token[1]='<｜end▁of▁sentence｜>' log_p=-0.33594703674316406 p=0.7146609555854663
+  top5: {"<｜end▁of▁sentence｜>": -0.33594703674316406, "\n": -1.710947036743164, "。": -2.710947036743164, "。\n": -3.710947036743164, "\n\n": -5.210947036743164}
+
+===== 第 5 次 =====
+HTTP=200 耗时=0.294020s
+完整生成内容：
+579
+finish_reason: stop
+usage: {"prompt_tokens": 17, "total_tokens": 19, "completion_tokens": 2, "prompt_tokens_details": null, "completion_tokens_details": null}
+token[0]='579' log_p=-0.22002601623535156 p=0.8024979197161445
+  top5: {"579": -0.22002601623535156, "<｜end▁of▁sentence｜>": -1.7200260162353516, "123": -4.720026016235352, " ": -6.845026016235352, "```": -7.095026016235352}
+token[1]='<｜end▁of▁sentence｜>' log_p=-0.33594703674316406 p=0.7146609555854663
+  top5: {"<｜end▁of▁sentence｜>": -0.33594703674316406, "\n": -1.710947036743164, "。": -2.710947036743164, "。\n": -3.710947036743164, "\n\n": -5.210947036743164}
+
+===== 第 6 次 =====
+HTTP=200 耗时=0.288898s
+完整生成内容：
+579
+finish_reason: stop
+usage: {"prompt_tokens": 17, "total_tokens": 19, "completion_tokens": 2, "prompt_tokens_details": null, "completion_tokens_details": null}
+token[0]='579' log_p=-0.22002601623535156 p=0.8024979197161445
+  top5: {"579": -0.22002601623535156, "<｜end▁of▁sentence｜>": -1.7200260162353516, "123": -4.720026016235352, " ": -6.845026016235352, "```": -7.095026016235352}
+token[1]='<｜end▁of▁sentence｜>' log_p=-0.33594703674316406 p=0.7146609555854663
+  top5: {"<｜end▁of▁sentence｜>": -0.33594703674316406, "\n": -1.710947036743164, "。": -2.710947036743164, "。\n": -3.710947036743164, "\n\n": -5.210947036743164}
+
+===== 第 7 次 =====
+HTTP=200 耗时=0.287654s
+完整生成内容：
+579
+finish_reason: stop
+usage: {"prompt_tokens": 17, "total_tokens": 19, "completion_tokens": 2, "prompt_tokens_details": null, "completion_tokens_details": null}
+token[0]='579' log_p=-0.22002601623535156 p=0.8024979197161445
+  top5: {"579": -0.22002601623535156, "<｜end▁of▁sentence｜>": -1.7200260162353516, "123": -4.720026016235352, " ": -6.845026016235352, "```": -7.095026016235352}
+token[1]='<｜end▁of▁sentence｜>' log_p=-0.33594703674316406 p=0.7146609555854663
+  top5: {"<｜end▁of▁sentence｜>": -0.33594703674316406, "\n": -1.710947036743164, "。": -2.710947036743164, "。\n": -3.710947036743164, "\n\n": -5.210947036743164}
+
+===== 第 8 次 =====
+HTTP=200 耗时=0.290135s
+完整生成内容：
+579
+finish_reason: stop
+usage: {"prompt_tokens": 17, "total_tokens": 19, "completion_tokens": 2, "prompt_tokens_details": null, "completion_tokens_details": null}
+token[0]='579' log_p=-0.22002601623535156 p=0.8024979197161445
+  top5: {"579": -0.22002601623535156, "<｜end▁of▁sentence｜>": -1.7200260162353516, "123": -4.720026016235352, " ": -6.845026016235352, "```": -7.095026016235352}
+token[1]='<｜end▁of▁sentence｜>' log_p=-0.33594703674316406 p=0.7146609555854663
+  top5: {"<｜end▁of▁sentence｜>": -0.33594703674316406, "\n": -1.710947036743164, "。": -2.710947036743164, "。\n": -3.710947036743164, "\n\n": -5.210947036743164}
+
+===== 第 9 次 =====
+HTTP=200 耗时=0.289452s
+完整生成内容：
+579
+finish_reason: stop
+usage: {"prompt_tokens": 17, "total_tokens": 19, "completion_tokens": 2, "prompt_tokens_details": null, "completion_tokens_details": null}
+token[0]='579' log_p=-0.22002601623535156 p=0.8024979197161445
+  top5: {"579": -0.22002601623535156, "<｜end▁of▁sentence｜>": -1.7200260162353516, "123": -4.720026016235352, " ": -6.845026016235352, "```": -7.095026016235352}
+token[1]='<｜end▁of▁sentence｜>' log_p=-0.33594703674316406 p=0.7146609555854663
+  top5: {"<｜end▁of▁sentence｜>": -0.33594703674316406, "\n": -1.710947036743164, "。": -2.710947036743164, "。\n": -3.710947036743164, "\n\n": -5.210947036743164}
+
+===== 第 10 次 =====
+HTTP=200 耗时=0.287495s
+完整生成内容：
+579
+finish_reason: stop
+usage: {"prompt_tokens": 17, "total_tokens": 19, "completion_tokens": 2, "prompt_tokens_details": null, "completion_tokens_details": null}
+token[0]='579' log_p=-0.22002601623535156 p=0.8024979197161445
+  top5: {"579": -0.22002601623535156, "<｜end▁of▁sentence｜>": -1.7200260162353516, "123": -4.720026016235352, " ": -6.845026016235352, "```": -7.095026016235352}
+token[1]='<｜end▁of▁sentence｜>' log_p=-0.33594703674316406 p=0.7146609555854663
+  top5: {"<｜end▁of▁sentence｜>": -0.33594703674316406, "\n": -1.710947036743164, "。": -2.710947036743164, "。\n": -3.710947036743164, "\n\n": -5.210947036743164}
+

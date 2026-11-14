@@ -1,0 +1,19 @@
+{
+  "backend": "npu_ipc",
+  "devices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "dp": 8,
+  "memory_utilization": 0.45,
+  "weight_buffer_mib": 2048,
+  "probe_runtime_name": "language_model.model.norm.weight",
+  "ipc_master_addr": "127.0.0.1",
+  "ipc_master_port": 0
+}

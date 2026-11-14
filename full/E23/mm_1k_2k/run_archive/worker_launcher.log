@@ -1,0 +1,560 @@
+EXPERIMENT_START role=worker utc=2026-11-12T01:37:08Z run=E23
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:13: FutureWarning: triton.language.extra.cann.extension.atan2 is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.atan2 instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.atan2")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:35: FutureWarning: triton.language.extra.cann.extension.isfinited is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.isfinited instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.isfinited")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:49: FutureWarning: triton.language.extra.cann.extension.finitef is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.finitef instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.finitef")
+(MainProcess pid=135030) INFO 11-12 01:37:17 [model.py:733] Resolved architecture: DeepseekV41ForCausalLM
+(MainProcess pid=135030) INFO 11-12 01:37:17 [model.py:756] Defaulting to tokenizer_mode='deepseek_v41' for DeepseekV41ForCausalLM
+(MainProcess pid=135030) INFO 11-12 01:37:17 [model.py:2152] Using max model len 40960
+(MainProcess pid=135030) INFO 11-12 01:37:18 [vllm.py:1412] Resolved Engram configuration: EngramConfig(cpu_offload=True, embedding_across_dp=False, dp_shared_memory=True, use_thp=False)
+(MainProcess pid=135030) INFO 11-12 01:37:18 [vllm.py:1651] Disabling NCCL for DP synchronization when using async scheduling.
+(MainProcess pid=135030) INFO 11-12 01:37:18 [kernel.py:467] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['native'], fused_add_rms_norm=['native'], gelu_and_mul_sparse=['native'])
+(MainProcess pid=135030) INFO 11-12 01:37:18 [mrv2_utils.py:91] VLLM_USE_V2_MODEL_RUNNER=True is set; using Model Runner V2.
+(MainProcess pid=135030) INFO 11-12 01:37:18 [utils.py:215] No ModelSlim quantization signature detected from model files for "/mnt/share/c00954197/workspace/dsv41-flash-bf16". To force a quantization method, pass "--quantization <method>" explicitly.
+(MainProcess pid=135030) WARNING 11-12 01:37:18 [platform.py:863] GPU-specific parameter is not supported on Ascend. parameter=disable_cascade_attn, value=True, action: resetting to False.
+(MainProcess pid=135030) INFO 11-12 01:37:18 [ascend_config.py:339] Dynamic EPLB is False
+(MainProcess pid=135030) INFO 11-12 01:37:18 [ascend_config.py:340] The number of redundant experts is 0
+(MainProcess pid=135030) INFO 11-12 01:37:18 [ascend_config.py:764] FlashComm1 is disabled. Using flashinfer_all2allv as the all2all backend.
+(MainProcess pid=135030) INFO 11-12 01:37:18 [platform.py:1678] Set PYTORCH_NPU_ALLOC_CONF=expandable_segments:True
+(MainProcess pid=135030) INFO 11-12 01:37:18 [compilation.py:317] Enabled custom fusions: norm_quant, act_quant
+(MainProcess pid=135030) INFO 11-12 01:37:18 [serve.py:239] Launching 1 data parallel engine(s) in headless mode, with head node address tcp://177.11.25.1:12346.
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:13: FutureWarning: triton.language.extra.cann.extension.atan2 is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.atan2 instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.atan2")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:35: FutureWarning: triton.language.extra.cann.extension.isfinited is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.isfinited instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.isfinited")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:49: FutureWarning: triton.language.extra.cann.extension.finitef is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.finitef instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.finitef")
+INFO 11-12 01:37:26 [logger.py:158] [vllm-ascend] - [ascend_log] applied level=INFO debug=[] modules={}
+(EngineCore_DP1 pid=135088) INFO 11-12 01:37:55 [__init__.py:113] Registered model loader `<class 'vllm_ascend.model_loader.netloader.netloader.ModelNetLoaderElastic'>` with load format `netloader`
+(EngineCore_DP1 pid=135088) INFO 11-12 01:37:55 [__init__.py:113] Registered model loader `<class 'vllm_ascend.model_loader.rfork.rfork_loader.RForkModelLoader'>` with load format `rfork`
+(EngineCore_DP1 pid=135088) INFO 11-12 01:37:55 [core.py:133] Initializing a V1 LLM engine (v0.32.0) with config: model='/mnt/share/c00954197/workspace/dsv41-flash-bf16', speculative_config=None, tokenizer='/mnt/share/c00954197/workspace/dsv41-flash-bf16', skip_tokenizer_init=False, tokenizer_mode=deepseek_v41, revision=None, tokenizer_revision=None, trust_remote_code=True, dtype=torch.bfloat16, max_seq_len=40960, download_dir=None, load_format=auto, tensor_parallel_size=1, pipeline_parallel_size=1, data_parallel_size=2, decode_context_parallel_size=1, dcp_comm_backend=ag_rs, disable_custom_all_reduce=True, quantization=None, quantization_config=None, enforce_eager=False, aux_output_config=AuxOutputConfig(enable_return_routed_experts=False, max_bytes=None), kv_cache_dtype=bfloat16, device_config=npu, structured_outputs_config=StructuredOutputsConfig(backend='auto', disable_any_whitespace=False, disable_additional_properties=False, reasoning_parser='', reasoning_parser_plugin='', enable_in_reasoning=False), observability_config=ObservabilityConfig(show_hidden_metrics_for_version=None, otlp_traces_endpoint=None, collect_detailed_traces=None, per_request_spec_decode_metrics='none', kv_cache_metrics=False, kv_cache_metrics_sample=0.01, custom_histogram_buckets=None, cudagraph_metrics=False, enable_layerwise_nvtx_tracing=False, enable_mfu_metrics=False, enable_mm_processor_stats=False, enable_logging_iteration_details=False, jit_monitor_mode='warn', jit_monitor_verbose=False), seed=0, served_model_name=dsv41-bf16-tp1, enable_prefix_caching=True, enable_chunked_prefill=True, pooler_config=None, compilation_config={'mode': <CompilationMode.VLLM_COMPILE: 3>, 'debug_dump_path': None, 'cache_dir': '', 'compile_cache_save_format': 'binary', 'backend': 'vllm_ascend.compilation.compiler_interface.AscendCompiler', 'custom_ops': ['all'], 'ir_enable_torch_wrap': False, 'splitting_ops': [], 'compile_mm_encoder': False, 'cudagraph_mm_encoder': False, 'encoder_cudagraph_token_budgets': [], 'encoder_cudagraph_max_vision_items_per_batch': 0, 'encoder_cudagraph_max_frames_per_batch': None, 'cudagraph_decoder_replay': True, 'decoder_replay_cudagraph_capture_sizes': [], 'decoder_replay_trim_threshold': 768, 'compile_sizes': [], 'compile_ranges_endpoints': [2048], 'inductor_compile_config': {'enable_auto_functionalized_v2': False, 'size_asserts': False, 'alignment_asserts': False, 'scalar_asserts': False, 'combo_kernels': True, 'benchmark_combo_kernel': True}, 'inductor_passes': {}, 'cudagraph_mode': <CUDAGraphMode.FULL_DECODE_ONLY: (2, 0)>, 'cudagraph_num_of_warmups': 1, 'cudagraph_capture_sizes': [1, 2, 4, 8, 16, 24, 32], 'cudagraph_copy_inputs': False, 'cudagraph_specialize_lora': True, 'use_inductor_graph_partition': False, 'pass_config': {'fuse_norm_quant': True, 'fuse_act_quant': True, 'fuse_attn_quant': False, 'fuse_allreduce_rms': False, 'enable_qk_norm_rope_fusion': False, 'fuse_rope_kvcache_cat_mla': False, 'fuse_act_padding': False, 'fuse_qk_norm_rope_kvcache': False}, 'max_cudagraph_capture_size': 32, 'dynamic_shapes_config': {'type': <DynamicShapesType.BACKED: 'backed'>, 'evaluate_guards': False, 'assume_32_bit_indexing': False}, 'local_cache_dir': None, 'fast_moe_cold_start': True, 'static_all_moe_layers': []}, kernel_config=KernelConfig(ir_op_priority=IrOpPriorityConfig(rms_norm=['native'], fused_add_rms_norm=['native'], gelu_and_mul_sparse=['native']), enable_flashinfer_autotune=True, enable_rocm_segmented_attn_autotune=False, enable_cutedsl_warmup=True, enable_jit_warmup=True, moe_backend='auto', sparse_indexer_topk_backend='auto', linear_backend='auto', linear_backend_per_quant=None)
+(EngineCore_DP1 pid=135088) INFO 11-12 01:37:55 [multiproc_executor.py:153] DP group leader: node_rank=0, node_rank_within_dp=0, master_addr=127.0.0.1, mq_connect_ip=177.11.26.1 (local), world_size=8, local_world_size=8
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:13: FutureWarning: triton.language.extra.cann.extension.atan2 is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.atan2 instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.atan2")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:35: FutureWarning: triton.language.extra.cann.extension.isfinited is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.isfinited instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.isfinited")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:49: FutureWarning: triton.language.extra.cann.extension.finitef is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.finitef instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.finitef")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:13: FutureWarning: triton.language.extra.cann.extension.atan2 is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.atan2 instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.atan2")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:35: FutureWarning: triton.language.extra.cann.extension.isfinited is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.isfinited instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.isfinited")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:49: FutureWarning: triton.language.extra.cann.extension.finitef is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.finitef instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.finitef")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:13: FutureWarning: triton.language.extra.cann.extension.atan2 is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.atan2 instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.atan2")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:35: FutureWarning: triton.language.extra.cann.extension.isfinited is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.isfinited instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.isfinited")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:49: FutureWarning: triton.language.extra.cann.extension.finitef is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.finitef instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.finitef")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:13: FutureWarning: triton.language.extra.cann.extension.atan2 is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.atan2 instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.atan2")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:35: FutureWarning: triton.language.extra.cann.extension.isfinited is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.isfinited instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.isfinited")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:49: FutureWarning: triton.language.extra.cann.extension.finitef is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.finitef instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.finitef")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:13: FutureWarning: triton.language.extra.cann.extension.atan2 is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.atan2 instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.atan2")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:35: FutureWarning: triton.language.extra.cann.extension.isfinited is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.isfinited instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.isfinited")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:49: FutureWarning: triton.language.extra.cann.extension.finitef is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.finitef instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.finitef")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:13: FutureWarning: triton.language.extra.cann.extension.atan2 is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.atan2 instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.atan2")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:35: FutureWarning: triton.language.extra.cann.extension.isfinited is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.isfinited instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.isfinited")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:49: FutureWarning: triton.language.extra.cann.extension.finitef is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.finitef instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.finitef")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:13: FutureWarning: triton.language.extra.cann.extension.atan2 is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.atan2 instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.atan2")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:13: FutureWarning: triton.language.extra.cann.extension.atan2 is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.atan2 instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.atan2")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:35: FutureWarning: triton.language.extra.cann.extension.isfinited is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.isfinited instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.isfinited")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:35: FutureWarning: triton.language.extra.cann.extension.isfinited is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.isfinited instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.isfinited")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:49: FutureWarning: triton.language.extra.cann.extension.finitef is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.finitef instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.finitef")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:49: FutureWarning: triton.language.extra.cann.extension.finitef is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.finitef instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.finitef")
+(VllmWorker-3 pid=135144) INFO 11-12 01:38:03 [patch_indexer_kv_dtype.py:102] Patched AttentionConfig.indexer_kv_dtype to accept 'int8' (DeepSeek V4 Ascend indexer K cache dtype).
+(VllmWorker-3 pid=135144) INFO 11-12 01:38:03 [patch_kv_cache_dtype.py:116] Patched CacheConfig.cache_dtype to accept 'int8' and 'mxfp8' (Ascend KV cache dtypes).
+(VllmWorker-3 pid=135144) INFO 11-12 01:38:03 [__init__.py:113] Registered model loader `<class 'vllm_ascend.model_loader.netloader.netloader.ModelNetLoaderElastic'>` with load format `netloader`
+(VllmWorker-3 pid=135144) INFO 11-12 01:38:03 [__init__.py:113] Registered model loader `<class 'vllm_ascend.model_loader.rfork.rfork_loader.RForkModelLoader'>` with load format `rfork`
+(VllmWorker-1 pid=135142) INFO 11-12 01:38:03 [patch_indexer_kv_dtype.py:102] Patched AttentionConfig.indexer_kv_dtype to accept 'int8' (DeepSeek V4 Ascend indexer K cache dtype).
+(VllmWorker-1 pid=135142) INFO 11-12 01:38:03 [patch_kv_cache_dtype.py:116] Patched CacheConfig.cache_dtype to accept 'int8' and 'mxfp8' (Ascend KV cache dtypes).
+(VllmWorker-1 pid=135142) INFO 11-12 01:38:03 [__init__.py:113] Registered model loader `<class 'vllm_ascend.model_loader.netloader.netloader.ModelNetLoaderElastic'>` with load format `netloader`
+(VllmWorker-1 pid=135142) INFO 11-12 01:38:03 [__init__.py:113] Registered model loader `<class 'vllm_ascend.model_loader.rfork.rfork_loader.RForkModelLoader'>` with load format `rfork`
+(VllmWorker-2 pid=135143) INFO 11-12 01:38:03 [patch_indexer_kv_dtype.py:102] Patched AttentionConfig.indexer_kv_dtype to accept 'int8' (DeepSeek V4 Ascend indexer K cache dtype).
+(VllmWorker-5 pid=135146) INFO 11-12 01:38:03 [patch_indexer_kv_dtype.py:102] Patched AttentionConfig.indexer_kv_dtype to accept 'int8' (DeepSeek V4 Ascend indexer K cache dtype).
+(VllmWorker-2 pid=135143) INFO 11-12 01:38:03 [patch_kv_cache_dtype.py:116] Patched CacheConfig.cache_dtype to accept 'int8' and 'mxfp8' (Ascend KV cache dtypes).
+(VllmWorker-5 pid=135146) INFO 11-12 01:38:03 [patch_kv_cache_dtype.py:116] Patched CacheConfig.cache_dtype to accept 'int8' and 'mxfp8' (Ascend KV cache dtypes).
+(VllmWorker-0 pid=135141) INFO 11-12 01:38:03 [patch_indexer_kv_dtype.py:102] Patched AttentionConfig.indexer_kv_dtype to accept 'int8' (DeepSeek V4 Ascend indexer K cache dtype).
+(VllmWorker-0 pid=135141) INFO 11-12 01:38:03 [patch_kv_cache_dtype.py:116] Patched CacheConfig.cache_dtype to accept 'int8' and 'mxfp8' (Ascend KV cache dtypes).
+(VllmWorker-5 pid=135146) INFO 11-12 01:38:03 [__init__.py:113] Registered model loader `<class 'vllm_ascend.model_loader.netloader.netloader.ModelNetLoaderElastic'>` with load format `netloader`
+(VllmWorker-2 pid=135143) INFO 11-12 01:38:03 [__init__.py:113] Registered model loader `<class 'vllm_ascend.model_loader.netloader.netloader.ModelNetLoaderElastic'>` with load format `netloader`
+(VllmWorker-0 pid=135141) INFO 11-12 01:38:03 [__init__.py:113] Registered model loader `<class 'vllm_ascend.model_loader.netloader.netloader.ModelNetLoaderElastic'>` with load format `netloader`
+(VllmWorker-5 pid=135146) INFO 11-12 01:38:03 [__init__.py:113] Registered model loader `<class 'vllm_ascend.model_loader.rfork.rfork_loader.RForkModelLoader'>` with load format `rfork`
+(VllmWorker-2 pid=135143) INFO 11-12 01:38:03 [__init__.py:113] Registered model loader `<class 'vllm_ascend.model_loader.rfork.rfork_loader.RForkModelLoader'>` with load format `rfork`
+(VllmWorker-0 pid=135141) INFO 11-12 01:38:03 [__init__.py:113] Registered model loader `<class 'vllm_ascend.model_loader.rfork.rfork_loader.RForkModelLoader'>` with load format `rfork`
+[W1112 01:38:04.660872650 OptionRegister.cpp:95] Warning: Current device only support allow_internal_format=False, the requested value True is invalid and has been reverted to False. (function operator())
+(VllmWorker-3 pid=135144) INFO 11-12 01:38:04 [mrv2_utils.py:91] VLLM_USE_V2_MODEL_RUNNER=True is set; using Model Runner V2.
+[W1112 01:38:04.719099170 OptionRegister.cpp:95] Warning: Current device only support allow_internal_format=False, the requested value True is invalid and has been reverted to False. (function operator())
+(VllmWorker-1 pid=135142) INFO 11-12 01:38:04 [mrv2_utils.py:91] VLLM_USE_V2_MODEL_RUNNER=True is set; using Model Runner V2.
+(VllmWorker-4 pid=135145) INFO 11-12 01:38:04 [patch_indexer_kv_dtype.py:102] Patched AttentionConfig.indexer_kv_dtype to accept 'int8' (DeepSeek V4 Ascend indexer K cache dtype).
+(VllmWorker-4 pid=135145) INFO 11-12 01:38:04 [patch_kv_cache_dtype.py:116] Patched CacheConfig.cache_dtype to accept 'int8' and 'mxfp8' (Ascend KV cache dtypes).
+(VllmWorker-4 pid=135145) INFO 11-12 01:38:04 [__init__.py:113] Registered model loader `<class 'vllm_ascend.model_loader.netloader.netloader.ModelNetLoaderElastic'>` with load format `netloader`
+(VllmWorker-4 pid=135145) INFO 11-12 01:38:04 [__init__.py:113] Registered model loader `<class 'vllm_ascend.model_loader.rfork.rfork_loader.RForkModelLoader'>` with load format `rfork`
+[W1112 01:38:04.895034400 OptionRegister.cpp:95] Warning: Current device only support allow_internal_format=False, the requested value True is invalid and has been reverted to False. (function operator())
+[W1112 01:38:04.895085790 OptionRegister.cpp:95] Warning: Current device only support allow_internal_format=False, the requested value True is invalid and has been reverted to False. (function operator())
+(VllmWorker-5 pid=135146) INFO 11-12 01:38:04 [mrv2_utils.py:91] VLLM_USE_V2_MODEL_RUNNER=True is set; using Model Runner V2.
+(VllmWorker-2 pid=135143) INFO 11-12 01:38:04 [mrv2_utils.py:91] VLLM_USE_V2_MODEL_RUNNER=True is set; using Model Runner V2.
+[W1112 01:38:04.897998250 OptionRegister.cpp:95] Warning: Current device only support allow_internal_format=False, the requested value True is invalid and has been reverted to False. (function operator())
+(VllmWorker-0 pid=135141) INFO 11-12 01:38:04 [mrv2_utils.py:91] VLLM_USE_V2_MODEL_RUNNER=True is set; using Model Runner V2.
+[W1112 01:38:04.231957350 OptionRegister.cpp:95] Warning: Current device only support allow_internal_format=False, the requested value True is invalid and has been reverted to False. (function operator())
+(VllmWorker-4 pid=135145) INFO 11-12 01:38:04 [mrv2_utils.py:91] VLLM_USE_V2_MODEL_RUNNER=True is set; using Model Runner V2.
+(VllmWorker-7 pid=135148) INFO 11-12 01:38:04 [patch_indexer_kv_dtype.py:102] Patched AttentionConfig.indexer_kv_dtype to accept 'int8' (DeepSeek V4 Ascend indexer K cache dtype).
+(VllmWorker-6 pid=135147) INFO 11-12 01:38:04 [patch_indexer_kv_dtype.py:102] Patched AttentionConfig.indexer_kv_dtype to accept 'int8' (DeepSeek V4 Ascend indexer K cache dtype).
+(VllmWorker-7 pid=135148) INFO 11-12 01:38:04 [patch_kv_cache_dtype.py:116] Patched CacheConfig.cache_dtype to accept 'int8' and 'mxfp8' (Ascend KV cache dtypes).
+(VllmWorker-6 pid=135147) INFO 11-12 01:38:04 [patch_kv_cache_dtype.py:116] Patched CacheConfig.cache_dtype to accept 'int8' and 'mxfp8' (Ascend KV cache dtypes).
+(VllmWorker-7 pid=135148) INFO 11-12 01:38:04 [__init__.py:113] Registered model loader `<class 'vllm_ascend.model_loader.netloader.netloader.ModelNetLoaderElastic'>` with load format `netloader`
+(VllmWorker-6 pid=135147) INFO 11-12 01:38:04 [__init__.py:113] Registered model loader `<class 'vllm_ascend.model_loader.netloader.netloader.ModelNetLoaderElastic'>` with load format `netloader`
+(VllmWorker-7 pid=135148) INFO 11-12 01:38:04 [__init__.py:113] Registered model loader `<class 'vllm_ascend.model_loader.rfork.rfork_loader.RForkModelLoader'>` with load format `rfork`
+(VllmWorker-6 pid=135147) INFO 11-12 01:38:04 [__init__.py:113] Registered model loader `<class 'vllm_ascend.model_loader.rfork.rfork_loader.RForkModelLoader'>` with load format `rfork`
+[W1112 01:38:05.687384100 OptionRegister.cpp:95] Warning: Current device only support allow_internal_format=False, the requested value True is invalid and has been reverted to False. (function operator())
+(VllmWorker-7 pid=135148) INFO 11-12 01:38:05 [mrv2_utils.py:91] VLLM_USE_V2_MODEL_RUNNER=True is set; using Model Runner V2.
+[W1112 01:38:05.688921060 OptionRegister.cpp:95] Warning: Current device only support allow_internal_format=False, the requested value True is invalid and has been reverted to False. (function operator())
+(VllmWorker-6 pid=135147) INFO 11-12 01:38:05 [mrv2_utils.py:91] VLLM_USE_V2_MODEL_RUNNER=True is set; using Model Runner V2.
+(VllmWorker-3 pid=135144) WARNING 11-12 01:38:05 [patch_triton.py:69] NPU Triton causal_conv1d_update is unavailable (cannot import name 'causal_conv1d_update_npu' from 'vllm_ascend.ops.triton.mamba.causal_conv1d' (/vllm-workspace/vllm-ascend/vllm_ascend/ops/triton/mamba/causal_conv1d.py)); falling back to the PyTorch implementation, which syncs per request and therefore stalls ACL graph capture at decode-FULL.
+(VllmWorker-1 pid=135142) WARNING 11-12 01:38:05 [patch_triton.py:69] NPU Triton causal_conv1d_update is unavailable (cannot import name 'causal_conv1d_update_npu' from 'vllm_ascend.ops.triton.mamba.causal_conv1d' (/vllm-workspace/vllm-ascend/vllm_ascend/ops/triton/mamba/causal_conv1d.py)); falling back to the PyTorch implementation, which syncs per request and therefore stalls ACL graph capture at decode-FULL.
+(VllmWorker-5 pid=135146) WARNING 11-12 01:38:05 [patch_triton.py:69] NPU Triton causal_conv1d_update is unavailable (cannot import name 'causal_conv1d_update_npu' from 'vllm_ascend.ops.triton.mamba.causal_conv1d' (/vllm-workspace/vllm-ascend/vllm_ascend/ops/triton/mamba/causal_conv1d.py)); falling back to the PyTorch implementation, which syncs per request and therefore stalls ACL graph capture at decode-FULL.
+(VllmWorker-0 pid=135141) WARNING 11-12 01:38:05 [patch_triton.py:69] NPU Triton causal_conv1d_update is unavailable (cannot import name 'causal_conv1d_update_npu' from 'vllm_ascend.ops.triton.mamba.causal_conv1d' (/vllm-workspace/vllm-ascend/vllm_ascend/ops/triton/mamba/causal_conv1d.py)); falling back to the PyTorch implementation, which syncs per request and therefore stalls ACL graph capture at decode-FULL.
+(VllmWorker-2 pid=135143) WARNING 11-12 01:38:05 [patch_triton.py:69] NPU Triton causal_conv1d_update is unavailable (cannot import name 'causal_conv1d_update_npu' from 'vllm_ascend.ops.triton.mamba.causal_conv1d' (/vllm-workspace/vllm-ascend/vllm_ascend/ops/triton/mamba/causal_conv1d.py)); falling back to the PyTorch implementation, which syncs per request and therefore stalls ACL graph capture at decode-FULL.
+INFO 11-12 01:38:06 [logger.py:158] [vllm-ascend] - [ascend_log] applied level=INFO debug=[] modules={}
+(VllmWorker-3 pid=135144) INFO 11-12 01:38:06 [ascend_config.py:339] Dynamic EPLB is False
+(VllmWorker-3 pid=135144) INFO 11-12 01:38:06 [ascend_config.py:340] The number of redundant experts is 0
+(VllmWorker-3 pid=135144) INFO 11-12 01:38:06 [ascend_config.py:764] FlashComm1 is disabled. Using flashinfer_all2allv as the all2all backend.
+INFO 11-12 01:38:06 [logger.py:158] [vllm-ascend] - [ascend_log] applied level=INFO debug=[] modules={}
+(VllmWorker-1 pid=135142) INFO 11-12 01:38:06 [ascend_config.py:339] Dynamic EPLB is False
+(VllmWorker-1 pid=135142) INFO 11-12 01:38:06 [ascend_config.py:340] The number of redundant experts is 0
+(VllmWorker-1 pid=135142) INFO 11-12 01:38:06 [ascend_config.py:764] FlashComm1 is disabled. Using flashinfer_all2allv as the all2all backend.
+(VllmWorker-4 pid=135145) WARNING 11-12 01:38:06 [patch_triton.py:69] NPU Triton causal_conv1d_update is unavailable (cannot import name 'causal_conv1d_update_npu' from 'vllm_ascend.ops.triton.mamba.causal_conv1d' (/vllm-workspace/vllm-ascend/vllm_ascend/ops/triton/mamba/causal_conv1d.py)); falling back to the PyTorch implementation, which syncs per request and therefore stalls ACL graph capture at decode-FULL.
+INFO 11-12 01:38:06 [logger.py:158] [vllm-ascend] - [ascend_log] applied level=INFO debug=[] modules={}
+INFO 11-12 01:38:06 [logger.py:158] [vllm-ascend] - [ascend_log] applied level=INFO debug=[] modules={}
+INFO 11-12 01:38:06 [logger.py:158] [vllm-ascend] - [ascend_log] applied level=INFO debug=[] modules={}
+(VllmWorker-5 pid=135146) INFO 11-12 01:38:06 [ascend_config.py:339] Dynamic EPLB is False
+(VllmWorker-5 pid=135146) INFO 11-12 01:38:06 [ascend_config.py:340] The number of redundant experts is 0
+(VllmWorker-5 pid=135146) INFO 11-12 01:38:06 [ascend_config.py:764] FlashComm1 is disabled. Using flashinfer_all2allv as the all2all backend.
+(VllmWorker-0 pid=135141) INFO 11-12 01:38:06 [ascend_config.py:339] Dynamic EPLB is False
+(VllmWorker-0 pid=135141) INFO 11-12 01:38:06 [ascend_config.py:340] The number of redundant experts is 0
+(VllmWorker-0 pid=135141) INFO 11-12 01:38:06 [ascend_config.py:764] FlashComm1 is disabled. Using flashinfer_all2allv as the all2all backend.
+(VllmWorker-2 pid=135143) INFO 11-12 01:38:06 [ascend_config.py:339] Dynamic EPLB is False
+(VllmWorker-2 pid=135143) INFO 11-12 01:38:06 [ascend_config.py:340] The number of redundant experts is 0
+(VllmWorker-2 pid=135143) INFO 11-12 01:38:06 [ascend_config.py:764] FlashComm1 is disabled. Using flashinfer_all2allv as the all2all backend.
+(VllmWorker-6 pid=135147) WARNING 11-12 01:38:06 [patch_triton.py:69] NPU Triton causal_conv1d_update is unavailable (cannot import name 'causal_conv1d_update_npu' from 'vllm_ascend.ops.triton.mamba.causal_conv1d' (/vllm-workspace/vllm-ascend/vllm_ascend/ops/triton/mamba/causal_conv1d.py)); falling back to the PyTorch implementation, which syncs per request and therefore stalls ACL graph capture at decode-FULL.
+(VllmWorker-7 pid=135148) WARNING 11-12 01:38:06 [patch_triton.py:69] NPU Triton causal_conv1d_update is unavailable (cannot import name 'causal_conv1d_update_npu' from 'vllm_ascend.ops.triton.mamba.causal_conv1d' (/vllm-workspace/vllm-ascend/vllm_ascend/ops/triton/mamba/causal_conv1d.py)); falling back to the PyTorch implementation, which syncs per request and therefore stalls ACL graph capture at decode-FULL.
+INFO 11-12 01:38:06 [logger.py:158] [vllm-ascend] - [ascend_log] applied level=INFO debug=[] modules={}
+(VllmWorker-4 pid=135145) INFO 11-12 01:38:06 [ascend_config.py:339] Dynamic EPLB is False
+(VllmWorker-4 pid=135145) INFO 11-12 01:38:06 [ascend_config.py:340] The number of redundant experts is 0
+(VllmWorker-4 pid=135145) INFO 11-12 01:38:06 [ascend_config.py:764] FlashComm1 is disabled. Using flashinfer_all2allv as the all2all backend.
+INFO 11-12 01:38:07 [logger.py:158] [vllm-ascend] - [ascend_log] applied level=INFO debug=[] modules={}
+(VllmWorker-6 pid=135147) INFO 11-12 01:38:07 [ascend_config.py:339] Dynamic EPLB is False
+(VllmWorker-6 pid=135147) INFO 11-12 01:38:07 [ascend_config.py:340] The number of redundant experts is 0
+(VllmWorker-6 pid=135147) INFO 11-12 01:38:07 [ascend_config.py:764] FlashComm1 is disabled. Using flashinfer_all2allv as the all2all backend.
+INFO 11-12 01:38:07 [logger.py:158] [vllm-ascend] - [ascend_log] applied level=INFO debug=[] modules={}
+(VllmWorker-7 pid=135148) INFO 11-12 01:38:07 [ascend_config.py:339] Dynamic EPLB is False
+(VllmWorker-7 pid=135148) INFO 11-12 01:38:07 [ascend_config.py:340] The number of redundant experts is 0
+(VllmWorker-7 pid=135148) INFO 11-12 01:38:07 [ascend_config.py:764] FlashComm1 is disabled. Using flashinfer_all2allv as the all2all backend.
+(Worker pid=135144) INFO 11-12 01:39:30 [parallel_state.py:1906] world_size=16 rank=11 local_rank=3 distributed_init_method=tcp://177.11.25.1:41527 backend=hccl
+(Worker pid=135142) INFO 11-12 01:39:35 [parallel_state.py:1906] world_size=16 rank=9 local_rank=1 distributed_init_method=tcp://177.11.25.1:41527 backend=hccl
+(Worker pid=135141) INFO 11-12 01:39:41 [parallel_state.py:1906] world_size=16 rank=8 local_rank=0 distributed_init_method=tcp://177.11.25.1:41527 backend=hccl
+(Worker pid=135143) INFO 11-12 01:39:46 [parallel_state.py:1906] world_size=16 rank=10 local_rank=2 distributed_init_method=tcp://177.11.25.1:41527 backend=hccl
+(Worker pid=135146) INFO 11-12 01:39:51 [parallel_state.py:1906] world_size=16 rank=13 local_rank=5 distributed_init_method=tcp://177.11.25.1:41527 backend=hccl
+(Worker pid=135147) INFO 11-12 01:40:11 [parallel_state.py:1906] world_size=16 rank=14 local_rank=6 distributed_init_method=tcp://177.11.25.1:41527 backend=hccl
+(Worker pid=135145) INFO 11-12 01:40:21 [parallel_state.py:1906] world_size=16 rank=12 local_rank=4 distributed_init_method=tcp://177.11.25.1:41527 backend=hccl
+(Worker pid=135148) INFO 11-12 01:40:21 [parallel_state.py:1906] world_size=16 rank=15 local_rank=7 distributed_init_method=tcp://177.11.25.1:41527 backend=hccl
+[Gloo] Rank 8 is connected to 15 peer ranks. Expected number of connected peer ranks is : 15
+[Gloo] Rank 9 is connected to 15 peer ranks. Expected number of connected peer ranks is : 15
+[Gloo] Rank 11 is connected to 15 peer ranks. Expected number of connected peer ranks is : 15
+[Gloo] Rank 14 is connected to 15 peer ranks. Expected number of connected peer ranks is : 15
+[Gloo] Rank 12 is connected to 15 peer ranks. Expected number of connected peer ranks is : 15
+[Gloo] Rank 10 is connected to 15 peer ranks. Expected number of connected peer ranks is : 15
+[Gloo] Rank 13 is connected to 15 peer ranks. Expected number of connected peer ranks is : 15
+[Gloo] Rank 15 is connected to 15 peer ranks. Expected number of connected peer ranks is : 15
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 4 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 0 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 2 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 3 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 1 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 7 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 5 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 6 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 1 is connected to 1 peer ranks. Expected number of connected peer ranks is : 1
+[Gloo] Rank 1 is connected to 1 peer ranks. Expected number of connected peer ranks is : 1
+[Gloo] Rank 1 is connected to 1 peer ranks. Expected number of connected peer ranks is : 1
+[Gloo] Rank 1 is connected to 1 peer ranks. Expected number of connected peer ranks is : 1
+[Gloo] Rank 1 is connected to 1 peer ranks. Expected number of connected peer ranks is : 1
+[Gloo] Rank 1 is connected to 1 peer ranks. Expected number of connected peer ranks is : 1
+[Gloo] Rank 1 is connected to 1 peer ranks. Expected number of connected peer ranks is : 1
+[Gloo] Rank 1 is connected to 1 peer ranks. Expected number of connected peer ranks is : 1
+[Gloo] Rank 11 is connected to 15 peer ranks. Expected number of connected peer ranks is : 15
+[Gloo] Rank 9 is connected to 15 peer ranks. Expected number of connected peer ranks is : 15
+[Gloo] Rank 8 is connected to 15 peer ranks. Expected number of connected peer ranks is : 15
+[Gloo] Rank 10 is connected to 15 peer ranks. Expected number of connected peer ranks is : 15
+[Gloo] Rank 12 is connected to 15 peer ranks. Expected number of connected peer ranks is : 15
+[Gloo] Rank 14 is connected to 15 peer ranks. Expected number of connected peer ranks is : 15
+[Gloo] Rank 13 is connected to 15 peer ranks. Expected number of connected peer ranks is : 15
+[Gloo] Rank 15 is connected to 15 peer ranks. Expected number of connected peer ranks is : 15
+(Worker pid=135141) INFO 11-12 01:40:22 [parallel_state.py:2350] rank 8 in world size 16 is assigned as DP rank 1, PP rank 0, PCP rank 0, TP rank 0, ETP rank 0, EP rank 8, EPLB rank N/A
+[Gloo] Rank 0 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 2 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 1 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 3 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 5 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 4 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 6 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 7 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 1 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 4 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 6 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 0 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 2 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 3 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 5 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 7 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 12 is connected to 15 peer ranks. Expected number of connected peer ranks is : 15
+[Gloo] Rank 8 is connected to 15 peer ranks. Expected number of connected peer ranks is : 15
+[Gloo] Rank 9 is connected to 15 peer ranks. Expected number of connected peer ranks is : 15
+[Gloo] Rank 10 is connected to 15 peer ranks. Expected number of connected peer ranks is : 15
+[Gloo] Rank 11 is connected to 15 peer ranks. Expected number of connected peer ranks is : 15
+[Gloo] Rank 14 is connected to 15 peer ranks. Expected number of connected peer ranks is : 15
+[Gloo] Rank 13 is connected to 15 peer ranks. Expected number of connected peer ranks is : 15
+[Gloo] Rank 15 is connected to 15 peer ranks. Expected number of connected peer ranks is : 15
+(Worker pid=135145) WARNING 11-12 01:40:22 [worker.py:603] npu model runner v2 is in developing, some features doesn't work for now.
+(Worker pid=135141) WARNING 11-12 01:40:22 [worker.py:603] npu model runner v2 is in developing, some features doesn't work for now.
+(Worker pid=135146) WARNING 11-12 01:40:22 [worker.py:603] npu model runner v2 is in developing, some features doesn't work for now.
+(Worker pid=135144) WARNING 11-12 01:40:22 [worker.py:603] npu model runner v2 is in developing, some features doesn't work for now.
+(Worker pid=135142) WARNING 11-12 01:40:22 [worker.py:603] npu model runner v2 is in developing, some features doesn't work for now.
+(Worker pid=135143) WARNING 11-12 01:40:22 [worker.py:603] npu model runner v2 is in developing, some features doesn't work for now.
+(Worker pid=135147) WARNING 11-12 01:40:22 [worker.py:603] npu model runner v2 is in developing, some features doesn't work for now.
+(Worker pid=135148) WARNING 11-12 01:40:22 [worker.py:603] npu model runner v2 is in developing, some features doesn't work for now.
+(Worker pid=135141) INFO 11-12 01:40:22 [utils.py:179] Wrapping torch.cuda with torch.npu.
+(Worker pid=135145) INFO 11-12 01:40:22 [ascend_config.py:339] Dynamic EPLB is False
+(Worker pid=135141) INFO 11-12 01:40:22 [ascend_config.py:339] Dynamic EPLB is False
+(Worker pid=135143) INFO 11-12 01:40:22 [ascend_config.py:339] Dynamic EPLB is False
+(Worker pid=135145) INFO 11-12 01:40:22 [ascend_config.py:340] The number of redundant experts is 0
+(Worker pid=135143) INFO 11-12 01:40:22 [ascend_config.py:340] The number of redundant experts is 0
+(Worker pid=135141) INFO 11-12 01:40:22 [ascend_config.py:340] The number of redundant experts is 0
+(Worker pid=135148) INFO 11-12 01:40:22 [ascend_config.py:339] Dynamic EPLB is False
+(Worker pid=135147) INFO 11-12 01:40:22 [ascend_config.py:339] Dynamic EPLB is False
+(Worker pid=135148) INFO 11-12 01:40:22 [ascend_config.py:340] The number of redundant experts is 0
+(Worker pid=135147) INFO 11-12 01:40:22 [ascend_config.py:340] The number of redundant experts is 0
+(Worker pid=135142) INFO 11-12 01:40:22 [ascend_config.py:339] Dynamic EPLB is False
+(Worker pid=135142) INFO 11-12 01:40:22 [ascend_config.py:340] The number of redundant experts is 0
+(Worker pid=135146) INFO 11-12 01:40:22 [ascend_config.py:339] Dynamic EPLB is False
+(Worker pid=135146) INFO 11-12 01:40:22 [ascend_config.py:340] The number of redundant experts is 0
+(Worker pid=135144) INFO 11-12 01:40:22 [ascend_config.py:339] Dynamic EPLB is False
+(Worker pid=135144) INFO 11-12 01:40:22 [ascend_config.py:340] The number of redundant experts is 0
+INFO 11-12 01:40:24 [config.py:709] [vllm-ascend] [observability] - [runtime_config] worker leader persisted path=/workspace/runtime/config/runtime_config.json explicit_path=False (overwrote)
+INFO 11-12 01:40:24 [queue.py:78] [vllm-ascend] [observability] - [runtime_guard] action worker started name=runtime-guard-actions maxsize=64
+INFO 11-12 01:40:24 [bus_worker.py:109] [vllm-ascend] [observability] - [runtime_guard] bus worker started name=runtime-guard-bus
+INFO 11-12 01:40:24 [config.py:709] [vllm-ascend] [observability] - [runtime_config] worker leader persisted path=/workspace/runtime/config/runtime_config.json explicit_path=False (overwrote)
+INFO 11-12 01:40:24 [queue.py:78] [vllm-ascend] [observability] - [runtime_guard] action worker started name=runtime-guard-actions maxsize=64
+INFO 11-12 01:40:24 [bus_worker.py:109] [vllm-ascend] [observability] - [runtime_guard] bus worker started name=runtime-guard-bus
+(Worker_DP1_PCP0_EP8 pid=135141) INFO 11-12 01:40:24 [model_runner.py:392] Loading model from scratch...
+(Worker_DP1_PCP0_EP8 pid=135141) INFO 11-12 01:40:24 [interface.py:429] Using default backend AttentionBackendEnum.TORCH_SDPA for vit attention
+(Worker_DP1_PCP0_EP8 pid=135141) INFO 11-12 01:40:24 [mm_encoder_attention.py:372] Using AttentionBackendEnum.TORCH_SDPA for MMEncoderAttention.
+(Worker_DP1_PCP0_EP8 pid=135141) INFO 11-12 01:40:24 [expert_map_manager.py:250] [EP Rank 8/16] Expert parallelism is enabled. Expert placement strategy: linear. Local/global number of experts: 24/384. Experts local to global index map: 0->192, 1->193, 2->194, 3->195, 4->196, 5->197, 6->198, 7->199, 8->200, 9->201, 10->202, 11->203, 12->204, 13->205, 14->206, 15->207, 16->208, 17->209, 18->210, 19->211, 20->212, 21->213, 22->214, 23->215.
+INFO 11-12 01:40:28 [config.py:709] [vllm-ascend] [observability] - [runtime_config] worker leader persisted path=/workspace/runtime/config/runtime_config.json explicit_path=False (overwrote)
+INFO 11-12 01:40:28 [queue.py:78] [vllm-ascend] [observability] - [runtime_guard] action worker started name=runtime-guard-actions maxsize=64
+INFO 11-12 01:40:28 [bus_worker.py:109] [vllm-ascend] [observability] - [runtime_guard] bus worker started name=runtime-guard-bus
+INFO 11-12 01:40:28 [config.py:709] [vllm-ascend] [observability] - [runtime_config] worker leader persisted path=/workspace/runtime/config/runtime_config.json explicit_path=False (overwrote)
+INFO 11-12 01:40:28 [queue.py:78] [vllm-ascend] [observability] - [runtime_guard] action worker started name=runtime-guard-actions maxsize=64
+INFO 11-12 01:40:28 [bus_worker.py:109] [vllm-ascend] [observability] - [runtime_guard] bus worker started name=runtime-guard-bus
+INFO 11-12 01:40:30 [config.py:709] [vllm-ascend] [observability] - [runtime_config] worker leader persisted path=/workspace/runtime/config/runtime_config.json explicit_path=False (overwrote)
+INFO 11-12 01:40:30 [queue.py:78] [vllm-ascend] [observability] - [runtime_guard] action worker started name=runtime-guard-actions maxsize=64
+INFO 11-12 01:40:30 [bus_worker.py:109] [vllm-ascend] [observability] - [runtime_guard] bus worker started name=runtime-guard-bus
+INFO 11-12 01:40:30 [config.py:709] [vllm-ascend] [observability] - [runtime_config] worker leader persisted path=/workspace/runtime/config/runtime_config.json explicit_path=False (overwrote)
+INFO 11-12 01:40:30 [queue.py:78] [vllm-ascend] [observability] - [runtime_guard] action worker started name=runtime-guard-actions maxsize=64
+INFO 11-12 01:40:30 [bus_worker.py:109] [vllm-ascend] [observability] - [runtime_guard] bus worker started name=runtime-guard-bus
+INFO 11-12 01:40:30 [config.py:709] [vllm-ascend] [observability] - [runtime_config] worker leader persisted path=/workspace/runtime/config/runtime_config.json explicit_path=False (overwrote)
+INFO 11-12 01:40:30 [queue.py:78] [vllm-ascend] [observability] - [runtime_guard] action worker started name=runtime-guard-actions maxsize=64
+INFO 11-12 01:40:30 [bus_worker.py:109] [vllm-ascend] [observability] - [runtime_guard] bus worker started name=runtime-guard-bus
+INFO 11-12 01:40:30 [config.py:709] [vllm-ascend] [observability] - [runtime_config] worker leader persisted path=/workspace/runtime/config/runtime_config.json explicit_path=False (overwrote)
+INFO 11-12 01:40:30 [queue.py:78] [vllm-ascend] [observability] - [runtime_guard] action worker started name=runtime-guard-actions maxsize=64
+INFO 11-12 01:40:30 [bus_worker.py:109] [vllm-ascend] [observability] - [runtime_guard] bus worker started name=runtime-guard-bus
+(Worker_DP1_PCP1_EP9 pid=135142) INFO 11-12 01:40:41 [embedding.py:124] Engram table offloaded to registered host memory: 384006168 rows x 256, 183.11 GiB per rank
+(Worker_DP1_PCP2_EP10 pid=135143) INFO 11-12 01:40:41 [embedding.py:124] Engram table offloaded to registered host memory: 384006168 rows x 256, 183.11 GiB per rank
+(Worker_DP1_PCP5_EP13 pid=135146) INFO 11-12 01:40:41 [embedding.py:124] Engram table offloaded to registered host memory: 384006168 rows x 256, 183.11 GiB per rank
+(Worker_DP1_PCP4_EP12 pid=135145) INFO 11-12 01:40:41 [embedding.py:124] Engram table offloaded to registered host memory: 384006168 rows x 256, 183.11 GiB per rank
+(Worker_DP1_PCP7_EP15 pid=135148) INFO 11-12 01:40:41 [embedding.py:124] Engram table offloaded to registered host memory: 384006168 rows x 256, 183.11 GiB per rank
+(Worker_DP1_PCP0_EP8 pid=135141) INFO 11-12 01:40:41 [embedding.py:124] Engram table offloaded to registered host memory: 384006168 rows x 256, 183.11 GiB per rank
+(Worker_DP1_PCP3_EP11 pid=135144) INFO 11-12 01:40:41 [embedding.py:124] Engram table offloaded to registered host memory: 384006168 rows x 256, 183.11 GiB per rank
+(Worker_DP1_PCP6_EP14 pid=135147) INFO 11-12 01:40:41 [embedding.py:124] Engram table offloaded to registered host memory: 384006168 rows x 256, 183.11 GiB per rank
+(Worker_DP1_PCP2_EP10 pid=135143) INFO 11-12 01:41:52 [embedding.py:124] Engram table offloaded to registered host memory: 384016682 rows x 256, 183.11 GiB per rank
+(Worker_DP1_PCP4_EP12 pid=135145) INFO 11-12 01:41:52 [embedding.py:124] Engram table offloaded to registered host memory: 384016682 rows x 256, 183.11 GiB per rank
+(Worker_DP1_PCP5_EP13 pid=135146) INFO 11-12 01:41:52 [embedding.py:124] Engram table offloaded to registered host memory: 384016682 rows x 256, 183.11 GiB per rank
+(Worker_DP1_PCP3_EP11 pid=135144) INFO 11-12 01:41:52 [embedding.py:124] Engram table offloaded to registered host memory: 384016682 rows x 256, 183.11 GiB per rank
+(Worker_DP1_PCP1_EP9 pid=135142) INFO 11-12 01:41:52 [embedding.py:124] Engram table offloaded to registered host memory: 384016682 rows x 256, 183.11 GiB per rank
+(Worker_DP1_PCP0_EP8 pid=135141) INFO 11-12 01:41:52 [embedding.py:124] Engram table offloaded to registered host memory: 384016682 rows x 256, 183.11 GiB per rank
+(Worker_DP1_PCP7_EP15 pid=135148) INFO 11-12 01:41:52 [embedding.py:124] Engram table offloaded to registered host memory: 384016682 rows x 256, 183.11 GiB per rank
+(Worker_DP1_PCP6_EP14 pid=135147) INFO 11-12 01:41:52 [embedding.py:124] Engram table offloaded to registered host memory: 384016682 rows x 256, 183.11 GiB per rank
+[transformers] You are using a model of type `deepseek_v41` to instantiate a model of type ``. This may be expected if you are loading a checkpoint that shares a subset of the architecture (e.g., loading a `sam2_video` checkpoint into `Sam2Model`), but is otherwise not supported and can yield errors. Please verify that the checkpoint is compatible with the model you are instantiating.
+[transformers] You are using a model of type `deepseek_v41` to instantiate a model of type ``. This may be expected if you are loading a checkpoint that shares a subset of the architecture (e.g., loading a `sam2_video` checkpoint into `Sam2Model`), but is otherwise not supported and can yield errors. Please verify that the checkpoint is compatible with the model you are instantiating.
+[transformers] You are using a model of type `deepseek_v41` to instantiate a model of type ``. This may be expected if you are loading a checkpoint that shares a subset of the architecture (e.g., loading a `sam2_video` checkpoint into `Sam2Model`), but is otherwise not supported and can yield errors. Please verify that the checkpoint is compatible with the model you are instantiating.
+[transformers] You are using a model of type `deepseek_v41` to instantiate a model of type ``. This may be expected if you are loading a checkpoint that shares a subset of the architecture (e.g., loading a `sam2_video` checkpoint into `Sam2Model`), but is otherwise not supported and can yield errors. Please verify that the checkpoint is compatible with the model you are instantiating.
+[transformers] You are using a model of type `deepseek_v41` to instantiate a model of type ``. This may be expected if you are loading a checkpoint that shares a subset of the architecture (e.g., loading a `sam2_video` checkpoint into `Sam2Model`), but is otherwise not supported and can yield errors. Please verify that the checkpoint is compatible with the model you are instantiating.
+[transformers] You are using a model of type `deepseek_v41` to instantiate a model of type ``. This may be expected if you are loading a checkpoint that shares a subset of the architecture (e.g., loading a `sam2_video` checkpoint into `Sam2Model`), but is otherwise not supported and can yield errors. Please verify that the checkpoint is compatible with the model you are instantiating.
+[transformers] You are using a model of type `deepseek_v41` to instantiate a model of type ``. This may be expected if you are loading a checkpoint that shares a subset of the architecture (e.g., loading a `sam2_video` checkpoint into `Sam2Model`), but is otherwise not supported and can yield errors. Please verify that the checkpoint is compatible with the model you are instantiating.
+[transformers] You are using a model of type `deepseek_v41` to instantiate a model of type ``. This may be expected if you are loading a checkpoint that shares a subset of the architecture (e.g., loading a `sam2_video` checkpoint into `Sam2Model`), but is otherwise not supported and can yield errors. Please verify that the checkpoint is compatible with the model you are instantiating.
+(Worker_DP1_PCP0_EP8 pid=135141) INFO 11-12 01:41:53 [engram.py:472] Built engram token map (129280 -> 99092 ids) for layers (1, 14)
+(Worker_DP1_PCP2_EP10 pid=135143) INFO 11-12 01:41:54 [engram.py:472] Built engram token map (129280 -> 99092 ids) for layers (1, 14)
+(Worker_DP1_PCP1_EP9 pid=135142) INFO 11-12 01:41:54 [engram.py:472] Built engram token map (129280 -> 99092 ids) for layers (1, 14)
+(Worker_DP1_PCP5_EP13 pid=135146) INFO 11-12 01:41:54 [engram.py:472] Built engram token map (129280 -> 99092 ids) for layers (1, 14)
+(Worker_DP1_PCP4_EP12 pid=135145) INFO 11-12 01:41:54 [engram.py:472] Built engram token map (129280 -> 99092 ids) for layers (1, 14)
+(Worker_DP1_PCP3_EP11 pid=135144) INFO 11-12 01:41:54 [engram.py:472] Built engram token map (129280 -> 99092 ids) for layers (1, 14)
+(Worker_DP1_PCP0_EP8 pid=135141) INFO 11-12 01:41:54 [decoder_replay_layers.py:205] Ascend MRV2 decoder bounded replay: layers 21-39 keep each prefill's last 128 tokens.
+(Worker_DP1_PCP7_EP15 pid=135148) INFO 11-12 01:41:54 [engram.py:472] Built engram token map (129280 -> 99092 ids) for layers (1, 14)
+(Worker_DP1_PCP6_EP14 pid=135147) INFO 11-12 01:41:54 [engram.py:472] Built engram token map (129280 -> 99092 ids) for layers (1, 14)
+(Worker_DP1_PCP0_EP8 pid=135141) INFO 11-12 01:41:54 [compilation.py:1123] Using OOT custom backend for compilation.
+(Worker_DP1_PCP2_EP10 pid=135143) INFO 11-12 01:41:54 [compilation.py:1123] Using OOT custom backend for compilation.
+(Worker_DP1_PCP1_EP9 pid=135142) INFO 11-12 01:41:54 [compilation.py:1123] Using OOT custom backend for compilation.
+(Worker_DP1_PCP5_EP13 pid=135146) INFO 11-12 01:41:54 [compilation.py:1123] Using OOT custom backend for compilation.
+(Worker_DP1_PCP4_EP12 pid=135145) INFO 11-12 01:41:54 [compilation.py:1123] Using OOT custom backend for compilation.
+(Worker_DP1_PCP3_EP11 pid=135144) INFO 11-12 01:41:54 [compilation.py:1123] Using OOT custom backend for compilation.
+(Worker_DP1_PCP7_EP15 pid=135148) INFO 11-12 01:41:54 [compilation.py:1123] Using OOT custom backend for compilation.
+(Worker_DP1_PCP6_EP14 pid=135147) INFO 11-12 01:41:54 [compilation.py:1123] Using OOT custom backend for compilation.
+(Worker_DP1_PCP0_EP8 pid=135141) INFO 11-12 01:41:54 [base_loader.py:82] Initializing model took 89.802560 seconds
+(Worker_DP1_PCP0_EP8 pid=135141) INFO 11-12 01:41:54 [weight_utils.py:1108] Filesystem type for checkpoints: NFS. Checkpoint size: 1421.66 GiB. Available RAM: 1703.92 GiB.
+(Worker_DP1_PCP0_EP8 pid=135141) INFO 11-12 01:44:50 [embedding.py:331] Engram rows [0, 384006168) loaded from model-bf16-00523.safetensors
+(Worker_DP1_PCP0_EP8 pid=135141) INFO 11-12 01:45:10 [embedding.py:331] Engram rows [0, 384016682) loaded from model-bf16-00524.safetensors
+(Worker_DP1_PCP0_EP8 pid=135141) INFO 11-12 01:45:20 [default_loader.py:501] Loading weights took 205.79 seconds
+(Worker_DP1_PCP7_EP15 pid=135148) INFO 11-12 01:45:21 [model_runner.py:424] Model loading took 74.01 GiB memory and 297.360844 seconds
+(Worker_DP1_PCP6_EP14 pid=135147) INFO 11-12 01:45:21 [model_runner.py:424] Model loading took 74.01 GiB memory and 290.715621 seconds
+(Worker_DP1_PCP1_EP9 pid=135142) INFO 11-12 01:45:21 [model_runner.py:424] Model loading took 74.01 GiB memory and 293.215604 seconds
+(Worker_DP1_PCP2_EP10 pid=135143) INFO 11-12 01:45:21 [model_runner.py:424] Model loading took 74.01 GiB memory and 290.968883 seconds
+(Worker_DP1_PCP5_EP13 pid=135146) INFO 11-12 01:45:21 [model_runner.py:424] Model loading took 74.01 GiB memory and 293.501854 seconds
+(Worker_DP1_PCP4_EP12 pid=135145) INFO 11-12 01:45:21 [model_runner.py:424] Model loading took 74.01 GiB memory and 290.707531 seconds
+(Worker_DP1_PCP3_EP11 pid=135144) INFO 11-12 01:45:21 [model_runner.py:424] Model loading took 74.01 GiB memory and 290.739983 seconds
+(Worker_DP1_PCP0_EP8 pid=135141) INFO 11-12 01:45:21 [model_runner.py:424] Model loading took 74.01 GiB memory and 297.395982 seconds
+(EngineCore_DP1 pid=135088) WARNING 11-12 01:45:21 [torch_utils.py:283] OMP_NUM_THREADS=10 is set; leaving Torch threads at 10 for serving. Multi-threaded torch CPU ops during serving can degrade performance through spin-wait contention and cgroup CPU-quota throttling.
+(EngineCore_DP1 pid=135088) INFO 11-12 01:45:21 [utils.py:347] Using LBNHC KV cache layout.
+(EngineCore_DP1 pid=135088) INFO 11-12 01:46:22 [shm_broadcast.py:871] No available shared memory broadcast block found in 60 seconds. This typically happens when some processes are hanging or doing some time-consuming work (e.g. compilation, weight/kv cache quantization).
+(EngineCore_DP1 pid=135088) INFO 11-12 01:47:22 [shm_broadcast.py:871] No available shared memory broadcast block found in 60 seconds. This typically happens when some processes are hanging or doing some time-consuming work (e.g. compilation, weight/kv cache quantization).
+(EngineCore_DP1 pid=135088) INFO 11-12 01:48:22 [shm_broadcast.py:871] No available shared memory broadcast block found in 60 seconds. This typically happens when some processes are hanging or doing some time-consuming work (e.g. compilation, weight/kv cache quantization).
+(EngineCore_DP1 pid=135088) INFO 11-12 01:49:22 [shm_broadcast.py:871] No available shared memory broadcast block found in 60 seconds. This typically happens when some processes are hanging or doing some time-consuming work (e.g. compilation, weight/kv cache quantization).
+(EngineCore_DP1 pid=135088) INFO 11-12 01:50:22 [shm_broadcast.py:871] No available shared memory broadcast block found in 60 seconds. This typically happens when some processes are hanging or doing some time-consuming work (e.g. compilation, weight/kv cache quantization).
+(EngineCore_DP1 pid=135088) INFO 11-12 01:51:22 [shm_broadcast.py:871] No available shared memory broadcast block found in 60 seconds. This typically happens when some processes are hanging or doing some time-consuming work (e.g. compilation, weight/kv cache quantization).
+(EngineCore_DP1 pid=135088) INFO 11-12 01:52:22 [shm_broadcast.py:871] No available shared memory broadcast block found in 60 seconds. This typically happens when some processes are hanging or doing some time-consuming work (e.g. compilation, weight/kv cache quantization).
+(EngineCore_DP1 pid=135088) INFO 11-12 01:53:23 [shm_broadcast.py:871] No available shared memory broadcast block found in 60 seconds. This typically happens when some processes are hanging or doing some time-consuming work (e.g. compilation, weight/kv cache quantization).
+(EngineCore_DP1 pid=135088) INFO 11-12 01:54:23 [shm_broadcast.py:871] No available shared memory broadcast block found in 60 seconds. This typically happens when some processes are hanging or doing some time-consuming work (e.g. compilation, weight/kv cache quantization).
+(EngineCore_DP1 pid=135088) INFO 11-12 01:55:23 [shm_broadcast.py:871] No available shared memory broadcast block found in 60 seconds. This typically happens when some processes are hanging or doing some time-consuming work (e.g. compilation, weight/kv cache quantization).
+(EngineCore_DP1 pid=135088) INFO 11-12 01:56:23 [shm_broadcast.py:871] No available shared memory broadcast block found in 60 seconds. This typically happens when some processes are hanging or doing some time-consuming work (e.g. compilation, weight/kv cache quantization).
+(EngineCore_DP1 pid=135088) INFO 11-12 01:57:23 [shm_broadcast.py:871] No available shared memory broadcast block found in 60 seconds. This typically happens when some processes are hanging or doing some time-consuming work (e.g. compilation, weight/kv cache quantization).
+(EngineCore_DP1 pid=135088) INFO 11-12 01:58:23 [shm_broadcast.py:871] No available shared memory broadcast block found in 60 seconds. This typically happens when some processes are hanging or doing some time-consuming work (e.g. compilation, weight/kv cache quantization).
+(EngineCore_DP1 pid=135088) INFO 11-12 01:59:23 [shm_broadcast.py:871] No available shared memory broadcast block found in 60 seconds. This typically happens when some processes are hanging or doing some time-consuming work (e.g. compilation, weight/kv cache quantization).
+(EngineCore_DP1 pid=135088) INFO 11-12 02:00:23 [shm_broadcast.py:871] No available shared memory broadcast block found in 60 seconds. This typically happens when some processes are hanging or doing some time-consuming work (e.g. compilation, weight/kv cache quantization).
+(EngineCore_DP1 pid=135088) INFO 11-12 02:01:23 [shm_broadcast.py:871] No available shared memory broadcast block found in 60 seconds. This typically happens when some processes are hanging or doing some time-consuming work (e.g. compilation, weight/kv cache quantization).
+(EngineCore_DP1 pid=135088) INFO 11-12 02:02:23 [shm_broadcast.py:871] No available shared memory broadcast block found in 60 seconds. This typically happens when some processes are hanging or doing some time-consuming work (e.g. compilation, weight/kv cache quantization).
+(EngineCore_DP1 pid=135088) INFO 11-12 02:03:23 [shm_broadcast.py:871] No available shared memory broadcast block found in 60 seconds. This typically happens when some processes are hanging or doing some time-consuming work (e.g. compilation, weight/kv cache quantization).
+(EngineCore_DP1 pid=135088) INFO 11-12 02:04:23 [shm_broadcast.py:871] No available shared memory broadcast block found in 60 seconds. This typically happens when some processes are hanging or doing some time-consuming work (e.g. compilation, weight/kv cache quantization).
+(EngineCore_DP1 pid=135088) INFO 11-12 02:05:23 [shm_broadcast.py:871] No available shared memory broadcast block found in 60 seconds. This typically happens when some processes are hanging or doing some time-consuming work (e.g. compilation, weight/kv cache quantization).
+(EngineCore_DP1 pid=135088) INFO 11-12 02:06:23 [shm_broadcast.py:871] No available shared memory broadcast block found in 60 seconds. This typically happens when some processes are hanging or doing some time-consuming work (e.g. compilation, weight/kv cache quantization).
+(EngineCore_DP1 pid=135088) INFO 11-12 02:07:23 [shm_broadcast.py:871] No available shared memory broadcast block found in 60 seconds. This typically happens when some processes are hanging or doing some time-consuming work (e.g. compilation, weight/kv cache quantization).
+[rank13]:[W1112 02:07:55.960788520 TensorFactories.cpp:437] Warning: Cannot create tensor with interal format while allow_internel_format=False, tensor will be created with base format. (function operator())
+[rank11]:[W1112 02:07:55.975751140 TensorFactories.cpp:437] Warning: Cannot create tensor with interal format while allow_internel_format=False, tensor will be created with base format. (function operator())
+[rank9]:[W1112 02:07:55.976488070 TensorFactories.cpp:437] Warning: Cannot create tensor with interal format while allow_internel_format=False, tensor will be created with base format. (function operator())
+[rank12]:[W1112 02:07:55.977966690 TensorFactories.cpp:437] Warning: Cannot create tensor with interal format while allow_internel_format=False, tensor will be created with base format. (function operator())
+[rank10]:[W1112 02:07:55.982883990 TensorFactories.cpp:437] Warning: Cannot create tensor with interal format while allow_internel_format=False, tensor will be created with base format. (function operator())
+[rank8]:[W1112 02:07:55.987780320 TensorFactories.cpp:437] Warning: Cannot create tensor with interal format while allow_internel_format=False, tensor will be created with base format. (function operator())
+[rank15]:[W1112 02:07:55.139246760 TensorFactories.cpp:437] Warning: Cannot create tensor with interal format while allow_internel_format=False, tensor will be created with base format. (function operator())
+[rank14]:[W1112 02:07:55.162855890 TensorFactories.cpp:437] Warning: Cannot create tensor with interal format while allow_internel_format=False, tensor will be created with base format. (function operator())
+(Worker_DP1_PCP0_EP8 pid=135141) INFO 11-12 02:07:59 [encoder_runner.py:131] Encoder cache will be initialized with a budget of 2048 tokens, and profiled with 2 image items of the maximum feature size.
+(Worker_DP1_PCP2_EP10 pid=135143) INFO 11-12 02:07:59 [monitor.py:40] [backbone] Starting torch.compile
+(Worker_DP1_PCP5_EP13 pid=135146) INFO 11-12 02:08:00 [monitor.py:40] [backbone] Starting torch.compile
+(Worker_DP1_PCP3_EP11 pid=135144) INFO 11-12 02:08:00 [monitor.py:40] [backbone] Starting torch.compile
+(Worker_DP1_PCP6_EP14 pid=135147) INFO 11-12 02:08:00 [monitor.py:40] [backbone] Starting torch.compile
+(Worker_DP1_PCP7_EP15 pid=135148) INFO 11-12 02:08:00 [monitor.py:40] [backbone] Starting torch.compile
+(Worker_DP1_PCP4_EP12 pid=135145) INFO 11-12 02:08:00 [monitor.py:40] [backbone] Starting torch.compile
+(Worker_DP1_PCP1_EP9 pid=135142) INFO 11-12 02:08:00 [monitor.py:40] [backbone] Starting torch.compile
+(Worker_DP1_PCP0_EP8 pid=135141) INFO 11-12 02:08:00 [monitor.py:40] [backbone] Starting torch.compile
+(Worker_DP1_PCP2_EP10 pid=135143) INFO 11-12 02:08:01 [compiler_interface.py:289] AscendCompiler hash factors: {'torch_npu_version': '2.10.0.post7', 'enable_npugraph_ex': False, 'enable_static_kernel': False, 'enable_super_kernel': False}
+(Worker_DP1_PCP2_EP10 pid=135143) INFO 11-12 02:08:01 [backends.py:1104] [backbone] Using cache directory: /root/.cache/vllm/torch_compile_cache/d11e751a02/rank_2_1/backbone for vLLM's torch.compile
+(Worker_DP1_PCP2_EP10 pid=135143) INFO 11-12 02:08:01 [backends.py:1166] [backbone] Dynamo bytecode transform time: 2.01 s
+(Worker_DP1_PCP5_EP13 pid=135146) INFO 11-12 02:08:02 [compiler_interface.py:289] AscendCompiler hash factors: {'torch_npu_version': '2.10.0.post7', 'enable_npugraph_ex': False, 'enable_static_kernel': False, 'enable_super_kernel': False}
+(Worker_DP1_PCP5_EP13 pid=135146) INFO 11-12 02:08:02 [backends.py:1104] [backbone] Using cache directory: /root/.cache/vllm/torch_compile_cache/d11e751a02/rank_5_1/backbone for vLLM's torch.compile
+(Worker_DP1_PCP5_EP13 pid=135146) INFO 11-12 02:08:02 [backends.py:1166] [backbone] Dynamo bytecode transform time: 2.01 s
+(Worker_DP1_PCP3_EP11 pid=135144) INFO 11-12 02:08:02 [compiler_interface.py:289] AscendCompiler hash factors: {'torch_npu_version': '2.10.0.post7', 'enable_npugraph_ex': False, 'enable_static_kernel': False, 'enable_super_kernel': False}
+(Worker_DP1_PCP3_EP11 pid=135144) INFO 11-12 02:08:02 [backends.py:1104] [backbone] Using cache directory: /root/.cache/vllm/torch_compile_cache/d11e751a02/rank_3_1/backbone for vLLM's torch.compile
+(Worker_DP1_PCP3_EP11 pid=135144) INFO 11-12 02:08:02 [backends.py:1166] [backbone] Dynamo bytecode transform time: 2.02 s
+(Worker_DP1_PCP6_EP14 pid=135147) INFO 11-12 02:08:02 [compiler_interface.py:289] AscendCompiler hash factors: {'torch_npu_version': '2.10.0.post7', 'enable_npugraph_ex': False, 'enable_static_kernel': False, 'enable_super_kernel': False}
+(Worker_DP1_PCP6_EP14 pid=135147) INFO 11-12 02:08:02 [backends.py:1104] [backbone] Using cache directory: /root/.cache/vllm/torch_compile_cache/d11e751a02/rank_6_1/backbone for vLLM's torch.compile
+(Worker_DP1_PCP6_EP14 pid=135147) INFO 11-12 02:08:02 [backends.py:1166] [backbone] Dynamo bytecode transform time: 2.03 s
+(Worker_DP1_PCP7_EP15 pid=135148) INFO 11-12 02:08:02 [compiler_interface.py:289] AscendCompiler hash factors: {'torch_npu_version': '2.10.0.post7', 'enable_npugraph_ex': False, 'enable_static_kernel': False, 'enable_super_kernel': False}
+(Worker_DP1_PCP7_EP15 pid=135148) INFO 11-12 02:08:02 [backends.py:1104] [backbone] Using cache directory: /root/.cache/vllm/torch_compile_cache/d11e751a02/rank_7_1/backbone for vLLM's torch.compile
+(Worker_DP1_PCP7_EP15 pid=135148) INFO 11-12 02:08:02 [backends.py:1166] [backbone] Dynamo bytecode transform time: 2.04 s
+(Worker_DP1_PCP4_EP12 pid=135145) INFO 11-12 02:08:02 [compiler_interface.py:289] AscendCompiler hash factors: {'torch_npu_version': '2.10.0.post7', 'enable_npugraph_ex': False, 'enable_static_kernel': False, 'enable_super_kernel': False}
+(Worker_DP1_PCP4_EP12 pid=135145) INFO 11-12 02:08:02 [backends.py:1104] [backbone] Using cache directory: /root/.cache/vllm/torch_compile_cache/d11e751a02/rank_4_1/backbone for vLLM's torch.compile
+(Worker_DP1_PCP4_EP12 pid=135145) INFO 11-12 02:08:02 [backends.py:1166] [backbone] Dynamo bytecode transform time: 2.04 s
+(Worker_DP1_PCP1_EP9 pid=135142) INFO 11-12 02:08:02 [compiler_interface.py:289] AscendCompiler hash factors: {'torch_npu_version': '2.10.0.post7', 'enable_npugraph_ex': False, 'enable_static_kernel': False, 'enable_super_kernel': False}
+(Worker_DP1_PCP1_EP9 pid=135142) INFO 11-12 02:08:02 [backends.py:1104] [backbone] Using cache directory: /root/.cache/vllm/torch_compile_cache/d11e751a02/rank_1_1/backbone for vLLM's torch.compile
+(Worker_DP1_PCP1_EP9 pid=135142) INFO 11-12 02:08:02 [backends.py:1166] [backbone] Dynamo bytecode transform time: 2.13 s
+(Worker_DP1_PCP0_EP8 pid=135141) INFO 11-12 02:08:02 [compiler_interface.py:289] AscendCompiler hash factors: {'torch_npu_version': '2.10.0.post7', 'enable_npugraph_ex': False, 'enable_static_kernel': False, 'enable_super_kernel': False}
+(Worker_DP1_PCP0_EP8 pid=135141) INFO 11-12 02:08:02 [backends.py:1104] [backbone] Using cache directory: /root/.cache/vllm/torch_compile_cache/d11e751a02/rank_0_1/backbone for vLLM's torch.compile
+(Worker_DP1_PCP0_EP8 pid=135141) INFO 11-12 02:08:02 [backends.py:1166] [backbone] Dynamo bytecode transform time: 2.04 s
+(Worker_DP1_PCP2_EP10 pid=135143) INFO 11-12 02:08:05 [backends.py:398] [backbone] Compiling a graph for compile range (1, 2048) takes 3.55 s
+(Worker_DP1_PCP5_EP13 pid=135146) INFO 11-12 02:08:05 [backends.py:398] [backbone] Compiling a graph for compile range (1, 2048) takes 3.51 s
+(Worker_DP1_PCP3_EP11 pid=135144) INFO 11-12 02:08:06 [backends.py:398] [backbone] Compiling a graph for compile range (1, 2048) takes 3.54 s
+(Worker_DP1_PCP6_EP14 pid=135147) INFO 11-12 02:08:06 [backends.py:398] [backbone] Compiling a graph for compile range (1, 2048) takes 3.58 s
+(Worker_DP1_PCP7_EP15 pid=135148) INFO 11-12 02:08:06 [backends.py:398] [backbone] Compiling a graph for compile range (1, 2048) takes 3.57 s
+(Worker_DP1_PCP4_EP12 pid=135145) INFO 11-12 02:08:06 [backends.py:398] [backbone] Compiling a graph for compile range (1, 2048) takes 3.57 s
+(Worker_DP1_PCP2_EP10 pid=135143) WARNING 11-12 02:08:06 [decorators.py:749] [backbone] unable to save AOT compiled function to /root/.cache/vllm/torch_compile_cache/torch_aot_compile/9df973df60d9ad1a01126a6e35093e3bfd29d5302745fc04ef0a3b7f8147883d/rank_2_1/model: TARGET: <class 'function'> <function current_stream at 0xffff7e35cc20> torch_npu.npu.utils.current_stream
+(Worker_DP1_PCP2_EP10 pid=135143) INFO 11-12 02:08:06 [monitor.py:62] [backbone] torch.compile took 6.52 s in total
+(Worker_DP1_PCP5_EP13 pid=135146) WARNING 11-12 02:08:06 [decorators.py:749] [backbone] unable to save AOT compiled function to /root/.cache/vllm/torch_compile_cache/torch_aot_compile/9df973df60d9ad1a01126a6e35093e3bfd29d5302745fc04ef0a3b7f8147883d/rank_5_1/model: TARGET: <class 'function'> <function current_stream at 0xffff62d0cc20> torch_npu.npu.utils.current_stream
+(Worker_DP1_PCP5_EP13 pid=135146) INFO 11-12 02:08:06 [monitor.py:62] [backbone] torch.compile took 6.49 s in total
+(Worker_DP1_PCP3_EP11 pid=135144) WARNING 11-12 02:08:06 [decorators.py:749] [backbone] unable to save AOT compiled function to /root/.cache/vllm/torch_compile_cache/torch_aot_compile/9df973df60d9ad1a01126a6e35093e3bfd29d5302745fc04ef0a3b7f8147883d/rank_3_1/model: TARGET: <class 'function'> <function current_stream at 0xffff6b7d8c20> torch_npu.npu.utils.current_stream
+(Worker_DP1_PCP3_EP11 pid=135144) INFO 11-12 02:08:06 [monitor.py:62] [backbone] torch.compile took 6.53 s in total
+(Worker_DP1_PCP1_EP9 pid=135142) INFO 11-12 02:08:06 [backends.py:398] [backbone] Compiling a graph for compile range (1, 2048) takes 3.89 s
+(Worker_DP1_PCP6_EP14 pid=135147) WARNING 11-12 02:08:06 [decorators.py:749] [backbone] unable to save AOT compiled function to /root/.cache/vllm/torch_compile_cache/torch_aot_compile/9df973df60d9ad1a01126a6e35093e3bfd29d5302745fc04ef0a3b7f8147883d/rank_6_1/model: TARGET: <class 'function'> <function current_stream at 0xffff6c70cc20> torch_npu.npu.utils.current_stream
+(Worker_DP1_PCP6_EP14 pid=135147) INFO 11-12 02:08:06 [monitor.py:62] [backbone] torch.compile took 6.59 s in total
+(Worker_DP1_PCP7_EP15 pid=135148) WARNING 11-12 02:08:06 [decorators.py:749] [backbone] unable to save AOT compiled function to /root/.cache/vllm/torch_compile_cache/torch_aot_compile/9df973df60d9ad1a01126a6e35093e3bfd29d5302745fc04ef0a3b7f8147883d/rank_7_1/model: TARGET: <class 'function'> <function current_stream at 0xffff42a58c20> torch_npu.npu.utils.current_stream
+(Worker_DP1_PCP7_EP15 pid=135148) INFO 11-12 02:08:06 [monitor.py:62] [backbone] torch.compile took 6.58 s in total
+(Worker_DP1_PCP4_EP12 pid=135145) WARNING 11-12 02:08:06 [decorators.py:749] [backbone] unable to save AOT compiled function to /root/.cache/vllm/torch_compile_cache/torch_aot_compile/9df973df60d9ad1a01126a6e35093e3bfd29d5302745fc04ef0a3b7f8147883d/rank_4_1/model: TARGET: <class 'function'> <function current_stream at 0xffff4bfc4c20> torch_npu.npu.utils.current_stream
+(Worker_DP1_PCP4_EP12 pid=135145) INFO 11-12 02:08:06 [monitor.py:62] [backbone] torch.compile took 6.59 s in total
+(Worker_DP1_PCP0_EP8 pid=135141) INFO 11-12 02:08:06 [backends.py:398] [backbone] Compiling a graph for compile range (1, 2048) takes 4.04 s
+(Worker_DP1_PCP1_EP9 pid=135142) WARNING 11-12 02:08:07 [decorators.py:749] [backbone] unable to save AOT compiled function to /root/.cache/vllm/torch_compile_cache/torch_aot_compile/9df973df60d9ad1a01126a6e35093e3bfd29d5302745fc04ef0a3b7f8147883d/rank_1_1/model: TARGET: <class 'function'> <function current_stream at 0xffff5435cc20> torch_npu.npu.utils.current_stream
+(Worker_DP1_PCP1_EP9 pid=135142) INFO 11-12 02:08:07 [monitor.py:62] [backbone] torch.compile took 7.06 s in total
+(Worker_DP1_PCP0_EP8 pid=135141) WARNING 11-12 02:08:07 [decorators.py:749] [backbone] unable to save AOT compiled function to /root/.cache/vllm/torch_compile_cache/torch_aot_compile/9df973df60d9ad1a01126a6e35093e3bfd29d5302745fc04ef0a3b7f8147883d/rank_0_1/model: TARGET: <class 'function'> <function current_stream at 0xffff6222cc20> torch_npu.npu.utils.current_stream
+(Worker_DP1_PCP0_EP8 pid=135141) INFO 11-12 02:08:07 [monitor.py:62] [backbone] torch.compile took 7.06 s in total
+(Worker_DP1_PCP4_EP12 pid=135145) INFO 11-12 02:08:10 [monitor.py:91] [backbone] Initial profiling/warmup run took 4.20 s
+(Worker_DP1_PCP3_EP11 pid=135144) INFO 11-12 02:08:10 [monitor.py:91] [backbone] Initial profiling/warmup run took 4.33 s
+(Worker_DP1_PCP2_EP10 pid=135143) INFO 11-12 02:08:10 [monitor.py:91] [backbone] Initial profiling/warmup run took 4.46 s
+(Worker_DP1_PCP6_EP14 pid=135147) INFO 11-12 02:08:10 [monitor.py:91] [backbone] Initial profiling/warmup run took 4.23 s
+(Worker_DP1_PCP7_EP15 pid=135148) INFO 11-12 02:08:10 [monitor.py:91] [backbone] Initial profiling/warmup run took 4.21 s
+(Worker_DP1_PCP1_EP9 pid=135142) INFO 11-12 02:08:10 [monitor.py:91] [backbone] Initial profiling/warmup run took 3.69 s
+(Worker_DP1_PCP5_EP13 pid=135146) INFO 11-12 02:08:10 [monitor.py:91] [backbone] Initial profiling/warmup run took 4.37 s
+(Worker_DP1_PCP0_EP8 pid=135141) INFO 11-12 02:08:10 [monitor.py:91] [backbone] Initial profiling/warmup run took 3.36 s
+(Worker_DP1_PCP0_EP8 pid=135141) INFO 11-12 02:08:11 [worker.py:770] Available KV cache memory: 10.03 GiB
+(EngineCore_DP1 pid=135088) INFO 11-12 02:08:11 [mrv2_utils.py:91] VLLM_USE_V2_MODEL_RUNNER=True is set; using Model Runner V2.
+(EngineCore_DP1 pid=135088) INFO 11-12 02:08:11 [kv_cache_utils.py:2327] NPU KV cache size: 1,441,036 tokens, Maximum concurrency for 40,960 tokens per request: 35.18x
+(Worker_DP1_PCP7_EP15 pid=135148) INFO 11-12 02:08:12 [kernel_warmup.py:168] JIT kernel warmup starting.
+(Worker_DP1_PCP5_EP13 pid=135146) INFO 11-12 02:08:12 [kernel_warmup.py:168] JIT kernel warmup starting.
+(Worker_DP1_PCP2_EP10 pid=135143) INFO 11-12 02:08:12 [kernel_warmup.py:168] JIT kernel warmup starting.
+(Worker_DP1_PCP1_EP9 pid=135142) INFO 11-12 02:08:12 [kernel_warmup.py:168] JIT kernel warmup starting.
+(Worker_DP1_PCP0_EP8 pid=135141) INFO 11-12 02:08:12 [kernel_warmup.py:168] JIT kernel warmup starting.
+(Worker_DP1_PCP4_EP12 pid=135145) INFO 11-12 02:08:12 [kernel_warmup.py:168] JIT kernel warmup starting.
+(Worker_DP1_PCP3_EP11 pid=135144) INFO 11-12 02:08:12 [kernel_warmup.py:168] JIT kernel warmup starting.
+(Worker_DP1_PCP6_EP14 pid=135147) INFO 11-12 02:08:12 [kernel_warmup.py:168] JIT kernel warmup starting.
+(Worker_DP1_PCP5_EP13 pid=135146) INFO 11-12 02:08:12 [kernel_warmup.py:198] JIT kernel warmup finished in 0.03s.
+(Worker_DP1_PCP7_EP15 pid=135148) INFO 11-12 02:08:12 [kernel_warmup.py:198] JIT kernel warmup finished in 0.03s.
+(Worker_DP1_PCP1_EP9 pid=135142) INFO 11-12 02:08:12 [kernel_warmup.py:198] JIT kernel warmup finished in 0.03s.
+(Worker_DP1_PCP3_EP11 pid=135144) INFO 11-12 02:08:12 [kernel_warmup.py:198] JIT kernel warmup finished in 0.03s.
+(Worker_DP1_PCP0_EP8 pid=135141) INFO 11-12 02:08:12 [kernel_warmup.py:198] JIT kernel warmup finished in 0.04s.
+(Worker_DP1_PCP4_EP12 pid=135145) INFO 11-12 02:08:12 [kernel_warmup.py:198] JIT kernel warmup finished in 0.04s.
+(Worker_DP1_PCP2_EP10 pid=135143) INFO 11-12 02:08:12 [kernel_warmup.py:198] JIT kernel warmup finished in 0.04s.
+(Worker_DP1_PCP6_EP14 pid=135147) INFO 11-12 02:08:12 [kernel_warmup.py:198] JIT kernel warmup finished in 0.04s.
+(Worker_DP1_PCP5_EP13 pid=135146) INFO 11-12 02:08:34 [model_runner.py:1127] Graph capturing finished in 22 secs, took 0.94 GiB
+(Worker_DP1_PCP5_EP13 pid=135146) INFO 11-12 02:08:34 [worker.py:1072] Free memory on device (91.02/91.75 GiB) on startup. Desired GPU memory utilization is (0.96, 88.08 GiB). Actual usage: 74.01 GiB for weights, 0.92 GiB for peak activation, 3.12 GiB for non-torch memory, 0.94 GiB for NPU graph memory. Replace gpu_memory_utilization with `--kv-cache-memory=9602856017` (8.94 GiB) to fit into requested memory, or `--kv-cache-memory=12758715392` (11.88 GiB) to fully utilize NPU free memory. Current KV cache memory: 10.02 GiB. After warmup: torch reserved memory 85.65 GiB, torch allocated memory 84.79 GiB.
+(Worker_DP1_PCP3_EP11 pid=135144) INFO 11-12 02:08:34 [model_runner.py:1127] Graph capturing finished in 22 secs, took 0.93 GiB
+(Worker_DP1_PCP3_EP11 pid=135144) INFO 11-12 02:08:34 [worker.py:1072] Free memory on device (91.02/91.75 GiB) on startup. Desired GPU memory utilization is (0.96, 88.08 GiB). Actual usage: 74.01 GiB for weights, 0.92 GiB for peak activation, 3.12 GiB for non-torch memory, 0.93 GiB for NPU graph memory. Replace gpu_memory_utilization with `--kv-cache-memory=9605739601` (8.95 GiB) to fit into requested memory, or `--kv-cache-memory=12759342080` (11.88 GiB) to fully utilize NPU free memory. Current KV cache memory: 10.03 GiB. After warmup: torch reserved memory 85.65 GiB, torch allocated memory 84.79 GiB.
+(Worker_DP1_PCP0_EP8 pid=135141) INFO 11-12 02:08:34 [model_runner.py:1127] Graph capturing finished in 22 secs, took 0.93 GiB
+(Worker_DP1_PCP0_EP8 pid=135141) INFO 11-12 02:08:34 [worker.py:1072] Free memory on device (91.02/91.75 GiB) on startup. Desired GPU memory utilization is (0.96, 88.08 GiB). Actual usage: 74.01 GiB for weights, 0.92 GiB for peak activation, 3.12 GiB for non-torch memory, 0.93 GiB for NPU graph memory. Replace gpu_memory_utilization with `--kv-cache-memory=9616061521` (8.96 GiB) to fit into requested memory, or `--kv-cache-memory=12769729536` (11.89 GiB) to fully utilize NPU free memory. Current KV cache memory: 10.03 GiB. After warmup: torch reserved memory 85.65 GiB, torch allocated memory 84.79 GiB.
+(Worker_DP1_PCP7_EP15 pid=135148) INFO 11-12 02:08:34 [model_runner.py:1127] Graph capturing finished in 22 secs, took 0.93 GiB
+(Worker_DP1_PCP7_EP15 pid=135148) INFO 11-12 02:08:34 [worker.py:1072] Free memory on device (91.02/91.75 GiB) on startup. Desired GPU memory utilization is (0.96, 88.08 GiB). Actual usage: 74.01 GiB for weights, 0.92 GiB for peak activation, 3.12 GiB for non-torch memory, 0.93 GiB for NPU graph memory. Replace gpu_memory_utilization with `--kv-cache-memory=9617867857` (8.96 GiB) to fit into requested memory, or `--kv-cache-memory=12772400128` (11.9 GiB) to fully utilize NPU free memory. Current KV cache memory: 10.03 GiB. After warmup: torch reserved memory 85.65 GiB, torch allocated memory 84.79 GiB.
+(Worker_DP1_PCP6_EP14 pid=135147) INFO 11-12 02:08:34 [model_runner.py:1127] Graph capturing finished in 22 secs, took 0.93 GiB
+(Worker_DP1_PCP4_EP12 pid=135145) INFO 11-12 02:08:34 [model_runner.py:1127] Graph capturing finished in 22 secs, took 0.92 GiB
+(Worker_DP1_PCP6_EP14 pid=135147) INFO 11-12 02:08:34 [worker.py:1072] Free memory on device (91.02/91.75 GiB) on startup. Desired GPU memory utilization is (0.96, 88.08 GiB). Actual usage: 74.01 GiB for weights, 0.92 GiB for peak activation, 3.12 GiB for non-torch memory, 0.93 GiB for NPU graph memory. Replace gpu_memory_utilization with `--kv-cache-memory=9614513233` (8.95 GiB) to fit into requested memory, or `--kv-cache-memory=12768750592` (11.89 GiB) to fully utilize NPU free memory. Current KV cache memory: 10.03 GiB. After warmup: torch reserved memory 85.66 GiB, torch allocated memory 84.79 GiB.
+(Worker_DP1_PCP4_EP12 pid=135145) INFO 11-12 02:08:34 [worker.py:1072] Free memory on device (91.02/91.75 GiB) on startup. Desired GPU memory utilization is (0.96, 88.08 GiB). Actual usage: 74.01 GiB for weights, 0.92 GiB for peak activation, 3.12 GiB for non-torch memory, 0.92 GiB for NPU graph memory. Replace gpu_memory_utilization with `--kv-cache-memory=9616159825` (8.96 GiB) to fit into requested memory, or `--kv-cache-memory=12770864128` (11.89 GiB) to fully utilize NPU free memory. Current KV cache memory: 10.02 GiB. After warmup: torch reserved memory 85.65 GiB, torch allocated memory 84.79 GiB.
+(Worker_DP1_PCP2_EP10 pid=135143) INFO 11-12 02:08:34 [model_runner.py:1127] Graph capturing finished in 22 secs, took 0.93 GiB
+(Worker_DP1_PCP2_EP10 pid=135143) INFO 11-12 02:08:34 [worker.py:1072] Free memory on device (91.01/91.75 GiB) on startup. Desired GPU memory utilization is (0.96, 88.08 GiB). Actual usage: 74.01 GiB for weights, 0.92 GiB for peak activation, 3.13 GiB for non-torch memory, 0.93 GiB for NPU graph memory. Replace gpu_memory_utilization with `--kv-cache-memory=9604994129` (8.95 GiB) to fit into requested memory, or `--kv-cache-memory=12756368384` (11.88 GiB) to fully utilize NPU free memory. Current KV cache memory: 10.02 GiB. After warmup: torch reserved memory 85.66 GiB, torch allocated memory 84.79 GiB.
+(Worker_DP1_PCP1_EP9 pid=135142) INFO 11-12 02:08:34 [model_runner.py:1127] Graph capturing finished in 22 secs, took 0.93 GiB
+(Worker_DP1_PCP1_EP9 pid=135142) INFO 11-12 02:08:34 [worker.py:1072] Free memory on device (91.01/91.75 GiB) on startup. Desired GPU memory utilization is (0.96, 88.08 GiB). Actual usage: 74.01 GiB for weights, 0.92 GiB for peak activation, 3.12 GiB for non-torch memory, 0.93 GiB for NPU graph memory. Replace gpu_memory_utilization with `--kv-cache-memory=9611125841` (8.95 GiB) to fit into requested memory, or `--kv-cache-memory=12762389504` (11.89 GiB) to fully utilize NPU free memory. Current KV cache memory: 10.03 GiB. After warmup: torch reserved memory 85.66 GiB, torch allocated memory 84.79 GiB.
+(Worker_DP1_PCP1_EP9 pid=135142) INFO 11-12 02:08:36 [cpu_binding.py:539] [cpu_bind_mode] mode=topo_affinity rank=1 visible_npus=[0, 1, 2, 3, 4, 5, 6, 7]
+(Worker_DP1_PCP1_EP9 pid=135142) WARNING 11-12 02:08:36 [cpu_binding.py:347] [cpu_bind_ascend_950] uvb_poll_window_thread not found. If running in Docker, start the container with '--pid=host'.
+(Worker_DP1_PCP1_EP9 pid=135142) INFO 11-12 02:08:36 [cpu_binding.py:623] The CPU allocation plan is as follows:
+(Worker_DP1_PCP1_EP9 pid=135142) INFO 11-12 02:08:36 [cpu_binding.py:631] Ascend 950 NPU1: worker=[152 153 154 155 156 157 158 159]
+(Worker_DP1_PCP2_EP10 pid=135143) INFO 11-12 02:08:36 [cpu_binding.py:539] [cpu_bind_mode] mode=topo_affinity rank=2 visible_npus=[0, 1, 2, 3, 4, 5, 6, 7]
+(Worker_DP1_PCP1_EP9 pid=135142) INFO 11-12 02:08:36 [cpu_binding.py:793] CPU affinity applied without process-wide NUMA page migration.
+(Worker_DP1_PCP1_EP9 pid=135142) INFO 11-12 02:08:36 [cpu_binding.py:695] [irq] IRQ binding skipped on Ascend 950.
+(Worker_DP1_PCP2_EP10 pid=135143) WARNING 11-12 02:08:36 [cpu_binding.py:347] [cpu_bind_ascend_950] uvb_poll_window_thread not found. If running in Docker, start the container with '--pid=host'.
+(Worker_DP1_PCP2_EP10 pid=135143) INFO 11-12 02:08:36 [cpu_binding.py:623] The CPU allocation plan is as follows:
+(Worker_DP1_PCP2_EP10 pid=135143) INFO 11-12 02:08:36 [cpu_binding.py:631] Ascend 950 NPU2: worker=[48 49 50 51 52 53 54 55]
+(Worker_DP1_PCP2_EP10 pid=135143) INFO 11-12 02:08:36 [cpu_binding.py:793] CPU affinity applied without process-wide NUMA page migration.
+(Worker_DP1_PCP2_EP10 pid=135143) INFO 11-12 02:08:36 [cpu_binding.py:695] [irq] IRQ binding skipped on Ascend 950.
+(Worker_DP1_PCP0_EP8 pid=135141) INFO 11-12 02:08:36 [cpu_binding.py:539] [cpu_bind_mode] mode=topo_affinity rank=0 visible_npus=[0, 1, 2, 3, 4, 5, 6, 7]
+(Worker_DP1_PCP0_EP8 pid=135141) WARNING 11-12 02:08:36 [cpu_binding.py:347] [cpu_bind_ascend_950] uvb_poll_window_thread not found. If running in Docker, start the container with '--pid=host'.
+(Worker_DP1_PCP0_EP8 pid=135141) INFO 11-12 02:08:36 [cpu_binding.py:623] The CPU allocation plan is as follows:
+(Worker_DP1_PCP0_EP8 pid=135141) INFO 11-12 02:08:36 [cpu_binding.py:631] Ascend 950 NPU0: worker=[144 145 146 147 148 149 150 151]
+(Worker_DP1_PCP0_EP8 pid=135141) INFO 11-12 02:08:36 [cpu_binding.py:793] CPU affinity applied without process-wide NUMA page migration.
+(Worker_DP1_PCP0_EP8 pid=135141) INFO 11-12 02:08:36 [cpu_binding.py:695] [irq] IRQ binding skipped on Ascend 950.
+(Worker_DP1_PCP5_EP13 pid=135146) INFO 11-12 02:08:36 [cpu_binding.py:539] [cpu_bind_mode] mode=topo_affinity rank=5 visible_npus=[0, 1, 2, 3, 4, 5, 6, 7]
+(Worker_DP1_PCP3_EP11 pid=135144) INFO 11-12 02:08:36 [cpu_binding.py:539] [cpu_bind_mode] mode=topo_affinity rank=3 visible_npus=[0, 1, 2, 3, 4, 5, 6, 7]
+(Worker_DP1_PCP5_EP13 pid=135146) WARNING 11-12 02:08:36 [cpu_binding.py:347] [cpu_bind_ascend_950] uvb_poll_window_thread not found. If running in Docker, start the container with '--pid=host'.
+(Worker_DP1_PCP5_EP13 pid=135146) INFO 11-12 02:08:36 [cpu_binding.py:623] The CPU allocation plan is as follows:
+(Worker_DP1_PCP5_EP13 pid=135146) INFO 11-12 02:08:36 [cpu_binding.py:631] Ascend 950 NPU5: worker=[72 73 74 75 76 77 78 79]
+(Worker_DP1_PCP5_EP13 pid=135146) INFO 11-12 02:08:36 [cpu_binding.py:793] CPU affinity applied without process-wide NUMA page migration.
+(Worker_DP1_PCP5_EP13 pid=135146) INFO 11-12 02:08:36 [cpu_binding.py:695] [irq] IRQ binding skipped on Ascend 950.
+(Worker_DP1_PCP3_EP11 pid=135144) WARNING 11-12 02:08:36 [cpu_binding.py:347] [cpu_bind_ascend_950] uvb_poll_window_thread not found. If running in Docker, start the container with '--pid=host'.
+(Worker_DP1_PCP4_EP12 pid=135145) INFO 11-12 02:08:36 [cpu_binding.py:539] [cpu_bind_mode] mode=topo_affinity rank=4 visible_npus=[0, 1, 2, 3, 4, 5, 6, 7]
+(Worker_DP1_PCP3_EP11 pid=135144) INFO 11-12 02:08:36 [cpu_binding.py:623] The CPU allocation plan is as follows:
+(Worker_DP1_PCP3_EP11 pid=135144) INFO 11-12 02:08:36 [cpu_binding.py:631] Ascend 950 NPU3: worker=[56 57 58 59 60 61 62 63]
+(Worker_DP1_PCP3_EP11 pid=135144) INFO 11-12 02:08:36 [cpu_binding.py:793] CPU affinity applied without process-wide NUMA page migration.
+(Worker_DP1_PCP3_EP11 pid=135144) INFO 11-12 02:08:36 [cpu_binding.py:695] [irq] IRQ binding skipped on Ascend 950.
+(Worker_DP1_PCP7_EP15 pid=135148) INFO 11-12 02:08:37 [cpu_binding.py:539] [cpu_bind_mode] mode=topo_affinity rank=7 visible_npus=[0, 1, 2, 3, 4, 5, 6, 7]
+(Worker_DP1_PCP6_EP14 pid=135147) INFO 11-12 02:08:37 [cpu_binding.py:539] [cpu_bind_mode] mode=topo_affinity rank=6 visible_npus=[0, 1, 2, 3, 4, 5, 6, 7]
+(Worker_DP1_PCP4_EP12 pid=135145) WARNING 11-12 02:08:37 [cpu_binding.py:347] [cpu_bind_ascend_950] uvb_poll_window_thread not found. If running in Docker, start the container with '--pid=host'.
+(Worker_DP1_PCP4_EP12 pid=135145) INFO 11-12 02:08:37 [cpu_binding.py:623] The CPU allocation plan is as follows:
+(Worker_DP1_PCP4_EP12 pid=135145) INFO 11-12 02:08:37 [cpu_binding.py:631] Ascend 950 NPU4: worker=[64 65 66 67 68 69 70 71]
+(Worker_DP1_PCP4_EP12 pid=135145) INFO 11-12 02:08:37 [cpu_binding.py:793] CPU affinity applied without process-wide NUMA page migration.
+(Worker_DP1_PCP4_EP12 pid=135145) INFO 11-12 02:08:37 [cpu_binding.py:695] [irq] IRQ binding skipped on Ascend 950.
+(Worker_DP1_PCP6_EP14 pid=135147) WARNING 11-12 02:08:37 [cpu_binding.py:347] [cpu_bind_ascend_950] uvb_poll_window_thread not found. If running in Docker, start the container with '--pid=host'.
+(Worker_DP1_PCP7_EP15 pid=135148) WARNING 11-12 02:08:37 [cpu_binding.py:347] [cpu_bind_ascend_950] uvb_poll_window_thread not found. If running in Docker, start the container with '--pid=host'.
+(Worker_DP1_PCP7_EP15 pid=135148) INFO 11-12 02:08:37 [cpu_binding.py:623] The CPU allocation plan is as follows:
+(Worker_DP1_PCP6_EP14 pid=135147) INFO 11-12 02:08:37 [cpu_binding.py:623] The CPU allocation plan is as follows:
+(Worker_DP1_PCP7_EP15 pid=135148) INFO 11-12 02:08:37 [cpu_binding.py:631] Ascend 950 NPU7: worker=[168 169 170 171 172 173 174 175]
+(Worker_DP1_PCP6_EP14 pid=135147) INFO 11-12 02:08:37 [cpu_binding.py:631] Ascend 950 NPU6: worker=[160 161 162 163 164 165 166 167]
+(Worker_DP1_PCP7_EP15 pid=135148) INFO 11-12 02:08:37 [cpu_binding.py:793] CPU affinity applied without process-wide NUMA page migration.
+(Worker_DP1_PCP7_EP15 pid=135148) INFO 11-12 02:08:37 [cpu_binding.py:695] [irq] IRQ binding skipped on Ascend 950.
+(Worker_DP1_PCP6_EP14 pid=135147) INFO 11-12 02:08:37 [cpu_binding.py:793] CPU affinity applied without process-wide NUMA page migration.
+(Worker_DP1_PCP6_EP14 pid=135147) INFO 11-12 02:08:37 [cpu_binding.py:695] [irq] IRQ binding skipped on Ascend 950.
+(EngineCore_DP1 pid=135088) INFO 11-12 02:08:37 [core.py:395] init engine (profile, create kv cache, warmup model) took 1395.61 s (compilation: 7.06 s)
+(EngineCore_DP1 pid=135088) INFO 11-12 02:08:38 [vllm.py:1412] Resolved Engram configuration: EngramConfig(cpu_offload=True, embedding_across_dp=False, dp_shared_memory=True, use_thp=False)
+(EngineCore_DP1 pid=135088) INFO 11-12 02:08:38 [kernel.py:467] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['native'], fused_add_rms_norm=['native'], gelu_and_mul_sparse=['native'])
+(EngineCore_DP1 pid=135088) INFO 11-12 02:08:38 [utils.py:215] No ModelSlim quantization signature detected from model files for "/mnt/share/c00954197/workspace/dsv41-flash-bf16". To force a quantization method, pass "--quantization <method>" explicitly.
+(EngineCore_DP1 pid=135088) INFO 11-12 02:08:38 [platform.py:1678] Set PYTORCH_NPU_ALLOC_CONF=expandable_segments:True
+(EngineCore_DP1 pid=135088) INFO 11-12 02:08:38 [compilation.py:317] Enabled custom fusions: norm_quant, act_quant
+[rank12]:[W1112 02:10:09.548909260 ArgSortKernelNpuOpApi.cpp:25] Warning: Warning: kernel [ArgSort] can not support dtype int32 or int64 on AiCore, Now this kernel is running on AiCpu.If you are more concerned about high-performance execution,please cast dtype to float32. (function operator())
+[rank14]:[W1112 02:10:09.549675960 ArgSortKernelNpuOpApi.cpp:25] Warning: Warning: kernel [ArgSort] can not support dtype int32 or int64 on AiCore, Now this kernel is running on AiCpu.If you are more concerned about high-performance execution,please cast dtype to float32. (function operator())
+[rank13]:[W1112 02:10:09.552131000 ArgSortKernelNpuOpApi.cpp:25] Warning: Warning: kernel [ArgSort] can not support dtype int32 or int64 on AiCore, Now this kernel is running on AiCpu.If you are more concerned about high-performance execution,please cast dtype to float32. (function operator())
+[rank10]:[W1112 02:10:09.552660360 ArgSortKernelNpuOpApi.cpp:25] Warning: Warning: kernel [ArgSort] can not support dtype int32 or int64 on AiCore, Now this kernel is running on AiCpu.If you are more concerned about high-performance execution,please cast dtype to float32. (function operator())
+[rank15]:[W1112 02:10:09.552792570 ArgSortKernelNpuOpApi.cpp:25] Warning: Warning: kernel [ArgSort] can not support dtype int32 or int64 on AiCore, Now this kernel is running on AiCpu.If you are more concerned about high-performance execution,please cast dtype to float32. (function operator())
+[rank9]:[W1112 02:10:09.557398110 ArgSortKernelNpuOpApi.cpp:25] Warning: Warning: kernel [ArgSort] can not support dtype int32 or int64 on AiCore, Now this kernel is running on AiCpu.If you are more concerned about high-performance execution,please cast dtype to float32. (function operator())
+[rank11]:[W1112 02:10:09.559653170 ArgSortKernelNpuOpApi.cpp:25] Warning: Warning: kernel [ArgSort] can not support dtype int32 or int64 on AiCore, Now this kernel is running on AiCpu.If you are more concerned about high-performance execution,please cast dtype to float32. (function operator())
+[rank8]:[W1112 02:10:09.563399810 ArgSortKernelNpuOpApi.cpp:25] Warning: Warning: kernel [ArgSort] can not support dtype int32 or int64 on AiCore, Now this kernel is running on AiCpu.If you are more concerned about high-performance execution,please cast dtype to float32. (function operator())
+(Worker_DP1_PCP0_EP8 pid=135141) INFO 11-12 02:10:19 [aclgraph_utils.py:189] ACL graph replay is active for the V2 target model (logged once).

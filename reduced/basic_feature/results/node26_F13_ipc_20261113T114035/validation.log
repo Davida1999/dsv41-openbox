@@ -1,0 +1,229 @@
+<frozen runpy>:128: RuntimeWarning: 'torch.distributed.run' found in sys.modules after import of package 'torch.distributed', but prior to execution of 'torch.distributed.run'; this may result in unpredictable behaviour
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:13: FutureWarning: triton.language.extra.cann.extension.atan2 is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.atan2 instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.atan2")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:35: FutureWarning: triton.language.extra.cann.extension.isfinited is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.isfinited instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.isfinited")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:49: FutureWarning: triton.language.extra.cann.extension.finitef is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.finitef instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.finitef")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:13: FutureWarning: triton.language.extra.cann.extension.atan2 is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.atan2 instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.atan2")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:35: FutureWarning: triton.language.extra.cann.extension.isfinited is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.isfinited instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.isfinited")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:49: FutureWarning: triton.language.extra.cann.extension.finitef is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.finitef instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.finitef")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:13: FutureWarning: triton.language.extra.cann.extension.atan2 is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.atan2 instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.atan2")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:35: FutureWarning: triton.language.extra.cann.extension.isfinited is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.isfinited instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.isfinited")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:49: FutureWarning: triton.language.extra.cann.extension.finitef is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.finitef instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.finitef")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:13: FutureWarning: triton.language.extra.cann.extension.atan2 is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.atan2 instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.atan2")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:35: FutureWarning: triton.language.extra.cann.extension.isfinited is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.isfinited instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.isfinited")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:49: FutureWarning: triton.language.extra.cann.extension.finitef is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.finitef instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.finitef")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:13: FutureWarning: triton.language.extra.cann.extension.atan2 is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.atan2 instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.atan2")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:35: FutureWarning: triton.language.extra.cann.extension.isfinited is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.isfinited instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.isfinited")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:49: FutureWarning: triton.language.extra.cann.extension.finitef is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.finitef instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.finitef")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:13: FutureWarning: triton.language.extra.cann.extension.atan2 is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.atan2 instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.atan2")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:35: FutureWarning: triton.language.extra.cann.extension.isfinited is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.isfinited instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.isfinited")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:49: FutureWarning: triton.language.extra.cann.extension.finitef is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.finitef instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.finitef")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:13: FutureWarning: triton.language.extra.cann.extension.atan2 is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.atan2 instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.atan2")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:35: FutureWarning: triton.language.extra.cann.extension.isfinited is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.isfinited instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.isfinited")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:49: FutureWarning: triton.language.extra.cann.extension.finitef is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.finitef instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.finitef")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:13: FutureWarning: triton.language.extra.cann.extension.atan2 is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.atan2 instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.atan2")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:35: FutureWarning: triton.language.extra.cann.extension.isfinited is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.isfinited instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.isfinited")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:49: FutureWarning: triton.language.extra.cann.extension.finitef is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.finitef instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.finitef")
+[Gloo] Rank 1 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 4 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 0 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 2 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 3 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 5 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank [Gloo] Rank 7 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+6 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+weight tensor 0: aligner.w1.bias
+[rank1]: Traceback (most recent call last):
+[rank1]:   File "/mnt/share/c00954197/workspace/dsv41-kx/basic_feature/scripts/check_ipc_multi.py", line 49, in <module>
+[rank1]:     dist.barrier();source.scale=scale;engine.send_weights();dist.barrier()
+[rank1]:                                       ^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/vllm-workspace/vllm/vllm/distributed/weight_transfer/ipc_engine.py", line 312, in send_weights
+[rank1]:     weight_refs = self._send(source)
+[rank1]:                   ^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/vllm-workspace/vllm/vllm/distributed/weight_transfer/ipc_engine.py", line 322, in _send
+[rank1]:     self._send_packed(source)
+[rank1]:   File "/vllm-workspace/vllm-ascend/vllm_ascend/distributed/weight_transfer/npu_ipc_engine.py", line 293, in _send_packed
+[rank1]:     self._post_send_sync()
+[rank1]:   File "/vllm-workspace/vllm-ascend/vllm_ascend/distributed/weight_transfer/npu_ipc_engine.py", line 266, in _post_send_sync
+[rank1]:     torch.distributed.barrier()
+[rank1]:   File "/usr/local/python3.12.16/lib/python3.12/site-packages/torch/distributed/c10d_logger.py", line 83, in wrapper
+[rank1]:     return func(*args, **kwargs)
+[rank1]:            ^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/usr/local/python3.12.16/lib/python3.12/site-packages/torch/distributed/distributed_c10d.py", line 4976, in barrier
+[rank1]:     work.wait()
+[rank1]: RuntimeError: [/pytorch/third_party/gloo/gloo/transport/tcp/pair.cc:547] Connection closed by peer [177.11.26.1]:33168
+[rank2]: Traceback (most recent call last):
+[rank2]:   File "/mnt/share/c00954197/workspace/dsv41-kx/basic_feature/scripts/check_ipc_multi.py", line 49, in <module>
+[rank2]:     dist.barrier();source.scale=scale;engine.send_weights();dist.barrier()
+[rank2]:                                       ^^^^^^^^^^^^^^^^^^^^^
+[rank2]:   File "/vllm-workspace/vllm/vllm/distributed/weight_transfer/ipc_engine.py", line 312, in send_weights
+[rank2]:     weight_refs = self._send(source)
+[rank2]:                   ^^^^^^^^^^^^^^^^^^
+[rank2]:   File "/vllm-workspace/vllm/vllm/distributed/weight_transfer/ipc_engine.py", line 322, in _send
+[rank2]:     self._send_packed(source)
+[rank2]:   File "/vllm-workspace/vllm-ascend/vllm_ascend/distributed/weight_transfer/npu_ipc_engine.py", line 293, in _send_packed
+[rank2]:     self._post_send_sync()
+[rank2]:   File "/vllm-workspace/vllm-ascend/vllm_ascend/distributed/weight_transfer/npu_ipc_engine.py", line 266, in _post_send_sync
+[rank2]:     torch.distributed.barrier()
+[rank2]:   File "/usr/local/python3.12.16/lib/python3.12/site-packages/torch/distributed/c10d_logger.py", line 83, in wrapper
+[rank2]:     return func(*args, **kwargs)
+[rank2]:            ^^^^^^^^^^^^^^^^^^^^^
+[rank2]:   File "/usr/local/python3.12.16/lib/python3.12/site-packages/torch/distributed/distributed_c10d.py", line 4976, in barrier
+[rank2]:     work.wait()
+[rank2]: RuntimeError: [/pytorch/third_party/gloo/gloo/transport/tcp/pair.cc:547] Connection closed by peer [177.11.26.1]:33168
+[rank4]: Traceback (most recent call last):
+[rank4]:   File "/mnt/share/c00954197/workspace/dsv41-kx/basic_feature/scripts/check_ipc_multi.py", line 49, in <module>
+[rank4]:     dist.barrier();source.scale=scale;engine.send_weights();dist.barrier()
+[rank4]:                                       ^^^^^^^^^^^^^^^^^^^^^
+[rank4]:   File "/vllm-workspace/vllm/vllm/distributed/weight_transfer/ipc_engine.py", line 312, in send_weights
+[rank4]:     weight_refs = self._send(source)
+[rank4]:                   ^^^^^^^^^^^^^^^^^^
+[rank4]:   File "/vllm-workspace/vllm/vllm/distributed/weight_transfer/ipc_engine.py", line 322, in _send
+[rank4]:     self._send_packed(source)
+[rank4]:   File "/vllm-workspace/vllm-ascend/vllm_ascend/distributed/weight_transfer/npu_ipc_engine.py", line 293, in _send_packed
+[rank4]:     self._post_send_sync()
+[rank4]:   File "/vllm-workspace/vllm-ascend/vllm_ascend/distributed/weight_transfer/npu_ipc_engine.py", line 266, in _post_send_sync
+[rank4]:     torch.distributed.barrier()
+[rank4]:   File "/usr/local/python3.12.16/lib/python3.12/site-packages/torch/distributed/c10d_logger.py", line 83, in wrapper
+[rank4]:     return func(*args, **kwargs)
+[rank4]:            ^^^^^^^^^^^^^^^^^^^^^
+[rank4]:   File "/usr/local/python3.12.16/lib/python3.12/site-packages/torch/distributed/distributed_c10d.py", line 4976, in barrier
+[rank4]:     work.wait()
+[rank4]: RuntimeError: [/pytorch/third_party/gloo/gloo/transport/tcp/pair.cc:547] Connection closed by peer [177.11.26.1]:33168
+[rank6]: Traceback (most recent call last):
+[rank6]:   File "/mnt/share/c00954197/workspace/dsv41-kx/basic_feature/scripts/check_ipc_multi.py", line 49, in <module>
+[rank6]:     dist.barrier();source.scale=scale;engine.send_weights();dist.barrier()
+[rank6]:                                       ^^^^^^^^^^^^^^^^^^^^^
+[rank6]:   File "/vllm-workspace/vllm/vllm/distributed/weight_transfer/ipc_engine.py", line 312, in send_weights
+[rank6]:     weight_refs = self._send(source)
+[rank6]:                   ^^^^^^^^^^^^^^^^^^
+[rank6]:   File "/vllm-workspace/vllm/vllm/distributed/weight_transfer/ipc_engine.py", line 322, in _send
+[rank6]:     self._send_packed(source)
+[rank6]:   File "/vllm-workspace/vllm-ascend/vllm_ascend/distributed/weight_transfer/npu_ipc_engine.py", line 293, in _send_packed
+[rank6]:     self._post_send_sync()
+[rank6]:   File "/vllm-workspace/vllm-ascend/vllm_ascend/distributed/weight_transfer/npu_ipc_engine.py", line 266, in _post_send_sync
+[rank6]:     torch.distributed.barrier()
+[rank6]:   File "/usr/local/python3.12.16/lib/python3.12/site-packages/torch/distributed/c10d_logger.py", line 83, in wrapper
+[rank6]:     return func(*args, **kwargs)
+[rank6]:            ^^^^^^^^^^^^^^^^^^^^^
+[rank6]:   File "/usr/local/python3.12.16/lib/python3.12/site-packages/torch/distributed/distributed_c10d.py", line 4976, in barrier
+[rank6]:     work.wait()
+[rank6]: RuntimeError: [/pytorch/third_party/gloo/gloo/transport/tcp/pair.cc:547] Connection closed by peer [177.11.26.1]:12429
+[rank7]: Traceback (most recent call last):
+[rank7]:   File "/mnt/share/c00954197/workspace/dsv41-kx/basic_feature/scripts/check_ipc_multi.py", line 49, in <module>
+[rank7]:     dist.barrier();source.scale=scale;engine.send_weights();dist.barrier()
+[rank7]:                                       ^^^^^^^^^^^^^^^^^^^^^
+[rank7]:   File "/vllm-workspace/vllm/vllm/distributed/weight_transfer/ipc_engine.py", line 312, in send_weights
+[rank7]:     weight_refs = self._send(source)
+[rank7]:                   ^^^^^^^^^^^^^^^^^^
+[rank7]:   File "/vllm-workspace/vllm/vllm/distributed/weight_transfer/ipc_engine.py", line 322, in _send
+[rank7]:     self._send_packed(source)
+[rank7]:   File "/vllm-workspace/vllm-ascend/vllm_ascend/distributed/weight_transfer/npu_ipc_engine.py", line 293, in _send_packed
+[rank7]:     self._post_send_sync()
+[rank7]:   File "/vllm-workspace/vllm-ascend/vllm_ascend/distributed/weight_transfer/npu_ipc_engine.py", line 266, in _post_send_sync
+[rank7]:     torch.distributed.barrier()
+[rank7]:   File "/usr/local/python3.12.16/lib/python3.12/site-packages/torch/distributed/c10d_logger.py", line 83, in wrapper
+[rank7]:     return func(*args, **kwargs)
+[rank7]:            ^^^^^^^^^^^^^^^^^^^^^
+[rank7]:   File "/usr/local/python3.12.16/lib/python3.12/site-packages/torch/distributed/distributed_c10d.py", line 4976, in barrier
+[rank7]:     work.wait()
+[rank7]: RuntimeError: [/pytorch/third_party/gloo/gloo/transport/tcp/pair.cc:547] Connection closed by peer [177.11.26.1]:33168
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/mnt/share/c00954197/workspace/dsv41-kx/basic_feature/scripts/check_ipc_multi.py", line 49, in <module>
+[rank0]:     dist.barrier();source.scale=scale;engine.send_weights();dist.barrier()
+[rank0]:                                       ^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/vllm-workspace/vllm/vllm/distributed/weight_transfer/ipc_engine.py", line 312, in send_weights
+[rank0]:     weight_refs = self._send(source)
+[rank0]:                   ^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/vllm-workspace/vllm/vllm/distributed/weight_transfer/ipc_engine.py", line 322, in _send
+[rank0]:     self._send_packed(source)
+[rank0]:   File "/vllm-workspace/vllm-ascend/vllm_ascend/distributed/weight_transfer/npu_ipc_engine.py", line 281, in _send_packed
+[rank0]:     self._do_send(
+[rank0]:   File "/vllm-workspace/vllm/vllm/distributed/weight_transfer/ipc_engine.py", line 459, in _do_send
+[rank0]:     self.client.update_weights(asdict(update_info))
+[rank0]:   File "/vllm-workspace/vllm/vllm/distributed/weight_transfer/clients.py", line 88, in update_weights
+[rank0]:     self._post(
+[rank0]:   File "/vllm-workspace/vllm/vllm/distributed/weight_transfer/clients.py", line 76, in _post
+[rank0]:     response.raise_for_status()
+[rank0]:   File "/usr/local/python3.12.16/lib/python3.12/site-packages/requests/models.py", line 1167, in raise_for_status
+[rank0]:     raise HTTPError(http_error_msg, response=self)
+[rank0]: requests.exceptions.HTTPError: 500 Server Error: Internal Server Error for url: http://127.0.0.1:18241/update_weights
+[ERROR] 2026-11-13-03:46:47 (PID:348049, Device:1, RankID:-1) ERR99999 UNKNOWN applicaiton exception
+[ERROR] 2026-11-13-03:46:47 (PID:348048, Device:0, RankID:-1) ERR99999 UNKNOWN applicaiton exception
+[ERROR] 2026-11-13-03:46:47 (PID:348055, Device:7, RankID:-1) ERR99999 UNKNOWN applicaiton exception
+[rank3]: Traceback (most recent call last):
+[rank3]:   File "/mnt/share/c00954197/workspace/dsv41-kx/basic_feature/scripts/check_ipc_multi.py", line 49, in <module>
+[rank3]:     dist.barrier();source.scale=scale;engine.send_weights();dist.barrier()
+[rank3]:                                       ^^^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/vllm-workspace/vllm/vllm/distributed/weight_transfer/ipc_engine.py", line 312, in send_weights
+[rank3]:     weight_refs = self._send(source)
+[rank3]:                   ^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/vllm-workspace/vllm/vllm/distributed/weight_transfer/ipc_engine.py", line 322, in _send
+[rank3]:     self._send_packed(source)
+[rank3]:   File "/vllm-workspace/vllm-ascend/vllm_ascend/distributed/weight_transfer/npu_ipc_engine.py", line 293, in _send_packed
+[rank3]:     self._post_send_sync()
+[rank3]:   File "/vllm-workspace/vllm-ascend/vllm_ascend/distributed/weight_transfer/npu_ipc_engine.py", line 266, in _post_send_sync
+[rank3]:     torch.distributed.barrier()
+[rank3]:   File "/usr/local/python3.12.16/lib/python3.12/site-packages/torch/distributed/c10d_logger.py", line 83, in wrapper
+[rank3]:     return func(*args, **kwargs)
+[rank3]:            ^^^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/usr/local/python3.12.16/lib/python3.12/site-packages/torch/distributed/distributed_c10d.py", line 4976, in barrier
+[rank3]:     work.wait()
+[rank3]: RuntimeError: [/pytorch/third_party/gloo/gloo/transport/tcp/pair.cc:547] Connection closed by peer [177.11.26.1]:10413
+[ERROR] 2026-11-13-03:46:48 (PID:348052, Device:4, RankID:-1) ERR99999 UNKNOWN applicaiton exception
+[rank5]: Traceback (most recent call last):
+[rank5]:   File "/mnt/share/c00954197/workspace/dsv41-kx/basic_feature/scripts/check_ipc_multi.py", line 49, in <module>
+[rank5]:     dist.barrier();source.scale=scale;engine.send_weights();dist.barrier()
+[rank5]:                                       ^^^^^^^^^^^^^^^^^^^^^
+[rank5]:   File "/vllm-workspace/vllm/vllm/distributed/weight_transfer/ipc_engine.py", line 312, in send_weights
+[rank5]:     weight_refs = self._send(source)
+[rank5]:                   ^^^^^^^^^^^^^^^^^^
+[rank5]:   File "/vllm-workspace/vllm/vllm/distributed/weight_transfer/ipc_engine.py", line 322, in _send
+[rank5]:     self._send_packed(source)
+[rank5]:   File "/vllm-workspace/vllm-ascend/vllm_ascend/distributed/weight_transfer/npu_ipc_engine.py", line 293, in _send_packed
+[rank5]:     self._post_send_sync()
+[rank5]:   File "/vllm-workspace/vllm-ascend/vllm_ascend/distributed/weight_transfer/npu_ipc_engine.py", line 266, in _post_send_sync
+[rank5]:     torch.distributed.barrier()
+[rank5]:   File "/usr/local/python3.12.16/lib/python3.12/site-packages/torch/distributed/c10d_logger.py", line 83, in wrapper
+[rank5]:     return func(*args, **kwargs)
+[rank5]:            ^^^^^^^^^^^^^^^^^^^^^
+[rank5]:   File "/usr/local/python3.12.16/lib/python3.12/site-packages/torch/distributed/distributed_c10d.py", line 4976, in barrier
+[rank5]:     work.wait()
+[rank5]: RuntimeError: [/pytorch/third_party/gloo/gloo/transport/tcp/pair.cc:547] Connection closed by peer [177.11.26.1]:23774
+[ERROR] 2026-11-13-03:46:48 (PID:348054, Device:6, RankID:-1) ERR99999 UNKNOWN applicaiton exception
+[ERROR] 2026-11-13-03:46:48 (PID:348050, Device:2, RankID:-1) ERR99999 UNKNOWN applicaiton exception
+[W1113 03:46:49.712485830 NPUIPCTypes.cpp:23] Producer process has been terminated before all shared NPU tensors released. See Note [Sharing NPU tensors]
+[ERROR] 2026-11-13-03:46:49 (PID:348053, Device:5, RankID:-1) ERR99999 UNKNOWN applicaiton exception
+[W1113 03:46:49.752361840 NPUIPCTypes.cpp:23] Producer process has been terminated before all shared NPU tensors released. See Note [Sharing NPU tensors]
+[W1113 03:46:49.763253660 NPUIPCTypes.cpp:23] Producer process has been terminated before all shared NPU tensors released. See Note [Sharing NPU tensors]
+[W1113 03:46:49.931632820 NPUIPCTypes.cpp:23] Producer process has been terminated before all shared NPU tensors released. See Note [Sharing NPU tensors]
+[ERROR] 2026-11-13-03:46:49 (PID:348051, Device:3, RankID:-1) ERR99999 UNKNOWN applicaiton exception
+W1113 03:46:49.605000 348035 site-packages/torch/distributed/elastic/multiprocessing/api.py:1010] Sending process 348050 closing signal SIGTERM
+W1113 03:46:49.606000 348035 site-packages/torch/distributed/elastic/multiprocessing/api.py:1010] Sending process 348051 closing signal SIGTERM
+W1113 03:46:49.607000 348035 site-packages/torch/distributed/elastic/multiprocessing/api.py:1010] Sending process 348053 closing signal SIGTERM
+W1113 03:46:49.607000 348035 site-packages/torch/distributed/elastic/multiprocessing/api.py:1010] Sending process 348054 closing signal SIGTERM
+W1113 03:46:49.608000 348035 site-packages/torch/distributed/elastic/multiprocessing/api.py:1010] Sending process 348055 closing signal SIGTERM
+E1113 03:46:49.973000 348035 site-packages/torch/distributed/elastic/multiprocessing/api.py:984] failed (exitcode: 1) local_rank: 0 (pid: 348048) of binary: /usr/local/python3.12.16/bin/python

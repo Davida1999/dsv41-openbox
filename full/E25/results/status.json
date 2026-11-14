@@ -1,0 +1,35 @@
+{
+  "run": "20261113T192449Z",
+  "remote_dir": "/workspace/experiments/tp1_dp16_20261029/E25/runs_930/baseline_20261113T192449Z",
+  "status": "complete",
+  "rounds": [
+    {
+      "round": 0,
+      "exit": 0,
+      "summary": "============ Serving Benchmark Result ============\nSuccessful requests:                     1         \nFailed requests:                         0         \nMaximum request concurrency:             1         \nRequest rate configured (RPS):           10000.00  \nBenchmark duration (s):                  3.14      \nTotal input tokens:                      1145      \nTotal generated tokens:                  16        \nRequest throughput (req/s):              0.32      \nOutput token throughput (tok/s):         5.10      \nPeak output token throughput (tok/s):    12.00     \nPeak concurrent requests:                1.00      \nTotal token throughput (tok/s):          369.83    \n---------------Time to First Token----------------\nMean TTFT (ms):                          2696.99   \nMedian TTFT (ms):                        2696.99   \nP99 TTFT (ms):                           2696.99   \n-----Time per Output Token (excl. 1st token)------\nMean TPOT (ms):                          29.37     \nMedian TPOT (ms):                        29.37     \nP99 TPOT (ms):                           29.37     \n---------------Inter-token Latency----------------\nMean ITL (ms):                           27.53     \nMedian ITL (ms):                         28.45     \nP99 ITL (ms):                            36.64     \n==================================================\nFinished UTC: 2026-11-13T19:45:23Z\nExit code: 0\n"
+    },
+    {
+      "round": 1,
+      "exit": 0,
+      "summary": "============ Serving Benchmark Result ============\nSuccessful requests:                     64        \nFailed requests:                         0         \nMaximum request concurrency:             64        \nRequest rate configured (RPS):           10000.00  \nBenchmark duration (s):                  1400.80   \nTotal input tokens:                      327233    \nTotal generated tokens:                  2097152   \nRequest throughput (req/s):              0.05      \nOutput token throughput (tok/s):         1497.11   \nPeak output token throughput (tok/s):    1607.00   \nPeak concurrent requests:                64.00     \nTotal token throughput (tok/s):          1730.72   \n---------------Time to First Token----------------\nMean TTFT (ms):                          19288.39  \nMedian TTFT (ms):                        19280.22  \nP99 TTFT (ms):                           31266.04  \n-----Time per Output Token (excl. 1st token)------\nMean TPOT (ms):                          42.11     \nMedian TPOT (ms):                        42.11     \nP99 TPOT (ms):                           42.44     \n---------------Inter-token Latency----------------\nMean ITL (ms):                           42.11     \nMedian ITL (ms):                         40.59     \nP99 ITL (ms):                            44.10     \n==================================================\nFinished UTC: 2026-11-13T20:09:39Z\nExit code: 0\n"
+    },
+    {
+      "round": 2,
+      "exit": 0,
+      "summary": "============ Serving Benchmark Result ============\nSuccessful requests:                     64        \nFailed requests:                         0         \nMaximum request concurrency:             64        \nRequest rate configured (RPS):           10000.00  \nBenchmark duration (s):                  1378.84   \nTotal input tokens:                      327233    \nTotal generated tokens:                  2097152   \nRequest throughput (req/s):              0.05      \nOutput token throughput (tok/s):         1520.95   \nPeak output token throughput (tok/s):    1664.00   \nPeak concurrent requests:                64.00     \nTotal token throughput (tok/s):          1758.28   \n---------------Time to First Token----------------\nMean TTFT (ms):                          8386.64   \nMedian TTFT (ms):                        8583.91   \nP99 TTFT (ms):                           15003.11  \n-----Time per Output Token (excl. 1st token)------\nMean TPOT (ms):                          41.80     \nMedian TPOT (ms):                        41.79     \nP99 TPOT (ms):                           41.99     \n---------------Inter-token Latency----------------\nMean ITL (ms):                           41.80     \nMedian ITL (ms):                         40.39     \nP99 ITL (ms):                            43.72     \n==================================================\nFinished UTC: 2026-11-13T20:35:28Z\nExit code: 0\n"
+    },
+    {
+      "round": 3,
+      "exit": 0,
+      "summary": "============ Serving Benchmark Result ============\nSuccessful requests:                     64        \nFailed requests:                         0         \nMaximum request concurrency:             64        \nRequest rate configured (RPS):           10000.00  \nBenchmark duration (s):                  1370.71   \nTotal input tokens:                      327233    \nTotal generated tokens:                  2097152   \nRequest throughput (req/s):              0.05      \nOutput token throughput (tok/s):         1529.98   \nPeak output token throughput (tok/s):    1664.00   \nPeak concurrent requests:                64.00     \nTotal token throughput (tok/s):          1768.71   \n---------------Time to First Token----------------\nMean TTFT (ms):                          6646.62   \nMedian TTFT (ms):                        6406.93   \nP99 TTFT (ms):                           12613.73  \n-----Time per Output Token (excl. 1st token)------\nMean TPOT (ms):                          41.61     \nMedian TPOT (ms):                        41.61     \nP99 TPOT (ms):                           41.76     \n---------------Inter-token Latency----------------\nMean ITL (ms):                           41.61     \nMedian ITL (ms):                         40.07     \nP99 ITL (ms):                            43.33     \n==================================================\nFinished UTC: 2026-11-13T21:06:08Z\nExit code: 0\n"
+    }
+  ],
+  "nodes": [
+    25,
+    26
+  ],
+  "cann_archive_status": "recovered_and_verified",
+  "cann_error_file_count": 0,
+  "npu_released": true,
+  "containers_kept_running": true
+}

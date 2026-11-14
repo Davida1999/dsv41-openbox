@@ -1,0 +1,12 @@
+{
+  "serial": [
+    true,
+    true,
+    true,
+    true
+  ],
+  "parallel": [
+    true,
+    true
+  ]
+}

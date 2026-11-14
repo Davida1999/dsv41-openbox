@@ -1,0 +1,1 @@
+PASS: exited/zombie PIDs ignored; previously tagged live PID recognized by start time; changed identity rejected. No NPU operation in guard check.

@@ -1,0 +1,6 @@
+{
+  "graph": true,
+  "async_scheduling": true,
+  "chunked_prefill": true,
+  "max_num_batched_tokens": 2048
+}

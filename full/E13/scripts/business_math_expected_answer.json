@@ -1,0 +1,12 @@
+{
+  "unit_cost": 90,
+  "revenue": 27900,
+  "sold_cost": 18900,
+  "damaged_loss": 1080,
+  "ending_units": 18,
+  "ending_inventory": 1620,
+  "commission": 837,
+  "delivery": 1680,
+  "profit": 5403,
+  "net_cash_flow": 3783
+}

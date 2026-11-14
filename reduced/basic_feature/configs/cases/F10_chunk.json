@@ -1,0 +1,6 @@
+{
+  "max_model_len": 16512,
+  "max_num_batched_tokens": 2048,
+  "chunked_prefill": true,
+  "input_tokens": 16384
+}

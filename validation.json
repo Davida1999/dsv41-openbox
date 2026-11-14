@@ -1,0 +1,8 @@
+{
+  "validation_type": "offline_archive_only_no_npu_execution",
+  "relative_links_checked": 87,
+  "json_files_parsed": 471,
+  "launch_scripts_bash_n": 12,
+  "E23_rounds_full_length": 12,
+  "errors": []
+}

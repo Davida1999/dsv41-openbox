@@ -1,0 +1,1 @@
+{"rank": 0, "allocated": 40065106944, "reserved": 40447770624, "name": "language_model.model.norm.weight", "shape": [5120], "dtype": "torch.bfloat16", "sha256": "22bcf3d1a2a739308b1a21bcc8137555725701ac8fdcd9be980a9e161be92a34", "dp_rank": 1}

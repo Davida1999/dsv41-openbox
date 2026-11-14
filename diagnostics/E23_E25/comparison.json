@@ -1,0 +1,106 @@
+{
+  "E23": {
+    "master": {
+      "counts": {
+        "ArgSort_AiCPU": 8,
+        "internal_format": 8,
+        "base_format": 8,
+        "causal_conv_fallback": 8,
+        "OMP_threads": 1,
+        "uvb_thread_missing": 8,
+        "AOT_save_failure": 8,
+        "tl_where_int8": 0,
+        "stats_out_of_order": 42,
+        "broadcast_wait": 15,
+        "graph_replay": 1
+      },
+      "keys": [
+        "(Worker_DP0_PCP0_EP0 pid=138333) INFO 11-12 00:10:50 [worker.py:770] Available KV cache memory: 10.03 GiB",
+        "(EngineCore_DP0 pid=138086) INFO 11-12 00:10:50 [kv_cache_utils.py:2327] NPU KV cache size: 1,441,221 tokens, Maximum concurrency for 40,960 tokens per request: 35.19x",
+        "Capturing CUDA graphs (FULL): 100%|██████████| 7/7 [00:21<00:00,  1.18s/it]",
+        "Capturing CUDA graphs (FULL): 100%|██████████| 7/7 [00:21<00:00,  3.05s/it]",
+        "(EngineCore_DP0 pid=138086) INFO 11-12 00:11:17 [core.py:395] init engine (profile, create kv cache, warmup model) took 956.69 s (compilation: 6.85 s)",
+        "(APIServer pid=137969) INFO 11-11 23:44:08 [ascend_config.py:764] FlashComm1 is disabled. Using flashinfer_all2allv as the all2all backend."
+      ],
+      "kv_usage_max": 43.6,
+      "preemption_lines": [],
+      "errors": 0
+    },
+    "worker": {
+      "counts": {
+        "ArgSort_AiCPU": 8,
+        "internal_format": 8,
+        "base_format": 8,
+        "causal_conv_fallback": 8,
+        "OMP_threads": 1,
+        "uvb_thread_missing": 8,
+        "AOT_save_failure": 8,
+        "tl_where_int8": 0,
+        "stats_out_of_order": 0,
+        "broadcast_wait": 0,
+        "graph_replay": 1
+      },
+      "keys": [
+        "(Worker_DP1_PCP0_EP8 pid=128692) INFO 11-12 00:10:40 [worker.py:770] Available KV cache memory: 10.03 GiB",
+        "(EngineCore_DP1 pid=128639) INFO 11-12 00:10:40 [kv_cache_utils.py:2327] NPU KV cache size: 1,441,036 tokens, Maximum concurrency for 40,960 tokens per request: 35.18x",
+        "(EngineCore_DP1 pid=128639) INFO 11-12 00:11:07 [core.py:395] init engine (profile, create kv cache, warmup model) took 42.98 s (compilation: 6.57 s)",
+        "(MainProcess pid=128581) INFO 11-11 23:44:01 [ascend_config.py:764] FlashComm1 is disabled. Using flashinfer_all2allv as the all2all backend."
+      ],
+      "kv_usage_max": 0,
+      "preemption_lines": [],
+      "errors": 0
+    }
+  },
+  "E25": {
+    "master": {
+      "counts": {
+        "ArgSort_AiCPU": 8,
+        "internal_format": 8,
+        "base_format": 8,
+        "causal_conv_fallback": 8,
+        "OMP_threads": 1,
+        "uvb_thread_missing": 8,
+        "AOT_save_failure": 8,
+        "tl_where_int8": 64,
+        "stats_out_of_order": 18,
+        "broadcast_wait": 1,
+        "graph_replay": 1
+      },
+      "keys": [
+        "(Worker_DP0_PCP0_EP0 pid=31462) INFO 11-13 19:44:10 [worker.py:770] Available KV cache memory: 10.02 GiB",
+        "(EngineCore_DP0 pid=31205) INFO 11-13 19:44:11 [kv_cache_utils.py:2327] NPU KV cache size: 1,898,630 tokens, Maximum concurrency for 40,960 tokens per request: 46.35x",
+        "Capturing CUDA graphs (FULL): 100%|██████████| 7/7 [00:25<00:00,  1.32s/it]",
+        "Capturing CUDA graphs (FULL): 100%|██████████| 7/7 [00:25<00:00,  3.63s/it]",
+        "(EngineCore_DP0 pid=31205) INFO 11-13 19:44:42 [core.py:395] init engine (profile, create kv cache, warmup model) took 118.25 s (compilation: 6.98 s)",
+        "(APIServer pid=31093) INFO 11-13 19:26:22 [ascend_config.py:764] FlashComm1 is disabled. Using flashinfer_all2allv as the all2all backend."
+      ],
+      "kv_usage_max": 43.5,
+      "preemption_lines": [],
+      "errors": 0
+    },
+    "worker": {
+      "counts": {
+        "ArgSort_AiCPU": 8,
+        "internal_format": 8,
+        "base_format": 8,
+        "causal_conv_fallback": 8,
+        "OMP_threads": 1,
+        "uvb_thread_missing": 8,
+        "AOT_save_failure": 8,
+        "tl_where_int8": 64,
+        "stats_out_of_order": 0,
+        "broadcast_wait": 0,
+        "graph_replay": 1
+      },
+      "keys": [
+        "(Worker_DP1_PCP0_EP8 pid=26507) INFO 11-13 19:44:00 [worker.py:770] Available KV cache memory: 10.02 GiB",
+        "(EngineCore_DP1 pid=26444) INFO 11-13 19:44:00 [kv_cache_utils.py:2327] NPU KV cache size: 1,898,549 tokens, Maximum concurrency for 40,960 tokens per request: 46.35x",
+        "(EngineCore_DP1 pid=26444) INFO 11-13 19:44:32 [core.py:395] init engine (profile, create kv cache, warmup model) took 50.76 s (compilation: 7.28 s)",
+        "(MainProcess pid=26391) INFO 11-13 19:26:18 [ascend_config.py:764] FlashComm1 is disabled. Using flashinfer_all2allv as the all2all backend."
+      ],
+      "kv_usage_max": 0,
+      "preemption_lines": [],
+      "errors": 0
+    }
+  }
+}

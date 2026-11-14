@@ -1,0 +1,6 @@
+{
+  "dp": 4,
+  "tp": 2,
+  "sp": true,
+  "blocked": "当前A5 BF16 TP2已实测失败：mixed_quant_sparse_flash_mla要求N1=64，TP2后为32；本case依赖TP>1。证据results/node26_F03_tp2_20261113T095042/server.log。不要套用原生MXFP量化Issue作为BF16证据。"
+}

@@ -1,0 +1,11 @@
+{
+  "async_scheduling": true,
+  "max_model_len": 16384,
+  "prompt_lengths": [
+    8192,
+    128,
+    0,
+    0
+  ],
+  "max_num_batched_tokens": 16384
+}

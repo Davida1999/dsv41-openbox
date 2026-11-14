@@ -1,0 +1,28 @@
+E13：全新活动票务计算实验
+
+某机构举办一天的公益科普活动，按以下明确规则核算，不考虑税费、折旧或其他收支。成人票标价180元，共售240张，其中60张早鸟票打85折，其余原价；儿童票标价90元，共售80张，其中20张早鸟票打8折，其余原价。活动前退回12张成人原价票和8张儿童原价票，按原价全额退款，没有其他退款。其余购票者全部到场，每人一张票。
+赞助合同金额12000元，活动完成后全部确认为本期收入，实际到账9000元，余款下月收到。成人餐食每位65元，儿童每位40元，只按实际到场人数采购且当期全部付清。场地费18000元全部计入本期费用，本期支付12000元，余款下月支付。设备租赁6000元，工作人员8人每人350元，均当期全额支付。平台佣金为退款后净票款的2%，本期已支付。全部票款及退款均在本期收付，没有期初应收应付和现金预收预付。
+请展示可核验的分步算式，计算净票款、到场人数、餐费、平台费、本期收入和费用、利润、净现金流、期末应收和应付，并说明利润与净现金流差额。最后单独给出合法JSON，金额保留到分但使用数字值，键必须为：adult_net_ticket, child_net_ticket, attendees, meals, platform_fee, revenue, expenses, profit, cash_inflow, cash_outflow, net_cash_flow, accounts_receivable, accounts_payable。不要只给JSON，须先给计算说明。
+
+标准答案：
+{
+  "adult_net_ticket": 39420,
+  "child_net_ticket": 6120,
+  "attendees": 300,
+  "meals": 17700,
+  "platform_fee": 910.8,
+  "revenue": 57540,
+  "expenses": 45410.8,
+  "profit": 12129.2,
+  "cash_inflow": 54540,
+  "cash_outflow": 39410.8,
+  "net_cash_flow": 15129.2,
+  "accounts_receivable": 3000,
+  "accounts_payable": 6000
+}
+
+协议：连续10次单curl，Chat Completions，temperature=0，top_p=1，top_k=-1，seed=42，max_tokens=8192，logprobs=true/top_logprobs=5。每次等待上一请求完成。每轮生成全新cache_salt，与之前请求的Prefix KV缓存隔离；本轮10次共享标识，允许轮内复用。不重启服务，因此运行时预热及内存状态并未重置。
+
+脚本：test_single_curl_event_math.py；输出：single_curl_event_math_results/<UTC时间戳_随机后缀>/。保留实际请求、原始响应、逐token概率、正确性核对、前后metrics、完整报告和脚本快照。不同token序列不强行逐位置比较概率。
+
+正式版本补充：现金流按净额列示（退票冲减流入，不重复计作流出）。chat_template_kwargs.thinking=false，仅关闭额外thinking模式，仍要求逐步算式和计算说明。初始诊断轮因长篇推演截断而中止，不计入正式结果。

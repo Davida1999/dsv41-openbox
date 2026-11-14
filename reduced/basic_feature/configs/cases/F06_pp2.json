@@ -1,0 +1,5 @@
+{
+  "dp": 4,
+  "pp": 2,
+  "review_note": "已核对当前VL和LLM类声明SupportsPP；关闭Engram，需真实执行验证跨层状态，不套用完整Engram模型限制。"
+}
