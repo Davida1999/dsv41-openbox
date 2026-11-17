@@ -110,3 +110,13 @@ HCCL TP1/DP4推理+第5卡sender，0.75和0.55更新时OOM；0.50无KV容量。I
 前置131072/262144/524288输入各输出32作为容量探针；最终严格1000000输入+1024输出。强制输出长度用于容量验证，不等同自然生成1K连贯回答或完整精度验收。
 
 - [node26_F14_long_20261113T120549](results/node26_F14_long_20261113T120549/)
+
+## 2026-11-17 CANN930 修复复验
+
+| 项目 | 报告与关键证据 |
+|---|---|
+| 当前环境 | [CANN930 环境](../../environment/cann930_environment_20261117.md) |
+| Sleep level-2 | [报告](../cann930_20261117/sleep_level2/REPORT.md)、[五轮输出](../cann930_20261117/sleep_level2/five_cycle_outputs.txt)、[逐卡 HBM](../cann930_20261117/sleep_level2/memory_five_cycles.csv) |
+| HCCL | [完整回环逐端计数](../cann930_20261117/weight_update/runs/transfer_20261117_03/hccl_producer/full_transfer_audit.json) |
+| NPU IPC | [完整回环逐端计数](../cann930_20261117/weight_update/runs/transfer_20261117_03/npu_ipc_producer/full_transfer_audit.json) |
+| 当前验证边界 | [状态](../cann930_20261117/weight_update/validation_status.json)、[IPC 待复验步骤](../cann930_20261117/weight_update/pending_validation.md) |

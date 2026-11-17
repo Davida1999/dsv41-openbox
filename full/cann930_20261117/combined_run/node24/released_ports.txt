@@ -1,0 +1,16 @@
+State  Recv-Q Send-Q Local Address:Port  Peer Address:PortProcess                                       
+LISTEN 0      4096         0.0.0.0:52955      0.0.0.0:*    users:(("rpc.statd",pid=3730459,fd=9))       
+LISTEN 0      64           0.0.0.0:37335      0.0.0.0:*                                                 
+LISTEN 0      128        127.0.0.1:39603      0.0.0.0:*    users:(("code-6d62b1d5da",pid=2571357,fd=10))
+LISTEN 0      32     192.168.122.1:53         0.0.0.0:*    users:(("dnsmasq",pid=26650,fd=6))           
+LISTEN 0      511        127.0.0.1:44339      0.0.0.0:*    users:(("MainThread",pid=4037031,fd=21))     
+LISTEN 0      512        127.0.0.1:4099       0.0.0.0:*    users:(("opencode",pid=143789,fd=18))        
+LISTEN 0      512        127.0.0.1:4098       0.0.0.0:*    users:(("opencode",pid=143594,fd=18))        
+LISTEN 0      512        127.0.0.1:4097       0.0.0.0:*    users:(("opencode",pid=3115011,fd=18))       
+LISTEN 0      512        127.0.0.1:4096       0.0.0.0:*    users:(("opencode",pid=1816680,fd=17))       
+LISTEN 0      4096         0.0.0.0:111        0.0.0.0:*    users:(("rpcbind",pid=5156,fd=8))            
+LISTEN 0      128          0.0.0.0:22         0.0.0.0:*    users:(("sshd",pid=2570539,fd=3))            
+LISTEN 0      4096            [::]:54629         [::]:*    users:(("rpc.statd",pid=3730459,fd=11))      
+LISTEN 0      64              [::]:34173         [::]:*                                                 
+LISTEN 0      4096            [::]:111           [::]:*    users:(("rpcbind",pid=5156,fd=11))           
+LISTEN 0      128             [::]:22            [::]:*    users:(("sshd",pid=2570539,fd=4))            

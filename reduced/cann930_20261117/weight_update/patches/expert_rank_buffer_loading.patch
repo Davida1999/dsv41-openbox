@@ -1,0 +1,10 @@
+--- a/vllm/model_executor/model_loader/reload/meta.py
++++ b/vllm/model_executor/model_loader/reload/meta.py
+@@ -30,6 +30,7 @@
+     "expert_global_to_physical",
+     "expert_physical_to_global",
+     "expert_local_to_global",
++    "expert_ids_per_ep_rank",
+     "e_score_correction_bias",
+ }
+ 

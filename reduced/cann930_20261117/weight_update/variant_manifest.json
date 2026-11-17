@@ -1,0 +1,18 @@
+{
+  "checkpoint_a": "/mnt/share/c00954197/Workspace/dsv41/basic/model",
+  "checkpoint_b": "/mnt/share/c00954197/Workspace/dsv41/basic/weight_update/model_b",
+  "tensor_count": 6248,
+  "total_tensor_bytes": 135927315272,
+  "changed_tensor": "head.weight",
+  "changed_shard": "model-bf16-00509.safetensors",
+  "shape": [
+    129280,
+    5120
+  ],
+  "dtype": "BF16",
+  "change": "torch.roll(head.weight, shifts=1, dims=0)",
+  "a_head_sha256": "12f45f83b1a1cd9f440f48f2d5a8b7b38b0a71fc9b35b7f9b7de7c4d81673508",
+  "b_head_sha256": "d12652ddde072bfd70380791c814d63be6e60c8090885009720f1ef8a1652d72",
+  "head_tensor_bytes": 1323827200,
+  "cpu_copy_chunk_bytes": 67108864
+}

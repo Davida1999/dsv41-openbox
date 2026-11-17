@@ -1,0 +1,10 @@
+test_each_chunk_receives_a_fresh_export_counter (__main__.IPCChunkLeaseTests.test_each_chunk_receives_a_fresh_export_counter) ... ok
+test_empty_iterator_has_no_exported_reference (__main__.IPCChunkLeaseTests.test_empty_iterator_has_no_exported_reference) ... ok
+test_export_follows_ready_payload (__main__.IPCChunkLeaseTests.test_export_follows_ready_payload) ... ok
+test_one_buffer_is_reused_across_exports (__main__.IPCChunkLeaseTests.test_one_buffer_is_reused_across_exports) ... ok
+test_zero_element_metadata_exports_once (__main__.IPCChunkLeaseTests.test_zero_element_metadata_exports_once) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.037s
+
+OK

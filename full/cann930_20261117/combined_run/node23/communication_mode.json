@@ -1,0 +1,66 @@
+[
+  {
+    "file": "/root/ascend/log/run/plog/plog-100811_20261116202712146.log",
+    "lines": [
+      "[INFO] HCCL(100811,):2026-11-16-20:32:33.081.420 [base_config_legacy.cc:385][100811][HCCL_ENV] HCCL_OP_EXPANSION_MODE set by environment to [HcclAccelerator::CCU_SCHED]",
+      "[INFO] HCCL(100811,):2026-11-16-20:32:35.991.771 [communicator_impl.cc:2792][100811][CommunicatorImpl][SetAccelerator] env OpExpansionMode is [HcclAccelerator::CCU_SCHED]",
+      "[INFO] HCCL(100811,):2026-11-16-20:32:37.306.782 [communicator_impl.cc:2792][100811][CommunicatorImpl][SetAccelerator] env OpExpansionMode is [HcclAccelerator::CCU_SCHED]"
+    ]
+  },
+  {
+    "file": "/root/ascend/log/run/plog/plog-100806_20261116202712146.log",
+    "lines": [
+      "[INFO] HCCL(100806,):2026-11-16-20:32:33.081.338 [base_config_legacy.cc:385][100806][HCCL_ENV] HCCL_OP_EXPANSION_MODE set by environment to [HcclAccelerator::CCU_SCHED]",
+      "[INFO] HCCL(100806,):2026-11-16-20:32:35.986.799 [communicator_impl.cc:2792][100806][CommunicatorImpl][SetAccelerator] env OpExpansionMode is [HcclAccelerator::CCU_SCHED]",
+      "[INFO] HCCL(100806,):2026-11-16-20:32:37.303.347 [communicator_impl.cc:2792][100806][CommunicatorImpl][SetAccelerator] env OpExpansionMode is [HcclAccelerator::CCU_SCHED]"
+    ]
+  },
+  {
+    "file": "/root/ascend/log/run/plog/plog-100810_20261116202712146.log",
+    "lines": [
+      "[INFO] HCCL(100810,):2026-11-16-20:32:33.081.339 [base_config_legacy.cc:385][100810][HCCL_ENV] HCCL_OP_EXPANSION_MODE set by environment to [HcclAccelerator::CCU_SCHED]",
+      "[INFO] HCCL(100810,):2026-11-16-20:32:35.990.057 [communicator_impl.cc:2792][100810][CommunicatorImpl][SetAccelerator] env OpExpansionMode is [HcclAccelerator::CCU_SCHED]",
+      "[INFO] HCCL(100810,):2026-11-16-20:32:37.304.456 [communicator_impl.cc:2792][100810][CommunicatorImpl][SetAccelerator] env OpExpansionMode is [HcclAccelerator::CCU_SCHED]"
+    ]
+  },
+  {
+    "file": "/root/ascend/log/run/plog/plog-100804_20261116202712045.log",
+    "lines": [
+      "[INFO] HCCL(100804,):2026-11-16-20:32:32.933.388 [base_config_legacy.cc:385][100804][HCCL_ENV] HCCL_OP_EXPANSION_MODE set by environment to [HcclAccelerator::CCU_SCHED]",
+      "[INFO] HCCL(100804,):2026-11-16-20:32:36.007.497 [communicator_impl.cc:2792][100804][CommunicatorImpl][SetAccelerator] env OpExpansionMode is [HcclAccelerator::CCU_SCHED]",
+      "[INFO] HCCL(100804,):2026-11-16-20:32:37.312.459 [communicator_impl.cc:2792][100804][CommunicatorImpl][SetAccelerator] env OpExpansionMode is [HcclAccelerator::CCU_SCHED]"
+    ]
+  },
+  {
+    "file": "/root/ascend/log/run/plog/plog-100809_20261116202712097.log",
+    "lines": [
+      "[INFO] HCCL(100809,):2026-11-16-20:32:33.081.408 [base_config_legacy.cc:385][100809][HCCL_ENV] HCCL_OP_EXPANSION_MODE set by environment to [HcclAccelerator::CCU_SCHED]",
+      "[INFO] HCCL(100809,):2026-11-16-20:32:36.001.725 [communicator_impl.cc:2792][100809][CommunicatorImpl][SetAccelerator] env OpExpansionMode is [HcclAccelerator::CCU_SCHED]",
+      "[INFO] HCCL(100809,):2026-11-16-20:32:37.306.324 [communicator_impl.cc:2792][100809][CommunicatorImpl][SetAccelerator] env OpExpansionMode is [HcclAccelerator::CCU_SCHED]"
+    ]
+  },
+  {
+    "file": "/root/ascend/log/run/plog/plog-100808_20261116202712090.log",
+    "lines": [
+      "[INFO] HCCL(100808,):2026-11-16-20:32:33.081.385 [base_config_legacy.cc:385][100808][HCCL_ENV] HCCL_OP_EXPANSION_MODE set by environment to [HcclAccelerator::CCU_SCHED]",
+      "[INFO] HCCL(100808,):2026-11-16-20:32:35.987.128 [communicator_impl.cc:2792][100808][CommunicatorImpl][SetAccelerator] env OpExpansionMode is [HcclAccelerator::CCU_SCHED]",
+      "[INFO] HCCL(100808,):2026-11-16-20:32:37.303.452 [communicator_impl.cc:2792][100808][CommunicatorImpl][SetAccelerator] env OpExpansionMode is [HcclAccelerator::CCU_SCHED]"
+    ]
+  },
+  {
+    "file": "/root/ascend/log/run/plog/plog-100807_20261116202712096.log",
+    "lines": [
+      "[INFO] HCCL(100807,):2026-11-16-20:32:33.081.385 [base_config_legacy.cc:385][100807][HCCL_ENV] HCCL_OP_EXPANSION_MODE set by environment to [HcclAccelerator::CCU_SCHED]",
+      "[INFO] HCCL(100807,):2026-11-16-20:32:35.982.960 [communicator_impl.cc:2792][100807][CommunicatorImpl][SetAccelerator] env OpExpansionMode is [HcclAccelerator::CCU_SCHED]",
+      "[INFO] HCCL(100807,):2026-11-16-20:32:37.301.901 [communicator_impl.cc:2792][100807][CommunicatorImpl][SetAccelerator] env OpExpansionMode is [HcclAccelerator::CCU_SCHED]"
+    ]
+  },
+  {
+    "file": "/root/ascend/log/run/plog/plog-100805_20261116202712146.log",
+    "lines": [
+      "[INFO] HCCL(100805,):2026-11-16-20:32:33.081.339 [base_config_legacy.cc:385][100805][HCCL_ENV] HCCL_OP_EXPANSION_MODE set by environment to [HcclAccelerator::CCU_SCHED]",
+      "[INFO] HCCL(100805,):2026-11-16-20:32:35.990.397 [communicator_impl.cc:2792][100805][CommunicatorImpl][SetAccelerator] env OpExpansionMode is [HcclAccelerator::CCU_SCHED]",
+      "[INFO] HCCL(100805,):2026-11-16-20:32:37.305.060 [communicator_impl.cc:2792][100805][CommunicatorImpl][SetAccelerator] env OpExpansionMode is [HcclAccelerator::CCU_SCHED]"
+    ]
+  }
+]

@@ -1,0 +1,128 @@
+{
+  "stage": "cycle_1_after_wake_weights",
+  "utc": "2026-11-16T20:29:27.139948+00:00",
+  "workers": [
+    {
+      "dp_rank": 0,
+      "device_id": 0,
+      "memory_source": "npu-smi",
+      "used_bytes": 38592839680,
+      "total_bytes": 103079215104,
+      "free_bytes": 64486375424,
+      "allocated_bytes": 53080826880,
+      "reserved_bytes": 53578039296
+    },
+    {
+      "dp_rank": 1,
+      "device_id": 1,
+      "memory_source": "npu-smi",
+      "used_bytes": 38933626880,
+      "total_bytes": 103079215104,
+      "free_bytes": 64145588224,
+      "allocated_bytes": null,
+      "reserved_bytes": null
+    },
+    {
+      "dp_rank": 2,
+      "device_id": 2,
+      "memory_source": "npu-smi",
+      "used_bytes": 38930481152,
+      "total_bytes": 103079215104,
+      "free_bytes": 64148733952,
+      "allocated_bytes": null,
+      "reserved_bytes": null
+    },
+    {
+      "dp_rank": 3,
+      "device_id": 3,
+      "memory_source": "npu-smi",
+      "used_bytes": 38927335424,
+      "total_bytes": 103079215104,
+      "free_bytes": 64151879680,
+      "allocated_bytes": null,
+      "reserved_bytes": null
+    },
+    {
+      "dp_rank": 4,
+      "device_id": 4,
+      "memory_source": "npu-smi",
+      "used_bytes": 38922092544,
+      "total_bytes": 103079215104,
+      "free_bytes": 64157122560,
+      "allocated_bytes": null,
+      "reserved_bytes": null
+    },
+    {
+      "dp_rank": 5,
+      "device_id": 5,
+      "memory_source": "npu-smi",
+      "used_bytes": 38934675456,
+      "total_bytes": 103079215104,
+      "free_bytes": 64144539648,
+      "allocated_bytes": null,
+      "reserved_bytes": null
+    },
+    {
+      "dp_rank": 6,
+      "device_id": 6,
+      "memory_source": "npu-smi",
+      "used_bytes": 38938869760,
+      "total_bytes": 103079215104,
+      "free_bytes": 64140345344,
+      "allocated_bytes": null,
+      "reserved_bytes": null
+    },
+    {
+      "dp_rank": 7,
+      "device_id": 7,
+      "memory_source": "npu-smi",
+      "used_bytes": 38924189696,
+      "total_bytes": 103079215104,
+      "free_bytes": 64155025408,
+      "allocated_bytes": null,
+      "reserved_bytes": null
+    }
+  ],
+  "worker_rpc_results": [
+    {
+      "pid": 39177,
+      "rank": 0,
+      "dp_rank": 0,
+      "device_index": 0,
+      "free_bytes": 64486035456,
+      "total_bytes": 98515812352,
+      "used_bytes": 34029776896,
+      "allocated_bytes": 53080826880,
+      "reserved_bytes": 53578039296
+    }
+  ],
+  "is_sleeping": {
+    "is_sleeping": true
+  },
+  "sleep_metrics": [
+    "vllm:engine_sleep_state{engine=\"0\",model_name=\"dsv41-top32-sleep2\",sleep_state=\"awake\"} 0.0",
+    "vllm:engine_sleep_state{engine=\"1\",model_name=\"dsv41-top32-sleep2\",sleep_state=\"awake\"} 0.0",
+    "vllm:engine_sleep_state{engine=\"2\",model_name=\"dsv41-top32-sleep2\",sleep_state=\"awake\"} 0.0",
+    "vllm:engine_sleep_state{engine=\"3\",model_name=\"dsv41-top32-sleep2\",sleep_state=\"awake\"} 0.0",
+    "vllm:engine_sleep_state{engine=\"4\",model_name=\"dsv41-top32-sleep2\",sleep_state=\"awake\"} 0.0",
+    "vllm:engine_sleep_state{engine=\"5\",model_name=\"dsv41-top32-sleep2\",sleep_state=\"awake\"} 0.0",
+    "vllm:engine_sleep_state{engine=\"6\",model_name=\"dsv41-top32-sleep2\",sleep_state=\"awake\"} 0.0",
+    "vllm:engine_sleep_state{engine=\"7\",model_name=\"dsv41-top32-sleep2\",sleep_state=\"awake\"} 0.0",
+    "vllm:engine_sleep_state{engine=\"0\",model_name=\"dsv41-top32-sleep2\",sleep_state=\"weights_offloaded\"} 0.0",
+    "vllm:engine_sleep_state{engine=\"1\",model_name=\"dsv41-top32-sleep2\",sleep_state=\"weights_offloaded\"} 0.0",
+    "vllm:engine_sleep_state{engine=\"2\",model_name=\"dsv41-top32-sleep2\",sleep_state=\"weights_offloaded\"} 0.0",
+    "vllm:engine_sleep_state{engine=\"3\",model_name=\"dsv41-top32-sleep2\",sleep_state=\"weights_offloaded\"} 0.0",
+    "vllm:engine_sleep_state{engine=\"4\",model_name=\"dsv41-top32-sleep2\",sleep_state=\"weights_offloaded\"} 0.0",
+    "vllm:engine_sleep_state{engine=\"5\",model_name=\"dsv41-top32-sleep2\",sleep_state=\"weights_offloaded\"} 0.0",
+    "vllm:engine_sleep_state{engine=\"6\",model_name=\"dsv41-top32-sleep2\",sleep_state=\"weights_offloaded\"} 0.0",
+    "vllm:engine_sleep_state{engine=\"7\",model_name=\"dsv41-top32-sleep2\",sleep_state=\"weights_offloaded\"} 0.0",
+    "vllm:engine_sleep_state{engine=\"0\",model_name=\"dsv41-top32-sleep2\",sleep_state=\"discard_all\"} 1.0",
+    "vllm:engine_sleep_state{engine=\"1\",model_name=\"dsv41-top32-sleep2\",sleep_state=\"discard_all\"} 1.0",
+    "vllm:engine_sleep_state{engine=\"2\",model_name=\"dsv41-top32-sleep2\",sleep_state=\"discard_all\"} 1.0",
+    "vllm:engine_sleep_state{engine=\"3\",model_name=\"dsv41-top32-sleep2\",sleep_state=\"discard_all\"} 1.0",
+    "vllm:engine_sleep_state{engine=\"4\",model_name=\"dsv41-top32-sleep2\",sleep_state=\"discard_all\"} 1.0",
+    "vllm:engine_sleep_state{engine=\"5\",model_name=\"dsv41-top32-sleep2\",sleep_state=\"discard_all\"} 1.0",
+    "vllm:engine_sleep_state{engine=\"6\",model_name=\"dsv41-top32-sleep2\",sleep_state=\"discard_all\"} 1.0",
+    "vllm:engine_sleep_state{engine=\"7\",model_name=\"dsv41-top32-sleep2\",sleep_state=\"discard_all\"} 1.0"
+  ]
+}

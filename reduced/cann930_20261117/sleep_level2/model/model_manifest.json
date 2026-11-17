@@ -1,0 +1,25 @@
+{
+  "source": "/mnt/share/g00815994/dsv41/DeepSeek-V4.1-Flash-top32-bf16-runtime-codex-20261030",
+  "layers": 40,
+  "routed_experts": 32,
+  "engram_layer_ids": [],
+  "removed_keys": {
+    "layers.1.engram.embed.weight": "model-bf16-00523.safetensors",
+    "layers.1.engram.k_weight": "model-bf16-00524.safetensors",
+    "layers.1.engram.q_weight": "model-bf16-00524.safetensors",
+    "layers.1.engram.wkv.weight": "model-bf16-00524.safetensors",
+    "layers.14.engram.embed.weight": "model-bf16-00524.safetensors",
+    "layers.14.engram.k_weight": "model-bf16-00525.safetensors",
+    "layers.14.engram.q_weight": "model-bf16-00525.safetensors",
+    "layers.14.engram.wkv.weight": "model-bf16-00525.safetensors"
+  },
+  "excluded_shards": [
+    "model-bf16-00524.safetensors",
+    "model-bf16-00525.safetensors"
+  ],
+  "retained_shards": 503,
+  "indexed_tensor_bytes": 135927315272,
+  "mixed_engram_shards": [
+    "model-bf16-00523.safetensors"
+  ]
+}

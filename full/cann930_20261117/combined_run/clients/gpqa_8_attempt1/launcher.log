@@ -1,0 +1,62 @@
+日志文件 /mnt/share/c00954197/Workspace/dsv41/precision/results/gpqa_20261116T221752Z_vAo8bD/client.log
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:13: FutureWarning: triton.language.extra.cann.extension.atan2 is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.atan2 instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.atan2")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:35: FutureWarning: triton.language.extra.cann.extension.isfinited is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.isfinited instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.isfinited")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:49: FutureWarning: triton.language.extra.cann.extension.finitef is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.finitef instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.finitef")
+[2026-11-16 22:17:59,951] [ais_bench] [[32mINFO[0m] Loading vllm_api_general_chat: /mnt/share/c00954197/Workspace/dsv41/benchmark/ais_bench/benchmark/configs/./models/vllm_api/vllm_api_general_chat.py
+[2026-11-16 22:18:00,029] [ais_bench] [[32mINFO[0m] Loading gpqa_gen_0_shot_cot_chat_prompt: /mnt/share/c00954197/Workspace/dsv41/benchmark/ais_bench/benchmark/configs/./datasets/gpqa/gpqa_gen_0_shot_cot_chat_prompt.py
+[2026-11-16 22:18:00,034] [ais_bench] [[32mINFO[0m] Loading example: /mnt/share/c00954197/Workspace/dsv41/benchmark/ais_bench/benchmark/configs/./summarizers/example.py
+[2026-11-16 22:18:00,066] [ais_bench] [[32mINFO[0m] Current exp folder: /mnt/share/c00954197/Workspace/dsv41/precision/results/gpqa_20261116T221752Z_vAo8bD/20261116_221753
+[2026-11-16 22:18:00,070] [ais_bench] [[32mINFO[0m] Keeping the first 8 prompts for dataset [GPQA_diamond]
+[2026-11-16 22:18:00,148] [ais_bench] [[32mINFO[0m] Starting inference tasks...
+[2026-11-16 22:18:00,151] [ais_bench] [[32mINFO[0m] Partitioned into 1 tasks.
+[2026-11-16 22:18:00,170] [ais_bench] [[33mWARNING[0m] Can't set cursor because of setupterm: could not find terminal, running in background mode
+[2026-11-16 22:18:00,170] [ais_bench] [[32mINFO[0m] Launch TasksMonitor, PID: 114663, Refresh interval: 0.5, Run in background: True
+Monitoring tasks progress:   0%|          | 0/1 [00:00<?, ?it/s][2026-11-16 22:18:00,172] [ais_bench] [[33mWARNING[0m] Failed to read status file '/mnt/share/c00954197/Workspace/dsv41/precision/results/gpqa_20261116T221752Z_vAo8bD/20261116_221753/status_tmp/tmp_dsv41-bf16-cann930-gpqa_GPQA_diamond.json': [Errno 2] No such file or directory: '/mnt/share/c00954197/Workspace/dsv41/precision/results/gpqa_20261116T221752Z_vAo8bD/20261116_221753/status_tmp/tmp_dsv41-bf16-cann930-gpqa_GPQA_diamond.json'. Attempting to clear and continuing.
+Monitoring tasks progress: 100%|██████████| 1/1 [12:43<00:00, 763.79s/it]Monitoring tasks progress: 100%|██████████| 1/1 [12:43<00:00, 763.80s/it]
+[2026-11-16 22:30:45,104] [ais_bench] [[32mINFO[0m] Inference tasks completed.
+[2026-11-16 22:30:45,114] [ais_bench] [[32mINFO[0m] Starting evaluation tasks...
+[2026-11-16 22:30:45,117] [ais_bench] [[32mINFO[0m] Partitioned into 1 tasks.
+[2026-11-16 22:30:45,145] [ais_bench] [[33mWARNING[0m] Can't set cursor because of setupterm: could not find terminal, running in background mode
+[2026-11-16 22:30:45,145] [ais_bench] [[32mINFO[0m] Launch TasksMonitor, PID: 114741, Refresh interval: 0.5, Run in background: True
+Monitoring tasks progress:   0%|          | 0/1 [00:00<?, ?it/s][2026-11-16 22:30:45,148] [ais_bench] [[33mWARNING[0m] Failed to read status file '/mnt/share/c00954197/Workspace/dsv41/precision/results/gpqa_20261116T221752Z_vAo8bD/20261116_221753/status_tmp/tmp_dsv41-bf16-cann930-gpqa_GPQA_diamond.json': [Errno 2] No such file or directory: '/mnt/share/c00954197/Workspace/dsv41/precision/results/gpqa_20261116T221752Z_vAo8bD/20261116_221753/status_tmp/tmp_dsv41-bf16-cann930-gpqa_GPQA_diamond.json'. Attempting to clear and continuing.
+Monitoring tasks progress: 100%|██████████| 1/1 [00:09<00:00,  9.05s/it]Monitoring tasks progress: 100%|██████████| 1/1 [00:09<00:00,  9.05s/it]
+[2026-11-16 22:30:55,140] [ais_bench] [[32mINFO[0m] Evaluation tasks completed.
+[2026-11-16 22:30:55,143] [ais_bench] [[32mINFO[0m] Summarizing evaluation results...
+[2026-11-16 22:30:55,150] [ais_bench] [[32mINFO[0m] write summary to /mnt/share/c00954197/Workspace/dsv41/precision/results/gpqa_20261116T221752Z_vAo8bD/20261116_221753/summary/summary_20261116_221753.txt
+[2026-11-16 22:30:55,151] [ais_bench] [[32mINFO[0m] write csv to /mnt/share/c00954197/Workspace/dsv41/precision/results/gpqa_20261116T221752Z_vAo8bD/20261116_221753/summary/summary_20261116_221753.csv
+[2026-11-16 22:30:55,152] [ais_bench] [[32mINFO[0m] write markdown summary to /mnt/share/c00954197/Workspace/dsv41/precision/results/gpqa_20261116T221752Z_vAo8bD/20261116_221753/summary/summary_20261116_221753.md
+dataset       version    metric    mode      dsv41-bf16-cann930-gpqa
+------------  ---------  --------  ------  -------------------------
+GPQA_diamond  b1ed2c     accuracy  gen                         87.50
+
+
+The markdown format results is as below:
+
+| dataset | version | metric | mode | dsv41-bf16-cann930-gpqa |
+|----- | ----- | ----- | ----- | -----|
+| GPQA_diamond | b1ed2c | accuracy | gen | 87.50 |
+
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:13: FutureWarning: triton.language.extra.cann.extension.atan2 is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.atan2 instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.atan2")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:35: FutureWarning: triton.language.extra.cann.extension.isfinited is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.isfinited instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.isfinited")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:49: FutureWarning: triton.language.extra.cann.extension.finitef is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.finitef instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.finitef")
+Traceback (most recent call last):
+  File "/mnt/share/c00954197/Workspace/dsv41/precision/check_results.py", line 19, in <module>
+    rows = [json.loads(line) for line in prediction_file.read_text().splitlines() if line.strip()]
+            ^^^^^^^^^^^^^^^^
+  File "/usr/local/python3.12.16/lib/python3.12/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python3.12.16/lib/python3.12/json/decoder.py", line 338, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python3.12.16/lib/python3.12/json/decoder.py", line 354, in raw_decode
+    obj, end = self.scan_once(s, idx)
+               ^^^^^^^^^^^^^^^^^^^^^^
+json.decoder.JSONDecodeError: Unterminated string starting at: line 1 column 147 (char 146)
+[ERROR] 2026-11-16-22:31:03 (PID:114764, Device:-1, RankID:-1) ERR99999 UNKNOWN applicaiton exception

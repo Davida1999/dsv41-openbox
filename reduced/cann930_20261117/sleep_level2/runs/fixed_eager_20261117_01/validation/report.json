@@ -1,0 +1,835 @@
+{
+  "status": "failed",
+  "cycles": [
+    {
+      "cycle": 1,
+      "lifecycle_seconds": 36.442398209590465,
+      "released_bytes_by_dp_rank": {
+        "0": 53368324096,
+        "1": 53439627264,
+        "2": 53433335808,
+        "3": 53425995776,
+        "4": 53439627264,
+        "5": 53410267136,
+        "6": 53424947200,
+        "7": 53439627264
+      },
+      "comparisons": {
+        "dp0_completions": {
+          "text_identical": false,
+          "token_ids_identical": false,
+          "tokens_identical": false,
+          "logprobs_identical": false,
+          "max_logprob_delta": 1.0299205780029297
+        },
+        "dp0_chat_completions": {
+          "text_identical": false,
+          "token_ids_identical": false,
+          "tokens_identical": false,
+          "logprobs_identical": false,
+          "max_logprob_delta": 1.8602027893066406
+        },
+        "dp1_completions": {
+          "text_identical": false,
+          "token_ids_identical": false,
+          "tokens_identical": false,
+          "logprobs_identical": false,
+          "max_logprob_delta": 1.0299205780029297
+        },
+        "dp1_chat_completions": {
+          "text_identical": false,
+          "token_ids_identical": false,
+          "tokens_identical": false,
+          "logprobs_identical": false,
+          "max_logprob_delta": 1.8602027893066406
+        },
+        "dp2_completions": {
+          "text_identical": false,
+          "token_ids_identical": false,
+          "tokens_identical": false,
+          "logprobs_identical": false,
+          "max_logprob_delta": 1.0299205780029297
+        },
+        "dp2_chat_completions": {
+          "text_identical": false,
+          "token_ids_identical": false,
+          "tokens_identical": false,
+          "logprobs_identical": false,
+          "max_logprob_delta": 1.8602027893066406
+        },
+        "dp3_completions": {
+          "text_identical": false,
+          "token_ids_identical": false,
+          "tokens_identical": false,
+          "logprobs_identical": false,
+          "max_logprob_delta": 1.0299205780029297
+        },
+        "dp3_chat_completions": {
+          "text_identical": false,
+          "token_ids_identical": false,
+          "tokens_identical": false,
+          "logprobs_identical": false,
+          "max_logprob_delta": 1.8602027893066406
+        },
+        "dp4_completions": {
+          "text_identical": false,
+          "token_ids_identical": false,
+          "tokens_identical": false,
+          "logprobs_identical": false,
+          "max_logprob_delta": 1.0299205780029297
+        },
+        "dp4_chat_completions": {
+          "text_identical": false,
+          "token_ids_identical": false,
+          "tokens_identical": false,
+          "logprobs_identical": false,
+          "max_logprob_delta": 1.8602027893066406
+        },
+        "dp5_completions": {
+          "text_identical": false,
+          "token_ids_identical": false,
+          "tokens_identical": false,
+          "logprobs_identical": false,
+          "max_logprob_delta": 1.0299205780029297
+        },
+        "dp5_chat_completions": {
+          "text_identical": false,
+          "token_ids_identical": false,
+          "tokens_identical": false,
+          "logprobs_identical": false,
+          "max_logprob_delta": 1.8602027893066406
+        },
+        "dp6_completions": {
+          "text_identical": false,
+          "token_ids_identical": false,
+          "tokens_identical": false,
+          "logprobs_identical": false,
+          "max_logprob_delta": 1.0299205780029297
+        },
+        "dp6_chat_completions": {
+          "text_identical": false,
+          "token_ids_identical": false,
+          "tokens_identical": false,
+          "logprobs_identical": false,
+          "max_logprob_delta": 1.8602027893066406
+        },
+        "dp7_completions": {
+          "text_identical": false,
+          "token_ids_identical": false,
+          "tokens_identical": false,
+          "logprobs_identical": false,
+          "max_logprob_delta": 1.0299205780029297
+        },
+        "dp7_chat_completions": {
+          "text_identical": false,
+          "token_ids_identical": false,
+          "tokens_identical": false,
+          "logprobs_identical": false,
+          "max_logprob_delta": 1.8602027893066406
+        }
+      }
+    }
+  ],
+  "memory": [
+    {
+      "stage": "initial",
+      "workers": [
+        {
+          "dp_rank": 0,
+          "device_id": 0,
+          "memory_source": "npu-smi",
+          "used_bytes": 61696114688,
+          "total_bytes": 103079215104,
+          "free_bytes": 41383100416,
+          "allocated_bytes": 52983202304,
+          "reserved_bytes": 53485764608
+        },
+        {
+          "dp_rank": 1,
+          "device_id": 1,
+          "memory_source": "npu-smi",
+          "used_bytes": 61711843328,
+          "total_bytes": 103079215104,
+          "free_bytes": 41367371776,
+          "allocated_bytes": null,
+          "reserved_bytes": null
+        },
+        {
+          "dp_rank": 2,
+          "device_id": 2,
+          "memory_source": "npu-smi",
+          "used_bytes": 61703454720,
+          "total_bytes": 103079215104,
+          "free_bytes": 41375760384,
+          "allocated_bytes": null,
+          "reserved_bytes": null
+        },
+        {
+          "dp_rank": 3,
+          "device_id": 3,
+          "memory_source": "npu-smi",
+          "used_bytes": 61690871808,
+          "total_bytes": 103079215104,
+          "free_bytes": 41388343296,
+          "allocated_bytes": null,
+          "reserved_bytes": null
+        },
+        {
+          "dp_rank": 4,
+          "device_id": 4,
+          "memory_source": "npu-smi",
+          "used_bytes": 61699260416,
+          "total_bytes": 103079215104,
+          "free_bytes": 41379954688,
+          "allocated_bytes": null,
+          "reserved_bytes": null
+        },
+        {
+          "dp_rank": 5,
+          "device_id": 5,
+          "memory_source": "npu-smi",
+          "used_bytes": 61683531776,
+          "total_bytes": 103079215104,
+          "free_bytes": 41395683328,
+          "allocated_bytes": null,
+          "reserved_bytes": null
+        },
+        {
+          "dp_rank": 6,
+          "device_id": 6,
+          "memory_source": "npu-smi",
+          "used_bytes": 61702406144,
+          "total_bytes": 103079215104,
+          "free_bytes": 41376808960,
+          "allocated_bytes": null,
+          "reserved_bytes": null
+        },
+        {
+          "dp_rank": 7,
+          "device_id": 7,
+          "memory_source": "npu-smi",
+          "used_bytes": 61702406144,
+          "total_bytes": 103079215104,
+          "free_bytes": 41376808960,
+          "allocated_bytes": null,
+          "reserved_bytes": null
+        }
+      ]
+    },
+    {
+      "stage": "baseline_steady",
+      "workers": [
+        {
+          "dp_rank": 0,
+          "device_id": 0,
+          "memory_source": "npu-smi",
+          "used_bytes": 61942530048,
+          "total_bytes": 103079215104,
+          "free_bytes": 41136685056,
+          "allocated_bytes": 53080826880,
+          "reserved_bytes": 53720645632
+        },
+        {
+          "dp_rank": 1,
+          "device_id": 1,
+          "memory_source": "npu-smi",
+          "used_bytes": 62281220096,
+          "total_bytes": 103079215104,
+          "free_bytes": 40797995008,
+          "allocated_bytes": null,
+          "reserved_bytes": null
+        },
+        {
+          "dp_rank": 2,
+          "device_id": 2,
+          "memory_source": "npu-smi",
+          "used_bytes": 62272831488,
+          "total_bytes": 103079215104,
+          "free_bytes": 40806383616,
+          "allocated_bytes": null,
+          "reserved_bytes": null
+        },
+        {
+          "dp_rank": 3,
+          "device_id": 3,
+          "memory_source": "npu-smi",
+          "used_bytes": 62260248576,
+          "total_bytes": 103079215104,
+          "free_bytes": 40818966528,
+          "allocated_bytes": null,
+          "reserved_bytes": null
+        },
+        {
+          "dp_rank": 4,
+          "device_id": 4,
+          "memory_source": "npu-smi",
+          "used_bytes": 62268637184,
+          "total_bytes": 103079215104,
+          "free_bytes": 40810577920,
+          "allocated_bytes": null,
+          "reserved_bytes": null
+        },
+        {
+          "dp_rank": 5,
+          "device_id": 5,
+          "memory_source": "npu-smi",
+          "used_bytes": 62252908544,
+          "total_bytes": 103079215104,
+          "free_bytes": 40826306560,
+          "allocated_bytes": null,
+          "reserved_bytes": null
+        },
+        {
+          "dp_rank": 6,
+          "device_id": 6,
+          "memory_source": "npu-smi",
+          "used_bytes": 62270734336,
+          "total_bytes": 103079215104,
+          "free_bytes": 40808480768,
+          "allocated_bytes": null,
+          "reserved_bytes": null
+        },
+        {
+          "dp_rank": 7,
+          "device_id": 7,
+          "memory_source": "npu-smi",
+          "used_bytes": 62271782912,
+          "total_bytes": 103079215104,
+          "free_bytes": 40807432192,
+          "allocated_bytes": null,
+          "reserved_bytes": null
+        }
+      ]
+    },
+    {
+      "stage": "cycle_1_before_sleep",
+      "workers": [
+        {
+          "dp_rank": 0,
+          "device_id": 0,
+          "memory_source": "npu-smi",
+          "used_bytes": 61942530048,
+          "total_bytes": 103079215104,
+          "free_bytes": 41136685056,
+          "allocated_bytes": 53080826880,
+          "reserved_bytes": 53720645632
+        },
+        {
+          "dp_rank": 1,
+          "device_id": 1,
+          "memory_source": "npu-smi",
+          "used_bytes": 62281220096,
+          "total_bytes": 103079215104,
+          "free_bytes": 40797995008,
+          "allocated_bytes": null,
+          "reserved_bytes": null
+        },
+        {
+          "dp_rank": 2,
+          "device_id": 2,
+          "memory_source": "npu-smi",
+          "used_bytes": 62272831488,
+          "total_bytes": 103079215104,
+          "free_bytes": 40806383616,
+          "allocated_bytes": null,
+          "reserved_bytes": null
+        },
+        {
+          "dp_rank": 3,
+          "device_id": 3,
+          "memory_source": "npu-smi",
+          "used_bytes": 62260248576,
+          "total_bytes": 103079215104,
+          "free_bytes": 40818966528,
+          "allocated_bytes": null,
+          "reserved_bytes": null
+        },
+        {
+          "dp_rank": 4,
+          "device_id": 4,
+          "memory_source": "npu-smi",
+          "used_bytes": 62268637184,
+          "total_bytes": 103079215104,
+          "free_bytes": 40810577920,
+          "allocated_bytes": null,
+          "reserved_bytes": null
+        },
+        {
+          "dp_rank": 5,
+          "device_id": 5,
+          "memory_source": "npu-smi",
+          "used_bytes": 62252908544,
+          "total_bytes": 103079215104,
+          "free_bytes": 40826306560,
+          "allocated_bytes": null,
+          "reserved_bytes": null
+        },
+        {
+          "dp_rank": 6,
+          "device_id": 6,
+          "memory_source": "npu-smi",
+          "used_bytes": 62270734336,
+          "total_bytes": 103079215104,
+          "free_bytes": 40808480768,
+          "allocated_bytes": null,
+          "reserved_bytes": null
+        },
+        {
+          "dp_rank": 7,
+          "device_id": 7,
+          "memory_source": "npu-smi",
+          "used_bytes": 62271782912,
+          "total_bytes": 103079215104,
+          "free_bytes": 40807432192,
+          "allocated_bytes": null,
+          "reserved_bytes": null
+        }
+      ]
+    },
+    {
+      "stage": "cycle_1_after_sleep",
+      "workers": [
+        {
+          "dp_rank": 0,
+          "device_id": 0,
+          "memory_source": "npu-smi",
+          "used_bytes": 8574205952,
+          "total_bytes": 103079215104,
+          "free_bytes": 94505009152,
+          "allocated_bytes": 53080826880,
+          "reserved_bytes": 53578039296
+        },
+        {
+          "dp_rank": 1,
+          "device_id": 1,
+          "memory_source": "npu-smi",
+          "used_bytes": 8841592832,
+          "total_bytes": 103079215104,
+          "free_bytes": 94237622272,
+          "allocated_bytes": null,
+          "reserved_bytes": null
+        },
+        {
+          "dp_rank": 2,
+          "device_id": 2,
+          "memory_source": "npu-smi",
+          "used_bytes": 8839495680,
+          "total_bytes": 103079215104,
+          "free_bytes": 94239719424,
+          "allocated_bytes": null,
+          "reserved_bytes": null
+        },
+        {
+          "dp_rank": 3,
+          "device_id": 3,
+          "memory_source": "npu-smi",
+          "used_bytes": 8834252800,
+          "total_bytes": 103079215104,
+          "free_bytes": 94244962304,
+          "allocated_bytes": null,
+          "reserved_bytes": null
+        },
+        {
+          "dp_rank": 4,
+          "device_id": 4,
+          "memory_source": "npu-smi",
+          "used_bytes": 8829009920,
+          "total_bytes": 103079215104,
+          "free_bytes": 94250205184,
+          "allocated_bytes": null,
+          "reserved_bytes": null
+        },
+        {
+          "dp_rank": 5,
+          "device_id": 5,
+          "memory_source": "npu-smi",
+          "used_bytes": 8842641408,
+          "total_bytes": 103079215104,
+          "free_bytes": 94236573696,
+          "allocated_bytes": null,
+          "reserved_bytes": null
+        },
+        {
+          "dp_rank": 6,
+          "device_id": 6,
+          "memory_source": "npu-smi",
+          "used_bytes": 8845787136,
+          "total_bytes": 103079215104,
+          "free_bytes": 94233427968,
+          "allocated_bytes": null,
+          "reserved_bytes": null
+        },
+        {
+          "dp_rank": 7,
+          "device_id": 7,
+          "memory_source": "npu-smi",
+          "used_bytes": 8832155648,
+          "total_bytes": 103079215104,
+          "free_bytes": 94247059456,
+          "allocated_bytes": null,
+          "reserved_bytes": null
+        }
+      ]
+    },
+    {
+      "stage": "cycle_1_after_wake_weights",
+      "workers": [
+        {
+          "dp_rank": 0,
+          "device_id": 0,
+          "memory_source": "npu-smi",
+          "used_bytes": 38638977024,
+          "total_bytes": 103079215104,
+          "free_bytes": 64440238080,
+          "allocated_bytes": 53080826880,
+          "reserved_bytes": 53578039296
+        },
+        {
+          "dp_rank": 1,
+          "device_id": 1,
+          "memory_source": "npu-smi",
+          "used_bytes": 38960889856,
+          "total_bytes": 103079215104,
+          "free_bytes": 64118325248,
+          "allocated_bytes": null,
+          "reserved_bytes": null
+        },
+        {
+          "dp_rank": 2,
+          "device_id": 2,
+          "memory_source": "npu-smi",
+          "used_bytes": 38958792704,
+          "total_bytes": 103079215104,
+          "free_bytes": 64120422400,
+          "allocated_bytes": null,
+          "reserved_bytes": null
+        },
+        {
+          "dp_rank": 3,
+          "device_id": 3,
+          "memory_source": "npu-smi",
+          "used_bytes": 38953549824,
+          "total_bytes": 103079215104,
+          "free_bytes": 64125665280,
+          "allocated_bytes": null,
+          "reserved_bytes": null
+        },
+        {
+          "dp_rank": 4,
+          "device_id": 4,
+          "memory_source": "npu-smi",
+          "used_bytes": 38948306944,
+          "total_bytes": 103079215104,
+          "free_bytes": 64130908160,
+          "allocated_bytes": null,
+          "reserved_bytes": null
+        },
+        {
+          "dp_rank": 5,
+          "device_id": 5,
+          "memory_source": "npu-smi",
+          "used_bytes": 38961938432,
+          "total_bytes": 103079215104,
+          "free_bytes": 64117276672,
+          "allocated_bytes": null,
+          "reserved_bytes": null
+        },
+        {
+          "dp_rank": 6,
+          "device_id": 6,
+          "memory_source": "npu-smi",
+          "used_bytes": 38965084160,
+          "total_bytes": 103079215104,
+          "free_bytes": 64114130944,
+          "allocated_bytes": null,
+          "reserved_bytes": null
+        },
+        {
+          "dp_rank": 7,
+          "device_id": 7,
+          "memory_source": "npu-smi",
+          "used_bytes": 38951452672,
+          "total_bytes": 103079215104,
+          "free_bytes": 64127762432,
+          "allocated_bytes": null,
+          "reserved_bytes": null
+        }
+      ]
+    },
+    {
+      "stage": "cycle_1_after_reload",
+      "workers": [
+        {
+          "dp_rank": 0,
+          "device_id": 0,
+          "memory_source": "npu-smi",
+          "used_bytes": 40077623296,
+          "total_bytes": 103079215104,
+          "free_bytes": 63001591808,
+          "allocated_bytes": 53080826880,
+          "reserved_bytes": 54997811200
+        },
+        {
+          "dp_rank": 1,
+          "device_id": 1,
+          "memory_source": "npu-smi",
+          "used_bytes": 40380661760,
+          "total_bytes": 103079215104,
+          "free_bytes": 62698553344,
+          "allocated_bytes": null,
+          "reserved_bytes": null
+        },
+        {
+          "dp_rank": 2,
+          "device_id": 2,
+          "memory_source": "npu-smi",
+          "used_bytes": 40378564608,
+          "total_bytes": 103079215104,
+          "free_bytes": 62700650496,
+          "allocated_bytes": null,
+          "reserved_bytes": null
+        },
+        {
+          "dp_rank": 3,
+          "device_id": 3,
+          "memory_source": "npu-smi",
+          "used_bytes": 40374370304,
+          "total_bytes": 103079215104,
+          "free_bytes": 62704844800,
+          "allocated_bytes": null,
+          "reserved_bytes": null
+        },
+        {
+          "dp_rank": 4,
+          "device_id": 4,
+          "memory_source": "npu-smi",
+          "used_bytes": 40368078848,
+          "total_bytes": 103079215104,
+          "free_bytes": 62711136256,
+          "allocated_bytes": null,
+          "reserved_bytes": null
+        },
+        {
+          "dp_rank": 5,
+          "device_id": 5,
+          "memory_source": "npu-smi",
+          "used_bytes": 40381710336,
+          "total_bytes": 103079215104,
+          "free_bytes": 62697504768,
+          "allocated_bytes": null,
+          "reserved_bytes": null
+        },
+        {
+          "dp_rank": 6,
+          "device_id": 6,
+          "memory_source": "npu-smi",
+          "used_bytes": 40384856064,
+          "total_bytes": 103079215104,
+          "free_bytes": 62694359040,
+          "allocated_bytes": null,
+          "reserved_bytes": null
+        },
+        {
+          "dp_rank": 7,
+          "device_id": 7,
+          "memory_source": "npu-smi",
+          "used_bytes": 40371224576,
+          "total_bytes": 103079215104,
+          "free_bytes": 62707990528,
+          "allocated_bytes": null,
+          "reserved_bytes": null
+        }
+      ]
+    },
+    {
+      "stage": "cycle_1_after_wakeup",
+      "workers": [
+        {
+          "dp_rank": 0,
+          "device_id": 0,
+          "memory_source": "npu-smi",
+          "used_bytes": 61906878464,
+          "total_bytes": 103079215104,
+          "free_bytes": 41172336640,
+          "allocated_bytes": 53080826880,
+          "reserved_bytes": 53578039296
+        },
+        {
+          "dp_rank": 1,
+          "device_id": 1,
+          "memory_source": "npu-smi",
+          "used_bytes": 62224596992,
+          "total_bytes": 103079215104,
+          "free_bytes": 40854618112,
+          "allocated_bytes": null,
+          "reserved_bytes": null
+        },
+        {
+          "dp_rank": 2,
+          "device_id": 2,
+          "memory_source": "npu-smi",
+          "used_bytes": 62216208384,
+          "total_bytes": 103079215104,
+          "free_bytes": 40863006720,
+          "allocated_bytes": null,
+          "reserved_bytes": null
+        },
+        {
+          "dp_rank": 3,
+          "device_id": 3,
+          "memory_source": "npu-smi",
+          "used_bytes": 62203625472,
+          "total_bytes": 103079215104,
+          "free_bytes": 40875589632,
+          "allocated_bytes": null,
+          "reserved_bytes": null
+        },
+        {
+          "dp_rank": 4,
+          "device_id": 4,
+          "memory_source": "npu-smi",
+          "used_bytes": 62212014080,
+          "total_bytes": 103079215104,
+          "free_bytes": 40867201024,
+          "allocated_bytes": null,
+          "reserved_bytes": null
+        },
+        {
+          "dp_rank": 5,
+          "device_id": 5,
+          "memory_source": "npu-smi",
+          "used_bytes": 62196285440,
+          "total_bytes": 103079215104,
+          "free_bytes": 40882929664,
+          "allocated_bytes": null,
+          "reserved_bytes": null
+        },
+        {
+          "dp_rank": 6,
+          "device_id": 6,
+          "memory_source": "npu-smi",
+          "used_bytes": 62215159808,
+          "total_bytes": 103079215104,
+          "free_bytes": 40864055296,
+          "allocated_bytes": null,
+          "reserved_bytes": null
+        },
+        {
+          "dp_rank": 7,
+          "device_id": 7,
+          "memory_source": "npu-smi",
+          "used_bytes": 62215159808,
+          "total_bytes": 103079215104,
+          "free_bytes": 40864055296,
+          "allocated_bytes": null,
+          "reserved_bytes": null
+        }
+      ]
+    },
+    {
+      "stage": "cycle_1_steady",
+      "workers": [
+        {
+          "dp_rank": 0,
+          "device_id": 0,
+          "memory_source": "npu-smi",
+          "used_bytes": 61942530048,
+          "total_bytes": 103079215104,
+          "free_bytes": 41136685056,
+          "allocated_bytes": 53080826880,
+          "reserved_bytes": 53699674112
+        },
+        {
+          "dp_rank": 1,
+          "device_id": 1,
+          "memory_source": "npu-smi",
+          "used_bytes": 62259200000,
+          "total_bytes": 103079215104,
+          "free_bytes": 40820015104,
+          "allocated_bytes": null,
+          "reserved_bytes": null
+        },
+        {
+          "dp_rank": 2,
+          "device_id": 2,
+          "memory_source": "npu-smi",
+          "used_bytes": 62251859968,
+          "total_bytes": 103079215104,
+          "free_bytes": 40827355136,
+          "allocated_bytes": null,
+          "reserved_bytes": null
+        },
+        {
+          "dp_rank": 3,
+          "device_id": 3,
+          "memory_source": "npu-smi",
+          "used_bytes": 62239277056,
+          "total_bytes": 103079215104,
+          "free_bytes": 40839938048,
+          "allocated_bytes": null,
+          "reserved_bytes": null
+        },
+        {
+          "dp_rank": 4,
+          "device_id": 4,
+          "memory_source": "npu-smi",
+          "used_bytes": 62247665664,
+          "total_bytes": 103079215104,
+          "free_bytes": 40831549440,
+          "allocated_bytes": null,
+          "reserved_bytes": null
+        },
+        {
+          "dp_rank": 5,
+          "device_id": 5,
+          "memory_source": "npu-smi",
+          "used_bytes": 62231937024,
+          "total_bytes": 103079215104,
+          "free_bytes": 40847278080,
+          "allocated_bytes": null,
+          "reserved_bytes": null
+        },
+        {
+          "dp_rank": 6,
+          "device_id": 6,
+          "memory_source": "npu-smi",
+          "used_bytes": 62249762816,
+          "total_bytes": 103079215104,
+          "free_bytes": 40829452288,
+          "allocated_bytes": null,
+          "reserved_bytes": null
+        },
+        {
+          "dp_rank": 7,
+          "device_id": 7,
+          "memory_source": "npu-smi",
+          "used_bytes": 62250811392,
+          "total_bytes": 103079215104,
+          "free_bytes": 40828403712,
+          "allocated_bytes": null,
+          "reserved_bytes": null
+        }
+      ]
+    }
+  ],
+  "max_tokens": 32,
+  "dp_ranks": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "reference_pr": "https://github.com/vllm-project/vllm/pull/53200",
+  "checkpoint": "/mnt/share/c00954197/Workspace/dsv41/basic/model",
+  "inference_world_size": {
+    "world_size": 8
+  },
+  "control_rpc_fanout": "DPLBAsyncMPClient broadcasts to every engine and returns only the first engine result",
+  "phase": "cycle_1_steady",
+  "baseline_repeat_identical": true,
+  "error": "Traceback (most recent call last):\n  File \"/mnt/share/c00954197/Workspace/dsv41/basic/scripts/verify_sleep2.py\", line 198, in main\n    raise AssertionError(\"Restored output differs from the initial loaded-checkpoint baseline\")\nAssertionError: Restored output differs from the initial loaded-checkpoint baseline\n"
+}

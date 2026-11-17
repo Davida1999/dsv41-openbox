@@ -1,0 +1,8 @@
+{
+  "status": "failed",
+  "completed": [
+    "/mnt/share/c00954197/Workspace/dsv41/basic/weight_update/runs/transfer_20261117_01/hccl_oracle"
+  ],
+  "current": "/mnt/share/c00954197/Workspace/dsv41/basic/weight_update/runs/transfer_20261117_01/hccl_producer",
+  "error": "RuntimeError('producer failed with exit 143, see /mnt/share/c00954197/Workspace/dsv41/basic/weight_update/runs/transfer_20261117_01/hccl_producer')"
+}

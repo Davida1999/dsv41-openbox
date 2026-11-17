@@ -1,0 +1,174 @@
+{
+  "files": [
+    {
+      "path": "/root/ascend/log/run/device-0/device-91322_20261116203804299.log",
+      "bytes": 291437,
+      "sha256": "0c2e1e5c8c77be7a042f22c13c1eadde1a4e103d06d06a12ae3b81ba9e501f31",
+      "error_lines": 0
+    },
+    {
+      "path": "/root/ascend/log/run/device-1/device-91323_20261116203804272.log",
+      "bytes": 288525,
+      "sha256": "45ce9a9f9b622cd8a34daabec781e7529136acc38d80e2ab88467ee822e68f17",
+      "error_lines": 0
+    },
+    {
+      "path": "/root/ascend/log/run/device-2/device-91324_20261116203804318.log",
+      "bytes": 290456,
+      "sha256": "22943f94f49eab7887606911be981e2c48ebca2da96a341c9aa23cf8fa784257",
+      "error_lines": 0
+    },
+    {
+      "path": "/root/ascend/log/run/device-3/device-91325_20261116203804457.log",
+      "bytes": 290752,
+      "sha256": "538f011ab5b2eb41df23318e471527f304f3da19dd071d6e347f82bd87c2d566",
+      "error_lines": 0
+    },
+    {
+      "path": "/root/ascend/log/run/device-4/device-91326_20261116203804642.log",
+      "bytes": 288804,
+      "sha256": "37dd89478c1a39555cfa28268010d244af91e7586c900d2b428003ca617bd236",
+      "error_lines": 0
+    },
+    {
+      "path": "/root/ascend/log/run/device-5/device-91327_20261116203804077.log",
+      "bytes": 288057,
+      "sha256": "008ee218ddcc171242887e0dce25860f93e311daeab72abb6307fd52bca90dd4",
+      "error_lines": 0
+    },
+    {
+      "path": "/root/ascend/log/run/device-6/device-91328_20261116203804507.log",
+      "bytes": 289934,
+      "sha256": "65a6d8f39df9e599f59e91a94aebb97fb9e21d6abb7991e878a8bde705906ac8",
+      "error_lines": 0
+    },
+    {
+      "path": "/root/ascend/log/run/device-7/device-91329_20261116203804144.log",
+      "bytes": 290519,
+      "sha256": "7c96e84e8efebb65c0e7ee4b5c315183a961ec32ddf8c42580067ed000160461",
+      "error_lines": 0
+    },
+    {
+      "path": "/root/ascend/log/run/plog/plog-90826_20261116203648646.log",
+      "bytes": 2947,
+      "sha256": "a3aac3fae92531ae6c6305c2ecf1be55fc571a09fe845633f7f1ca0fddb7b741",
+      "error_lines": 0
+    },
+    {
+      "path": "/root/ascend/log/run/plog/plog-91268_20261116203700689.log",
+      "bytes": 1918,
+      "sha256": "ec093b442b18ed0deb7d75b4297b4312d02f17580aa084025c9f2eaec054baed",
+      "error_lines": 0
+    },
+    {
+      "path": "/root/ascend/log/run/plog/plog-91322_20261116203748281.log",
+      "bytes": 490708,
+      "sha256": "b285d46b140149e3ee84227ea7f5d14d23a2304f0b846af55dad7916fd6fdded",
+      "error_lines": 0
+    },
+    {
+      "path": "/root/ascend/log/run/plog/plog-91323_20261116203748395.log",
+      "bytes": 490131,
+      "sha256": "2fea3c2f1aeae5f34ef243b0577bf7f953644ebd606cdb687b52f2920fe0bafb",
+      "error_lines": 0
+    },
+    {
+      "path": "/root/ascend/log/run/plog/plog-91324_20261116203748373.log",
+      "bytes": 491500,
+      "sha256": "b55facd8d8ac92b0cb0ef627e3c7e3a5283e620e159aa21fd2e3ab91cfb1db2e",
+      "error_lines": 0
+    },
+    {
+      "path": "/root/ascend/log/run/plog/plog-91325_20261116203748285.log",
+      "bytes": 501486,
+      "sha256": "b6e6f05b6936086d3a3e8378b223e7e8fdd1d30e3b0a5ea5e7fd770c707f9d3a",
+      "error_lines": 0
+    },
+    {
+      "path": "/root/ascend/log/run/plog/plog-91326_20261116203748364.log",
+      "bytes": 503467,
+      "sha256": "66b120c657068ed1a8324a781f8ad721ff90228725706c6fe21ce8a8c27c0d00",
+      "error_lines": 0
+    },
+    {
+      "path": "/root/ascend/log/run/plog/plog-91327_20261116203748326.log",
+      "bytes": 475713,
+      "sha256": "d3495bbe74616500f2338a3d0baeb5be76d2c6e093ca9b69afe585d45c8d1c87",
+      "error_lines": 0
+    },
+    {
+      "path": "/root/ascend/log/run/plog/plog-91328_20261116203748397.log",
+      "bytes": 506672,
+      "sha256": "50ae35c4510954e0e15ed470ed2ce55a28598f067b4245cb137fc402c9fb25db",
+      "error_lines": 0
+    },
+    {
+      "path": "/root/ascend/log/run/plog/plog-91329_20261116203748396.log",
+      "bytes": 499539,
+      "sha256": "8dc9b3e2a431423a7659d044abbce4ec7f88cede03523dc67e820447c16b49da",
+      "error_lines": 0
+    },
+    {
+      "path": "/root/ascend/log/vllm_ascend/vllm_ascend_20261116_203659_90826.log",
+      "bytes": 2597,
+      "sha256": "c5299137ee0b6af9b579cb2c4fbee2353a363509f663b46032783a67fc71baef",
+      "error_lines": 0
+    },
+    {
+      "path": "/root/ascend/log/vllm_ascend/vllm_ascend_20261116_203800_91322.log",
+      "bytes": 6596,
+      "sha256": "e33be9b3e8bd9ecb0f87e13d7c09b4badc7df7f009930a12027c3ec897721027",
+      "error_lines": 0
+    },
+    {
+      "path": "/root/ascend/log/vllm_ascend/vllm_ascend_20261116_203800_91323.log",
+      "bytes": 4412,
+      "sha256": "7c4426d48d94b23bfcba9ed91945f06440258a4e8ecd43b8c0f9c104e9200965",
+      "error_lines": 0
+    },
+    {
+      "path": "/root/ascend/log/vllm_ascend/vllm_ascend_20261116_203800_91324.log",
+      "bytes": 4409,
+      "sha256": "47b2fc064a07b9a0ec4ef86bd8298865aae9b4d90f227cc5b06484e34bc713a8",
+      "error_lines": 0
+    },
+    {
+      "path": "/root/ascend/log/vllm_ascend/vllm_ascend_20261116_203800_91325.log",
+      "bytes": 4412,
+      "sha256": "9e652599fd12b3d9c7b66bbc9211f48bcf2fd3a313f1d1cabfb885c8e91b05d0",
+      "error_lines": 0
+    },
+    {
+      "path": "/root/ascend/log/vllm_ascend/vllm_ascend_20261116_203800_91326.log",
+      "bytes": 4412,
+      "sha256": "7944f1e9937e60c19f0ed343eeb60ebd758c070dfeaf1619c5dd9dc54e338be3",
+      "error_lines": 0
+    },
+    {
+      "path": "/root/ascend/log/vllm_ascend/vllm_ascend_20261116_203800_91327.log",
+      "bytes": 4413,
+      "sha256": "bbb8cd07d7a446c2f6a0d9f39e8e3134975de5d74323cee4dda2f7a6d8943819",
+      "error_lines": 0
+    },
+    {
+      "path": "/root/ascend/log/vllm_ascend/vllm_ascend_20261116_203800_91328.log",
+      "bytes": 4412,
+      "sha256": "0e459299e00ac0859403c78b7dc6397124d160afa56e523feaae38914ffa1834",
+      "error_lines": 0
+    },
+    {
+      "path": "/root/ascend/log/vllm_ascend/vllm_ascend_20261116_203800_91329.log",
+      "bytes": 4413,
+      "sha256": "76ef5d02c2107110ed0ab0567376636b33281261f527c69e650e99b1ad0bf158",
+      "error_lines": 0
+    },
+    {
+      "path": "/root/ascend/log/vllm_ascend/vllm_ascend_20261116_210531_91268.log",
+      "bytes": 1009,
+      "sha256": "92f787ceb72e4cda0d6e8be45b1922e2d1d98dd559fb00635b83791a97df2a34",
+      "error_lines": 0
+    }
+  ],
+  "total_error_lines": 0,
+  "error_samples": []
+}

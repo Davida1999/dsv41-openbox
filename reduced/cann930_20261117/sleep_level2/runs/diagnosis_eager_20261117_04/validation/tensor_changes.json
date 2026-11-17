@@ -1,0 +1,3077 @@
+[
+  {
+    "name": "buffer:language_model.model.layers.2.self_attn.compressor._ring_pooled",
+    "before": {
+      "shape": [
+        8192,
+        512
+      ],
+      "dtype": "torch.bfloat16",
+      "device": "npu:0",
+      "data_ptr": 20070828867584,
+      "stride": [
+        512,
+        1
+      ],
+      "digest_kind": "head_tail_sample",
+      "sha256": "01099398cae1412c14b29129ef6d70707eecf66d5054a7a09ff961aed2965b03"
+    },
+    "after": {
+      "shape": [
+        8192,
+        512
+      ],
+      "dtype": "torch.bfloat16",
+      "device": "npu:0",
+      "data_ptr": 20070828867584,
+      "stride": [
+        512,
+        1
+      ],
+      "digest_kind": "head_tail_sample",
+      "sha256": "076a27c79e5ace2a3d47f9dd2e83e4ff6ea8872b3c2218f66c92b89b55f36560"
+    }
+  },
+  {
+    "name": "buffer:language_model.model.layers.8.self_attn.compressor._ring_pooled",
+    "before": {
+      "shape": [
+        8192,
+        512
+      ],
+      "dtype": "torch.bfloat16",
+      "device": "npu:0",
+      "data_ptr": 20075627151360,
+      "stride": [
+        512,
+        1
+      ],
+      "digest_kind": "head_tail_sample",
+      "sha256": "b8b640c6e97c5a92e011db9def764aaa7bebde5bac0790ca6a1abb584132bde3"
+    },
+    "after": {
+      "shape": [
+        8192,
+        512
+      ],
+      "dtype": "torch.bfloat16",
+      "device": "npu:0",
+      "data_ptr": 20075627151360,
+      "stride": [
+        512,
+        1
+      ],
+      "digest_kind": "head_tail_sample",
+      "sha256": "076a27c79e5ace2a3d47f9dd2e83e4ff6ea8872b3c2218f66c92b89b55f36560"
+    }
+  },
+  {
+    "name": "buffer:language_model.model.layers.14.self_attn.compressor._ring_pooled",
+    "before": {
+      "shape": [
+        8192,
+        512
+      ],
+      "dtype": "torch.bfloat16",
+      "device": "npu:0",
+      "data_ptr": 20078930165760,
+      "stride": [
+        512,
+        1
+      ],
+      "digest_kind": "head_tail_sample",
+      "sha256": "7cfe43a5a453c496b4ea20061f8ffd67e9b20ad2f3b0045c61d82ffb5b1a0762"
+    },
+    "after": {
+      "shape": [
+        8192,
+        512
+      ],
+      "dtype": "torch.bfloat16",
+      "device": "npu:0",
+      "data_ptr": 20078930165760,
+      "stride": [
+        512,
+        1
+      ],
+      "digest_kind": "head_tail_sample",
+      "sha256": "076a27c79e5ace2a3d47f9dd2e83e4ff6ea8872b3c2218f66c92b89b55f36560"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.topk_indices_buffer",
+    "before": {
+      "shape": [
+        8192,
+        512
+      ],
+      "dtype": "torch.int32",
+      "device": "npu:0",
+      "data_ptr": 20067129491456,
+      "stride": [
+        512,
+        1
+      ],
+      "digest_kind": "head_tail_sample",
+      "sha256": "849d1ba6b69a70b831e61b4b723eae353ed7da7fc1b977d9417cb26f968b7a3e"
+    },
+    "after": {
+      "shape": [
+        8192,
+        512
+      ],
+      "dtype": "torch.int32",
+      "device": "npu:0",
+      "data_ptr": 20067129491456,
+      "stride": [
+        512,
+        1
+      ],
+      "digest_kind": "head_tail_sample",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.candidate_indices_buffer",
+    "before": {
+      "shape": [
+        8192,
+        1,
+        2048
+      ],
+      "dtype": "torch.int32",
+      "device": "npu:0",
+      "data_ptr": 20095266979840,
+      "stride": [
+        2048,
+        2048,
+        1
+      ],
+      "digest_kind": "head_tail_sample",
+      "sha256": "d4d9964b4fde3a0d38482007228399957c04702f47493fecd8561dbe49d185b0"
+    },
+    "after": {
+      "shape": [
+        8192,
+        1,
+        2048
+      ],
+      "dtype": "torch.int32",
+      "device": "npu:0",
+      "data_ptr": 20095266979840,
+      "stride": [
+        2048,
+        2048,
+        1
+      ],
+      "digest_kind": "head_tail_sample",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.candidate_lengths_buffer",
+    "before": {
+      "shape": [
+        8192,
+        1
+      ],
+      "dtype": "torch.int32",
+      "device": "npu:0",
+      "data_ptr": 20087561256960,
+      "stride": [
+        1,
+        1
+      ],
+      "digest_kind": "full",
+      "sha256": "5b9ab057d5a75558e241854e9f97a56954476f9eaf2e0743f3ea4234bd4faef7"
+    },
+    "after": {
+      "shape": [
+        8192,
+        1
+      ],
+      "dtype": "torch.int32",
+      "device": "npu:0",
+      "data_ptr": 20087561256960,
+      "stride": [
+        1,
+        1
+      ],
+      "digest_kind": "full",
+      "sha256": "c35020473aed1b4642cd726cad727b63fff2824ad68cedd7ffb73c7cbd890479"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.topk_lengths_buffer",
+    "before": {
+      "shape": [
+        8192,
+        1
+      ],
+      "dtype": "torch.int32",
+      "device": "npu:0",
+      "data_ptr": 20087561289728,
+      "stride": [
+        1,
+        1
+      ],
+      "digest_kind": "full",
+      "sha256": "6cc21093775fbcf7e36dfd40f20ec49224866a2cbed7955b09d7eb916219d9f0"
+    },
+    "after": {
+      "shape": [
+        8192,
+        1
+      ],
+      "dtype": "torch.int32",
+      "device": "npu:0",
+      "data_ptr": 20087561289728,
+      "stride": [
+        1,
+        1
+      ],
+      "digest_kind": "full",
+      "sha256": "c35020473aed1b4642cd726cad727b63fff2824ad68cedd7ffb73c7cbd890479"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.0.self_attn.q_norm_without_weight.weight",
+    "before": {
+      "shape": [
+        512
+      ],
+      "dtype": "torch.bfloat16",
+      "device": "npu:0",
+      "data_ptr": 20066108673024,
+      "stride": [
+        1
+      ],
+      "digest_kind": "full",
+      "sha256": "ad755ff209a358c0a9891662926947d163a48a087efa7da7b8ce9348cfe8c2d1"
+    },
+    "after": {
+      "shape": [
+        512
+      ],
+      "dtype": "torch.bfloat16",
+      "device": "npu:0",
+      "data_ptr": 20066108673024,
+      "stride": [
+        1
+      ],
+      "digest_kind": "full",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.0.self_attn.dsa_attn.dsa_attn._k_scale_cpu",
+    "before": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20066108703744,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c"
+    },
+    "after": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20066108703744,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.0.self_attn.dsa_attn.dsa_attn._v_scale_cpu",
+    "before": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20066108704256,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c"
+    },
+    "after": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20066108704256,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.1.self_attn.q_norm_without_weight.weight",
+    "before": {
+      "shape": [
+        512
+      ],
+      "dtype": "torch.bfloat16",
+      "device": "npu:0",
+      "data_ptr": 20066108228608,
+      "stride": [
+        1
+      ],
+      "digest_kind": "full",
+      "sha256": "ad755ff209a358c0a9891662926947d163a48a087efa7da7b8ce9348cfe8c2d1"
+    },
+    "after": {
+      "shape": [
+        512
+      ],
+      "dtype": "torch.bfloat16",
+      "device": "npu:0",
+      "data_ptr": 20066108228608,
+      "stride": [
+        1
+      ],
+      "digest_kind": "full",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.1.self_attn.dsa_attn.dsa_attn._k_scale_cpu",
+    "before": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20066108232704,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c"
+    },
+    "after": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20066108232704,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.1.self_attn.dsa_attn.dsa_attn._v_scale_cpu",
+    "before": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20066108233216,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c"
+    },
+    "after": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20066108233216,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.2.self_attn.q_norm_without_weight.weight",
+    "before": {
+      "shape": [
+        512
+      ],
+      "dtype": "torch.bfloat16",
+      "device": "npu:0",
+      "data_ptr": 20066108265472,
+      "stride": [
+        1
+      ],
+      "digest_kind": "full",
+      "sha256": "ad755ff209a358c0a9891662926947d163a48a087efa7da7b8ce9348cfe8c2d1"
+    },
+    "after": {
+      "shape": [
+        512
+      ],
+      "dtype": "torch.bfloat16",
+      "device": "npu:0",
+      "data_ptr": 20066108265472,
+      "stride": [
+        1
+      ],
+      "digest_kind": "full",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.2.self_attn.dsa_attn.dsa_attn._k_scale_cpu",
+    "before": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20066108294144,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c"
+    },
+    "after": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20066108294144,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.2.self_attn.dsa_attn.dsa_attn._v_scale_cpu",
+    "before": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20066108294656,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c"
+    },
+    "after": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20066108294656,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.3.self_attn.q_norm_without_weight.weight",
+    "before": {
+      "shape": [
+        512
+      ],
+      "dtype": "torch.bfloat16",
+      "device": "npu:0",
+      "data_ptr": 20066108328448,
+      "stride": [
+        1
+      ],
+      "digest_kind": "full",
+      "sha256": "ad755ff209a358c0a9891662926947d163a48a087efa7da7b8ce9348cfe8c2d1"
+    },
+    "after": {
+      "shape": [
+        512
+      ],
+      "dtype": "torch.bfloat16",
+      "device": "npu:0",
+      "data_ptr": 20066108328448,
+      "stride": [
+        1
+      ],
+      "digest_kind": "full",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.3.self_attn.dsa_attn.dsa_attn._k_scale_cpu",
+    "before": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20066108357120,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c"
+    },
+    "after": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20066108357120,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.3.self_attn.dsa_attn.dsa_attn._v_scale_cpu",
+    "before": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20066108357632,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c"
+    },
+    "after": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20066108357632,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.4.self_attn.q_norm_without_weight.weight",
+    "before": {
+      "shape": [
+        512
+      ],
+      "dtype": "torch.bfloat16",
+      "device": "npu:0",
+      "data_ptr": 20066108362752,
+      "stride": [
+        1
+      ],
+      "digest_kind": "full",
+      "sha256": "ad755ff209a358c0a9891662926947d163a48a087efa7da7b8ce9348cfe8c2d1"
+    },
+    "after": {
+      "shape": [
+        512
+      ],
+      "dtype": "torch.bfloat16",
+      "device": "npu:0",
+      "data_ptr": 20066108362752,
+      "stride": [
+        1
+      ],
+      "digest_kind": "full",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.4.self_attn.dsa_attn.dsa_attn._k_scale_cpu",
+    "before": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20066108393984,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c"
+    },
+    "after": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20066108393984,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.4.self_attn.dsa_attn.dsa_attn._v_scale_cpu",
+    "before": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20066108394496,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c"
+    },
+    "after": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20066108394496,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.5.self_attn.q_norm_without_weight.weight",
+    "before": {
+      "shape": [
+        512
+      ],
+      "dtype": "torch.bfloat16",
+      "device": "npu:0",
+      "data_ptr": 20066108426752,
+      "stride": [
+        1
+      ],
+      "digest_kind": "full",
+      "sha256": "ad755ff209a358c0a9891662926947d163a48a087efa7da7b8ce9348cfe8c2d1"
+    },
+    "after": {
+      "shape": [
+        512
+      ],
+      "dtype": "torch.bfloat16",
+      "device": "npu:0",
+      "data_ptr": 20066108426752,
+      "stride": [
+        1
+      ],
+      "digest_kind": "full",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.5.self_attn.dsa_attn.dsa_attn._k_scale_cpu",
+    "before": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20066108455424,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c"
+    },
+    "after": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20066108455424,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.5.self_attn.dsa_attn.dsa_attn._v_scale_cpu",
+    "before": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20066108455936,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c"
+    },
+    "after": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20066108455936,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.6.self_attn.q_norm_without_weight.weight",
+    "before": {
+      "shape": [
+        512
+      ],
+      "dtype": "torch.bfloat16",
+      "device": "npu:0",
+      "data_ptr": 20066108461056,
+      "stride": [
+        1
+      ],
+      "digest_kind": "full",
+      "sha256": "ad755ff209a358c0a9891662926947d163a48a087efa7da7b8ce9348cfe8c2d1"
+    },
+    "after": {
+      "shape": [
+        512
+      ],
+      "dtype": "torch.bfloat16",
+      "device": "npu:0",
+      "data_ptr": 20066108461056,
+      "stride": [
+        1
+      ],
+      "digest_kind": "full",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.6.self_attn.dsa_attn.dsa_attn._k_scale_cpu",
+    "before": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20066108492288,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c"
+    },
+    "after": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20066108492288,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.6.self_attn.dsa_attn.dsa_attn._v_scale_cpu",
+    "before": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20066108492800,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c"
+    },
+    "after": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20066108492800,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.7.self_attn.q_norm_without_weight.weight",
+    "before": {
+      "shape": [
+        512
+      ],
+      "dtype": "torch.bfloat16",
+      "device": "npu:0",
+      "data_ptr": 20066108525056,
+      "stride": [
+        1
+      ],
+      "digest_kind": "full",
+      "sha256": "ad755ff209a358c0a9891662926947d163a48a087efa7da7b8ce9348cfe8c2d1"
+    },
+    "after": {
+      "shape": [
+        512
+      ],
+      "dtype": "torch.bfloat16",
+      "device": "npu:0",
+      "data_ptr": 20066108525056,
+      "stride": [
+        1
+      ],
+      "digest_kind": "full",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.7.self_attn.dsa_attn.dsa_attn._k_scale_cpu",
+    "before": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20066108553728,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c"
+    },
+    "after": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20066108553728,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.7.self_attn.dsa_attn.dsa_attn._v_scale_cpu",
+    "before": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20066108554240,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c"
+    },
+    "after": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20066108554240,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.8.self_attn.q_norm_without_weight.weight",
+    "before": {
+      "shape": [
+        512
+      ],
+      "dtype": "torch.bfloat16",
+      "device": "npu:0",
+      "data_ptr": 20066108559360,
+      "stride": [
+        1
+      ],
+      "digest_kind": "full",
+      "sha256": "ad755ff209a358c0a9891662926947d163a48a087efa7da7b8ce9348cfe8c2d1"
+    },
+    "after": {
+      "shape": [
+        512
+      ],
+      "dtype": "torch.bfloat16",
+      "device": "npu:0",
+      "data_ptr": 20066108559360,
+      "stride": [
+        1
+      ],
+      "digest_kind": "full",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.8.self_attn.dsa_attn.dsa_attn._k_scale_cpu",
+    "before": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20066108590592,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c"
+    },
+    "after": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20066108590592,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.8.self_attn.dsa_attn.dsa_attn._v_scale_cpu",
+    "before": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20066108591104,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c"
+    },
+    "after": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20066108591104,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.9.self_attn.q_norm_without_weight.weight",
+    "before": {
+      "shape": [
+        512
+      ],
+      "dtype": "torch.bfloat16",
+      "device": "npu:0",
+      "data_ptr": 20066108624896,
+      "stride": [
+        1
+      ],
+      "digest_kind": "full",
+      "sha256": "ad755ff209a358c0a9891662926947d163a48a087efa7da7b8ce9348cfe8c2d1"
+    },
+    "after": {
+      "shape": [
+        512
+      ],
+      "dtype": "torch.bfloat16",
+      "device": "npu:0",
+      "data_ptr": 20066108624896,
+      "stride": [
+        1
+      ],
+      "digest_kind": "full",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.9.self_attn.dsa_attn.dsa_attn._k_scale_cpu",
+    "before": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20066108653568,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c"
+    },
+    "after": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20066108653568,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.9.self_attn.dsa_attn.dsa_attn._v_scale_cpu",
+    "before": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20066108654080,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c"
+    },
+    "after": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20066108654080,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.10.self_attn.q_norm_without_weight.weight",
+    "before": {
+      "shape": [
+        512
+      ],
+      "dtype": "torch.bfloat16",
+      "device": "npu:0",
+      "data_ptr": 20066108686848,
+      "stride": [
+        1
+      ],
+      "digest_kind": "full",
+      "sha256": "ad755ff209a358c0a9891662926947d163a48a087efa7da7b8ce9348cfe8c2d1"
+    },
+    "after": {
+      "shape": [
+        512
+      ],
+      "dtype": "torch.bfloat16",
+      "device": "npu:0",
+      "data_ptr": 20066108686848,
+      "stride": [
+        1
+      ],
+      "digest_kind": "full",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.10.self_attn.dsa_attn.dsa_attn._k_scale_cpu",
+    "before": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20066108690432,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c"
+    },
+    "after": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20066108690432,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.10.self_attn.dsa_attn.dsa_attn._v_scale_cpu",
+    "before": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20066108690944,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c"
+    },
+    "after": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20066108690944,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.11.self_attn.q_norm_without_weight.weight",
+    "before": {
+      "shape": [
+        512
+      ],
+      "dtype": "torch.bfloat16",
+      "device": "npu:0",
+      "data_ptr": 20070377977856,
+      "stride": [
+        1
+      ],
+      "digest_kind": "full",
+      "sha256": "ad755ff209a358c0a9891662926947d163a48a087efa7da7b8ce9348cfe8c2d1"
+    },
+    "after": {
+      "shape": [
+        512
+      ],
+      "dtype": "torch.bfloat16",
+      "device": "npu:0",
+      "data_ptr": 20070377977856,
+      "stride": [
+        1
+      ],
+      "digest_kind": "full",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.11.self_attn.dsa_attn.dsa_attn._k_scale_cpu",
+    "before": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20072528738304,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c"
+    },
+    "after": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20072528738304,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.11.self_attn.dsa_attn.dsa_attn._v_scale_cpu",
+    "before": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20072528738816,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c"
+    },
+    "after": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20072528738816,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.12.self_attn.q_norm_without_weight.weight",
+    "before": {
+      "shape": [
+        512
+      ],
+      "dtype": "torch.bfloat16",
+      "device": "npu:0",
+      "data_ptr": 20072529094656,
+      "stride": [
+        1
+      ],
+      "digest_kind": "full",
+      "sha256": "ad755ff209a358c0a9891662926947d163a48a087efa7da7b8ce9348cfe8c2d1"
+    },
+    "after": {
+      "shape": [
+        512
+      ],
+      "dtype": "torch.bfloat16",
+      "device": "npu:0",
+      "data_ptr": 20072529094656,
+      "stride": [
+        1
+      ],
+      "digest_kind": "full",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.12.self_attn.dsa_attn.dsa_attn._k_scale_cpu",
+    "before": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20072529098752,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c"
+    },
+    "after": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20072529098752,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.12.self_attn.dsa_attn.dsa_attn._v_scale_cpu",
+    "before": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20072529099264,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c"
+    },
+    "after": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20072529099264,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.13.self_attn.q_norm_without_weight.weight",
+    "before": {
+      "shape": [
+        512
+      ],
+      "dtype": "torch.bfloat16",
+      "device": "npu:0",
+      "data_ptr": 20072529455104,
+      "stride": [
+        1
+      ],
+      "digest_kind": "full",
+      "sha256": "ad755ff209a358c0a9891662926947d163a48a087efa7da7b8ce9348cfe8c2d1"
+    },
+    "after": {
+      "shape": [
+        512
+      ],
+      "dtype": "torch.bfloat16",
+      "device": "npu:0",
+      "data_ptr": 20072529455104,
+      "stride": [
+        1
+      ],
+      "digest_kind": "full",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.13.self_attn.dsa_attn.dsa_attn._k_scale_cpu",
+    "before": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20072529459200,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c"
+    },
+    "after": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20072529459200,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.13.self_attn.dsa_attn.dsa_attn._v_scale_cpu",
+    "before": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20072529459712,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c"
+    },
+    "after": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20072529459712,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.14.self_attn.q_norm_without_weight.weight",
+    "before": {
+      "shape": [
+        512
+      ],
+      "dtype": "torch.bfloat16",
+      "device": "npu:0",
+      "data_ptr": 20072529487872,
+      "stride": [
+        1
+      ],
+      "digest_kind": "full",
+      "sha256": "ad755ff209a358c0a9891662926947d163a48a087efa7da7b8ce9348cfe8c2d1"
+    },
+    "after": {
+      "shape": [
+        512
+      ],
+      "dtype": "torch.bfloat16",
+      "device": "npu:0",
+      "data_ptr": 20072529487872,
+      "stride": [
+        1
+      ],
+      "digest_kind": "full",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.14.self_attn.dsa_attn.dsa_attn._k_scale_cpu",
+    "before": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20072529491968,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c"
+    },
+    "after": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20072529491968,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.14.self_attn.dsa_attn.dsa_attn._v_scale_cpu",
+    "before": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20072529492480,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c"
+    },
+    "after": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20072529492480,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.15.self_attn.q_norm_without_weight.weight",
+    "before": {
+      "shape": [
+        512
+      ],
+      "dtype": "torch.bfloat16",
+      "device": "npu:0",
+      "data_ptr": 20072529653248,
+      "stride": [
+        1
+      ],
+      "digest_kind": "full",
+      "sha256": "ad755ff209a358c0a9891662926947d163a48a087efa7da7b8ce9348cfe8c2d1"
+    },
+    "after": {
+      "shape": [
+        512
+      ],
+      "dtype": "torch.bfloat16",
+      "device": "npu:0",
+      "data_ptr": 20072529653248,
+      "stride": [
+        1
+      ],
+      "digest_kind": "full",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.15.self_attn.dsa_attn.dsa_attn._k_scale_cpu",
+    "before": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20072529657344,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c"
+    },
+    "after": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20072529657344,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.15.self_attn.dsa_attn.dsa_attn._v_scale_cpu",
+    "before": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20076821413888,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c"
+    },
+    "after": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20076821413888,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.16.self_attn.q_norm_without_weight.weight",
+    "before": {
+      "shape": [
+        512
+      ],
+      "dtype": "torch.bfloat16",
+      "device": "npu:0",
+      "data_ptr": 20076821769728,
+      "stride": [
+        1
+      ],
+      "digest_kind": "full",
+      "sha256": "ad755ff209a358c0a9891662926947d163a48a087efa7da7b8ce9348cfe8c2d1"
+    },
+    "after": {
+      "shape": [
+        512
+      ],
+      "dtype": "torch.bfloat16",
+      "device": "npu:0",
+      "data_ptr": 20076821769728,
+      "stride": [
+        1
+      ],
+      "digest_kind": "full",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.16.self_attn.dsa_attn.dsa_attn._k_scale_cpu",
+    "before": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20076821773824,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c"
+    },
+    "after": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20076821773824,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.16.self_attn.dsa_attn.dsa_attn._v_scale_cpu",
+    "before": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20076821774336,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c"
+    },
+    "after": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20076821774336,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.17.self_attn.q_norm_without_weight.weight",
+    "before": {
+      "shape": [
+        512
+      ],
+      "dtype": "torch.bfloat16",
+      "device": "npu:0",
+      "data_ptr": 20076822130176,
+      "stride": [
+        1
+      ],
+      "digest_kind": "full",
+      "sha256": "ad755ff209a358c0a9891662926947d163a48a087efa7da7b8ce9348cfe8c2d1"
+    },
+    "after": {
+      "shape": [
+        512
+      ],
+      "dtype": "torch.bfloat16",
+      "device": "npu:0",
+      "data_ptr": 20076822130176,
+      "stride": [
+        1
+      ],
+      "digest_kind": "full",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.17.self_attn.dsa_attn.dsa_attn._k_scale_cpu",
+    "before": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20076822134272,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c"
+    },
+    "after": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20076822134272,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.17.self_attn.dsa_attn.dsa_attn._v_scale_cpu",
+    "before": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20076822134784,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c"
+    },
+    "after": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20076822134784,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.18.self_attn.q_norm_without_weight.weight",
+    "before": {
+      "shape": [
+        512
+      ],
+      "dtype": "torch.bfloat16",
+      "device": "npu:0",
+      "data_ptr": 20076822490624,
+      "stride": [
+        1
+      ],
+      "digest_kind": "full",
+      "sha256": "ad755ff209a358c0a9891662926947d163a48a087efa7da7b8ce9348cfe8c2d1"
+    },
+    "after": {
+      "shape": [
+        512
+      ],
+      "dtype": "torch.bfloat16",
+      "device": "npu:0",
+      "data_ptr": 20076822490624,
+      "stride": [
+        1
+      ],
+      "digest_kind": "full",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.18.self_attn.dsa_attn.dsa_attn._k_scale_cpu",
+    "before": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20076822494720,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c"
+    },
+    "after": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20076822494720,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.18.self_attn.dsa_attn.dsa_attn._v_scale_cpu",
+    "before": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20076822495232,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c"
+    },
+    "after": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20076822495232,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.19.self_attn.q_norm_without_weight.weight",
+    "before": {
+      "shape": [
+        512
+      ],
+      "dtype": "torch.bfloat16",
+      "device": "npu:0",
+      "data_ptr": 20076822523392,
+      "stride": [
+        1
+      ],
+      "digest_kind": "full",
+      "sha256": "ad755ff209a358c0a9891662926947d163a48a087efa7da7b8ce9348cfe8c2d1"
+    },
+    "after": {
+      "shape": [
+        512
+      ],
+      "dtype": "torch.bfloat16",
+      "device": "npu:0",
+      "data_ptr": 20076822523392,
+      "stride": [
+        1
+      ],
+      "digest_kind": "full",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.19.self_attn.dsa_attn.dsa_attn._k_scale_cpu",
+    "before": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20076822527488,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c"
+    },
+    "after": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20076822527488,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.19.self_attn.dsa_attn.dsa_attn._v_scale_cpu",
+    "before": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20078970339328,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c"
+    },
+    "after": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20078970339328,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.20.self_attn.q_norm_without_weight.weight",
+    "before": {
+      "shape": [
+        512
+      ],
+      "dtype": "torch.bfloat16",
+      "device": "npu:0",
+      "data_ptr": 20078970695168,
+      "stride": [
+        1
+      ],
+      "digest_kind": "full",
+      "sha256": "ad755ff209a358c0a9891662926947d163a48a087efa7da7b8ce9348cfe8c2d1"
+    },
+    "after": {
+      "shape": [
+        512
+      ],
+      "dtype": "torch.bfloat16",
+      "device": "npu:0",
+      "data_ptr": 20078970695168,
+      "stride": [
+        1
+      ],
+      "digest_kind": "full",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.20.self_attn.dsa_attn.dsa_attn._k_scale_cpu",
+    "before": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20078970699264,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c"
+    },
+    "after": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20078970699264,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.20.self_attn.dsa_attn.dsa_attn._v_scale_cpu",
+    "before": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20078970699776,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c"
+    },
+    "after": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20078970699776,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.21.self_attn.q_norm_without_weight.weight",
+    "before": {
+      "shape": [
+        512
+      ],
+      "dtype": "torch.bfloat16",
+      "device": "npu:0",
+      "data_ptr": 20078971515904,
+      "stride": [
+        1
+      ],
+      "digest_kind": "full",
+      "sha256": "ad755ff209a358c0a9891662926947d163a48a087efa7da7b8ce9348cfe8c2d1"
+    },
+    "after": {
+      "shape": [
+        512
+      ],
+      "dtype": "torch.bfloat16",
+      "device": "npu:0",
+      "data_ptr": 20078971515904,
+      "stride": [
+        1
+      ],
+      "digest_kind": "full",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.21.self_attn.dsa_attn.dsa_attn._k_scale_cpu",
+    "before": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20078971520000,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c"
+    },
+    "after": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20078971520000,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.21.self_attn.dsa_attn.dsa_attn._v_scale_cpu",
+    "before": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20078971520512,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c"
+    },
+    "after": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20078971520512,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.22.self_attn.q_norm_without_weight.weight",
+    "before": {
+      "shape": [
+        512
+      ],
+      "dtype": "torch.bfloat16",
+      "device": "npu:0",
+      "data_ptr": 20078971876352,
+      "stride": [
+        1
+      ],
+      "digest_kind": "full",
+      "sha256": "ad755ff209a358c0a9891662926947d163a48a087efa7da7b8ce9348cfe8c2d1"
+    },
+    "after": {
+      "shape": [
+        512
+      ],
+      "dtype": "torch.bfloat16",
+      "device": "npu:0",
+      "data_ptr": 20078971876352,
+      "stride": [
+        1
+      ],
+      "digest_kind": "full",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.22.self_attn.dsa_attn.dsa_attn._k_scale_cpu",
+    "before": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20078971880448,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c"
+    },
+    "after": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20078971880448,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.22.self_attn.dsa_attn.dsa_attn._v_scale_cpu",
+    "before": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20078971880960,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c"
+    },
+    "after": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20078971880960,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.23.self_attn.q_norm_without_weight.weight",
+    "before": {
+      "shape": [
+        512
+      ],
+      "dtype": "torch.bfloat16",
+      "device": "npu:0",
+      "data_ptr": 20078971909120,
+      "stride": [
+        1
+      ],
+      "digest_kind": "full",
+      "sha256": "ad755ff209a358c0a9891662926947d163a48a087efa7da7b8ce9348cfe8c2d1"
+    },
+    "after": {
+      "shape": [
+        512
+      ],
+      "dtype": "torch.bfloat16",
+      "device": "npu:0",
+      "data_ptr": 20078971909120,
+      "stride": [
+        1
+      ],
+      "digest_kind": "full",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.23.self_attn.dsa_attn.dsa_attn._k_scale_cpu",
+    "before": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20078971913216,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c"
+    },
+    "after": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20078971913216,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.23.self_attn.dsa_attn.dsa_attn._v_scale_cpu",
+    "before": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20078971913728,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c"
+    },
+    "after": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20078971913728,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.24.self_attn.q_norm_without_weight.weight",
+    "before": {
+      "shape": [
+        512
+      ],
+      "dtype": "torch.bfloat16",
+      "device": "npu:0",
+      "data_ptr": 20078971941888,
+      "stride": [
+        1
+      ],
+      "digest_kind": "full",
+      "sha256": "ad755ff209a358c0a9891662926947d163a48a087efa7da7b8ce9348cfe8c2d1"
+    },
+    "after": {
+      "shape": [
+        512
+      ],
+      "dtype": "torch.bfloat16",
+      "device": "npu:0",
+      "data_ptr": 20078971941888,
+      "stride": [
+        1
+      ],
+      "digest_kind": "full",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.24.self_attn.dsa_attn.dsa_attn._k_scale_cpu",
+    "before": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20078971945984,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c"
+    },
+    "after": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20078971945984,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.24.self_attn.dsa_attn.dsa_attn._v_scale_cpu",
+    "before": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20078971946496,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c"
+    },
+    "after": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20078971946496,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.25.self_attn.q_norm_without_weight.weight",
+    "before": {
+      "shape": [
+        512
+      ],
+      "dtype": "torch.bfloat16",
+      "device": "npu:0",
+      "data_ptr": 20078971974656,
+      "stride": [
+        1
+      ],
+      "digest_kind": "full",
+      "sha256": "ad755ff209a358c0a9891662926947d163a48a087efa7da7b8ce9348cfe8c2d1"
+    },
+    "after": {
+      "shape": [
+        512
+      ],
+      "dtype": "torch.bfloat16",
+      "device": "npu:0",
+      "data_ptr": 20078971974656,
+      "stride": [
+        1
+      ],
+      "digest_kind": "full",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.25.self_attn.dsa_attn.dsa_attn._k_scale_cpu",
+    "before": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20078971978752,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c"
+    },
+    "after": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20078971978752,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.25.self_attn.dsa_attn.dsa_attn._v_scale_cpu",
+    "before": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20078971979264,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c"
+    },
+    "after": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20078971979264,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.26.self_attn.q_norm_without_weight.weight",
+    "before": {
+      "shape": [
+        512
+      ],
+      "dtype": "torch.bfloat16",
+      "device": "npu:0",
+      "data_ptr": 20078972007424,
+      "stride": [
+        1
+      ],
+      "digest_kind": "full",
+      "sha256": "ad755ff209a358c0a9891662926947d163a48a087efa7da7b8ce9348cfe8c2d1"
+    },
+    "after": {
+      "shape": [
+        512
+      ],
+      "dtype": "torch.bfloat16",
+      "device": "npu:0",
+      "data_ptr": 20078972007424,
+      "stride": [
+        1
+      ],
+      "digest_kind": "full",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.26.self_attn.dsa_attn.dsa_attn._k_scale_cpu",
+    "before": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20078972011520,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c"
+    },
+    "after": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20078972011520,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.26.self_attn.dsa_attn.dsa_attn._v_scale_cpu",
+    "before": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20078972012032,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c"
+    },
+    "after": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20078972012032,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.27.self_attn.q_norm_without_weight.weight",
+    "before": {
+      "shape": [
+        512
+      ],
+      "dtype": "torch.bfloat16",
+      "device": "npu:0",
+      "data_ptr": 20078972040192,
+      "stride": [
+        1
+      ],
+      "digest_kind": "full",
+      "sha256": "ad755ff209a358c0a9891662926947d163a48a087efa7da7b8ce9348cfe8c2d1"
+    },
+    "after": {
+      "shape": [
+        512
+      ],
+      "dtype": "torch.bfloat16",
+      "device": "npu:0",
+      "data_ptr": 20078972040192,
+      "stride": [
+        1
+      ],
+      "digest_kind": "full",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.27.self_attn.dsa_attn.dsa_attn._k_scale_cpu",
+    "before": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20078972044288,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c"
+    },
+    "after": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20078972044288,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.27.self_attn.dsa_attn.dsa_attn._v_scale_cpu",
+    "before": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20078972044800,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c"
+    },
+    "after": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20078972044800,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.28.self_attn.q_norm_without_weight.weight",
+    "before": {
+      "shape": [
+        512
+      ],
+      "dtype": "torch.bfloat16",
+      "device": "npu:0",
+      "data_ptr": 20078972072960,
+      "stride": [
+        1
+      ],
+      "digest_kind": "full",
+      "sha256": "ad755ff209a358c0a9891662926947d163a48a087efa7da7b8ce9348cfe8c2d1"
+    },
+    "after": {
+      "shape": [
+        512
+      ],
+      "dtype": "torch.bfloat16",
+      "device": "npu:0",
+      "data_ptr": 20078972072960,
+      "stride": [
+        1
+      ],
+      "digest_kind": "full",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.28.self_attn.dsa_attn.dsa_attn._k_scale_cpu",
+    "before": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20078972077056,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c"
+    },
+    "after": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20078972077056,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.28.self_attn.dsa_attn.dsa_attn._v_scale_cpu",
+    "before": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20078972077568,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c"
+    },
+    "after": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20078972077568,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.29.self_attn.q_norm_without_weight.weight",
+    "before": {
+      "shape": [
+        512
+      ],
+      "dtype": "torch.bfloat16",
+      "device": "npu:0",
+      "data_ptr": 20078972105728,
+      "stride": [
+        1
+      ],
+      "digest_kind": "full",
+      "sha256": "ad755ff209a358c0a9891662926947d163a48a087efa7da7b8ce9348cfe8c2d1"
+    },
+    "after": {
+      "shape": [
+        512
+      ],
+      "dtype": "torch.bfloat16",
+      "device": "npu:0",
+      "data_ptr": 20078972105728,
+      "stride": [
+        1
+      ],
+      "digest_kind": "full",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.29.self_attn.dsa_attn.dsa_attn._k_scale_cpu",
+    "before": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20083266946048,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c"
+    },
+    "after": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20083266946048,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.29.self_attn.dsa_attn.dsa_attn._v_scale_cpu",
+    "before": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20083266946560,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c"
+    },
+    "after": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20083266946560,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.30.self_attn.q_norm_without_weight.weight",
+    "before": {
+      "shape": [
+        512
+      ],
+      "dtype": "torch.bfloat16",
+      "device": "npu:0",
+      "data_ptr": 20083266974720,
+      "stride": [
+        1
+      ],
+      "digest_kind": "full",
+      "sha256": "ad755ff209a358c0a9891662926947d163a48a087efa7da7b8ce9348cfe8c2d1"
+    },
+    "after": {
+      "shape": [
+        512
+      ],
+      "dtype": "torch.bfloat16",
+      "device": "npu:0",
+      "data_ptr": 20083266974720,
+      "stride": [
+        1
+      ],
+      "digest_kind": "full",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.30.self_attn.dsa_attn.dsa_attn._k_scale_cpu",
+    "before": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20083266978816,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c"
+    },
+    "after": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20083266978816,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.30.self_attn.dsa_attn.dsa_attn._v_scale_cpu",
+    "before": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20083266979328,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c"
+    },
+    "after": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20083266979328,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.31.self_attn.q_norm_without_weight.weight",
+    "before": {
+      "shape": [
+        512
+      ],
+      "dtype": "torch.bfloat16",
+      "device": "npu:0",
+      "data_ptr": 20083267007488,
+      "stride": [
+        1
+      ],
+      "digest_kind": "full",
+      "sha256": "ad755ff209a358c0a9891662926947d163a48a087efa7da7b8ce9348cfe8c2d1"
+    },
+    "after": {
+      "shape": [
+        512
+      ],
+      "dtype": "torch.bfloat16",
+      "device": "npu:0",
+      "data_ptr": 20083267007488,
+      "stride": [
+        1
+      ],
+      "digest_kind": "full",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.31.self_attn.dsa_attn.dsa_attn._k_scale_cpu",
+    "before": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20083267011584,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c"
+    },
+    "after": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20083267011584,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.31.self_attn.dsa_attn.dsa_attn._v_scale_cpu",
+    "before": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20083267012096,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c"
+    },
+    "after": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20083267012096,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.32.self_attn.q_norm_without_weight.weight",
+    "before": {
+      "shape": [
+        512
+      ],
+      "dtype": "torch.bfloat16",
+      "device": "npu:0",
+      "data_ptr": 20083267040256,
+      "stride": [
+        1
+      ],
+      "digest_kind": "full",
+      "sha256": "ad755ff209a358c0a9891662926947d163a48a087efa7da7b8ce9348cfe8c2d1"
+    },
+    "after": {
+      "shape": [
+        512
+      ],
+      "dtype": "torch.bfloat16",
+      "device": "npu:0",
+      "data_ptr": 20083267040256,
+      "stride": [
+        1
+      ],
+      "digest_kind": "full",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.32.self_attn.dsa_attn.dsa_attn._k_scale_cpu",
+    "before": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20083267044352,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c"
+    },
+    "after": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20083267044352,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.32.self_attn.dsa_attn.dsa_attn._v_scale_cpu",
+    "before": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20083267044864,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c"
+    },
+    "after": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20083267044864,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.33.self_attn.q_norm_without_weight.weight",
+    "before": {
+      "shape": [
+        512
+      ],
+      "dtype": "torch.bfloat16",
+      "device": "npu:0",
+      "data_ptr": 20083267073024,
+      "stride": [
+        1
+      ],
+      "digest_kind": "full",
+      "sha256": "ad755ff209a358c0a9891662926947d163a48a087efa7da7b8ce9348cfe8c2d1"
+    },
+    "after": {
+      "shape": [
+        512
+      ],
+      "dtype": "torch.bfloat16",
+      "device": "npu:0",
+      "data_ptr": 20083267073024,
+      "stride": [
+        1
+      ],
+      "digest_kind": "full",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.33.self_attn.dsa_attn.dsa_attn._k_scale_cpu",
+    "before": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20084340687872,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c"
+    },
+    "after": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20084340687872,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.33.self_attn.dsa_attn.dsa_attn._v_scale_cpu",
+    "before": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20084340688384,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c"
+    },
+    "after": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20084340688384,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.34.self_attn.q_norm_without_weight.weight",
+    "before": {
+      "shape": [
+        512
+      ],
+      "dtype": "torch.bfloat16",
+      "device": "npu:0",
+      "data_ptr": 20084340716544,
+      "stride": [
+        1
+      ],
+      "digest_kind": "full",
+      "sha256": "ad755ff209a358c0a9891662926947d163a48a087efa7da7b8ce9348cfe8c2d1"
+    },
+    "after": {
+      "shape": [
+        512
+      ],
+      "dtype": "torch.bfloat16",
+      "device": "npu:0",
+      "data_ptr": 20084340716544,
+      "stride": [
+        1
+      ],
+      "digest_kind": "full",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.34.self_attn.dsa_attn.dsa_attn._k_scale_cpu",
+    "before": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20084340720640,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c"
+    },
+    "after": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20084340720640,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.34.self_attn.dsa_attn.dsa_attn._v_scale_cpu",
+    "before": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20084340721152,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c"
+    },
+    "after": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20084340721152,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.35.self_attn.q_norm_without_weight.weight",
+    "before": {
+      "shape": [
+        512
+      ],
+      "dtype": "torch.bfloat16",
+      "device": "npu:0",
+      "data_ptr": 20084340749312,
+      "stride": [
+        1
+      ],
+      "digest_kind": "full",
+      "sha256": "ad755ff209a358c0a9891662926947d163a48a087efa7da7b8ce9348cfe8c2d1"
+    },
+    "after": {
+      "shape": [
+        512
+      ],
+      "dtype": "torch.bfloat16",
+      "device": "npu:0",
+      "data_ptr": 20084340749312,
+      "stride": [
+        1
+      ],
+      "digest_kind": "full",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.35.self_attn.dsa_attn.dsa_attn._k_scale_cpu",
+    "before": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20084340753408,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c"
+    },
+    "after": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20084340753408,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.35.self_attn.dsa_attn.dsa_attn._v_scale_cpu",
+    "before": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20084340753920,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c"
+    },
+    "after": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20084340753920,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.36.self_attn.q_norm_without_weight.weight",
+    "before": {
+      "shape": [
+        512
+      ],
+      "dtype": "torch.bfloat16",
+      "device": "npu:0",
+      "data_ptr": 20084340782080,
+      "stride": [
+        1
+      ],
+      "digest_kind": "full",
+      "sha256": "ad755ff209a358c0a9891662926947d163a48a087efa7da7b8ce9348cfe8c2d1"
+    },
+    "after": {
+      "shape": [
+        512
+      ],
+      "dtype": "torch.bfloat16",
+      "device": "npu:0",
+      "data_ptr": 20084340782080,
+      "stride": [
+        1
+      ],
+      "digest_kind": "full",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.36.self_attn.dsa_attn.dsa_attn._k_scale_cpu",
+    "before": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20084340786176,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c"
+    },
+    "after": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20084340786176,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.36.self_attn.dsa_attn.dsa_attn._v_scale_cpu",
+    "before": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20084340786688,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c"
+    },
+    "after": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20084340786688,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.37.self_attn.q_norm_without_weight.weight",
+    "before": {
+      "shape": [
+        512
+      ],
+      "dtype": "torch.bfloat16",
+      "device": "npu:0",
+      "data_ptr": 20084340814848,
+      "stride": [
+        1
+      ],
+      "digest_kind": "full",
+      "sha256": "ad755ff209a358c0a9891662926947d163a48a087efa7da7b8ce9348cfe8c2d1"
+    },
+    "after": {
+      "shape": [
+        512
+      ],
+      "dtype": "torch.bfloat16",
+      "device": "npu:0",
+      "data_ptr": 20084340814848,
+      "stride": [
+        1
+      ],
+      "digest_kind": "full",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.37.self_attn.dsa_attn.dsa_attn._k_scale_cpu",
+    "before": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20088635655168,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c"
+    },
+    "after": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20088635655168,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.37.self_attn.dsa_attn.dsa_attn._v_scale_cpu",
+    "before": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20088635655680,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c"
+    },
+    "after": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20088635655680,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.38.self_attn.q_norm_without_weight.weight",
+    "before": {
+      "shape": [
+        512
+      ],
+      "dtype": "torch.bfloat16",
+      "device": "npu:0",
+      "data_ptr": 20088635683840,
+      "stride": [
+        1
+      ],
+      "digest_kind": "full",
+      "sha256": "ad755ff209a358c0a9891662926947d163a48a087efa7da7b8ce9348cfe8c2d1"
+    },
+    "after": {
+      "shape": [
+        512
+      ],
+      "dtype": "torch.bfloat16",
+      "device": "npu:0",
+      "data_ptr": 20088635683840,
+      "stride": [
+        1
+      ],
+      "digest_kind": "full",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.38.self_attn.dsa_attn.dsa_attn._k_scale_cpu",
+    "before": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20088635687936,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c"
+    },
+    "after": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20088635687936,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.38.self_attn.dsa_attn.dsa_attn._v_scale_cpu",
+    "before": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20088635688448,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c"
+    },
+    "after": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20088635688448,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.39.self_attn.q_norm_without_weight.weight",
+    "before": {
+      "shape": [
+        512
+      ],
+      "dtype": "torch.bfloat16",
+      "device": "npu:0",
+      "data_ptr": 20088635716608,
+      "stride": [
+        1
+      ],
+      "digest_kind": "full",
+      "sha256": "ad755ff209a358c0a9891662926947d163a48a087efa7da7b8ce9348cfe8c2d1"
+    },
+    "after": {
+      "shape": [
+        512
+      ],
+      "dtype": "torch.bfloat16",
+      "device": "npu:0",
+      "data_ptr": 20088635716608,
+      "stride": [
+        1
+      ],
+      "digest_kind": "full",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.39.self_attn.dsa_attn.dsa_attn._k_scale_cpu",
+    "before": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20088635720704,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c"
+    },
+    "after": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20088635720704,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    }
+  },
+  {
+    "name": "attribute:language_model.model.layers.39.self_attn.dsa_attn.dsa_attn._v_scale_cpu",
+    "before": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20088635721216,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c"
+    },
+    "after": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "data_ptr": 20088635721216,
+      "stride": [],
+      "digest_kind": "full",
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    }
+  }
+]

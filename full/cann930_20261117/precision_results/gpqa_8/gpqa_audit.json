@@ -1,0 +1,16 @@
+{
+  "questions": 8,
+  "successful_requests": 8,
+  "correct": 7,
+  "accuracy": 87.5,
+  "aisbench_accuracy": 87.5,
+  "aisbench_raw_recomputed_accuracy": 87.5,
+  "scoring_difference_ids": [],
+  "scoring_validated": true,
+  "unparsed_answer_ids": [
+    6
+  ],
+  "output_limit_ids": [
+    6
+  ]
+}

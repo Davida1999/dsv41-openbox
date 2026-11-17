@@ -1,0 +1,33 @@
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:13: FutureWarning: triton.language.extra.cann.extension.atan2 is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.atan2 instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.atan2")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:35: FutureWarning: triton.language.extra.cann.extension.isfinited is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.isfinited instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.isfinited")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:49: FutureWarning: triton.language.extra.cann.extension.finitef is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.finitef instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.finitef")
+A_cold dp0_completions 19.56s '1.2.3.4.'
+A_cold dp0_chat_completions 1.49s ': Paris is the capital of France.'
+A_cold dp1_completions 4.08s '1.2.3.4.'
+A_cold dp1_chat_completions 1.63s ': Paris is the capital of France.'
+A_cold dp2_completions 4.03s ' Paris is the capital of France. Berlin'
+A_cold dp2_chat_completions 1.40s ': Paris is the capital of France.'
+A_cold dp3_completions 4.01s ' Paris is the capital of France. Berlin'
+A_cold dp3_chat_completions 1.70s ': Paris is the capital of France.'
+A_warm dp0_completions 1.26s '1.2.3.4.'
+A_warm dp0_chat_completions 1.40s ': Paris is the capital of France.'
+A_warm dp1_completions 1.39s '1.2.3.4.'
+A_warm dp1_chat_completions 1.38s ': Paris is the capital of France.'
+A_warm dp2_completions 1.40s ' Paris is the capital of France. Berlin'
+A_warm dp2_chat_completions 1.41s ': Paris is the capital of France.'
+A_warm dp3_completions 1.41s ' Paris is the capital of France. Berlin'
+A_warm dp3_chat_completions 1.40s ': Paris is the capital of France.'
+TRANSFER_PROGRESS B 256 vision.blocks.31.attn.wqkv.bias 2271625216
+TRANSFER_PROGRESS B 512 layers.2.attn.wq_b.weight 2237155840
+TRANSFER_PROGRESS B 768 layers.4.ffn.experts.13.w1.weight 2475256832
+TRANSFER_PROGRESS B 1024 layers.6.ffn.experts.16.w3.weight 1413571072
+TRANSFER_PROGRESS B 1280 layers.8.ffn.experts.24.w1.weight 1552639488
+TRANSFER_PROGRESS B 1536 layers.10.ffn.experts.3.w3.weight 1698703360
+TRANSFER_PROGRESS B 1792 layers.12.ffn.experts.6.w2.weight 1981808640
+TRANSFER_PROGRESS B 2048 layers.14.hc_attn_fn 1960521216
+TRANSFER_PROGRESS B 2304 layers.17.ffn.experts.7.w1.weight 2192141312
+TRANSFER_PROGRESS B 2560 layers.19.ffn.experts.13.w3.weight 2475256832
+TRANSFER_PROGRESS B 2816 layers.21.ffn.experts.18.w2.weight 2616814080

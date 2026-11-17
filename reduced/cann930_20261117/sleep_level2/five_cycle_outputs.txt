@@ -1,0 +1,35 @@
+baseline /v1/completions
+ 250. The capital of France is 250. The capital of France is 250. The capital of France is 250. The capital of France is
+
+baseline /v1/chat/completions
+: The capital of France is " France, or the "French"  —  (the French) refers to the "French"  —  (the
+
+cycle_1 /v1/completions
+ 250. The capital of France is 250. The capital of France is 250. The capital of France is 250. The capital of France is
+
+cycle_1 /v1/chat/completions
+: The capital of France is " France, or the "French"  —  (the French) refers to the "French"  —  (the
+
+cycle_2 /v1/completions
+ 250. The capital of France is 250. The capital of France is 250. The capital of France is 250. The capital of France is
+
+cycle_2 /v1/chat/completions
+: The capital of France is " France, or the "French"  —  (the French) refers to the "French"  —  (the
+
+cycle_3 /v1/completions
+ 250. The capital of France is 250. The capital of France is 250. The capital of France is 250. The capital of France is
+
+cycle_3 /v1/chat/completions
+: The capital of France is " France, or the "French"  —  (the French) refers to the "French"  —  (the
+
+cycle_4 /v1/completions
+ 250. The capital of France is 250. The capital of France is 250. The capital of France is 250. The capital of France is
+
+cycle_4 /v1/chat/completions
+: The capital of France is " France, or the "French"  —  (the French) refers to the "French"  —  (the
+
+cycle_5 /v1/completions
+ 250. The capital of France is 250. The capital of France is 250. The capital of France is 250. The capital of France is
+
+cycle_5 /v1/chat/completions
+: The capital of France is " France, or the "French"  —  (the French) refers to the "French"  —  (the

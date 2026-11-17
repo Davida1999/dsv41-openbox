@@ -1,0 +1,30 @@
+{
+  "name": "gpqa_8",
+  "kind": "accuracy",
+  "questions": 8,
+  "script": "/mnt/share/c00954197/Workspace/dsv41/precision/run_gpqa.sh",
+  "args": [
+    "8"
+  ],
+  "result_dir": "/mnt/share/c00954197/Workspace/dsv41/precision/results/gpqa_20261116T221752Z_vAo8bD/20261116_221753",
+  "audit": {
+    "questions": 8,
+    "successful_requests": 8,
+    "correct": 7,
+    "accuracy": 87.5,
+    "aisbench_accuracy": 87.5,
+    "unparsed_answer_ids": [
+      6
+    ],
+    "output_limit_ids": [
+      6
+    ]
+  },
+  "pass": true,
+  "exit_code": 0,
+  "original_script_exit_code": 1,
+  "audit_recheck_exit_code": 0,
+  "recovery": "Existing inference and AISBench score retained; fixed-reader audit rerun only",
+  "attempt_dir": "/mnt/share/c00954197/Workspace/dsv41/precision/runs/combined_20261117_R1/clients/gpqa_8_attempt1",
+  "prediction_sha256": "1a0fa04316b9d5f75f6bd1f94a8a5a745bb5d3a5fe0d9a9804efc6d893498da5"
+}

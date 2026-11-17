@@ -1,0 +1,30 @@
+{
+  "object": "list",
+  "data": [
+    {
+      "id": "dsv41-bf16-cann930",
+      "object": "model",
+      "created": 1794868497,
+      "owned_by": "vllm",
+      "root": "/mnt/share/c00954197/workspace/dsv41-flash-bf16",
+      "parent": null,
+      "max_model_len": 40960,
+      "permission": [
+        {
+          "id": "modelperm-b53940ce2c9711b3",
+          "object": "model_permission",
+          "created": 1794868497,
+          "allow_create_engine": false,
+          "allow_sampling": true,
+          "allow_logprobs": true,
+          "allow_search_indices": false,
+          "allow_view": true,
+          "allow_fine_tuning": false,
+          "organization": "*",
+          "group": null,
+          "is_blocking": false
+        }
+      ]
+    }
+  ]
+}

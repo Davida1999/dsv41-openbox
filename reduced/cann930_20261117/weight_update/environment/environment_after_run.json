@@ -1,0 +1,27 @@
+{
+  "capture_scope": "CPU-only metadata collected after full-model run",
+  "python": "3.12.16 (main, Oct 28 2026, 13:43:18) [GCC 11.4.0]",
+  "executable": "/usr/local/python3.12.16/bin/python3",
+  "platform": "Linux-6.6.0-145.3.35.166.oe2403sp3.aarch64-aarch64-with-glibc2.35",
+  "packages": {
+    "torch": "2.10.0+cpu",
+    "torch-npu": "2.10.0.post7",
+    "vllm": "0.32.0+empty",
+    "vllm-ascend": "0.19.1rc2.dev3401+g28e9e97ba",
+    "transformers": "5.19.0"
+  },
+  "source": {
+    "/vllm-workspace/vllm": {
+      "head": "5df63a7203cdb9328d824a27b682e77c7b9928be",
+      "status": " M vllm/model_executor/layers/layernorm.py\n M vllm/model_executor/model_loader/reload/meta.py\n"
+    },
+    "/vllm-workspace/vllm-ascend": {
+      "head": "28e9e97ba254b076a88275e8a275556cb9a11664",
+      "status": " M vllm_ascend/distributed/weight_transfer/packed_tensor.py\n M vllm_ascend/models/deepseek_v41/model.py\n?? csrc/build.cann921-baseline/\n?? csrc/build_cache.cann921-baseline/\n"
+    }
+  },
+  "source_sha256": {
+    "/vllm-workspace/vllm/vllm/model_executor/model_loader/reload/meta.py": "aa5ea0e0503ee34c763403469de0432eb4315868bd91792071445c1bbfe63ccd",
+    "/vllm-workspace/vllm-ascend/vllm_ascend/distributed/weight_transfer/packed_tensor.py": "1f8e4edc8f691bbb4cdbfbe2eef0c37c8163ad8090471eeb3b661e801c8f0b1e"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "stop_requested_at_utc": "2026-11-17T00:28:59.999656+00:00",
+  "before_stop_error_lines": {
+    "node23": 0,
+    "node24": 0
+  },
+  "post_stop_error_context": [
+    {
+      "file": "root/ascend/log/vllm_ascend/vllm_ascend_20261116_202622_100246.log",
+      "context": [
+        "INFO 11-17 00:29:03 [core_client.py:775] [shutdown] MPClient: cleaning up background resources",
+        "INFO 11-17 00:29:03 [utils.py:628] [shutdown] Process manager: send sigterm to process VLLM_DP_Coordinator",
+        "INFO 11-17 00:29:03 [core_client.py:777] [shutdown] MPClient: complete",
+        "ERROR 11-17 00:29:03 [async_llm.py:906] AsyncLLM output_handler failed.",
+        "ERROR 11-17 00:29:03 [async_llm.py:906] Traceback (most recent call last):",
+        "ERROR 11-17 00:29:03 [async_llm.py:906]   File \"/vllm-workspace/vllm/vllm/v1/engine/async_llm.py\", line 849, in output_handler",
+        "ERROR 11-17 00:29:03 [async_llm.py:906]     outputs = await engine_core.get_output_async()",
+        "ERROR 11-17 00:29:03 [async_llm.py:906]               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
+        "ERROR 11-17 00:29:03 [async_llm.py:906]   File \"/vllm-workspace/vllm/vllm/v1/engine/core_client.py\", line 1235, in get_output_async",
+        "ERROR 11-17 00:29:03 [async_llm.py:906]     raise self._format_exception(outputs) from None",
+        "ERROR 11-17 00:29:03 [async_llm.py:906] vllm.v1.engine.exceptions.EngineDeadError: EngineCore encountered an issue. See stack trace (above) for the root cause.",
+        "INFO 11-17 00:29:03 [launcher.py:279] [shutdown] API server: engine client stopped",
+        "INFO 11-17 00:29:03 [launcher.py:282] [shutdown] API server: signalling HTTP server shutdown",
+        "INFO 11-17 00:29:03 [launcher.py:304] [shutdown] API server: shutting down FastAPI HTTP server"
+      ]
+    }
+  ],
+  "assessment": "Node23 API output handler logged EngineDeadError after STOP during engine cleanup. All generation had completed before STOP."
+}

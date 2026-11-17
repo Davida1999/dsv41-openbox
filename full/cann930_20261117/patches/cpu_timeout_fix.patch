@@ -1,0 +1,65 @@
+--- a/vllm_ascend/patch/worker/patch_distributed.py
++++ b/vllm_ascend/patch/worker/patch_distributed.py
+@@ -174,7 +174,11 @@
+             elif self.backend == "hccl" and self.rank in ranks:
+                 self._unshared_hccl_groups.append(device_group)
+ 
+-            cpu_group = torch.distributed.new_group(ranks, backend="gloo") if create_cpu_group else None
++            cpu_group = None
++            if create_cpu_group:
++                cpu_group = torch.distributed.new_group(
++                    ranks, backend="gloo", timeout=get_cpu_distributed_timeout_or_none()
++                )
+             if self.rank in ranks:
+                 if create_cpu_group:
+                     self.ranks = ranks
+--- a/tests/ut/patch/worker/patch_common/test_patch_distributed.py
++++ b/tests/ut/patch/worker/patch_common/test_patch_distributed.py
+@@ -102,13 +102,14 @@
+     torch_distributed: Any = ModuleType("torch.distributed")
+     torch_distributed_c10d: Any = ModuleType("torch.distributed.distributed_c10d")
+ 
+-    def new_group(ranks, backend, pg_options=None):
++    def new_group(ranks, backend, pg_options=None, timeout=None):
+         backend_name = str(backend)
+         new_group_calls.append(
+             {
+                 "ranks": tuple(ranks),
+                 "backend": backend_name,
+                 "pg_options": pg_options,
++                "timeout": timeout,
+             }
+         )
+         if get_rank() not in ranks:
+@@ -300,6 +301,18 @@
+     assert "make_sibling_device_group" not in type(coordinator).__dict__
+ 
+ 
++@pytest.mark.parametrize("cpu_timeout", [None, timedelta(seconds=5400)])
++@pytest.mark.parametrize("is_vllm_032", [False, True])
++def test_cpu_group_uses_configured_timeout(module_env, monkeypatch, cpu_timeout, is_vllm_032):
++    monkeypatch.setattr(module_env.module, "get_cpu_distributed_timeout_or_none", lambda: cpu_timeout)
++    monkeypatch.setattr(module_env.module, "vllm_version_is", lambda version: is_vllm_032)
++
++    _make_group(module_env)
++
++    gloo_calls = _calls_with_backend(module_env, "gloo")
++    assert [entry["timeout"] for entry in gloo_calls] == [cpu_timeout]
++
++
+ def test_same_hccl_group_reuses_device_pg_once(module_env):
+     first = _make_group(
+         module_env,
+@@ -431,10 +444,10 @@
+     release_mock = MagicMock(wraps=module_env.module._HCCL_PG_REGISTRY.release)
+     module_env.module._HCCL_PG_REGISTRY.release = release_mock
+ 
+-    def failing_new_group(ranks, backend, pg_options=None):
++    def failing_new_group(ranks, backend, pg_options=None, timeout=None):
+         if str(backend) == "gloo":
+             raise RuntimeError("gloo failed")
+-        return original_new_group(ranks, backend, pg_options)
++        return original_new_group(ranks, backend, pg_options, timeout=timeout)
+ 
+     module_env.distributed.new_group = failing_new_group
+     hccl_key = module_env.registry_module.make_hccl_pg_key(

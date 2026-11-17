@@ -1,0 +1,24 @@
+{
+  "full_model_roundtrips": {
+    "hccl": "passed",
+    "npu_ipc": "passed"
+  },
+  "receiver_loading_quota_fix": "npu_verified",
+  "ipc_reference_counter_fix": "cpu_verified_npu_pending_resources",
+  "resource_state": "All experiment NPU processes released; user requests waiting for device availability",
+  "roundtrip_packed_source_sha256": "2bfcde4bdf2fd2cb3638af8ad49cce0736a3c2d01081d147e22cf9d2081780aa",
+  "pending_test": "scripts/ipc_reclamation_retest.py",
+  "task_status": "IN_PROGRESS",
+  "result": "PARTIAL",
+  "hardware_gate": "Await user-provided NPU resource window",
+  "ipc_fixed_source_sha256": "1f8e4edc8f691bbb4cdbfbe2eef0c37c8163ad8090471eeb3b661e801c8f0b1e",
+  "offline_evidence_audit": "passed",
+  "evidence_run": "transfer_20261117_03",
+  "tested_model": {
+    "layers": 40,
+    "routed_experts": 32,
+    "engram_enabled": false,
+    "indexed_tensors": 6248,
+    "indexed_tensor_bytes": 135927315272
+  }
+}

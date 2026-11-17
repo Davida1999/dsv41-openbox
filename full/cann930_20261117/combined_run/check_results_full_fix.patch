@@ -1,0 +1,39 @@
+--- check_results.original.py
++++ check_results.reconciled.py
+@@ -16,7 +16,8 @@
+ expected = int(sys.argv[2]) if len(sys.argv) > 2 else 198
+ model = "dsv41-bf16-cann930-gpqa"
+ prediction_file = run_dir / "predictions" / model / "GPQA_diamond.jsonl"
+-rows = [json.loads(line) for line in prediction_file.read_text().splitlines() if line.strip()]
++with prediction_file.open(encoding="utf-8") as stream:
++    rows = [json.loads(line) for line in stream if line.strip()]
+ rows.sort(key=lambda row: row["id"])
+ dataset = GPQADataset.load(
+     "/mnt/share/c00954197/Workspace/dsv41/benchmark/ais_bench/datasets/gpqa",
+@@ -33,15 +34,25 @@
+ answers = [GPQA_Simple_Eval_postprocess(extract_non_reasoning_content(text)) for text in texts]
+ score = GPQAEvaluator().score(answers, references)
+ aisbench_result = json.loads((run_dir / "results" / model / "GPQA_diamond.json").read_text())
++raw_answers = [GPQA_Simple_Eval_postprocess(extract_non_reasoning_content(row["prediction"])) for row in rows]
++raw_score = GPQAEvaluator().score(raw_answers, references)
++assert abs(raw_score["accuracy"] - aisbench_result["accuracy"]) < 1e-6, "AISBench原始分数复算不一致"
++difference_ids = [
++    row["id"] for row, raw, final, gold in zip(rows, raw_answers, answers, references)
++    if (raw == gold) != (final == gold)
++]
++assert all(rows[index].get("content") == "" for index in difference_ids), "存在需核查的非空最终答案评分差异"
+ audit = {
+     "questions": expected,
+     "successful_requests": len(rows),
+     "correct": sum(detail["correct"] for detail in score["details"]),
+     "accuracy": score["accuracy"],
+     "aisbench_accuracy": aisbench_result["accuracy"],
++    "aisbench_raw_recomputed_accuracy": raw_score["accuracy"],
++    "scoring_difference_ids": difference_ids,
++    "scoring_validated": True,
+     "unparsed_answer_ids": [row["id"] for row, answer in zip(rows, answers) if answer is None],
+     "output_limit_ids": [row["id"] for row in rows if row["output_tokens"] >= 32768],
+ }
+ (run_dir / "gpqa_audit.json").write_text(json.dumps(audit, ensure_ascii=False, indent=2) + "\n")
+ print(json.dumps(audit, ensure_ascii=False, indent=2))
+-assert abs(audit["accuracy"] - audit["aisbench_accuracy"]) < 1e-6, "最终答案审计与AISBench分数不同，请检查推理输出"

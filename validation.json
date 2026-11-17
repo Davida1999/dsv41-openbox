@@ -1,8 +1,39 @@
 {
-  "validation_type": "offline_archive_only_no_npu_execution",
-  "relative_links_checked": 87,
-  "json_files_parsed": 471,
-  "launch_scripts_bash_n": 12,
-  "E23_rounds_full_length": 12,
+  "validation_type": "offline_delivery_checks_of_recorded_npu_evidence",
+  "date": "2026-11-17",
+  "json_files_parsed": 1736,
+  "relative_links_checked": 245,
+  "new_python_files_syntax_checked": 42,
+  "new_shell_files_bash_n": 25,
+  "authored_paths_whitespace_checked": 23,
+  "sleep_level2": {
+    "verified_restore_requests": 80,
+    "max_growth_mib": 40,
+    "post_first_cycle_max_growth_mib": 1
+  },
+  "weight_updates": "saved_raw_evidence_audit_passed",
+  "cann930_full_model_performance_rounds": 12,
+  "performance_mean_output_tokens_per_second": {
+    "mm_4k_32k": 2230.531097804652,
+    "text_2k_6k": 2212.9135360644327,
+    "mm_1k_2k": 1844.2275003688683
+  },
+  "gpqa": [
+    {
+      "questions": 8,
+      "final_content_correct": 7,
+      "raw_correct": 7,
+      "output_limit_count": 1,
+      "prediction_sha256_verified": true
+    },
+    {
+      "questions": 198,
+      "final_content_correct": 164,
+      "raw_correct": 165,
+      "output_limit_count": 24,
+      "prediction_sha256_verified": true
+    }
+  ],
+  "ipc_latest_lifecycle_patch": "cpu_verified_npu_pending",
   "errors": []
 }

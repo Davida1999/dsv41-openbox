@@ -1,0 +1,114 @@
+{
+  "prepared_at_host23": 1794860767.8217611,
+  "model": "/mnt/share/c00954197/workspace/dsv41-flash-bf16",
+  "servers": [
+    "177.42.23.1",
+    "177.42.24.1"
+  ],
+  "container": "c00954197_dsv41_cann930",
+  "launch_scripts": "precision/run_master.sh and run_worker.sh",
+  "parallel": "TP1 PCP8 DP2 EP16",
+  "async_scheduling": true,
+  "hccl_expansion": "CCU_SCHED",
+  "seed": 42,
+  "tokenizer_mode": "deepseek_v41",
+  "reasoning_parser": "deepseek_v41",
+  "performance_order": [
+    {
+      "scene": "mm_4k_32k",
+      "rounds": 4,
+      "requests": 64,
+      "concurrency": 64,
+      "expected_output_tokens": 2097152
+    },
+    {
+      "scene": "text_2k_6k",
+      "rounds": 4,
+      "requests": 64,
+      "concurrency": 64,
+      "expected_output_tokens": 393216
+    },
+    {
+      "scene": "mm_1k_2k",
+      "rounds": 4,
+      "requests": 64,
+      "concurrency": 64,
+      "expected_output_tokens": 131072
+    }
+  ],
+  "accuracy": [
+    {
+      "questions": 8,
+      "purpose": "precheck"
+    },
+    {
+      "questions": 198,
+      "purpose": "formal"
+    }
+  ],
+  "accuracy_parameters": {
+    "temperature": 0,
+    "top_p": 1,
+    "seed": 42,
+    "thinking": true,
+    "reasoning_effort": 100,
+    "max_out_len": 32768,
+    "concurrency": 8
+  },
+  "resource_policy": "Stop only this run on both nodes if another NPU task appears",
+  "reuse": "One service for all stages when healthy; retain caches across stages",
+  "files": [
+    {
+      "path": "/mnt/share/c00954197/Workspace/dsv41/precision/run_master.sh",
+      "sha256": "576848300303e245476d1e1dcc81d236a20c0eae79712b47aed4c26e264113e6"
+    },
+    {
+      "path": "/mnt/share/c00954197/Workspace/dsv41/precision/run_worker.sh",
+      "sha256": "caaaa58eb47aa2a141321696ec2f65820c25f7d9bcb116c25830aa9ad0de4b7b"
+    },
+    {
+      "path": "/mnt/share/c00954197/Workspace/dsv41/precision/run_gpqa.sh",
+      "sha256": "b0d730a56d1c418938ce1b89695e337da85a42d7aad3b1e1a9b39f9b60967589"
+    },
+    {
+      "path": "/mnt/share/c00954197/Workspace/dsv41/precision/check_results.py",
+      "sha256": "1e33ea70edc14cd03d7d4be37644ba8d0e12748f7b8fb289f15020abc9c55870"
+    },
+    {
+      "path": "/mnt/share/c00954197/Workspace/dsv41/precision/README.md",
+      "sha256": "4fb8aaf577842bbf591d7a605f599f9e1841d9bc16fd5e97eeb903543cd43a5b"
+    },
+    {
+      "path": "/mnt/share/c00954197/Workspace/dsv41/performance_cann930/run_client_mm_4k_32k.sh",
+      "sha256": "67d2a82859a01f8a8f6221f39527fa1c50ee51869bbabcfa36f475dde7f459f8"
+    },
+    {
+      "path": "/mnt/share/c00954197/Workspace/dsv41/performance_cann930/run_client_text_2k_6k.sh",
+      "sha256": "5588bf65607c738fdcf51008661f7be2404cc907bdc701f8f678cf53760ef9e7"
+    },
+    {
+      "path": "/mnt/share/c00954197/Workspace/dsv41/performance_cann930/run_client_mm_1k_2k.sh",
+      "sha256": "c6ccbb15dd0e1a763feb40add48fb5bec73501548b2b64a2b189727e51d3cab4"
+    },
+    {
+      "path": "/mnt/share/c00954197/deployments/performance_cann930_runs/run_node_yield.py",
+      "sha256": "10f7a2658a3c31d13ad5614a2ebfd39cfa366ed1ef10496af6124f43a3db213e"
+    }
+  ],
+  "amendments": [
+    {
+      "time_host23": 1794868496.3054373,
+      "path": "/mnt/share/c00954197/Workspace/dsv41/precision/check_results.py",
+      "old_sha256": "320575070c197173aeefe94ca74f63496f69a330dcc54e4556706a7123b895a5",
+      "new_sha256": "946c4318438769ae267f180fc2633556014ed050b63b64f6feec7f9cbafb0846",
+      "reason": "Read JSONL by physical lines to preserve U+2028 within JSON strings; existing 8 predictions revalidated."
+    },
+    {
+      "time_host23": 1794875803.412252,
+      "path": "/mnt/share/c00954197/Workspace/dsv41/precision/check_results.py",
+      "old_sha256": "946c4318438769ae267f180fc2633556014ed050b63b64f6feec7f9cbafb0846",
+      "new_sha256": "1e33ea70edc14cd03d7d4be37644ba8d0e12748f7b8fb289f15020abc9c55870",
+      "reason": "Recompute raw AISBench extraction independently and retain final-content score. Accept correctness differences only for empty final content. No inference rerun."
+    }
+  ]
+}

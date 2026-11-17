@@ -1,0 +1,10 @@
+{
+  "state": "COMPLETED_WITH_AUDIT_RECOVERY",
+  "finished_at_host23": 1794875803.428782,
+  "completed_tasks": 14,
+  "service_released": true,
+  "original_controller_state": "FAILED_SERVICE_HELD",
+  "recovery": "CPU-only scoring rechecks. Predictions and original AISBench results retained.",
+  "report": "/mnt/share/c00954197/Workspace/dsv41/precision/runs/combined_20261117_R1/REPORT.md",
+  "results_summary": "/mnt/share/c00954197/Workspace/dsv41/precision/runs/combined_20261117_R1/results_summary.json"
+}

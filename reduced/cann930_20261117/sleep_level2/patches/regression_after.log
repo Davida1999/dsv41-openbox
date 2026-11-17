@@ -1,0 +1,14 @@
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:13: FutureWarning: triton.language.extra.cann.extension.atan2 is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.atan2 instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.atan2")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:35: FutureWarning: triton.language.extra.cann.extension.isfinited is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.isfinited instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.isfinited")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:49: FutureWarning: triton.language.extra.cann.extension.finitef is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.finitef instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.finitef")
+test_constant_is_a_nonpersistent_buffer (__main__.WeightlessRMSNormSleepTests.test_constant_is_a_nonpersistent_buffer) ... ok
+test_learned_weight_keeps_its_checkpoint_contract (__main__.WeightlessRMSNormSleepTests.test_learned_weight_keeps_its_checkpoint_contract) ... ok
+test_level2_backup_restores_constant_in_place (__main__.WeightlessRMSNormSleepTests.test_level2_backup_restores_constant_in_place) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.013s
+
+OK

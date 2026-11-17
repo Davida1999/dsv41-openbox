@@ -1,0 +1,17 @@
+START hccl producer /mnt/share/c00954197/Workspace/dsv41/basic/weight_update/runs/transfer_20261117_03/hccl_producer
+WAITING_FOR_SERVICE hccl_producer 0
+WAITING_FOR_SERVICE hccl_producer 60
+WAITING_FOR_SERVICE hccl_producer 120
+WAITING_FOR_SERVICE hccl_producer 180
+COMPLETE hccl producer
+START npu_ipc oracle /mnt/share/c00954197/Workspace/dsv41/basic/weight_update/runs/transfer_20261117_03/npu_ipc_oracle
+WAITING_FOR_SERVICE npu_ipc_oracle 0
+WAITING_FOR_SERVICE npu_ipc_oracle 60
+WAITING_FOR_SERVICE npu_ipc_oracle 120
+COMPLETE npu_ipc oracle
+START npu_ipc producer /mnt/share/c00954197/Workspace/dsv41/basic/weight_update/runs/transfer_20261117_03/npu_ipc_producer
+WAITING_FOR_SERVICE npu_ipc_producer 0
+WAITING_FOR_SERVICE npu_ipc_producer 60
+WAITING_FOR_SERVICE npu_ipc_producer 120
+WAITING_FOR_SERVICE npu_ipc_producer 180
+COMPLETE npu_ipc producer

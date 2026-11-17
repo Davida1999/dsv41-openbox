@@ -1,0 +1,30 @@
+{
+  "cycle": 1,
+  "lifecycle_seconds": 37.12534596025944,
+  "released_bytes_by_dp_rank": {
+    "0": 53410267136,
+    "1": 53439627264,
+    "2": 53439627264,
+    "3": 53424947200,
+    "4": 53439627264,
+    "5": 53410267136,
+    "6": 53424947200,
+    "7": 53439627264
+  },
+  "comparisons": {
+    "dp0_completions": {
+      "text_identical": false,
+      "token_ids_identical": false,
+      "tokens_identical": false,
+      "logprobs_identical": false,
+      "max_logprob_delta": 1.0299205780029297
+    },
+    "dp0_chat_completions": {
+      "text_identical": false,
+      "token_ids_identical": false,
+      "tokens_identical": false,
+      "logprobs_identical": false,
+      "max_logprob_delta": 1.8602027893066406
+    }
+  }
+}

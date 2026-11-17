@@ -1,0 +1,53 @@
+test_each_chunk_receives_a_fresh_export_counter (__main__.IPCChunkLeaseTests.test_each_chunk_receives_a_fresh_export_counter) ... FAIL
+test_empty_iterator_has_no_exported_reference (__main__.IPCChunkLeaseTests.test_empty_iterator_has_no_exported_reference) ... FAIL
+test_export_follows_ready_payload (__main__.IPCChunkLeaseTests.test_export_follows_ready_payload) ... FAIL
+test_one_buffer_is_reused_across_exports (__main__.IPCChunkLeaseTests.test_one_buffer_is_reused_across_exports) ... FAIL
+test_zero_element_metadata_exports_once (__main__.IPCChunkLeaseTests.test_zero_element_metadata_exports_once) ... ok
+
+======================================================================
+FAIL: test_each_chunk_receives_a_fresh_export_counter (__main__.IPCChunkLeaseTests.test_each_chunk_receives_a_fresh_export_counter)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/share/c00954197/Workspace/dsv41/basic/weight_update/scripts/test_ipc_chunk_leases.py", line 57, in test_each_chunk_receives_a_fresh_export_counter
+    self.assertEqual(len(exports), len(chunks))
+AssertionError: 1 != 3
+
+======================================================================
+FAIL: test_empty_iterator_has_no_exported_reference (__main__.IPCChunkLeaseTests.test_empty_iterator_has_no_exported_reference)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/share/c00954197/Workspace/dsv41/basic/weight_update/scripts/test_ipc_chunk_leases.py", line 77, in test_empty_iterator_has_no_exported_reference
+    self.assertEqual(exports, [])
+AssertionError: Lists differ: [{'lease': 0, 'data_ptr': 5976178623552, '[161 chars]: 0}] != []
+
+First list contains 1 additional elements.
+First extra element 0:
+{'lease': 0, 'data_ptr': 5976178623552, 'payload': b'\xa5\xa5\xa5\xa5\xa5\xa5\xa5\xa5\xa5\xa5\xa5\xa5\xa5\xa5\xa5\xa5\xa5\xa5\xa5\xa5\xa5\xa5\xa5\xa5\xa5\xa5\xa5\xa5\xa5\xa5\xa5\xa5', 'synchronizations': 0}
+
++ []
+- [{'data_ptr': 5976178623552,
+-   'lease': 0,
+-   'payload': b'\xa5\xa5\xa5\xa5\xa5\xa5\xa5\xa5\xa5\xa5\xa5\xa5\xa5\xa5\xa5\xa5'
+-              b'\xa5\xa5\xa5\xa5\xa5\xa5\xa5\xa5\xa5\xa5\xa5\xa5\xa5\xa5\xa5\xa5',
+-   'synchronizations': 0}]
+
+======================================================================
+FAIL: test_export_follows_ready_payload (__main__.IPCChunkLeaseTests.test_export_follows_ready_payload)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/share/c00954197/Workspace/dsv41/basic/weight_update/scripts/test_ipc_chunk_leases.py", line 65, in test_export_follows_ready_payload
+    self.assertEqual(export["payload"], tensor.view(torch.uint8).numpy().tobytes())
+AssertionError: b'\xa5\xa5\xa5\xa5\xa5\xa5\xa5\xa5\xa5\xa5\xa[81 chars]\xa5' != b'\x00\x00\x88A\x00\x00\x90A\x00\x00\x98A\x00[57 chars]xc0A'
+
+======================================================================
+FAIL: test_one_buffer_is_reused_across_exports (__main__.IPCChunkLeaseTests.test_one_buffer_is_reused_across_exports)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/share/c00954197/Workspace/dsv41/basic/weight_update/scripts/test_ipc_chunk_leases.py", line 71, in test_one_buffer_is_reused_across_exports
+    self.assertEqual(len(exports), len(chunks))
+AssertionError: 1 != 3
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.038s
+
+FAILED (failures=4)

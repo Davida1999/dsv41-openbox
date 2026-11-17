@@ -1,17 +1,26 @@
-# DSV41 Flash 开箱归档
+# DSV41 Flash 模型开箱交付
 
-主交付件：[DSV41模型开箱交付件](DSV41模型开箱交付件.md)。
+更新日期为 2026-11-17。主交付件见下方链接。[DSV41模型开箱交付件](DSV41模型开箱交付件.md)
 
-完整BF16＋Engram的1108/CANN9.2.1推理为部署基线；E13历史完整模型单curl、E25/CANN9.3.0补充性能和32专家专项失败证据分别归档。现状是部分验收完成，不能宣称RL/1M语义/数据集精度全通过。
+本轮验证环境为 `177.42.22.1` 专项及 `177.42.23.1/24.1` 完整模型使用的 `c00954197_dsv41_cann930` 容器，CANN 9.3.0。使用 40 层、32 路由专家、BF16、关闭 Engram 的模型，Sleep level-2 五轮恢复、HCCL 与 NPU IPC 全量 A→B→A 已通过。IPC 发送缓冲引用计数的后续修复通过 CPU 测试，实际回收效果等待设备复验。完整 384 专家模型在 23/24 双节点完成 CANN930 三场景各四轮性能压测和 GPQA 正式评测。GPQA 最终 content 为 164/198，82.828283%，24 题达到输出上限。路由、长输入有效回答、Math-500 和 TextVQA 等专项仍待完成。
 
+| 当前专项 | 结论 | 报告 |
+|---|---|---|
+| Sleep level-2 | 五轮、8 副本、双接口共 80 次恢复后输出严格一致，最大单卡 HBM 增量 40 MiB | [Sleep 报告](reduced/cann930_20261117/sleep_level2/REPORT.md) |
+| HCCL 全量权重更新 | 每轮每端 6248 张量、135927315272 字节，B 与冷加载 B 一致，恢复 A 与初始 A 一致 | [权重更新报告](reduced/cann930_20261117/weight_update/REPORT.md) |
+| NPU IPC 全量权重更新 | 完整回环通过，旧实现发送缓冲逐轮滞留，最新回收补丁待实机复验 | [当前状态](reduced/cann930_20261117/weight_update/validation_status.json) |
+
+- [CANN930 完整模型性能与 GPQA](full/cann930_20261117/REPORT.md)
 - [模型结构与转换](model/模型结构分析.md)
-- [环境](environment/1108_environment_20261112.md)
+- [CANN930 当前环境](environment/cann930_environment_20261117.md)
+- [本轮实验入口](reduced/cann930_20261117/README.md)
+- [1108 历史环境](environment/1108_environment_20261112.md)
 - [E23运行脚本](full/E23/scripts/)
 - [完整模型单curl](full/E13/results/)
-- [裁剪专项](reduced/basic_feature/VALIDATION_REPORT.md)
+- [基础功能验收矩阵](reduced/basic_feature/VALIDATION_REPORT.md)
 - [Profiling对比](profiling/hardware_comparison.md)
 - [归档范围](ARCHIVE.md)
 
-历史脚本包含当时的IP、容器路径与模型路径，仅在匹配环境复现。归档不自带模型权重或镜像，也没有后台自动启动任务。
+E13、E23、E25 及 2026-11-13 基础功能实验保留各自的环境与日期。运行快照中的模型路径和启动参数用于追溯，新的执行入口见 CANN930 环境文档。
 
-校验：`shasum -a 256 -c manifest.sha256`。本仓库保存既有实验材料与本次整理结果；没有将本次静态核验写成新的NPU运行。
+在仓库根目录运行 `shasum -a 256 -c manifest.sha256` 校验交付文件。

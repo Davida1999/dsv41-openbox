@@ -1,0 +1,102 @@
+{
+  "status": "passed",
+  "rounds": [
+    {
+      "stage": "B",
+      "producers": [
+        {
+          "tensor_count": 6248,
+          "tensor_bytes": 135927315272,
+          "allocated_bytes": 0,
+          "reserved_bytes": 7914651648,
+          "elapsed_seconds": 90.15657424973324,
+          "device": 7
+        }
+      ],
+      "receivers": [
+        {
+          "file": "receiver_dp0.jsonl",
+          "count": 6248,
+          "bytes": 135927315272,
+          "max_deferred_bytes": 2194145280
+        },
+        {
+          "file": "receiver_dp3.jsonl",
+          "count": 6248,
+          "bytes": 135927315272,
+          "max_deferred_bytes": 1911029760
+        },
+        {
+          "file": "receiver_dp1.jsonl",
+          "count": 6248,
+          "bytes": 135927315272,
+          "max_deferred_bytes": 2099773440
+        },
+        {
+          "file": "receiver_dp2.jsonl",
+          "count": 6248,
+          "bytes": 135927315272,
+          "max_deferred_bytes": 1179648000
+        }
+      ]
+    },
+    {
+      "stage": "A-restored",
+      "producers": [
+        {
+          "tensor_count": 6248,
+          "tensor_bytes": 135927315272,
+          "allocated_bytes": 0,
+          "reserved_bytes": 7912554496,
+          "elapsed_seconds": 87.300578400027,
+          "device": 7
+        }
+      ],
+      "receivers": [
+        {
+          "file": "receiver_dp0.jsonl",
+          "count": 6248,
+          "bytes": 135927315272,
+          "max_deferred_bytes": 2194145280
+        },
+        {
+          "file": "receiver_dp1.jsonl",
+          "count": 6248,
+          "bytes": 135927315272,
+          "max_deferred_bytes": 2099773440
+        },
+        {
+          "file": "receiver_dp3.jsonl",
+          "count": 6248,
+          "bytes": 135927315272,
+          "max_deferred_bytes": 1911029760
+        },
+        {
+          "file": "receiver_dp2.jsonl",
+          "count": 6248,
+          "bytes": 135927315272,
+          "max_deferred_bytes": 1179648000
+        }
+      ]
+    }
+  ],
+  "physical_peak_mib": {
+    "B_transfer/npu0": 60250,
+    "B_transfer/npu1": 61552,
+    "B_transfer/npu2": 60244,
+    "B_transfer/npu3": 61541,
+    "B_transfer/npu4": 4789,
+    "B_transfer/npu5": 4796,
+    "B_transfer/npu6": 4799,
+    "B_transfer/npu7": 13248,
+    "A-restored_transfer/npu0": 55810,
+    "A-restored_transfer/npu1": 57112,
+    "A-restored_transfer/npu2": 55804,
+    "A-restored_transfer/npu3": 57101,
+    "A-restored_transfer/npu4": 4789,
+    "A-restored_transfer/npu5": 4796,
+    "A-restored_transfer/npu6": 4799,
+    "A-restored_transfer/npu7": 13248
+  },
+  "ipc_exit_warning_count": 0
+}

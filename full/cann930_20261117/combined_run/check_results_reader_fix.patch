@@ -1,0 +1,12 @@
+--- check_results.py.before
++++ check_results.py
+@@ -16,7 +16,8 @@
+ expected = int(sys.argv[2]) if len(sys.argv) > 2 else 198
+ model = "dsv41-bf16-cann930-gpqa"
+ prediction_file = run_dir / "predictions" / model / "GPQA_diamond.jsonl"
+-rows = [json.loads(line) for line in prediction_file.read_text().splitlines() if line.strip()]
++with prediction_file.open(encoding="utf-8") as stream:
++    rows = [json.loads(line) for line in stream if line.strip()]
+ rows.sort(key=lambda row: row["id"])
+ dataset = GPQADataset.load(
+     "/mnt/share/c00954197/Workspace/dsv41/benchmark/ais_bench/datasets/gpqa",

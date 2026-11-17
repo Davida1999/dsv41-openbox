@@ -1,0 +1,21 @@
+{
+  "host_timestamp": 1794875566.1134467,
+  "checks": {
+    "npu": {
+      "exit_code": 0,
+      "file": "/mnt/share/c00954197/Workspace/dsv41/precision/runs/combined_20261117_R1/node23/released_npu.txt"
+    },
+    "processes": {
+      "exit_code": 0,
+      "file": "/mnt/share/c00954197/Workspace/dsv41/precision/runs/combined_20261117_R1/node23/released_processes.txt"
+    },
+    "memory": {
+      "exit_code": 0,
+      "file": "/mnt/share/c00954197/Workspace/dsv41/precision/runs/combined_20261117_R1/node23/released_memory.txt"
+    },
+    "ports": {
+      "exit_code": 0,
+      "file": "/mnt/share/c00954197/Workspace/dsv41/precision/runs/combined_20261117_R1/node23/released_ports.txt"
+    }
+  }
+}

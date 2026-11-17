@@ -1,0 +1,14 @@
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:13: FutureWarning: triton.language.extra.cann.extension.atan2 is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.atan2 instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.atan2")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:35: FutureWarning: triton.language.extra.cann.extension.isfinited is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.isfinited instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.isfinited")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:49: FutureWarning: triton.language.extra.cann.extension.finitef is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.finitef instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.finitef")
+test_a_b_a_keeps_runtime_state_and_addresses (__main__.RuntimeBufferReloadTests.test_a_b_a_keeps_runtime_state_and_addresses) ... ok
+test_each_layer_releases_deferred_inputs (__main__.RuntimeBufferReloadTests.test_each_layer_releases_deferred_inputs) ... ok
+test_quota_counts_checkpoint_weights (__main__.RuntimeBufferReloadTests.test_quota_counts_checkpoint_weights) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.018s
+
+OK

@@ -1,0 +1,85 @@
+{
+  "container": "/c00954197_dsv41_cann930",
+  "image_reference": "c00954197/vllm-ascend:1108-cann930-20261113",
+  "image_id": "sha256:3614b7afe7000897bf6f1c60a415f2547feb0e033bae0c9bf76c68a76ecf944f",
+  "network_mode": "host",
+  "ipc_mode": "host",
+  "shm_size": 67108864,
+  "binds": [
+    {
+      "source": "/etc/hixlep",
+      "destination": "/etc/hixlep",
+      "rw": false
+    },
+    {
+      "source": "/var/log/npu",
+      "destination": "/usr/slog",
+      "rw": true
+    },
+    {
+      "source": "/dev/uburma",
+      "destination": "/dev/uburma",
+      "rw": true
+    },
+    {
+      "source": "/mnt/share/g00815994/dsv41",
+      "destination": "/mnt/share/g00815994/dsv41",
+      "rw": false
+    },
+    {
+      "source": "/usr/local/dcmi",
+      "destination": "/usr/local/dcmi",
+      "rw": false
+    },
+    {
+      "source": "/usr/local/sbin/npu-smi",
+      "destination": "/usr/local/bin/npu-smi",
+      "rw": false
+    },
+    {
+      "source": "/mnt/share/c00954197",
+      "destination": "/mnt/share/c00954197",
+      "rw": true
+    },
+    {
+      "source": "/mnt/share/c00954197",
+      "destination": "/c00954197",
+      "rw": true
+    },
+    {
+      "source": "/usr/local/Ascend/driver",
+      "destination": "/usr/local/Ascend/driver",
+      "rw": false
+    },
+    {
+      "source": "/data/models/dsv41-private/cann930-runtime/cache",
+      "destination": "/root/.cache",
+      "rw": true
+    },
+    {
+      "source": "/mnt/share/c00954197/workspace",
+      "destination": "/workspace",
+      "rw": true
+    },
+    {
+      "source": "/mnt/share/a5comm/x00951564/pkgs-930/cann",
+      "destination": "/opt/cann930-packages",
+      "rw": false
+    },
+    {
+      "source": "/usr/local/Ascend/firmware",
+      "destination": "/usr/local/Ascend/firmware",
+      "rw": false
+    },
+    {
+      "source": "/usr/lib64/urma",
+      "destination": "/usr/lib64/urma",
+      "rw": false
+    },
+    {
+      "source": "/usr/local/sbin",
+      "destination": "/usr/local/sbin",
+      "rw": false
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "model": "dsv41-top32-sleep2",
+  "temperature": 0,
+  "top_p": 1,
+  "seed": 42,
+  "max_tokens": 32,
+  "return_token_ids": true,
+  "prompt": "The capital of France is",
+  "logprobs": 5
+}

@@ -1,0 +1,388 @@
+{
+  "scope": "CPU audit of saved evidence",
+  "backends": {
+    "hccl": {
+      "roundtrips": "passed",
+      "stages": [
+        {
+          "stage": "B",
+          "producers": [
+            {
+              "tensor_count": 6248,
+              "tensor_bytes": 135927315272,
+              "allocated_bytes": 0,
+              "reserved_bytes": 7914651648,
+              "elapsed_seconds": 90.15657424973324,
+              "device": 7
+            }
+          ],
+          "receivers": [
+            {
+              "file": "receiver_dp0.jsonl",
+              "tensors": 6248,
+              "bytes": 135927315272,
+              "final_deferred_bytes": 0,
+              "max_deferred_bytes": 2194145280
+            },
+            {
+              "file": "receiver_dp1.jsonl",
+              "tensors": 6248,
+              "bytes": 135927315272,
+              "final_deferred_bytes": 0,
+              "max_deferred_bytes": 2099773440
+            },
+            {
+              "file": "receiver_dp2.jsonl",
+              "tensors": 6248,
+              "bytes": 135927315272,
+              "final_deferred_bytes": 0,
+              "max_deferred_bytes": 1179648000
+            },
+            {
+              "file": "receiver_dp3.jsonl",
+              "tensors": 6248,
+              "bytes": 135927315272,
+              "final_deferred_bytes": 0,
+              "max_deferred_bytes": 1911029760
+            }
+          ],
+          "sampled_receiver_hbm_peak_mib": 61552,
+          "dual_api_exact_checks": 8
+        },
+        {
+          "stage": "A-restored",
+          "producers": [
+            {
+              "tensor_count": 6248,
+              "tensor_bytes": 135927315272,
+              "allocated_bytes": 0,
+              "reserved_bytes": 7912554496,
+              "elapsed_seconds": 87.300578400027,
+              "device": 7
+            }
+          ],
+          "receivers": [
+            {
+              "file": "receiver_dp0.jsonl",
+              "tensors": 6248,
+              "bytes": 135927315272,
+              "final_deferred_bytes": 0,
+              "max_deferred_bytes": 2194145280
+            },
+            {
+              "file": "receiver_dp1.jsonl",
+              "tensors": 6248,
+              "bytes": 135927315272,
+              "final_deferred_bytes": 0,
+              "max_deferred_bytes": 2099773440
+            },
+            {
+              "file": "receiver_dp2.jsonl",
+              "tensors": 6248,
+              "bytes": 135927315272,
+              "final_deferred_bytes": 0,
+              "max_deferred_bytes": 1179648000
+            },
+            {
+              "file": "receiver_dp3.jsonl",
+              "tensors": 6248,
+              "bytes": 135927315272,
+              "final_deferred_bytes": 0,
+              "max_deferred_bytes": 1911029760
+            }
+          ],
+          "sampled_receiver_hbm_peak_mib": 57112,
+          "dual_api_exact_checks": 8
+        }
+      ],
+      "warm_outputs_match_each_stage": {
+        "A": true,
+        "B": true,
+        "A-restored": true
+      },
+      "cached_tokens_max": 0,
+      "ipc_exit_warnings": 0
+    },
+    "npu_ipc": {
+      "roundtrips": "passed",
+      "stages": [
+        {
+          "stage": "B",
+          "producers": [
+            {
+              "tensor_count": 6248,
+              "tensor_bytes": 135927315272,
+              "allocated_bytes": 1342177280,
+              "reserved_bytes": 2764046336,
+              "elapsed_seconds": 159.57639643037692,
+              "device": 0
+            },
+            {
+              "tensor_count": 6248,
+              "tensor_bytes": 135927315272,
+              "allocated_bytes": 1342177280,
+              "reserved_bytes": 2764046336,
+              "elapsed_seconds": 159.57637945003808,
+              "device": 1
+            },
+            {
+              "tensor_count": 6248,
+              "tensor_bytes": 135927315272,
+              "allocated_bytes": 1342177280,
+              "reserved_bytes": 2764046336,
+              "elapsed_seconds": 159.57638485031202,
+              "device": 2
+            },
+            {
+              "tensor_count": 6248,
+              "tensor_bytes": 135927315272,
+              "allocated_bytes": 1342177280,
+              "reserved_bytes": 2764046336,
+              "elapsed_seconds": 159.57635609991848,
+              "device": 3
+            },
+            {
+              "tensor_count": 6248,
+              "tensor_bytes": 135927315272,
+              "allocated_bytes": 1342177280,
+              "reserved_bytes": 2764046336,
+              "elapsed_seconds": 159.5763977598399,
+              "device": 4
+            },
+            {
+              "tensor_count": 6248,
+              "tensor_bytes": 135927315272,
+              "allocated_bytes": 1342177280,
+              "reserved_bytes": 2764046336,
+              "elapsed_seconds": 159.5764784803614,
+              "device": 5
+            },
+            {
+              "tensor_count": 6248,
+              "tensor_bytes": 135927315272,
+              "allocated_bytes": 1342177280,
+              "reserved_bytes": 2764046336,
+              "elapsed_seconds": 159.57640025997534,
+              "device": 6
+            },
+            {
+              "tensor_count": 6248,
+              "tensor_bytes": 135927315272,
+              "allocated_bytes": 1342177280,
+              "reserved_bytes": 2764046336,
+              "elapsed_seconds": 159.57631233986467,
+              "device": 7
+            }
+          ],
+          "receivers": [
+            {
+              "file": "receiver_dp0.jsonl",
+              "tensors": 6248,
+              "bytes": 135927315272,
+              "final_deferred_bytes": 0,
+              "max_deferred_bytes": 2194145280
+            },
+            {
+              "file": "receiver_dp1.jsonl",
+              "tensors": 6248,
+              "bytes": 135927315272,
+              "final_deferred_bytes": 0,
+              "max_deferred_bytes": 2241331200
+            },
+            {
+              "file": "receiver_dp2.jsonl",
+              "tensors": 6248,
+              "bytes": 135927315272,
+              "final_deferred_bytes": 0,
+              "max_deferred_bytes": 2099773440
+            },
+            {
+              "file": "receiver_dp3.jsonl",
+              "tensors": 6248,
+              "bytes": 135927315272,
+              "final_deferred_bytes": 0,
+              "max_deferred_bytes": 1250426880
+            },
+            {
+              "file": "receiver_dp4.jsonl",
+              "tensors": 6248,
+              "bytes": 135927315272,
+              "final_deferred_bytes": 0,
+              "max_deferred_bytes": 1014497280
+            },
+            {
+              "file": "receiver_dp5.jsonl",
+              "tensors": 6248,
+              "bytes": 135927315272,
+              "final_deferred_bytes": 0,
+              "max_deferred_bytes": 1250426880
+            },
+            {
+              "file": "receiver_dp6.jsonl",
+              "tensors": 6248,
+              "bytes": 135927315272,
+              "final_deferred_bytes": 0,
+              "max_deferred_bytes": 1580728320
+            },
+            {
+              "file": "receiver_dp7.jsonl",
+              "tensors": 6248,
+              "bytes": 135927315272,
+              "final_deferred_bytes": 0,
+              "max_deferred_bytes": 1911029760
+            }
+          ],
+          "sampled_receiver_hbm_peak_mib": 44611,
+          "dual_api_exact_checks": 16
+        },
+        {
+          "stage": "A-restored",
+          "producers": [
+            {
+              "tensor_count": 6248,
+              "tensor_bytes": 135927315272,
+              "allocated_bytes": 2684354560,
+              "reserved_bytes": 4106223616,
+              "elapsed_seconds": 231.9620734299533,
+              "device": 0
+            },
+            {
+              "tensor_count": 6248,
+              "tensor_bytes": 135927315272,
+              "allocated_bytes": 2684354560,
+              "reserved_bytes": 4106223616,
+              "elapsed_seconds": 231.96201934991404,
+              "device": 1
+            },
+            {
+              "tensor_count": 6248,
+              "tensor_bytes": 135927315272,
+              "allocated_bytes": 2684354560,
+              "reserved_bytes": 4106223616,
+              "elapsed_seconds": 231.9620533301495,
+              "device": 2
+            },
+            {
+              "tensor_count": 6248,
+              "tensor_bytes": 135927315272,
+              "allocated_bytes": 2684354560,
+              "reserved_bytes": 4106223616,
+              "elapsed_seconds": 231.96204240992665,
+              "device": 3
+            },
+            {
+              "tensor_count": 6248,
+              "tensor_bytes": 135927315272,
+              "allocated_bytes": 2684354560,
+              "reserved_bytes": 4106223616,
+              "elapsed_seconds": 231.9620264498517,
+              "device": 4
+            },
+            {
+              "tensor_count": 6248,
+              "tensor_bytes": 135927315272,
+              "allocated_bytes": 2684354560,
+              "reserved_bytes": 4106223616,
+              "elapsed_seconds": 231.9620369002223,
+              "device": 5
+            },
+            {
+              "tensor_count": 6248,
+              "tensor_bytes": 135927315272,
+              "allocated_bytes": 2684354560,
+              "reserved_bytes": 4106223616,
+              "elapsed_seconds": 231.96198531007394,
+              "device": 6
+            },
+            {
+              "tensor_count": 6248,
+              "tensor_bytes": 135927315272,
+              "allocated_bytes": 2684354560,
+              "reserved_bytes": 4106223616,
+              "elapsed_seconds": 231.96211469033733,
+              "device": 7
+            }
+          ],
+          "receivers": [
+            {
+              "file": "receiver_dp0.jsonl",
+              "tensors": 6248,
+              "bytes": 135927315272,
+              "final_deferred_bytes": 0,
+              "max_deferred_bytes": 2194145280
+            },
+            {
+              "file": "receiver_dp1.jsonl",
+              "tensors": 6248,
+              "bytes": 135927315272,
+              "final_deferred_bytes": 0,
+              "max_deferred_bytes": 2241331200
+            },
+            {
+              "file": "receiver_dp2.jsonl",
+              "tensors": 6248,
+              "bytes": 135927315272,
+              "final_deferred_bytes": 0,
+              "max_deferred_bytes": 2099773440
+            },
+            {
+              "file": "receiver_dp3.jsonl",
+              "tensors": 6248,
+              "bytes": 135927315272,
+              "final_deferred_bytes": 0,
+              "max_deferred_bytes": 1250426880
+            },
+            {
+              "file": "receiver_dp4.jsonl",
+              "tensors": 6248,
+              "bytes": 135927315272,
+              "final_deferred_bytes": 0,
+              "max_deferred_bytes": 1014497280
+            },
+            {
+              "file": "receiver_dp5.jsonl",
+              "tensors": 6248,
+              "bytes": 135927315272,
+              "final_deferred_bytes": 0,
+              "max_deferred_bytes": 1250426880
+            },
+            {
+              "file": "receiver_dp6.jsonl",
+              "tensors": 6248,
+              "bytes": 135927315272,
+              "final_deferred_bytes": 0,
+              "max_deferred_bytes": 1580728320
+            },
+            {
+              "file": "receiver_dp7.jsonl",
+              "tensors": 6248,
+              "bytes": 135927315272,
+              "final_deferred_bytes": 0,
+              "max_deferred_bytes": 1911029760
+            }
+          ],
+          "sampled_receiver_hbm_peak_mib": 43230,
+          "dual_api_exact_checks": 16
+        }
+      ],
+      "warm_outputs_match_each_stage": {
+        "A": true,
+        "B": true,
+        "A-restored": true
+      },
+      "cached_tokens_max": 0,
+      "ipc_exit_warnings": 8
+    }
+  },
+  "reused_hccl_oracle_matches_prior_cold_load": true,
+  "resource_release_at_run_end": {
+    "all_npus_free": true
+  },
+  "source_sha256": {
+    "meta.before.py": "749d03cc94639c6e0133c1f0e326eaec2b43ee7d8fe3288963982bf50a1aeed4",
+    "meta.comm_map.after.py": "aa5ea0e0503ee34c763403469de0432eb4315868bd91792071445c1bbfe63ccd",
+    "packed_tensor.before.py": "2bfcde4bdf2fd2cb3638af8ad49cce0736a3c2d01081d147e22cf9d2081780aa",
+    "packed_tensor.after.py": "1f8e4edc8f691bbb4cdbfbe2eef0c37c8163ad8090471eeb3b661e801c8f0b1e"
+  },
+  "status": "passed"
+}

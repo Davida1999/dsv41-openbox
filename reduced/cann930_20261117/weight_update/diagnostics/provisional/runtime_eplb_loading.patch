@@ -1,0 +1,13 @@
+--- a/vllm/model_executor/model_loader/reload/meta.py
++++ b/vllm/model_executor/model_loader/reload/meta.py
+@@ -30,6 +30,10 @@
+     "expert_global_to_physical",
+     "expert_physical_to_global",
+     "expert_local_to_global",
++    # Runtime EPLB buffers participate in the sleep/wake lifecycle.
++    "log2phy",
++    "moe_load",
++    "load_counter",
+     "e_score_correction_bias",
+ }
+ 

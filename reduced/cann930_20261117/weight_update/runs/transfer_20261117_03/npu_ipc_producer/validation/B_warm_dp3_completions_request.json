@@ -1,0 +1,10 @@
+{
+  "model": "dsv41-weight-update",
+  "temperature": 0,
+  "top_p": 1,
+  "seed": 42,
+  "max_tokens": 8,
+  "return_token_ids": true,
+  "prompt": "Paris is the capital of France. Berlin is the capital of Germany. Paris is the capital of France. Berlin is the capital of Germany. Paris is the capital of France. Berlin is the capital of Germany. Paris is the capital of France. Berlin is the capital of Germany. Paris is the capital of France. Berlin is the capital of Germany. Paris is the capital of France. Berlin is the capital of Germany. Paris is the capital of France. Berlin is the capital of Germany. Paris is the capital of France. Berlin is the capital of Germany. ",
+  "logprobs": 5
+}

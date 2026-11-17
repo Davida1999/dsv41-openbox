@@ -1,0 +1,11 @@
+[
+  "docker",
+  "-H",
+  "unix:///run/c00954197-cann930/docker.sock",
+  "exec",
+  "-d",
+  "c00954197_dsv41_cann930",
+  "bash",
+  "-lc",
+  "python3 -u /mnt/share/c00954197/Workspace/dsv41/basic/scripts/verify_sleep2.py --output /mnt/share/c00954197/Workspace/dsv41/basic/runs/diagnosis_eager_20261117_04/validation --cycles 1 --ranks 0 --max-tokens 32 --inspect-tensors > /mnt/share/c00954197/Workspace/dsv41/basic/runs/diagnosis_eager_20261117_04/validation.log 2>&1; printf \"%s\\n\" \"$?\" > /mnt/share/c00954197/Workspace/dsv41/basic/runs/diagnosis_eager_20261117_04/validation.exit"
+]

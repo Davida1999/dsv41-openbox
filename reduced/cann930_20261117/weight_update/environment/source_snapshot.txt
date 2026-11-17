@@ -1,0 +1,98 @@
+/usr/local/Ascend/cann-9.3.0/cann-9.3.0
+diff --git a/vllm/model_executor/layers/layernorm.py b/vllm/model_executor/layers/layernorm.py
+index 266a346..17191ed 100644
+--- a/vllm/model_executor/layers/layernorm.py
++++ b/vllm/model_executor/layers/layernorm.py
+@@ -60,9 +60,12 @@ class RMSNorm(CustomOp):
+         )
+         weight_dtype = dtype or torch.get_default_dtype()
+         self.has_weight = has_weight
+-        self.weight = torch.ones(hidden_size, dtype=weight_dtype)
++        weight = torch.ones(hidden_size, dtype=weight_dtype)
+         if self.has_weight:
+-            self.weight = nn.Parameter(self.weight)
++            self.weight = nn.Parameter(weight)
++        else:
++            # Level-2 sleep backs up buffers that are absent from checkpoints.
++            self.register_buffer("weight", weight, persistent=False)
+ 
+         # When has_weight=False, pass weight=None so implementations that
+         # support a weightless path can skip the per-channel multiply.
+diff --git a/vllm/model_executor/model_loader/reload/meta.py b/vllm/model_executor/model_loader/reload/meta.py
+index 9874ebd..02433a1 100644
+--- a/vllm/model_executor/model_loader/reload/meta.py
++++ b/vllm/model_executor/model_loader/reload/meta.py
+@@ -30,6 +30,7 @@ SKIP_LOAD_TENSORS: set[str] = {
+     "expert_global_to_physical",
+     "expert_physical_to_global",
+     "expert_local_to_global",
++    "expert_ids_per_ep_rank",
+     "e_score_correction_bias",
+ }
+ 
+diff --git a/vllm_ascend/distributed/weight_transfer/packed_tensor.py b/vllm_ascend/distributed/weight_transfer/packed_tensor.py
+index b9e0cfb7d..52cda0b9c 100644
+--- a/vllm_ascend/distributed/weight_transfer/packed_tensor.py
++++ b/vllm_ascend/distributed/weight_transfer/packed_tensor.py
+@@ -290,10 +290,10 @@ def packed_npu_ipc_producer(
+ ) -> Iterator[dict[str, Any]]:
+     """Pack tensors into a reusable NPU IPC buffer and yield chunks.
+ 
+-    Allocates a single NPU buffer of ``buffer_size_bytes`` and registers
+-    it for IPC once via ``reduce_tensor``.  Each chunk's packed data is
+-    copied into this buffer before yielding, so only one IPC-shared
+-    allocation exists for the lifetime of the transfer.
++    Allocates a single reusable NPU buffer.
++    Each chunk exports fresh rebuild arguments through reduce_tensor so
++    every consumer reconstruction has its own reference-counted export.
++    Packed data is synchronized before the chunk is exported.
+     A nonempty iterator containing only zero-element tensors still yields a
+     chunk so its names, shapes and dtypes are delivered; an empty iterator does not.
+ 
+@@ -310,9 +310,11 @@ def packed_npu_ipc_producer(
+     if buffer_size_bytes <= 0:
+         raise ValueError(f"buffer_size_bytes must be positive, got {buffer_size_bytes}")
+     ipc_buffer = torch.empty(buffer_size_bytes, dtype=torch.uint8, device="npu")
+-    # Store only the rebuild args (drop the func); the consumer rebuilds with
+-    # the well-known ``rebuild_npu_tensor``, mirroring upstream's CUDA IPC engine.
+-    _, ipc_args = reduce_tensor(ipc_buffer)
++
++    def create_ipc_handle() -> dict[str, tuple]:
++        # Each rebuild consumes an exported reference counter.
++        _, ipc_args = reduce_tensor(ipc_buffer)
++        return {npu_uuid: ipc_args}
+ 
+     names: list[str] = []
+     shapes: list[list[int]] = []
+@@ -346,7 +348,7 @@ def packed_npu_ipc_producer(
+                 "shapes": shapes,
+                 "dtype_names": [str(d).split(".")[-1] for d in dtypes],
+                 "tensor_sizes": tensor_sizes,
+-                "ipc_handle": {npu_uuid: ipc_args},
++                "ipc_handle": create_ipc_handle(),
+             }
+             names, shapes, dtypes, tensor_sizes = [], [], [], []
+             total_bytes = 0
+@@ -365,7 +367,7 @@ def packed_npu_ipc_producer(
+             "shapes": shapes,
+             "dtype_names": [str(d).split(".")[-1] for d in dtypes],
+             "tensor_sizes": tensor_sizes,
+-            "ipc_handle": {npu_uuid: ipc_args},
++            "ipc_handle": create_ipc_handle(),
+         }
+ 
+ 
+diff --git a/vllm_ascend/models/deepseek_v41/model.py b/vllm_ascend/models/deepseek_v41/model.py
+index 07e5f7826..aa12ca386 100644
+--- a/vllm_ascend/models/deepseek_v41/model.py
++++ b/vllm_ascend/models/deepseek_v41/model.py
+@@ -1964,7 +1964,8 @@ class AscendDeepseekV41LLMForCausalLM(nn.Module, DeepseekV41MixtureOfExperts, Su
+                 param = params_dict[name]
+                 # Handle attention sinks (distributed across ranks)
+                 narrow_weight = loaded_weight.narrow(0, head_start, heads_per_rank)
+-                param.data.copy_(narrow_weight)
++                weight_loader = getattr(param, "weight_loader", default_weight_loader)
++                weight_loader(param, narrow_weight)
+                 loaded_params.add(name)
+                 continue
+ 

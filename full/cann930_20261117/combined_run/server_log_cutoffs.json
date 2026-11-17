@@ -1,0 +1,13 @@
+{
+  "captured_at_host23": 1794875339.999656,
+  "nodes": {
+    "node23": {
+      "bytes": 868288,
+      "sha256": "3ffdd5a6e83ec23bb8ac054c492f73b2562e813493f9e06f6d403c78c091b108"
+    },
+    "node24": {
+      "bytes": 94194,
+      "sha256": "964e62e407bf51f98ba8db79c8e4731f885f600a48feeca8c49eeac2d9042438"
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "tensor_count": 6248,
+  "tensor_bytes": 135927315272,
+  "allocated_bytes": 2684354560,
+  "reserved_bytes": 4106223616,
+  "elapsed_seconds": 231.96198531007394,
+  "device": 6
+}

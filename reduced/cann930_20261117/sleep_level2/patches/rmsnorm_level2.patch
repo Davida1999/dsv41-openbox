@@ -1,0 +1,17 @@
+--- a/vllm/model_executor/layers/layernorm.py
++++ b/vllm/model_executor/layers/layernorm.py
+@@ -60,9 +60,12 @@
+         )
+         weight_dtype = dtype or torch.get_default_dtype()
+         self.has_weight = has_weight
+-        self.weight = torch.ones(hidden_size, dtype=weight_dtype)
++        weight = torch.ones(hidden_size, dtype=weight_dtype)
+         if self.has_weight:
+-            self.weight = nn.Parameter(self.weight)
++            self.weight = nn.Parameter(weight)
++        else:
++            # Level-2 sleep backs up buffers that are absent from checkpoints.
++            self.register_buffer("weight", weight, persistent=False)
+ 
+         # When has_weight=False, pass weight=None so implementations that
+         # support a weightless path can skip the per-channel multiply.

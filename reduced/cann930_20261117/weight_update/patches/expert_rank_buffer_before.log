@@ -1,0 +1,42 @@
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:13: FutureWarning: triton.language.extra.cann.extension.atan2 is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.atan2 instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.atan2")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:35: FutureWarning: triton.language.extra.cann.extension.isfinited is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.isfinited instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.isfinited")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:49: FutureWarning: triton.language.extra.cann.extension.finitef is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.finitef instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.finitef")
+test_a_b_a_keeps_runtime_state_and_addresses (__main__.RuntimeBufferReloadTests.test_a_b_a_keeps_runtime_state_and_addresses) ... ok
+test_each_layer_releases_deferred_inputs (__main__.RuntimeBufferReloadTests.test_each_layer_releases_deferred_inputs) ... FAIL
+test_quota_counts_checkpoint_weights (__main__.RuntimeBufferReloadTests.test_quota_counts_checkpoint_weights) ... FAIL
+
+======================================================================
+FAIL: test_each_layer_releases_deferred_inputs (__main__.RuntimeBufferReloadTests.test_each_layer_releases_deferred_inputs)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/share/c00954197/Workspace/dsv41/basic/weight_update/scripts/test_runtime_buffers_reload.py", line 52, in test_each_layer_releases_deferred_inputs
+    self.assertEqual(info.loaded_weights, [])
+AssertionError: Lists differ: [('weight', <BoundArguments (param=Paramet[113 chars]))>)] != []
+
+First list contains 1 additional elements.
+First extra element 0:
+('weight', <BoundArguments (param=Parameter containing:
+tensor(..., device='meta', size=(2, 3)), loaded_weight=tensor([[1., 1., 1.],
+        [1., 1., 1.]]))>)
+
++ []
+- [('weight',
+-   <BoundArguments (param=Parameter containing:
+- tensor(..., device='meta', size=(2, 3)), loaded_weight=tensor([[1., 1., 1.],
+-         [1., 1., 1.]]))>)]
+
+======================================================================
+FAIL: test_quota_counts_checkpoint_weights (__main__.RuntimeBufferReloadTests.test_quota_counts_checkpoint_weights)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/share/c00954197/Workspace/dsv41/basic/weight_update/scripts/test_runtime_buffers_reload.py", line 42, in test_quota_counts_checkpoint_weights
+    self.assertEqual(get_layer_size(RuntimeMoE()), 6)
+AssertionError: 38 != 6
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.019s
+
+FAILED (failures=2)

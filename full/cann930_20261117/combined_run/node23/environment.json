@@ -1,0 +1,29 @@
+{
+  "captured_at": 1794861717.612585,
+  "python": "3.12.16 (main, Oct 28 2026, 13:43:18) [GCC 11.4.0]",
+  "packages": {
+    "torch": "2.10.0+cpu",
+    "torch_npu": "2.10.0.post7",
+    "vllm": "0.32.0+empty",
+    "vllm-ascend": "0.19.1rc2.dev3401+g28e9e97ba",
+    "transformers": "5.19.0",
+    "triton-ascend": "3.6.0.post2",
+    "ais_bench_benchmark": "3.1.20261113"
+  },
+  "cpu_timeout_source_sha256": "ccf708b35a36e1c5606cc9c0841253d9a08e2887f8f7ccd3368d16a8f72ca2c6",
+  "rootinfo": {
+    "version": "2.0",
+    "rank_count": 8
+  },
+  "model": {
+    "num_hidden_layers": 40,
+    "n_routed_experts": 384,
+    "num_experts_per_tok": 6,
+    "max_position_embeddings": 1048576
+  },
+  "commits": {
+    "/vllm-workspace/vllm": "5df63a7203cdb9328d824a27b682e77c7b9928be",
+    "/vllm-workspace/vllm-ascend": "28e9e97ba254b076a88275e8a275556cb9a11664",
+    "/mnt/share/c00954197/Workspace/dsv41/benchmark": "2c7434077ddacf23a55e4eb595cfd4f59244c00e"
+  }
+}

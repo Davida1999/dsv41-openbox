@@ -1,0 +1,14 @@
+{
+  "command": [
+    "docker",
+    "-H",
+    "unix:///run/c00954197-cann930/docker.sock",
+    "exec",
+    "-d",
+    "c00954197_dsv41_cann930",
+    "bash",
+    "-lc",
+    "exec setsid bash /mnt/share/c00954197/Workspace/dsv41/basic/scripts/start_server.sh eager /mnt/share/c00954197/Workspace/dsv41/basic/runs/fixed_eager_20261117_01 > /mnt/share/c00954197/Workspace/dsv41/basic/runs/fixed_eager_20261117_01/server.log 2>&1 < /dev/null"
+  ],
+  "started_epoch": 1794859756.373623
+}

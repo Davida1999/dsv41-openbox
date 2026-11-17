@@ -1,0 +1,128 @@
+[
+  {
+    "name": "mm_4k_32k_round1",
+    "kind": "performance",
+    "scene": "mm_4k_32k",
+    "round": 1,
+    "expected_output_tokens": 2097152,
+    "script": "/mnt/share/c00954197/Workspace/dsv41/performance_cann930/run_client_mm_4k_32k.sh",
+    "args": []
+  },
+  {
+    "name": "mm_4k_32k_round2",
+    "kind": "performance",
+    "scene": "mm_4k_32k",
+    "round": 2,
+    "expected_output_tokens": 2097152,
+    "script": "/mnt/share/c00954197/Workspace/dsv41/performance_cann930/run_client_mm_4k_32k.sh",
+    "args": []
+  },
+  {
+    "name": "mm_4k_32k_round3",
+    "kind": "performance",
+    "scene": "mm_4k_32k",
+    "round": 3,
+    "expected_output_tokens": 2097152,
+    "script": "/mnt/share/c00954197/Workspace/dsv41/performance_cann930/run_client_mm_4k_32k.sh",
+    "args": []
+  },
+  {
+    "name": "mm_4k_32k_round4",
+    "kind": "performance",
+    "scene": "mm_4k_32k",
+    "round": 4,
+    "expected_output_tokens": 2097152,
+    "script": "/mnt/share/c00954197/Workspace/dsv41/performance_cann930/run_client_mm_4k_32k.sh",
+    "args": []
+  },
+  {
+    "name": "text_2k_6k_round1",
+    "kind": "performance",
+    "scene": "text_2k_6k",
+    "round": 1,
+    "expected_output_tokens": 393216,
+    "script": "/mnt/share/c00954197/Workspace/dsv41/performance_cann930/run_client_text_2k_6k.sh",
+    "args": []
+  },
+  {
+    "name": "text_2k_6k_round2",
+    "kind": "performance",
+    "scene": "text_2k_6k",
+    "round": 2,
+    "expected_output_tokens": 393216,
+    "script": "/mnt/share/c00954197/Workspace/dsv41/performance_cann930/run_client_text_2k_6k.sh",
+    "args": []
+  },
+  {
+    "name": "text_2k_6k_round3",
+    "kind": "performance",
+    "scene": "text_2k_6k",
+    "round": 3,
+    "expected_output_tokens": 393216,
+    "script": "/mnt/share/c00954197/Workspace/dsv41/performance_cann930/run_client_text_2k_6k.sh",
+    "args": []
+  },
+  {
+    "name": "text_2k_6k_round4",
+    "kind": "performance",
+    "scene": "text_2k_6k",
+    "round": 4,
+    "expected_output_tokens": 393216,
+    "script": "/mnt/share/c00954197/Workspace/dsv41/performance_cann930/run_client_text_2k_6k.sh",
+    "args": []
+  },
+  {
+    "name": "mm_1k_2k_round1",
+    "kind": "performance",
+    "scene": "mm_1k_2k",
+    "round": 1,
+    "expected_output_tokens": 131072,
+    "script": "/mnt/share/c00954197/Workspace/dsv41/performance_cann930/run_client_mm_1k_2k.sh",
+    "args": []
+  },
+  {
+    "name": "mm_1k_2k_round2",
+    "kind": "performance",
+    "scene": "mm_1k_2k",
+    "round": 2,
+    "expected_output_tokens": 131072,
+    "script": "/mnt/share/c00954197/Workspace/dsv41/performance_cann930/run_client_mm_1k_2k.sh",
+    "args": []
+  },
+  {
+    "name": "mm_1k_2k_round3",
+    "kind": "performance",
+    "scene": "mm_1k_2k",
+    "round": 3,
+    "expected_output_tokens": 131072,
+    "script": "/mnt/share/c00954197/Workspace/dsv41/performance_cann930/run_client_mm_1k_2k.sh",
+    "args": []
+  },
+  {
+    "name": "mm_1k_2k_round4",
+    "kind": "performance",
+    "scene": "mm_1k_2k",
+    "round": 4,
+    "expected_output_tokens": 131072,
+    "script": "/mnt/share/c00954197/Workspace/dsv41/performance_cann930/run_client_mm_1k_2k.sh",
+    "args": []
+  },
+  {
+    "name": "gpqa_8",
+    "kind": "accuracy",
+    "questions": 8,
+    "script": "/mnt/share/c00954197/Workspace/dsv41/precision/run_gpqa.sh",
+    "args": [
+      "8"
+    ]
+  },
+  {
+    "name": "gpqa_198",
+    "kind": "accuracy",
+    "questions": 198,
+    "script": "/mnt/share/c00954197/Workspace/dsv41/precision/run_gpqa.sh",
+    "args": [
+      "198"
+    ]
+  }
+]

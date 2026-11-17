@@ -1,30 +1,31 @@
 # DSV41 模型开箱交付件
 
-归档日期：2026-11-14。部署基线：**1108容器、CANN9.2.1、完整BF16反量化模型＋Engram CPU offload，双机16卡**。
+更新日期为 2026-11-17。本轮使用 **c00954197_dsv41_cann930 容器、CANN 9.3.0**。177.42.22.1 的 8 卡专项使用 40 层、32 路由专家、BF16、关闭 Engram 的模型。177.42.23.1/24.1 双机 16 卡性能与精度验证使用完整 384 专家 BF16 模型，Engram 和视觉模块开启。
 
-本交付件按《模型开箱交付件模板》组织，参考Step5 preview和HY4的证据呈现方式。完整模型已完成文本单curl、图文推理负载及三组各四轮性能；RL、1M有效回答和数据集精度尚未全部通过。**文档整理完成不等于模型开箱全项验收通过。** 本次只整理既有实验与只读取证，没有新占用NPU或重跑实验。
+Sleep level-2 修复后完成五轮恢复验证，8 个副本的双接口共 80 次恢复后请求与首次加载基准严格一致。HCCL 和 NPU IPC 均完成缩减模型全量 A→B→A 更新。后续 IPC 发送缓冲引用计数补丁已通过 CPU 测试，实际回收效果等待设备复验。完整模型在同一次 CANN930 服务启动中完成三场景各四轮性能压测和 GPQA Diamond 198 题正式评测，最终 content 评分为 164/198，82.828283%，24 题达到输出预算。其余基础功能保留各自的实测环境与日期，整体开箱验收仍有待完成项。
 
-## 验收总览与证据替代规则
+## 验收总览
 
 “已验证”仅指表内受测配置；“部分”表示通路或有限检查完成；“失败/阻塞”保留原始证据；“待开展”没有足够实测证据。完整模型正常推理不能替代未执行的专项动作。
 
 | 验收项 | 当前结论 | 主证据 / 替代范围 |
 |---|---|---|
-| 完整BF16＋Engram基础推理 | 已验证双接口可读文本样例 | E13完整模型30次单curl；替代裁剪模型乱码作为基础输出证据，不代表数据集精度 |
-| EP / DP / PCP | 已验证TP1/PCP8/DP2、EP16的组合 | E13单curl＋E23长输出性能；不宣称TP>1或PCP各档精度等价 |
+| 完整 BF16＋Engram 基础推理 | CANN930 三场景 12 轮性能及 GPQA 请求完成，E13 保留双接口可读样例 | 完整模型与 32 专家专项分别记录，GPQA 评分及预算命中见精度章节 |
+| EP / DP / PCP | CANN930 完整模型 TP1/PCP8/DP2/EP16 组合实测完成 | 三场景 12 轮性能与 GPQA 请求，其他切分档位待专项验证 |
 | TP>1 / DCP / SP | TP2失败；DCP/SP前置阻塞 | 1108裁剪32专家专项保留，不能用完整TP1替代 |
 | PP | PP2裁剪模型失败；完整Engram基线PP1 | 不标记PP功能通过 |
-| 图模式 / async / chunked prefill | 完整模型所列组合已运行 | E13显式开关＋E23正式运行；独立开关精度消融未在完整模型完成 |
-| 2K文本→6K、1K文本＋图片→2K、4K文本＋图片→32K | 各四轮64成功、0失败，输出长度完整 | E23/1108，替代裁剪模型对应性能 |
-| sleep level-1 | 裁剪模型5轮恢复一致性通过 | 不代表完整模型，也不能替代模板要求的level-2 |
-| sleep level-2 | 裁剪模型首轮恢复token不一致 | 完整模型待验证 |
+| 图模式 / async / chunked prefill | CANN930 完整模型 FULL_DECODE_ONLY、async、chunked prefill 组合通过运行验证 | 同一次双节点服务执行性能与 GPQA，独立开关精度对照待验证 |
+| 2K文本→6K、1K文本＋图片→2K、4K文本＋图片→32K | CANN930 各四轮 64 成功、0 失败，输出长度完整 | 2026-11-17 双节点完整模型三场景 12 轮，历史 E23/1108 数据分列 |
+| sleep level-1 | 1108 历史裁剪模型五轮恢复一致性通过 | 历史配置与结果保留在基础功能报告 |
+| sleep level-2 | CANN930 缩减模型五轮通过，双接口文本/token/logprob 全部严格一致 | 80 次恢复后请求，最大单卡 HBM 增量 40 MiB，首轮后最大增长 1 MiB |
 | 专家路由返回 / replay | 裁剪模型双请求断言/HTTP500 | 完整模型待验证；不能由普通MoE推理推出replay支持 |
-| Checkpoint / HCCL / NPU IPC更新 | 未验收通过 | level-2 reload后不一致；HCCL/IPC完整更新OOM |
+| Checkpoint / HCCL / NPU IPC更新 | CANN930 缩减模型 checkpoint 恢复与两种全量 A→B→A 均通过 | 每轮每端 6248 张量、135927315272 字节，完整 head 哈希和逐副本双接口数值一致；IPC 最新回收补丁待实机复验 |
 | 1M输入 | 裁剪模型容量通过，检索0/3 | 不能替代完整模型1M可读回答与精度 |
 | 0.8硬件目标 | 单卡decode经验评分通过；理论峰值口径未证明 | E23文本2K→6K profile，不外推4K图文→32K全阶段或16卡 |
-| Math-500 / TextVQA | 待开展 | 未找到本模型正式评测与同条件参考，不沿用模板示例分数 |
+| GPQA Diamond | CANN930 198/198 请求完成，最终 content 164/198，82.828283% | AISBench 原始 165/198，24 题无可提取最终答案，精度阈值待确定 |
+| Math-500 / TextVQA | 待开展 | 正式评分、同条件多轮对照及 T 检验等待完成 |
 
-完整模型结果只替换相同验收项的主要证据；裁剪专项保留在[基础功能报告](reduced/basic_feature/VALIDATION_REPORT.md)和[原始结果](reduced/basic_feature/results/)。E13早于1108，使用27/28节点；不能倒写为1108实测。E25为CANN9.3.0补充验证，与1108性能分列。
+当前 Sleep、权重更新和完整模型性能精度证据均已归档，原始失败运行继续保留。[CANN930 完整模型结果](full/cann930_20261117/REPORT.md)E13 使用 27/28 节点，E23 使用 1108/CANN9.2.1，E25 使用 CANN9.3.0。其余基础功能在当前 CANN930 环境的复验仍待资源安排。[本轮专项入口](reduced/cann930_20261117/README.md) [基础功能矩阵](reduced/basic_feature/VALIDATION_REPORT.md)
 
 # 模型结构分析
 
@@ -32,41 +33,48 @@
 
 本资产由FP8/FP4源权重反量化获得。转换器、执行脚本、525分片/48496张量完成日志均见[转换归档](model/conversion/)。没有把旧“尚未开始转换”的准备文档当成最终状态。
 
+当前完整 BF16 模型路径为 `/mnt/share/c00954197/model/deepseek-V4.1-Flash-1017-bf16`。32 专家实体副本路径为 `/mnt/share/c00954197/model/deepseek-V4.1-Flash-1017-bf16-Slim-E32`，共 503 个分片、6248 个有效张量，约 135.9 GB（126.6 GiB），Engram 关闭且残留数据已剔除。实测运行快照保留实验当时的 checkpoint 路径。
+
 # 模型开箱打通
 
-## 环境配置：1108基线
+## 环境配置
 
 | 组件 | 版本／配置 |
 | --- | --- |
-| 容器系统 | Ubuntu 22.04.5 LTS |
-| 宿主机系统 | openEuler 24.03 LTS-SP3 |
-| 架构／CPU | aarch64，每台 192 逻辑核 |
-| NPU | 每台 8×Ascend950DT，单卡 HBM 96 GiB |
-| Ascend 驱动 | `25.1.rc3` |
-| 固件 | `9.2.0.101.235` |
-| CANN／Runtime／HCCL | `9.2.1` |
+| 服务器／容器 | 专项 `177.42.22.1`，完整模型 `177.42.23.1/24.1`，均使用 `c00954197_dsv41_cann930` |
+| 宿主机系统／架构 | openEuler，Linux 6.6.0-145.3.35.166.oe2403sp3，aarch64 |
+| NPU | 每节点 8×Ascend950DT，单卡 HBM 96 GiB，完整模型使用双节点 16 卡 |
+| CANN toolkit | `9.3.0`，`V100R001C25B114` |
 | Python | `3.12.16` |
 | PyTorch | `2.10.0+cpu`，通过 TorchNPU 支持 NPU |
 | TorchNPU | `2.10.0.post7` |
 | vLLM | `0.32.0+empty`，commit点： `5df63a7203cdb9328d824a27b682e77c7b9928be` |
 | vLLM-Ascend | `0.19.1rc2.dev3401+g28e9e97ba`，commit点： `28e9e97ba254b076a88275e8a275556cb9a11664` |
 | Transformers | `5.19.0` |
-| Triton／Triton-Ascend | `3.6.0`／`3.6.0.post2` |
-| NumPy | `1.26.4` |
-| safetensors／tokenizers | `0.8.0`／`0.23.3` |
-| Ray | `2.48.0` |
 | Docker 网络／IPC | `host`／`host` |
-| 实际共享内存容量 | 约 1.10 TiB |
-| E23 Gloo 接口 | `enp39s0f0` |
-| E23 HCCL 接口 | `enp35s0f2` |
+| Docker socket | `/run/c00954197-cann930/docker.sock` |
+| Gloo 接口 | `enp39s0f0` |
+| HCCL 接口 | `enp35s0f2` |
 
-镜像：`c00954197/vllm-ascend:main-a5-20261108-e8215a9d`；镜像ID：`sha256:59b0f6431b5f81bc0037d485c41bdcccf6af70805090c68bfbedba14ba6bc5e8`。镜像标签后缀不是当前源码commit。
+镜像为 `c00954197/vllm-ascend:1108-cann930-20261113`，镜像 ID 为 `sha256:3614b7afe7000897bf6f1c60a415f2547feb0e033bae0c9bf76c68a76ecf944f`。实际源码在上述提交上包含本轮修复补丁，具体文件哈希与运行时状态见环境记录。[CANN930 环境报告](environment/cann930_environment_20261117.md)
 
-[环境报告](environment/1108_environment_20261112.md)与[两节点原始快照](environment/environment_snapshot.json)记录挂载、导入路径和版本。原环境报告将KV写为BF16，指CLI值；实际packed cache解释以本交付件模型分析为准。该环境证明历史实测，不是任意torch/CANN版本组合的兼容认证。
+1108 两节点环境报告与原始快照用于解释 E23 历史性能。原报告中的 KV BF16 为 CLI 配置，实际 packed cache 布局见模型结构分析。[历史环境](environment/1108_environment_20261112.md) [历史快照](environment/environment_snapshot.json)
 
-vLLM源码：`https://github.com/vllm-project/vllm`；Ascend插件：`https://github.com/vllm-project/vllm-ascend`。历史1108快照两仓库已跟踪文件无改动，未统计未跟踪文件。未找到需要附上的本实验专用源码修复PR；Gloo问题通过接口配置规避，不虚构已合入PR。
+本轮修复涉及 RMSNorm 常量 buffer、attention sink 的 layerwise 加载，以及运行时专家通信映射的加载配额。三项已完成实机验证。IPC 逐 chunk 导出 rebuild 参数的后续补丁已完成 CPU 验证，NPU 回收效果待验证。[Sleep 补丁](reduced/cann930_20261117/sleep_level2/patches/) [权重更新补丁](reduced/cann930_20261117/weight_update/patches/)
 
-## 全层服务与客户端脚本
+## CANN930 完整模型服务与客户端
+
+主节点为 177.42.23.1，子节点为 177.42.24.1，使用 TP1/PCP8/DP2/EP16、async、FULL_DECODE_ONLY 和 CCU_SCHED。进入容器的命令如下。
+
+```bash
+docker -H unix:///run/c00954197-cann930/docker.sock exec -it c00954197_dsv41_cann930 bash -l
+```
+
+服务启动脚本基于实测快照更新模型和工作目录路径，当前模型路径为 `/mnt/share/c00954197/model/deepseek-V4.1-Flash-1017-bf16`。主、子节点分别运行对应服务脚本，随后在主节点串行执行三场景各四轮和 GPQA 8/198 题。实际运行快照保留当时的路径与参数。[主节点](full/cann930_20261117/scripts/run_master.sh) [子节点](full/cann930_20261117/scripts/run_worker.sh) [客户端与审计](full/cann930_20261117/scripts/) [实测快照](full/cann930_20261117/combined_run/snapshots/)
+
+服务上下文 40960、batched tokens 2048、每 DP 最大序列数 32、显存比例 0.96。GPQA 使用 32768 输出预算、temperature=0、thinking=true、reasoning_effort=100。65536 预算为后续复验方案。
+
+## 完整模型历史服务与客户端脚本
 
 - [主节点脚本](full/E23/scripts/run_master_mm.sh)、[子节点脚本](full/E23/scripts/run_worker_mm.sh)。保持历史原文件；执行前按实际机器核对IP、网卡和模型路径。
 - [纯文本2K→6K](full/E23/scripts/run_client_text_2k_6k.sh)、[图文1K→2K](full/E23/scripts/run_client_mm_1k_2k.sh)、[图文4K→32K](full/E23/scripts/run_client_mm_4k_32k.sh)。
@@ -148,7 +156,7 @@ curl -sS http://localhost:8000/v1/chat/completions \
 
 ## SP功能
 
-裁剪模型受TP>1前置限制，未执行有效SP专项；TP1下打开无效开关不能算通过。[配置](reduced/basic_feature/configs/cases/F05_sp.json)。保留模板 `--compilation-config '{"pass_config":{"enable_sp":true}}'` 作为待验证方向，不提供已经通过的声明。
+裁剪模型受TP>1前置限制，未执行有效SP专项；TP1下打开无效开关不能算通过。[配置](reduced/basic_feature/configs/cases/F05_sp.json)。待验证配置为 `--compilation-config '{"pass_config":{"enable_sp":true}}'`，需在满足 TP 前置条件后实测。
 
 ## PP功能
 
@@ -162,43 +170,80 @@ curl -sS http://localhost:8000/v1/chat/completions \
 
 # RL功能验证
 
-以下最新专项使用1108、40层32专家且Engram/DSpark关闭，与完整模型身份不同。 [完整13项报告](reduced/basic_feature/VALIDATION_REPORT.md)、[执行汇总](reduced/basic_feature/results/EXECUTION_SUMMARY_20261113.json)、[测试脚本](reduced/basic_feature/scripts/)、[各配置](reduced/basic_feature/configs/cases/)。本次没有移植HY4/Step5补丁或重新运行RL测试。
+本轮 Sleep level-2、checkpoint、HCCL 与 NPU IPC 专项使用 CANN930 容器、40 层 32 专家 BF16 模型，Engram 关闭。2026-11-13 的 1108 基础功能记录继续作为其他专项的历史证据。[本轮实验](reduced/cann930_20261117/README.md) [功能矩阵](reduced/basic_feature/VALIDATION_REPORT.md) [历史执行汇总](reduced/basic_feature/results/EXECUTION_SUMMARY_20261113.json)
 
 ## sleep mode功能精度验证
 
-模板参考：[vLLM #53200](https://github.com/vllm-project/vllm/pull/53200)。
+**CANN930 缩减模型 Sleep level-2 五轮验收通过。** 按 sleep2→wake(weights)→checkpoint reload→wake(kv_cache) 执行，逐副本定向发送 temperature=0 的单请求。五轮共 80 次恢复后请求，文本、token IDs 和逐 token logprob 与首次加载基准完全一致，最大 logprob 差值为 0。
 
-- Level-1：5/5轮temperature=0输出token与基准一致，8卡HBM最后相对初始最大增长80MiB；仅首引擎allocator统计可见，其余卡依赖HBM采样。此结论不代表全部logprobs严格相等或长期无泄漏。
-- Level-2：按wake(weights)→reload_weights→wake(kv_cache)执行，两次均首轮token不一致，复现从第一个输出token即不同；未完成5轮，不能标为通过。
-- 原始[Level-1记录](reduced/basic_feature/results/node26_F11_sleep1_20261113T100448/)、[Level-2复现](reduced/basic_feature/results/node26_F12_sleep2_repro_20261113T102258/)。完整BF16＋Engram的Level-2五轮输出、logprob和显存检查待开展。
+故障定位到 attention sink 直接 `param.data.copy_` 绕过 layerwise weight_loader，以及无学习权重 RMSNorm 常量未注册为 buffer。修复后两组共 6 项 CPU 回归通过，并完成 TP1/DP8/EP8 的实机五轮验证。
+
+| 轮次 | 一致请求 | sleep 前 HBM | sleep 后 HBM | wakeup 后 HBM | 请求后稳态 HBM |
+|---|---|---|---|---|---|
+| 1 | 16/16 | 59030–59395 | 8100–8436 | 58996–59341 | 59070–59375 |
+| 2 | 16/16 | 59070–59375 | 8140–8436 | 59036–59341 | 59070–59375 |
+| 3 | 16/16 | 59070–59375 | 8140–8436 | 59036–59341 | 59070–59375 |
+| 4 | 16/16 | 59070–59375 | 8140–8437 | 59036–59341 | 59070–59375 |
+| 5 | 16/16 | 59070–59375 | 8174–8465 | 59036–59341 | 59070–59375 |
+
+单位为 MiB，区间覆盖 8 张卡。相对加载基准的最大单卡稳态增量为 40 MiB，首轮恢复后各轮最大增长为 1 MiB。裁剪模型的基准输出仍存在质量限制，完整 384 专家＋Engram 的五轮恢复验证等待资源安排。[完整报告](reduced/cann930_20261117/sleep_level2/REPORT.md) [五轮输出](reduced/cann930_20261117/sleep_level2/five_cycle_outputs.txt) [逐卡显存](reduced/cann930_20261117/sleep_level2/memory_five_cycles.csv) [服务脚本](reduced/cann930_20261117/sleep_level2/scripts/start_server.sh)
+
+1108 环境中 level-1 的五轮一致性记录，以及 level-2 的首轮输出差异继续保留，作为修复前证据。[历史 level-1](reduced/basic_feature/results/node26_F11_sleep1_20261113T100448/) [历史 level-2](reduced/basic_feature/results/node26_F12_sleep2_repro_20261113T102258/)
 
 ## routing replay功能验证
 
-模板参考：[vLLM #52902](https://github.com/vllm-project/vllm/pull/52902)。裁剪模型启用返回专家后，AuxOutput要求prefix caching；修正后单请求HTTP200，但响应未及时落盘，双请求触发 `unexpected topk_ids batch dim 2` 与HTTP500，不能判专家内容校验通过。[日志](reduced/basic_feature/results/node26_F09_routing_20261113T095702/server.log)。训练侧强制路由replay也未验证。完整MoE正常推理不能替代此项。
+1108 裁剪模型启用返回专家后，AuxOutput要求prefix caching；修正后单请求HTTP200，但响应未及时落盘，双请求触发 `unexpected topk_ids batch dim 2` 与HTTP500，不能判专家内容校验通过。[日志](reduced/basic_feature/results/node26_F09_routing_20261113T095702/server.log)。训练侧强制路由replay也未验证。完整MoE正常推理不能替代此项。
 
 ## 权重更新功能验证
 
-模板参考：[vLLM #53541](https://github.com/vllm-project/vllm/pull/53541)。
+**CANN930 缩减模型 HCCL 与 NPU IPC 全量 A→B→A 均通过。** 每轮每个发送端及每个接收副本均记录 6248 张量、135927315272 字节。B 对输出头词表行循环置换一次，由同拓扑独立冷加载 B 提供数值对照。版本提交为 `B`、`A-restored`，所有副本完整 head 哈希和双接口文本/token/logprob 均与对应基准严格一致。
 
-| 路径 | 实测状态 | 后续验收 |
+OOM 根因为运行时通信映射 `expert_ids_per_ep_rank` 被计入 checkpoint 加载配额，EP4 每层实际加载 283115520 个元素，预期配额多出 32，逐层暂存输入无法释放。修复将该运行时字段加入跳过加载集合，最大采样延迟张量量从失败时约 44.32 GiB 降至 HCCL 2.043457 GiB、IPC 2.087402 GiB，轮后均归零。
+
+| 路径 | 拓扑与验收 | 采样 HBM 与状态 |
 |---|---|---|
-| checkpoint reload | 与Level-2恢复组合执行，返回后生成token不一致 | 独立A→B→A、双接口文本/token/logprobs与权重内容检查 |
-| HCCL | DP4/EP4推理＋独立sender；0.75/0.55更新OOM；0.50启动KV不足 | 先做全量权重更新内存预算，再完整传输与一致性验证 |
-| NPU IPC | DP8/EP8＋8个同卡sender，packed2GiB、0.45、backend=npu_ipc，真实更新OOM | 校验完整B加载和A恢复，不能以部分传输成功代替 |
+| checkpoint reload | Sleep level-2 五轮，逐副本双接口恢复一致 | 最大单卡稳态增量 40 MiB |
+| HCCL | DP4/EP4 推理 NPU0–3，独立发送端 NPU7，完整 A→B→A | 更新阶段接收卡峰值 61552 MiB |
+| NPU IPC | DP8/EP8 与 8 个同置发送进程，完整 A→B→A | 更新阶段接收卡峰值 44611 MiB，IPC 回收补丁待实机复验 |
 
-[HCCL结果](reduced/basic_feature/results/node26_F13_hccl_20261113T112758/)、[NPU IPC结果](reduced/basic_feature/results/node26_F13_ipc_20261113T115009/)。完整384专家模型内存需求更高，不能直接照搬裁剪模型参数重测。
+显式 KV 为 2 GiB，单 packed buffer 为 1280 MiB，HCCL_BUFFSIZE 为 256 MiB。最大单张量为 1262.5 MiB，当前打包器要求单缓冲可容纳该张量。[完整报告](reduced/cann930_20261117/weight_update/REPORT.md) [HCCL 逐端审计](reduced/cann930_20261117/weight_update/runs/transfer_20261117_03/hccl_producer/full_transfer_audit.json) [IPC 逐端审计](reduced/cann930_20261117/weight_update/runs/transfer_20261117_03/npu_ipc_producer/full_transfer_audit.json)
+
+后续审计发现旧 IPC 实现各发送进程的分配量在 B 轮后为 1.25 GiB、恢复 A 后为 2.5 GiB，退出共出现 8 条共享张量释放告警。逐 chunk 导出新 rebuild 参数的补丁通过新增 5 项 CPU 回归和仓库 106 项 CPU 测试，实际回收效果等待资源安排。当前 prompt 的 cached_tokens 始终为 0，有效缓存命中后的更新失效仍待覆盖。[验证状态](reduced/cann930_20261117/weight_update/validation_status.json) [后续复验步骤](reduced/cann930_20261117/weight_update/pending_validation.md)
+
+1108 的更新 OOM 和本轮 CANN930 修复前失败日志继续保留。完整 384 专家模型的更新验证需要独立容量预算和实机结果。[1108 HCCL](reduced/basic_feature/results/node26_F13_hccl_20261113T112758/) [1108 IPC](reduced/basic_feature/results/node26_F13_ipc_20261113T115009/) [本轮失败现场](reduced/cann930_20261117/weight_update/diagnostics/oom_reproduction.json)
 
 ## 1M长序列功能验证
 
 裁剪模型实现了1000000输入token＋1024输出token，耗时305.99秒，但5%/50%/95%三个位置检索命中0/3，输出重复。只能标记容量通路通过，不能写成“1M精度/有效回答通过”。[原始结果](reduced/basic_feature/results/node26_F14_long_20261113T120549/long_1000000.json)。
 
-完整模型E23上下文40960、4K→32K长输出不等于1M长输入。完整模型1M测试待开展：保存真实tokenizer计数、请求与输出、内存、检索答案；模板附件若不可获取，先确定替代文本并注明，不能将1M字符直接当成1M token。
+完整模型E23上下文40960、4K→32K长输出不等于1M长输入。完整模型1M测试待开展，需保存输入文本版本、真实 tokenizer 计数、请求与输出、内存和检索答案。
 
 # 性能与精度验证
 
-## 性能需求与正式结果
+## CANN930 正式性能结果
 
-以当前模板的**4K输入→32K输出**为主场景，图文每请求一张图片。原草稿“多模态32K→4K”标题已纠正。
+2026-11-17 的完整模型服务在 23/24 双节点连续运行，按图文 4K→32K、文本 2K→6K、图文 1K→2K 顺序各执行四轮。每轮 64 个请求、并发 64，输出完整。图文图片为高 1920×宽 1080，prefix caching 开启，轮次间复用缓存。
+
+| 场景 | 轮次 | 成功/失败 | 总输出 token | 耗时 s | 输出 token/s | 平均 TTFT ms | 平均 TPOT ms |
+|---|---|---|---|---|---|---|---|
+| mm_4k_32k | [1](full/cann930_20261117/performance_results/mm_4k_32k/20261116T205522Z_zRmtCa/benchmark.json) | 64/0 | 2097152 | 941.099 | 2228.407 | 19224.264 | 28.101 |
+| mm_4k_32k | [2](full/cann930_20261117/performance_results/mm_4k_32k/20261116T211122Z_d05oZn/benchmark.json) | 64/0 | 2097152 | 934.647 | 2243.790 | 9596.589 | 28.207 |
+| mm_4k_32k | [3](full/cann930_20261117/performance_results/mm_4k_32k/20261116T212716Z_WNFjMZ/benchmark.json) | 64/0 | 2097152 | 944.969 | 2219.281 | 8417.828 | 28.564 |
+| mm_4k_32k | [4](full/cann930_20261117/performance_results/mm_4k_32k/20261116T214320Z_Cqk0Xa/benchmark.json) | 64/0 | 2097152 | 940.154 | 2230.647 | 7982.875 | 28.431 |
+| text_2k_6k | [1](full/cann930_20261117/performance_results/text_2k_6k/20261116T215920Z_yLSInZ/benchmark.json) | 64/0 | 393216 | 182.020 | 2160.291 | 4865.748 | 28.775 |
+| text_2k_6k | [2](full/cann930_20261117/performance_results/text_2k_6k/20261116T220236Z_yz1k2a/benchmark.json) | 64/0 | 393216 | 176.355 | 2229.686 | 2062.710 | 28.337 |
+| text_2k_6k | [3](full/cann930_20261117/performance_results/text_2k_6k/20261116T220547Z_CUc2vU/benchmark.json) | 64/0 | 393216 | 176.542 | 2227.319 | 1270.352 | 28.517 |
+| text_2k_6k | [4](full/cann930_20261117/performance_results/text_2k_6k/20261116T220857Z_9uRr5a/benchmark.json) | 64/0 | 393216 | 175.986 | 2234.358 | 1159.127 | 28.450 |
+| mm_1k_2k | [1](full/cann930_20261117/performance_results/mm_1k_2k/20261116T221208Z_scB8wm/benchmark.json) | 64/0 | 131072 | 70.928 | 1847.958 | 8912.948 | 30.046 |
+| mm_1k_2k | [2](full/cann930_20261117/performance_results/mm_1k_2k/20261116T221333Z_YHqkFW/benchmark.json) | 64/0 | 131072 | 73.521 | 1782.774 | 6931.700 | 32.280 |
+| mm_1k_2k | [3](full/cann930_20261117/performance_results/mm_1k_2k/20261116T221502Z_hjwCFl/benchmark.json) | 64/0 | 131072 | 74.936 | 1749.108 | 7609.830 | 32.610 |
+| mm_1k_2k | [4](full/cann930_20261117/performance_results/mm_1k_2k/20261116T221632Z_MyA2B0/benchmark.json) | 64/0 | 131072 | 65.632 | 1997.070 | 5894.833 | 28.910 |
+
+三场景四轮平均吞吐分别为 2230.531、2212.914、1844.228 token/s。数据对应本轮 CANN930、CCU_SCHED、异步调度与服务复用条件。[完整报告](full/cann930_20261117/REPORT.md) [执行汇总](full/cann930_20261117/combined_run/results_summary.json)
+
+## 1108 历史性能结果
+
+主性能场景为 **4K 输入→32K 输出**，图文每请求一张图片。
 
 E23三组均64请求、最大并发64、seed42、ignore-eos、request-rate10000、openai-chat；服务端每DP实例32。图片bucket为 `(1920,1080,1)`，该脚本按**高、宽、帧数**解释，实际为高1920、宽1080的竖图。若验收将“1920×1080”严格定义为宽×高的横图，需要补测，不能默认为已满足方向要求。
 
@@ -251,9 +296,13 @@ no_stack客户端完整结束64成功/0失败、393216输出token；with_stack�
 
 ## 精度验证
 
-目前没有可归档的本模型Math-500、TextVQA正式评分、竞品同条件多轮数据或T检验。草稿中的Math-500 97.44%、TextVQA 77.539%来自模板示例，已删除，**不是本模型成绩**。单curl算术正确和随机长输出性能不能代替数据集精度。
+CANN930 完整模型完成 GPQA Diamond 8 题预检和 198 题正式评测。正式评测请求成功 198/198，AISBench 原始评分为 165/198、83.333333%，最终 content 审计为 164/198、82.828283%。零基题号 52 的最终 content 为空，原评分从推理文本提取答案并计对，造成 1 题差异。24 题达到 32768 输出上限且无可提取最终答案，均随分数报告。[GPQA 报告](full/cann930_20261117/REPORT.md) [正式审计](full/cann930_20261117/precision_results/gpqa_198/gpqa_audit.json)
 
-待执行：完整BF16＋Engram，ais_bench固定数据集版本、prompt、图像处理、tokenizer、采样参数、最大输出长度和seed；保存逐题输出、提取率、截断率与评分。有竞品时用同条件多轮分数进行T检验；无竞品时选模型报告同口径典型集，明确“1%”是绝对百分点还是相对误差。模板所列内部T检验规范本次未读取，不能声称通过该规范。
+实际参数为 temperature=0、top_p=1、seed=42、thinking=true、reasoning_effort=100、并发 8、max_out_len=32768。原始两轮审计分别因 JSONL Unicode 读取和空最终答案评分差异退出 1，修正后的 CPU 复核均退出 0。精度达标阈值与同条件对照仍待确定，65536 输出预算的真实推理等待资源安排。
+
+Math-500、TextVQA 的正式评测、同条件多轮对照和 T 检验仍待完成。现有结果覆盖单请求算术样例与随机长输出性能。
+
+后续使用完整 BF16＋Engram 模型，以 ais_bench 固定数据集版本、prompt、图像处理、tokenizer、采样参数、最大输出长度和 seed，保存逐题输出、提取率、截断率与评分。具备同条件多轮分数时执行 T 检验，评估阈值需明确采用绝对百分点或相对误差。
 
 # 问题、规避与CANN9.3.0补充结果
 
@@ -262,10 +311,13 @@ no_stack客户端完整结束64成功/0失败、393216输出token；with_stack�
 3. **CANN9.3.0裁剪模型异步长输出异常：**历史E24出现507011、AI Vector timeout/trap，async copy_event同步处检测错误；返回64成功但输出5458而非393216也不能判通过。具体根因尚未闭环，不归因成“BF16 KV不兼容”。
 4. **完整模型CANN9.3.0 E25：**同权重和Engram，关闭async后4K图文→32K三轮通过；耗时1400.80/1378.84/1370.71秒，吞吐1497.11/1520.95/1529.98 tok/s。见[三轮结果](full/E25/results/)与[环境](environment/cann930_container_build_report.md)。
 5. E23平均约2205 tok/s，E25约1516 tok/s。CANN版本和async开关同时改变，不能把约31%的差距直接归因CANN升级。现有ArgSort转AiCPU、internal format等告警并非E25独有；未找到证明稳态性能下降根因的单条告警。[日志对比](diagnostics/E23_E25/)。需补9.2.1＋async关闭的同条件控制组。
+6. **Sleep level-2 恢复差异已修复。** attention sink 加载改为调用 layerwise weight_loader，无学习权重 RMSNorm 常量注册为非持久 buffer，CANN930 五轮逐副本双接口验证通过。[修复与实测](reduced/cann930_20261117/sleep_level2/REPORT.md)
+7. **全量权重更新接收端 OOM 已修复。** 排除运行时通信映射的加载配额后，HCCL、IPC 均完成全量 A→B→A。IPC 发送端的缓冲回收问题已完成 CPU 修复验证，NPU 复验等待资源安排。[修复与实测](reduced/cann930_20261117/weight_update/REPORT.md)
+8. **CANN930 完整模型异步配置已复验。** 双节点使用 CCU_SCHED 和 Gloo CPU 超时透传修复，完成 12 轮完整性能与 GPQA 请求。默认通信展开模式超时的底层机制仍待确认。[当前完整模型报告](full/cann930_20261117/REPORT.md)
 
 # 交付物与复现范围
 
-[README](README.md)为工程入口，[归档清单](ARCHIVE.md)说明包含和未包含材料；`manifest.sha256`记录归档文件校验值。保留运行脚本、实际参数、原始日志/响应/性能JSON、环境快照、转换记录、功能失败证据和profiling表格。文件中历史IP/路径用于追溯，迁移时需要替换；GitHub按用户选择作公开归档，不上传模型权重、SSH凭据或环境认证信息。
+[README](README.md)为工程入口，[归档清单](ARCHIVE.md)说明交付范围，`manifest.sha256`记录文件校验值。本仓库收录运行脚本、实际参数、原始日志/响应/性能 JSON、环境快照、修复补丁、转换记录、失败证据和 profiling 表格。历史 IP、容器及模型路径保留用于追溯，当前执行入口使用 CANN930 环境配置。
 
 镜像仅提供标签、ID和环境证据；尚未导出可下载镜像tar，不能把记录镜像ID写成已交付镜像二进制。原始两轮profiling rank0 zip及全16rank trace为本地/共享存储大件，Git仓库保存分析CSV/Excel和索引，不复制数百MB检查中间文件。
 
@@ -276,7 +328,9 @@ no_stack客户端完整结束64成功/0失败、393216输出token；with_stack�
 | P0 | 完整模型Math-500、TextVQA精度 | 数据/命令/版本、逐题输出、提取与截断、评分和同口径对照/T检验 |
 | P0 | 完整模型Level-2 sleep/wake五轮 | 双接口固定greedy请求，文本/token/logprobs恢复一致，各卡逐轮显存无持续增长 |
 | P0 | routing专家返回及需要时训练侧replay | 单/多请求原始专家、dtype/shape/范围，实际回放路径无报错 |
-| P0 | checkpoint、HCCL、NPU IPC完整更新 | 内存预算，独立完整A→B→A与内容哈希；生成恢复；泄漏/正常退出检查 |
+| P0 | IPC 最新引用计数补丁实机复验 | 单卡 20 轮回收、数据一致性、轮后 allocated/reserved、退出告警，再执行 8 卡全量 A→B→A |
+| P0 | 完整 384 专家模型 checkpoint、HCCL、NPU IPC 更新 | 独立容量预算、全量计数、版本、权重哈希、生成对照和连续更新回收检查 |
+| P1 | GPQA 65536 输出预算复验 | 固定数据、实际采样参数与评分口径，报告预算命中和最终答案提取率 |
 | P1 | 完整模型1M有效回答 | tokenizer输入计数、完整请求/响应、检索命中与无乱码；不只容量 |
 | P1 | 主场景4K图文→32K硬件验收 | 视觉/prefill/decode、多卡取证；明确经验评分与理论峰值目标区别 |
 | P1 | 完整模型功能开关精度对照 | PCP档位、eager/graph、async、chunk，固定输入和比较口径 |
@@ -285,4 +339,4 @@ no_stack客户端完整结束64成功/0失败、393216输出token；with_stack�
 | P2 | CANN性能单变量对照 | 9.2.1＋async关闭与9.3.0＋async关闭同负载同采样 |
 | P2 | 权重与交付补证 | 反量化FP4/FP8数值校验、公共源码可达提交/必要PR、镜像导出校验 |
 
-以上为待办计划，本次不执行新的推理、RL、profiling或权重转换任务。
+资源安排后按上述范围补充实测。32 专家模型已完成的 Sleep level-2 与两种全量权重更新结果，见本轮专项报告。

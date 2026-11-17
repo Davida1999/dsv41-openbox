@@ -1,0 +1,28 @@
+{
+  "backend": "npu_ipc",
+  "status": "running",
+  "rounds": [],
+  "source_A": {
+    "path": "/mnt/share/c00954197/Workspace/dsv41/basic/model",
+    "format": "safetensors",
+    "file_count": 503,
+    "total_file_bytes": 332539144800,
+    "tensor_count": 6248,
+    "total_tensor_bytes": 135927315272,
+    "max_tensor_name": "embed.weight",
+    "max_tensor_bytes": 1323827200,
+    "manifest_sha256": "47e807fad2a0bf06b28ad912a5a1b61dafef72cab209a71a7b95cb2451156e40"
+  },
+  "source_B": {
+    "path": "/mnt/share/c00954197/Workspace/dsv41/basic/weight_update/model_b",
+    "format": "safetensors",
+    "file_count": 503,
+    "total_file_bytes": 332539144800,
+    "tensor_count": 6248,
+    "total_tensor_bytes": 135927315272,
+    "max_tensor_name": "embed.weight",
+    "max_tensor_bytes": 1323827200,
+    "manifest_sha256": "47e807fad2a0bf06b28ad912a5a1b61dafef72cab209a71a7b95cb2451156e40"
+  },
+  "rank": 5
+}

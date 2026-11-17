@@ -1,0 +1,128 @@
+{
+  "cycle": 1,
+  "lifecycle_seconds": 34.5800536996685,
+  "released_bytes_by_dp_rank": {
+    "0": 53403975680,
+    "1": 53439627264,
+    "2": 53439627264,
+    "3": 53424947200,
+    "4": 53433335808,
+    "5": 53410267136,
+    "6": 53425995776,
+    "7": 53439627264
+  },
+  "comparisons": {
+    "dp0_completions": {
+      "text_identical": true,
+      "token_ids_identical": true,
+      "tokens_identical": true,
+      "logprobs_identical": true,
+      "max_logprob_delta": 0.0
+    },
+    "dp0_chat_completions": {
+      "text_identical": true,
+      "token_ids_identical": true,
+      "tokens_identical": true,
+      "logprobs_identical": true,
+      "max_logprob_delta": 0.0
+    },
+    "dp1_completions": {
+      "text_identical": true,
+      "token_ids_identical": true,
+      "tokens_identical": true,
+      "logprobs_identical": true,
+      "max_logprob_delta": 0.0
+    },
+    "dp1_chat_completions": {
+      "text_identical": true,
+      "token_ids_identical": true,
+      "tokens_identical": true,
+      "logprobs_identical": true,
+      "max_logprob_delta": 0.0
+    },
+    "dp2_completions": {
+      "text_identical": true,
+      "token_ids_identical": true,
+      "tokens_identical": true,
+      "logprobs_identical": true,
+      "max_logprob_delta": 0.0
+    },
+    "dp2_chat_completions": {
+      "text_identical": true,
+      "token_ids_identical": true,
+      "tokens_identical": true,
+      "logprobs_identical": true,
+      "max_logprob_delta": 0.0
+    },
+    "dp3_completions": {
+      "text_identical": true,
+      "token_ids_identical": true,
+      "tokens_identical": true,
+      "logprobs_identical": true,
+      "max_logprob_delta": 0.0
+    },
+    "dp3_chat_completions": {
+      "text_identical": true,
+      "token_ids_identical": true,
+      "tokens_identical": true,
+      "logprobs_identical": true,
+      "max_logprob_delta": 0.0
+    },
+    "dp4_completions": {
+      "text_identical": true,
+      "token_ids_identical": true,
+      "tokens_identical": true,
+      "logprobs_identical": true,
+      "max_logprob_delta": 0.0
+    },
+    "dp4_chat_completions": {
+      "text_identical": true,
+      "token_ids_identical": true,
+      "tokens_identical": true,
+      "logprobs_identical": true,
+      "max_logprob_delta": 0.0
+    },
+    "dp5_completions": {
+      "text_identical": true,
+      "token_ids_identical": true,
+      "tokens_identical": true,
+      "logprobs_identical": true,
+      "max_logprob_delta": 0.0
+    },
+    "dp5_chat_completions": {
+      "text_identical": true,
+      "token_ids_identical": true,
+      "tokens_identical": true,
+      "logprobs_identical": true,
+      "max_logprob_delta": 0.0
+    },
+    "dp6_completions": {
+      "text_identical": true,
+      "token_ids_identical": true,
+      "tokens_identical": true,
+      "logprobs_identical": true,
+      "max_logprob_delta": 0.0
+    },
+    "dp6_chat_completions": {
+      "text_identical": true,
+      "token_ids_identical": true,
+      "tokens_identical": true,
+      "logprobs_identical": true,
+      "max_logprob_delta": 0.0
+    },
+    "dp7_completions": {
+      "text_identical": true,
+      "token_ids_identical": true,
+      "tokens_identical": true,
+      "logprobs_identical": true,
+      "max_logprob_delta": 0.0
+    },
+    "dp7_chat_completions": {
+      "text_identical": true,
+      "token_ids_identical": true,
+      "tokens_identical": true,
+      "logprobs_identical": true,
+      "max_logprob_delta": 0.0
+    }
+  }
+}

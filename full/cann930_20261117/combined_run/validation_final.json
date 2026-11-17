@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "scope": "Requested execution, output completeness, independent scoring reconciliation, and resource release",
+  "completed_tasks": 14,
+  "raw_accuracy_script_exit_codes": [
+    1,
+    1
+  ],
+  "cpu_audit_recheck_exit_codes": [
+    0,
+    0
+  ],
+  "performance_requests": 768,
+  "accuracy_requests": 206,
+  "all_generated_tokens": 12621655,
+  "accuracy_threshold_specified": false,
+  "service_released": true
+}

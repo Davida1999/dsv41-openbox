@@ -1,0 +1,42 @@
+[
+  {
+    "cycle": 1,
+    "changed_parameter_fingerprints": [],
+    "sleeping": true,
+    "weights_only_still_sleeping": true,
+    "fully_awake": true,
+    "discard_all_metric_seen": true
+  },
+  {
+    "cycle": 2,
+    "changed_parameter_fingerprints": [],
+    "sleeping": true,
+    "weights_only_still_sleeping": true,
+    "fully_awake": true,
+    "discard_all_metric_seen": true
+  },
+  {
+    "cycle": 3,
+    "changed_parameter_fingerprints": [],
+    "sleeping": true,
+    "weights_only_still_sleeping": true,
+    "fully_awake": true,
+    "discard_all_metric_seen": true
+  },
+  {
+    "cycle": 4,
+    "changed_parameter_fingerprints": [],
+    "sleeping": true,
+    "weights_only_still_sleeping": true,
+    "fully_awake": true,
+    "discard_all_metric_seen": true
+  },
+  {
+    "cycle": 5,
+    "changed_parameter_fingerprints": [],
+    "sleeping": true,
+    "weights_only_still_sleeping": true,
+    "fully_awake": true,
+    "discard_all_metric_seen": true
+  }
+]

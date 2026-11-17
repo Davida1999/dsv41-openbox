@@ -1,0 +1,19 @@
+START hccl oracle /mnt/share/c00954197/Workspace/dsv41/basic/weight_update/runs/transfer_20261117_01/hccl_oracle
+WAITING_FOR_SERVICE hccl_oracle 0
+WAITING_FOR_SERVICE hccl_oracle 60
+WAITING_FOR_SERVICE hccl_oracle 120
+WAITING_FOR_SERVICE hccl_oracle 180
+COMPLETE hccl oracle
+START hccl producer /mnt/share/c00954197/Workspace/dsv41/basic/weight_update/runs/transfer_20261117_01/hccl_producer
+WAITING_FOR_SERVICE hccl_producer 0
+WAITING_FOR_SERVICE hccl_producer 60
+WAITING_FOR_SERVICE hccl_producer 120
+WAITING_FOR_SERVICE hccl_producer 180
+Traceback (most recent call last):
+  File "/mnt/share/c00954197/Workspace/dsv41/basic/weight_update/scripts/run_host.py", line 157, in <module>
+    main()
+  File "/mnt/share/c00954197/Workspace/dsv41/basic/weight_update/scripts/run_host.py", line 134, in main
+    execute(backend, mode, run, oracle_path)
+  File "/mnt/share/c00954197/Workspace/dsv41/basic/weight_update/scripts/run_host.py", line 105, in execute
+    raise RuntimeError(f"{mode} failed with exit {code}, see {run}")
+RuntimeError: producer failed with exit 143, see /mnt/share/c00954197/Workspace/dsv41/basic/weight_update/runs/transfer_20261117_01/hccl_producer

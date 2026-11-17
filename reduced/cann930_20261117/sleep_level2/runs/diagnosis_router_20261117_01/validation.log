@@ -1,0 +1,12 @@
+warmup dp0_completions 22.18s ' 250. The capital of France is'
+warmup dp0_chat_completions 1.45s ': The capital of France is " France'
+baseline dp0_completions 1.44s ' 250. The capital of France is'
+baseline dp0_chat_completions 1.46s ': The capital of France is " France'
+cycle_1 dp0_completions 1.36s ' 20.20.20.20'
+cycle_1 dp0_chat_completions 1.51s ' is "The capital of France is '
+Traceback (most recent call last):
+  File "/mnt/share/c00954197/Workspace/dsv41/basic/scripts/verify_sleep2.py", line 198, in main
+    raise AssertionError("Restored output differs from the initial loaded-checkpoint baseline")
+AssertionError: Restored output differs from the initial loaded-checkpoint baseline
+
+FINAL failed /mnt/share/c00954197/Workspace/dsv41/basic/runs/diagnosis_router_20261117_01/validation

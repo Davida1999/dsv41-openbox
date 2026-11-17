@@ -1,0 +1,17 @@
+{
+  "dp_rank": 1,
+  "rank": 0,
+  "device": 1,
+  "allocated_bytes": 43005414400,
+  "reserved_bytes": 46529511424,
+  "free_bytes": 49821601792,
+  "used_bytes": 48694210560,
+  "head_name": "language_model.lm_head.weight",
+  "head_shape": [
+    129280,
+    5120
+  ],
+  "head_dtype": "torch.bfloat16",
+  "head_sha256": "12f45f83b1a1cd9f440f48f2d5a8b7b38b0a71fc9b35b7f9b7de7c4d81673508",
+  "head_data_ptr": 20106889396224
+}

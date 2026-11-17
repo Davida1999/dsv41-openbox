@@ -1,0 +1,14 @@
+{
+  "node": "node24",
+  "release_verified": true,
+  "remaining_owned": [],
+  "npu_empty_devices": 8,
+  "service_ports_released": true,
+  "telemetry_samples": 4373,
+  "competition_samples": 0,
+  "before_stop_log_sha256_verified": true,
+  "before_stop_error_lines": 0,
+  "container_processes_file": "/mnt/share/c00954197/Workspace/dsv41/precision/runs/combined_20261117_R1/node24/released_processes.txt",
+  "npu_file": "/mnt/share/c00954197/Workspace/dsv41/precision/runs/combined_20261117_R1/node24/released_npu.txt",
+  "cann_logs_manifest": "/mnt/share/c00954197/Workspace/dsv41/precision/runs/combined_20261117_R1/node24/cann_logs_manifest.json"
+}

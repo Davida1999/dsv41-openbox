@@ -1,0 +1,11 @@
+[
+  {
+    "id": 52,
+    "raw_answer": "D",
+    "final_answer": null,
+    "gold": "D",
+    "output_tokens": 32768,
+    "content_present": true,
+    "content_empty": true
+  }
+]

@@ -1,0 +1,12 @@
+{
+  "pid": 2051033,
+  "command": [
+    "python3",
+    "-u",
+    "/mnt/share/c00954197/Workspace/dsv41/basic/weight_update/scripts/run_host.py",
+    "--tag",
+    "transfer_20261117_02",
+    "--backend",
+    "both"
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "python": "3.12.16 (main, Oct 28 2026, 13:43:18) [GCC 11.4.0]",
+  "platform": "Linux-6.6.0-145.3.35.166.oe2403sp3.aarch64-aarch64-with-glibc2.35",
+  "packages": {
+    "torch": "2.10.0+cpu",
+    "torch-npu": "2.10.0.post7",
+    "vllm": "0.32.0+empty",
+    "vllm-ascend": "0.19.1rc2.dev3401+g28e9e97ba"
+  },
+  "git": {
+    "vllm": {
+      "head": "5df63a7203cdb9328d824a27b682e77c7b9928be\n",
+      "status": " M vllm/model_executor/layers/layernorm.py\n"
+    },
+    "vllm_ascend": {
+      "head": "28e9e97ba254b076a88275e8a275556cb9a11664\n",
+      "status": " M vllm_ascend/models/deepseek_v41/model.py\n?? csrc/build.cann921-baseline/\n?? csrc/build_cache.cann921-baseline/\n"
+    }
+  },
+  "source_sha256": {
+    "/vllm-workspace/vllm/vllm/model_executor/layers/layernorm.py": "39117ee43607ad9e0aec75b189e8eec835c90b3c619e908151e9f48ca42d6042",
+    "/vllm-workspace/vllm-ascend/vllm_ascend/models/deepseek_v41/model.py": "9045e86c4278d79d11e4784bbdf960576c35a380369154c4a6a7ce4aa7912095",
+    "/etc/hccl_rootinfo.json": "efdff0e36e9ae8b314b7cedf31349472e47fca33328bb6321ce1c3f21d02c1aa"
+  },
+  "cann_runtime": "Version=9.3.0\nversion_dir=cann\ntimestamp=20261028_000328247\n"
+}

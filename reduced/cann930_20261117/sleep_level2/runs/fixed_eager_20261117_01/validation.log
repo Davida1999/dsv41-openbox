@@ -1,0 +1,70 @@
+curl: (7) Failed to connect to 127.0.0.1 port 18242 after 0 ms: Connection refused
+curl: (7) Failed to connect to 127.0.0.1 port 18242 after 0 ms: Connection refused
+curl: (7) Failed to connect to 127.0.0.1 port 18242 after 0 ms: Connection refused
+curl: (7) Failed to connect to 127.0.0.1 port 18242 after 0 ms: Connection refused
+curl: (7) Failed to connect to 127.0.0.1 port 18242 after 0 ms: Connection refused
+curl: (7) Failed to connect to 127.0.0.1 port 18242 after 0 ms: Connection refused
+curl: (7) Failed to connect to 127.0.0.1 port 18242 after 0 ms: Connection refused
+curl: (7) Failed to connect to 127.0.0.1 port 18242 after 0 ms: Connection refused
+curl: (7) Failed to connect to 127.0.0.1 port 18242 after 0 ms: Connection refused
+curl: (7) Failed to connect to 127.0.0.1 port 18242 after 0 ms: Connection refused
+curl: (7) Failed to connect to 127.0.0.1 port 18242 after 0 ms: Connection refused
+curl: (7) Failed to connect to 127.0.0.1 port 18242 after 0 ms: Connection refused
+curl: (7) Failed to connect to 127.0.0.1 port 18242 after 0 ms: Connection refused
+curl: (7) Failed to connect to 127.0.0.1 port 18242 after 0 ms: Connection refused
+curl: (7) Failed to connect to 127.0.0.1 port 18242 after 0 ms: Connection refused
+curl: (7) Failed to connect to 127.0.0.1 port 18242 after 0 ms: Connection refused
+warmup dp0_completions 26.44s ' 250. The capital of France is 250. The capital of France is 250. The capital of France is 250. The capital of France is'
+warmup dp0_chat_completions 5.27s ': The capital of France is " France, or the "French"  —  (the French) refers to the "French"  —  (the'
+warmup dp1_completions 9.02s ' 250. The capital of France is 250. The capital of France is 250. The capital of France is 250. The capital of France is'
+warmup dp1_chat_completions 5.26s ': The capital of France is " France, or the "French"  —  (the French) refers to the "French"  —  (the'
+warmup dp2_completions 9.11s ' 250. The capital of France is 250. The capital of France is 250. The capital of France is 250. The capital of France is'
+warmup dp2_chat_completions 5.69s ': The capital of France is " France, or the "French"  —  (the French) refers to the "French"  —  (the'
+warmup dp3_completions 9.05s ' 250. The capital of France is 250. The capital of France is 250. The capital of France is 250. The capital of France is'
+warmup dp3_chat_completions 5.62s ': The capital of France is " France, or the "French"  —  (the French) refers to the "French"  —  (the'
+warmup dp4_completions 8.99s ' 250. The capital of France is 250. The capital of France is 250. The capital of France is 250. The capital of France is'
+warmup dp4_chat_completions 5.28s ': The capital of France is " France, or the "French"  —  (the French) refers to the "French"  —  (the'
+warmup dp5_completions 9.36s ' 250. The capital of France is 250. The capital of France is 250. The capital of France is 250. The capital of France is'
+warmup dp5_chat_completions 5.40s ': The capital of France is " France, or the "French"  —  (the French) refers to the "French"  —  (the'
+warmup dp6_completions 9.10s ' 250. The capital of France is 250. The capital of France is 250. The capital of France is 250. The capital of France is'
+warmup dp6_chat_completions 5.32s ': The capital of France is " France, or the "French"  —  (the French) refers to the "French"  —  (the'
+warmup dp7_completions 8.99s ' 250. The capital of France is 250. The capital of France is 250. The capital of France is 250. The capital of France is'
+warmup dp7_chat_completions 5.50s ': The capital of France is " France, or the "French"  —  (the French) refers to the "French"  —  (the'
+baseline dp0_completions 5.32s ' 250. The capital of France is 250. The capital of France is 250. The capital of France is 250. The capital of France is'
+baseline dp0_chat_completions 5.28s ': The capital of France is " France, or the "French"  —  (the French) refers to the "French"  —  (the'
+baseline dp1_completions 5.36s ' 250. The capital of France is 250. The capital of France is 250. The capital of France is 250. The capital of France is'
+baseline dp1_chat_completions 5.39s ': The capital of France is " France, or the "French"  —  (the French) refers to the "French"  —  (the'
+baseline dp2_completions 5.30s ' 250. The capital of France is 250. The capital of France is 250. The capital of France is 250. The capital of France is'
+baseline dp2_chat_completions 5.26s ': The capital of France is " France, or the "French"  —  (the French) refers to the "French"  —  (the'
+baseline dp3_completions 5.41s ' 250. The capital of France is 250. The capital of France is 250. The capital of France is 250. The capital of France is'
+baseline dp3_chat_completions 5.42s ': The capital of France is " France, or the "French"  —  (the French) refers to the "French"  —  (the'
+baseline dp4_completions 5.56s ' 250. The capital of France is 250. The capital of France is 250. The capital of France is 250. The capital of France is'
+baseline dp4_chat_completions 5.75s ': The capital of France is " France, or the "French"  —  (the French) refers to the "French"  —  (the'
+baseline dp5_completions 5.42s ' 250. The capital of France is 250. The capital of France is 250. The capital of France is 250. The capital of France is'
+baseline dp5_chat_completions 5.32s ': The capital of France is " France, or the "French"  —  (the French) refers to the "French"  —  (the'
+baseline dp6_completions 5.28s ' 250. The capital of France is 250. The capital of France is 250. The capital of France is 250. The capital of France is'
+baseline dp6_chat_completions 5.38s ': The capital of France is " France, or the "French"  —  (the French) refers to the "French"  —  (the'
+baseline dp7_completions 5.49s ' 250. The capital of France is 250. The capital of France is 250. The capital of France is 250. The capital of France is'
+baseline dp7_chat_completions 5.40s ': The capital of France is " France, or the "French"  —  (the French) refers to the "French"  —  (the'
+cycle_1 dp0_completions 5.41s ' 20.20.20.20.20.20.20.20.20.20.20.20.20.20.20.20'
+cycle_1 dp0_chat_completions 5.27s ' is "The capital of France is 5000,000; or 1.00,000000000000000000000000000000000000000'
+cycle_1 dp1_completions 5.40s ' 20.20.20.20.20.20.20.20.20.20.20.20.20.20.20.20'
+cycle_1 dp1_chat_completions 5.48s ' is "The capital of France is 5000,000; or 1.00,000000000000000000000000000000000000000'
+cycle_1 dp2_completions 5.36s ' 20.20.20.20.20.20.20.20.20.20.20.20.20.20.20.20'
+cycle_1 dp2_chat_completions 5.25s ' is "The capital of France is 5000,000; or 1.00,000000000000000000000000000000000000000'
+cycle_1 dp3_completions 5.48s ' 20.20.20.20.20.20.20.20.20.20.20.20.20.20.20.20'
+cycle_1 dp3_chat_completions 5.56s ' is "The capital of France is 5000,000; or 1.00,000000000000000000000000000000000000000'
+cycle_1 dp4_completions 5.57s ' 20.20.20.20.20.20.20.20.20.20.20.20.20.20.20.20'
+cycle_1 dp4_chat_completions 5.52s ' is "The capital of France is 5000,000; or 1.00,000000000000000000000000000000000000000'
+cycle_1 dp5_completions 5.54s ' 20.20.20.20.20.20.20.20.20.20.20.20.20.20.20.20'
+cycle_1 dp5_chat_completions 5.54s ' is "The capital of France is 5000,000; or 1.00,000000000000000000000000000000000000000'
+cycle_1 dp6_completions 5.61s ' 20.20.20.20.20.20.20.20.20.20.20.20.20.20.20.20'
+cycle_1 dp6_chat_completions 5.61s ' is "The capital of France is 5000,000; or 1.00,000000000000000000000000000000000000000'
+cycle_1 dp7_completions 5.44s ' 20.20.20.20.20.20.20.20.20.20.20.20.20.20.20.20'
+cycle_1 dp7_chat_completions 5.44s ' is "The capital of France is 5000,000; or 1.00,000000000000000000000000000000000000000'
+Traceback (most recent call last):
+  File "/mnt/share/c00954197/Workspace/dsv41/basic/scripts/verify_sleep2.py", line 198, in main
+    raise AssertionError("Restored output differs from the initial loaded-checkpoint baseline")
+AssertionError: Restored output differs from the initial loaded-checkpoint baseline
+
+FINAL failed /mnt/share/c00954197/Workspace/dsv41/basic/runs/fixed_eager_20261117_01/validation

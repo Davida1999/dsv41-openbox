@@ -1,0 +1,14 @@
+{
+  "name": "gpqa_198",
+  "kind": "accuracy",
+  "questions": 198,
+  "script": "/mnt/share/c00954197/Workspace/dsv41/precision/run_gpqa.sh",
+  "args": [
+    "198"
+  ],
+  "started_at_host23": 1794868497.4590108,
+  "counters_before": {
+    "vllm:generation_tokens_total": 10540648.0,
+    "vllm:request_success_total": 776.0
+  }
+}

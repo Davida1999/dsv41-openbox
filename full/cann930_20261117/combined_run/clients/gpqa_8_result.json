@@ -1,0 +1,37 @@
+{
+  "name": "gpqa_8",
+  "kind": "accuracy",
+  "questions": 8,
+  "script": "/mnt/share/c00954197/Workspace/dsv41/precision/run_gpqa.sh",
+  "args": [
+    "8"
+  ],
+  "result_dir": "/mnt/share/c00954197/Workspace/dsv41/precision/results/gpqa_20261116T221752Z_vAo8bD/20261116_221753",
+  "audit": {
+    "questions": 8,
+    "successful_requests": 8,
+    "correct": 7,
+    "accuracy": 87.5,
+    "aisbench_accuracy": 87.5,
+    "aisbench_raw_recomputed_accuracy": 87.5,
+    "scoring_difference_ids": [],
+    "scoring_validated": true,
+    "unparsed_answer_ids": [
+      6
+    ],
+    "output_limit_ids": [
+      6
+    ]
+  },
+  "pass": true,
+  "exit_code": 1,
+  "original_script_exit_code": 1,
+  "audit_recheck_exit_code": 0,
+  "recovery": "Existing predictions and original AISBench score preserved. CPU-only JSONL reader and scoring reconciliation recheck completed.",
+  "attempt_dir": "/mnt/share/c00954197/Workspace/dsv41/precision/runs/combined_20261117_R1/clients/gpqa_8_attempt1",
+  "prediction_sha256": "1a0fa04316b9d5f75f6bd1f94a8a5a745bb5d3a5fe0d9a9804efc6d893498da5",
+  "final_validation_exit_code": 0,
+  "generated_tokens": 54888,
+  "scoring_recheck_log": "/mnt/share/c00954197/Workspace/dsv41/precision/runs/combined_20261117_R1/clients/gpqa_8_scoring_recheck.log",
+  "pass_scope": "All requested inference and scoring steps completed, with audited scores and disclosed recovery. No accuracy threshold was specified."
+}

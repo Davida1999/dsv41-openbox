@@ -1,0 +1,30 @@
+[
+  {
+    "tag": "transfer_20261117_01",
+    "max_deferred_tensor_bytes": 47587000320,
+    "last_tensor_count": 2757,
+    "example_pending_layer": {
+      "class": "AscendRoutedExperts",
+      "loaded": 283115520,
+      "expected": 283115552
+    },
+    "oom": [
+      "(Worker_DP1_EP1 pid=69697) ERROR 11-16 21:44:32 [multiproc_executor.py:1063] torch.OutOfMemoryError: NPU out of memory. Tried to allocate 1.25 GiB (NPU 1; 91.75 GiB total capacity; 85.63 GiB already allocated; 85.63 GiB current active; 1.42 GiB free; 87.77 GiB reserved in total by PyTorch).If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.",
+      "(EngineCore_DP1 pid=67816) ERROR 11-16 21:44:32 [core.py:1750] RuntimeError: Worker failed with error 'NPU out of memory. Tried to allocate 1.25 GiB (NPU 1; 91.75 GiB total capacity; 85.63 GiB already allocated; 85.63 GiB current active; 1.42 GiB free; 87.77 GiB reserved in total by PyTorch).If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.', please check the stack trace above for the root cause"
+    ]
+  },
+  {
+    "tag": "transfer_20261117_02",
+    "max_deferred_tensor_bytes": 47587000320,
+    "last_tensor_count": 2757,
+    "example_pending_layer": {
+      "class": "AscendRoutedExperts",
+      "loaded": 283115520,
+      "expected": 283115552
+    },
+    "oom": [
+      "(EngineCore_DP0 pid=79264) ERROR 11-16 22:08:59 [core.py:1750] RuntimeError: Worker failed with error 'NPU out of memory. Tried to allocate 1.25 GiB (NPU 0; 91.75 GiB total capacity; 85.63 GiB already allocated; 85.63 GiB current active; 1.42 GiB free; 87.77 GiB reserved in total by PyTorch).If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.', please check the stack trace above for the root cause",
+      "Exception: Call to collective_rpc method failed: Worker failed with error 'NPU out of memory. Tried to allocate 1.25 GiB (NPU 0; 91.75 GiB total capacity; 85.63 GiB already allocated; 85.63 GiB current active; 1.42 GiB free; 87.77 GiB reserved in total by PyTorch).If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.', please check the stack trace above for the root cause"
+    ]
+  }
+]

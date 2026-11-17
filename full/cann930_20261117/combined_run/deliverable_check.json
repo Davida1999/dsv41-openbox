@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "tasks": 14,
+  "performance_rounds": 12,
+  "gpqa_questions": [
+    8,
+    198
+  ],
+  "same_service_per_node_verified": true,
+  "predictions_sha256_verified": true,
+  "dataset_snapshots_verified": true,
+  "resource_release_verified": true,
+  "files": {
+    "REPORT.md": "ccb4be4d70ce9884317f95c62c5b275508fdd928b8ca576c635d7a7aa43d6319",
+    "results_summary.json": "c0bc0e6e0cfc41386c35d67e3d410a29ac101422f2bed1e25be1f9561ab379f3",
+    "validation_final.json": "f7c9f84d7ea0a3c78afceeab1915e6367a57ab221995d3ca36bba6dc8c3d20fa",
+    "release_check.json": "dcd9978b7b22b0c1202409b36e481e6ad9596af5d28e3bcbeeb8154dffa7791c",
+    "completion.json": "9cf423a8e47a9fd10e598a9f54c0490872fc03742957b3b975c65e511286f30e"
+  }
+}

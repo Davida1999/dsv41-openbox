@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "completed": [
+    "/mnt/share/c00954197/Workspace/dsv41/basic/weight_update/runs/transfer_20261117_03/hccl_producer",
+    "/mnt/share/c00954197/Workspace/dsv41/basic/weight_update/runs/transfer_20261117_03/npu_ipc_oracle",
+    "/mnt/share/c00954197/Workspace/dsv41/basic/weight_update/runs/transfer_20261117_03/npu_ipc_producer"
+  ],
+  "current": "/mnt/share/c00954197/Workspace/dsv41/basic/weight_update/runs/transfer_20261117_03/npu_ipc_producer"
+}

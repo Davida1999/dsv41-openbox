@@ -1,0 +1,44 @@
+{
+  "hccl": {
+    "status": "passed",
+    "max_update_hbm_mib": 61552,
+    "max_deferred_gib": 2.04345703125,
+    "source_allocated_after_send_gib": [
+      [
+        0.0
+      ],
+      [
+        0.0
+      ]
+    ],
+    "ipc_exit_warnings": 0
+  },
+  "npu_ipc": {
+    "status": "passed",
+    "max_update_hbm_mib": 44611,
+    "max_deferred_gib": 2.08740234375,
+    "source_allocated_after_send_gib": [
+      [
+        1.25,
+        1.25,
+        1.25,
+        1.25,
+        1.25,
+        1.25,
+        1.25,
+        1.25
+      ],
+      [
+        2.5,
+        2.5,
+        2.5,
+        2.5,
+        2.5,
+        2.5,
+        2.5,
+        2.5
+      ]
+    ],
+    "ipc_exit_warnings": 8
+  }
+}
