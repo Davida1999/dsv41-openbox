@@ -1,0 +1,208 @@
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:13: FutureWarning: triton.language.extra.cann.extension.atan2 is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.atan2 instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.atan2")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:35: FutureWarning: triton.language.extra.cann.extension.isfinited is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.isfinited instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.isfinited")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:49: FutureWarning: triton.language.extra.cann.extension.finitef is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.finitef instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.finitef")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:13: FutureWarning: triton.language.extra.cann.extension.atan2 is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.atan2 instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.atan2")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:35: FutureWarning: triton.language.extra.cann.extension.isfinited is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.isfinited instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.isfinited")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:49: FutureWarning: triton.language.extra.cann.extension.finitef is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.finitef instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.finitef")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:13: FutureWarning: triton.language.extra.cann.extension.atan2 is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.atan2 instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.atan2")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:35: FutureWarning: triton.language.extra.cann.extension.isfinited is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.isfinited instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.isfinited")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:49: FutureWarning: triton.language.extra.cann.extension.finitef is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.finitef instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.finitef")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:13: FutureWarning: triton.language.extra.cann.extension.atan2 is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.atan2 instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.atan2")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:35: FutureWarning: triton.language.extra.cann.extension.isfinited is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.isfinited instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.isfinited")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:49: FutureWarning: triton.language.extra.cann.extension.finitef is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.finitef instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.finitef")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:13: FutureWarning: triton.language.extra.cann.extension.atan2 is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.atan2 instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.atan2")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:35: FutureWarning: triton.language.extra.cann.extension.isfinited is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.isfinited instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.isfinited")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:13: FutureWarning: triton.language.extra.cann.extension.atan2 is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.atan2 instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.atan2")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:49: FutureWarning: triton.language.extra.cann.extension.finitef is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.finitef instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.finitef")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:35: FutureWarning: triton.language.extra.cann.extension.isfinited is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.isfinited instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.isfinited")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:49: FutureWarning: triton.language.extra.cann.extension.finitef is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.finitef instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.finitef")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:13: FutureWarning: triton.language.extra.cann.extension.atan2 is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.atan2 instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.atan2")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:35: FutureWarning: triton.language.extra.cann.extension.isfinited is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.isfinited instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.isfinited")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:49: FutureWarning: triton.language.extra.cann.extension.finitef is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.finitef instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.finitef")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:13: FutureWarning: triton.language.extra.cann.extension.atan2 is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.atan2 instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.atan2")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:35: FutureWarning: triton.language.extra.cann.extension.isfinited is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.isfinited instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.isfinited")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:49: FutureWarning: triton.language.extra.cann.extension.finitef is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.finitef instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.finitef")
+[Gloo] Rank 0 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 1 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 2 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 3 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7[Gloo] Rank 
+4 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 5 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank [Gloo] Rank 6 is connected to 77 peer ranks.  is connected to Expected number of connected peer ranks is : 77 peer ranks. 
+Expected number of connected peer ranks is : 7
+A_cold dp0_completions 20.06s ' capital of France. Berlin is the capital'
+A_cold dp0_chat_completions 1.46s ' seemingly to France and Germany. The capital'
+A_cold dp1_completions 4.04s ' capital of France. Berlin is the capital'
+A_cold dp1_chat_completions 1.46s ' seemingly to France and Germany. The capital'
+A_cold dp2_completions 4.07s ' capital of France. Berlin is the capital'
+A_cold dp2_chat_completions 1.48s ' seemingly to France and Germany. The capital'
+A_cold dp3_completions 4.04s ' capital of France. Berlin is the capital'
+A_cold dp3_chat_completions 1.51s ' seemingly to France and Germany. The capital'
+A_cold dp4_completions 4.03s ' capital of France. Berlin is the capital'
+A_cold dp4_chat_completions 1.33s ' seemingly to France and Germany. The capital'
+A_cold dp5_completions 4.03s ' capital of France. Berlin is the capital'
+A_cold dp5_chat_completions 1.49s ' seemingly to France and Germany. The capital'
+A_cold dp6_completions 4.15s ' capital of France. Berlin is the capital'
+A_cold dp6_chat_completions 1.57s ' seemingly to France and Germany. The capital'
+A_cold dp7_completions 4.05s ' capital of France. Berlin is the capital'
+A_cold dp7_chat_completions 1.46s ' seemingly to France and Germany. The capital'
+A_warm dp0_completions 1.47s ' capital of France. Berlin is the capital'
+A_warm dp0_chat_completions 1.50s ' unres_real_real_real_real_real_real_real'
+A_warm dp1_completions 1.34s ' capital of France. Berlin is the capital'
+A_warm dp1_chat_completions 1.48s ' unres_real_real_real_real_real_real_real'
+A_warm dp2_completions 1.47s ' capital of France. Berlin is the capital'
+A_warm dp2_chat_completions 1.47s ' unres_real_real_real_real_real_real_real'
+A_warm dp3_completions 1.46s ' capital of France. Berlin is the capital'
+A_warm dp3_chat_completions 1.48s ' unres_real_real_real_real_real_real_real'
+A_warm dp4_completions 1.47s ' capital of France. Berlin is the capital'
+A_warm dp4_chat_completions 1.48s ' unres_real_real_real_real_real_real_real'
+A_warm dp5_completions 1.51s ' capital of France. Berlin is the capital'
+A_warm dp5_chat_completions 1.36s ' unres_real_real_real_real_real_real_real'
+A_warm dp6_completions 1.47s ' capital of France. Berlin is the capital'
+A_warm dp6_chat_completions 1.48s ' unres_real_real_real_real_real_real_real'
+A_warm dp7_completions 1.50s ' capital of France. Berlin is the capital'
+A_warm dp7_chat_completions 1.45s ' unres_real_real_real_real_real_real_real'
+TRANSFER_PROGRESS B 256 vision.blocks.31.attn.wqkv.bias 1344280576
+TRANSFER_PROGRESS B 512 layers.2.attn.wq_b.weight 1439170560
+TRANSFER_PROGRESS B 768 layers.4.ffn.experts.13.w1.weight 1389363200
+TRANSFER_PROGRESS B 1024 layers.6.ffn.experts.16.w3.weight 1389363200
+TRANSFER_PROGRESS B 1280 layers.8.ffn.experts.24.w1.weight 1389363200
+TRANSFER_PROGRESS B 1536 layers.10.ffn.experts.3.w3.weight 1389363200
+TRANSFER_PROGRESS B 1792 layers.12.ffn.experts.6.w2.weight 1389363200
+TRANSFER_PROGRESS B 2048 layers.14.hc_attn_fn 1344143872
+TRANSFER_PROGRESS B 2304 layers.17.ffn.experts.7.w1.weight 1389363200
+TRANSFER_PROGRESS B 2560 layers.19.ffn.experts.13.w3.weight 1389363200
+TRANSFER_PROGRESS B 2816 layers.21.ffn.experts.18.w2.weight 1389363200
+TRANSFER_PROGRESS B 3072 layers.23.ffn.experts.25.w1.weight 1389363200
+TRANSFER_PROGRESS B 3328 layers.25.ffn.experts.4.w1.weight 1389363200
+TRANSFER_PROGRESS B 3584 layers.27.ffn.gate.weight 1342505472
+TRANSFER_PROGRESS B 3840 layers.30.attn.wq_b.weight 1439170560
+TRANSFER_PROGRESS B 4096 layers.32.ffn.experts.9.w2.weight 1389363200
+TRANSFER_PROGRESS B 4352 layers.34.ffn.experts.17.w1.weight 1389363200
+TRANSFER_PROGRESS B 4608 layers.36.ffn.experts.24.w1.weight 1389363200
+TRANSFER_PROGRESS B 4864 layers.38.ffn.experts.29.w3.weight 1389363200
+TRANSFER_PROGRESS B 5120 mtp.0.ffn.experts.126.w2.weight 1389363200
+TRANSFER_PROGRESS B 5376 mtp.0.ffn.experts.89.w3.weight 1389363200
+TRANSFER_PROGRESS B 5632 mtp.1.ffn.experts.43.w1.weight 1389363200
+TRANSFER_PROGRESS B 5888 mtp.2.ffn.experts.111.w3.weight 1389363200
+TRANSFER_PROGRESS B 6144 mtp.2.ffn.experts.75.w1.weight 1389363200
+B dp0_completions 1.36s ' oil/\x7f/\x7f0/1'
+B dp0_chat_completions 1.45s ' breeding\x7fororesgres'
+B dp1_completions 1.45s ' oil/\x7f/\x7f0/1'
+B dp1_chat_completions 1.53s ' breeding\x7fororesgres'
+B dp2_completions 1.52s ' oil/\x7f/\x7f0/1'
+B dp2_chat_completions 1.53s ' breeding\x7fororesgres'
+B dp3_completions 1.49s ' oil/\x7f/\x7f0/1'
+B dp3_chat_completions 1.49s ' breeding\x7fororesgres'
+B dp4_completions 1.45s ' oil/\x7f/\x7f0/1'
+B dp4_chat_completions 1.31s ' breeding\x7fororesgres'
+B dp5_completions 1.50s ' oil/\x7f/\x7f0/1'
+B dp5_chat_completions 1.56s ' breeding\x7fororesgres'
+B dp6_completions 1.53s ' oil/\x7f/\x7f0/1'
+B dp6_chat_completions 1.55s ' breeding\x7fororesgres'
+B dp7_completions 1.53s ' oil/\x7f/\x7f0/1'
+B dp7_chat_completions 1.52s ' breeding\x7fororesgres'
+B_warm dp0_completions 1.52s ' oil/ towards\n\n就\x7foror'
+B_warm dp0_chat_completions 1.51s '来访le�le， le，nt'
+B_warm dp1_completions 1.38s ' oil/ towards\n\n就\x7foror'
+B_warm dp1_chat_completions 1.51s '来访le�le， le，nt'
+B_warm dp2_completions 1.50s ' oil/ towards\n\n就\x7foror'
+B_warm dp2_chat_completions 1.52s '来访le�le， le，nt'
+B_warm dp3_completions 1.49s ' oil/ towards\n\n就\x7foror'
+B_warm dp3_chat_completions 1.49s '来访le�le， le，nt'
+B_warm dp4_completions 1.49s ' oil/ towards\n\n就\x7foror'
+B_warm dp4_chat_completions 1.46s '来访le�le， le，nt'
+B_warm dp5_completions 1.47s ' oil/ towards\n\n就\x7foror'
+B_warm dp5_chat_completions 1.37s '来访le�le， le，nt'
+B_warm dp6_completions 1.50s ' oil/ towards\n\n就\x7foror'
+B_warm dp6_chat_completions 1.49s '来访le�le， le，nt'
+B_warm dp7_completions 1.46s ' oil/ towards\n\n就\x7foror'
+B_warm dp7_chat_completions 1.47s '来访le�le， le，nt'
+TRANSFER_PROGRESS A-restored 256 vision.blocks.31.attn.wqkv.bias 1344280576
+TRANSFER_PROGRESS A-restored 512 layers.2.attn.wq_b.weight 1439170560
+TRANSFER_PROGRESS A-restored 768 layers.4.ffn.experts.13.w1.weight 1389363200
+TRANSFER_PROGRESS A-restored 1024 layers.6.ffn.experts.16.w3.weight 1389363200
+TRANSFER_PROGRESS A-restored 1280 layers.8.ffn.experts.24.w1.weight 1389363200
+TRANSFER_PROGRESS A-restored 1536 layers.10.ffn.experts.3.w3.weight 1389363200
+TRANSFER_PROGRESS A-restored 1792 layers.12.ffn.experts.6.w2.weight 1389363200
+TRANSFER_PROGRESS A-restored 2048 layers.14.hc_attn_fn 1344143872
+TRANSFER_PROGRESS A-restored 2304 layers.17.ffn.experts.7.w1.weight 1389363200
+TRANSFER_PROGRESS A-restored 2560 layers.19.ffn.experts.13.w3.weight 1389363200
+TRANSFER_PROGRESS A-restored 2816 layers.21.ffn.experts.18.w2.weight 1389363200
+TRANSFER_PROGRESS A-restored 3072 layers.23.ffn.experts.25.w1.weight 1389363200
+TRANSFER_PROGRESS A-restored 3328 layers.25.ffn.experts.4.w1.weight 1389363200
+TRANSFER_PROGRESS A-restored 3584 layers.27.ffn.gate.weight 1342505472
+TRANSFER_PROGRESS A-restored 3840 layers.30.attn.wq_b.weight 1439170560
+TRANSFER_PROGRESS A-restored 4096 layers.32.ffn.experts.9.w2.weight 1389363200
+TRANSFER_PROGRESS A-restored 4352 layers.34.ffn.experts.17.w1.weight 1389363200
+TRANSFER_PROGRESS A-restored 4608 layers.36.ffn.experts.24.w1.weight 1389363200
+TRANSFER_PROGRESS A-restored 4864 layers.38.ffn.experts.29.w3.weight 1389363200
+TRANSFER_PROGRESS A-restored 5120 mtp.0.ffn.experts.126.w2.weight 1389363200
+TRANSFER_PROGRESS A-restored 5376 mtp.0.ffn.experts.89.w3.weight 1389363200
+TRANSFER_PROGRESS A-restored 5632 mtp.1.ffn.experts.43.w1.weight 1389363200
+TRANSFER_PROGRESS A-restored 5888 mtp.2.ffn.experts.111.w3.weight 1389363200
+TRANSFER_PROGRESS A-restored 6144 mtp.2.ffn.experts.75.w1.weight 1389363200
+A-restored dp0_completions 1.56s ' capital of France. Berlin is the capital'
+A-restored dp0_chat_completions 1.66s ' seemingly to France and Germany. The capital'
+A-restored dp1_completions 1.67s ' capital of France. Berlin is the capital'
+A-restored dp1_chat_completions 1.62s ' seemingly to France and Germany. The capital'
+A-restored dp2_completions 1.47s ' capital of France. Berlin is the capital'
+A-restored dp2_chat_completions 1.47s ' seemingly to France and Germany. The capital'
+A-restored dp3_completions 1.45s ' capital of France. Berlin is the capital'
+A-restored dp3_chat_completions 1.43s ' seemingly to France and Germany. The capital'
+A-restored dp4_completions 1.43s ' capital of France. Berlin is the capital'
+A-restored dp4_chat_completions 1.32s ' seemingly to France and Germany. The capital'
+A-restored dp5_completions 1.45s ' capital of France. Berlin is the capital'
+A-restored dp5_chat_completions 1.46s ' seemingly to France and Germany. The capital'
+A-restored dp6_completions 1.44s ' capital of France. Berlin is the capital'
+A-restored dp6_chat_completions 1.47s ' seemingly to France and Germany. The capital'
+A-restored dp7_completions 1.51s ' capital of France. Berlin is the capital'
+A-restored dp7_chat_completions 1.50s ' seemingly to France and Germany. The capital'
+A-restored_warm dp0_completions 1.51s ' capital of France. Berlin is the capital'
+A-restored_warm dp0_chat_completions 1.52s ' unres_real_real_real_real_real_real_real'
+A-restored_warm dp1_completions 1.36s ' capital of France. Berlin is the capital'
+A-restored_warm dp1_chat_completions 1.51s ' unres_real_real_real_real_real_real_real'
+A-restored_warm dp2_completions 1.51s ' capital of France. Berlin is the capital'
+A-restored_warm dp2_chat_completions 1.51s ' unres_real_real_real_real_real_real_real'
+A-restored_warm dp3_completions 1.52s ' capital of France. Berlin is the capital'
+A-restored_warm dp3_chat_completions 1.44s ' unres_real_real_real_real_real_real_real'
+A-restored_warm dp4_completions 1.47s ' capital of France. Berlin is the capital'
+A-restored_warm dp4_chat_completions 1.47s ' unres_real_real_real_real_real_real_real'
+A-restored_warm dp5_completions 1.48s ' capital of France. Berlin is the capital'
+A-restored_warm dp5_chat_completions 1.32s ' unres_real_real_real_real_real_real_real'
+A-restored_warm dp6_completions 1.55s ' capital of France. Berlin is the capital'
+A-restored_warm dp6_chat_completions 1.63s ' unres_real_real_real_real_real_real_real'
+A-restored_warm dp7_completions 1.58s ' capital of France. Berlin is the capital'
+A-restored_warm dp7_chat_completions 1.56s ' unres_real_real_real_real_real_real_real'
+BACKEND_COMPLETE npu_ipc 1 passed
+BACKEND_COMPLETE npu_ipc 2 passed
+BACKEND_COMPLETE npu_ipc 3 passed
+BACKEND_COMPLETE npu_ipc 4 passed
+BACKEND_COMPLETE npu_ipc 5 passed
+BACKEND_COMPLETE npu_ipc 0 passed
+BACKEND_COMPLETE npu_ipc 7 passed
+BACKEND_COMPLETE npu_ipc 6 passed

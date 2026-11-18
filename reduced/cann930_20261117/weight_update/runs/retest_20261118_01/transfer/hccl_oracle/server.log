@@ -1,0 +1,1036 @@
+vllm serve /mnt/share/c00954197/Workspace/dsv41/basic/weight_update/model_b --host 127.0.0.1 --port 18243 --served-model-name dsv41-weight-update --dtype bfloat16 --load-format auto --tokenizer-mode deepseek_v41 --trust-remote-code --enable-scale-out --tensor-parallel-size 1 --data-parallel-size 4 --pipeline-parallel-size 1 --prefill-context-parallel-size 1 --decode-context-parallel-size 1 --enable-expert-parallel --enable-sleep-mode --weight-transfer-config \{\"backend\":\"hccl\"\} --worker-extension-cls weight_probe.WeightProbe --max-model-len 2048 --max-num-batched-tokens 2048 --max-num-seqs 2 --gpu-memory-utilization 0.60 --kv-cache-memory-bytes 2147483648 --block-size 128 --seed 42 --enforce-eager --no-async-scheduling --enable-prefix-caching --enable-chunked-prefill --enable-prompt-tokens-details --additional-config \{\"weight_nz_mode\":0\,\"rl_config\":\{\"enabled\":true\}\} 
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:13: FutureWarning: triton.language.extra.cann.extension.atan2 is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.atan2 instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.atan2")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:35: FutureWarning: triton.language.extra.cann.extension.isfinited is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.isfinited instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.isfinited")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:49: FutureWarning: triton.language.extra.cann.extension.finitef is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.finitef instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.finitef")
+(MainProcess pid=114533) INFO 11-17 19:50:42 [serve.py:127] Defaulting api_server_count to data_parallel_size (4).
+(MainProcess pid=114533) INFO 11-17 19:50:42 [api_utils.py:347] 
+(MainProcess pid=114533) INFO 11-17 19:50:42 [api_utils.py:347]        █     █     █▄   ▄█
+(MainProcess pid=114533) INFO 11-17 19:50:42 [api_utils.py:347]  ▄▄ ▄█ █     █     █ ▀▄▀ █  version 0.32.0
+(MainProcess pid=114533) INFO 11-17 19:50:42 [api_utils.py:347]   █▄█▀ █     █     █     █  model   /mnt/share/c00954197/Workspace/dsv41/basic/weight_update/model_b
+(MainProcess pid=114533) INFO 11-17 19:50:42 [api_utils.py:347]    ▀▀  ▀▀▀▀▀ ▀▀▀▀▀ ▀     ▀
+(MainProcess pid=114533) INFO 11-17 19:50:42 [api_utils.py:347] 
+(MainProcess pid=114533) INFO 11-17 19:50:42 [api_utils.py:286] non-default args: {'model_tag': '/mnt/share/c00954197/Workspace/dsv41/basic/weight_update/model_b', 'api_server_count': 4, 'enable_prompt_tokens_details': True, 'enable_scale_out': True, 'host': '127.0.0.1', 'port': 18243, 'model': '/mnt/share/c00954197/Workspace/dsv41/basic/weight_update/model_b', 'tokenizer_mode': 'deepseek_v41', 'trust_remote_code': True, 'dtype': 'bfloat16', 'seed': 42, 'max_model_len': 2048, 'enforce_eager': True, 'served_model_name': ['dsv41-weight-update'], 'enable_sleep_mode': True, 'data_parallel_size': 4, 'enable_expert_parallel': True, 'worker_extension_cls': 'weight_probe.WeightProbe', 'block_size': 128, 'gpu_memory_utilization': 0.6, 'kv_cache_memory_bytes': 2147483648, 'enable_prefix_caching': True, 'max_num_batched_tokens': 2048, 'max_num_seqs': 2, 'enable_chunked_prefill': True, 'async_scheduling': False, 'additional_config': {'weight_nz_mode': 0, 'rl_config': {'enabled': True}}, 'weight_transfer_config': WeightTransferConfig(backend='hccl')}
+(MainProcess pid=114533) WARNING 11-17 19:50:42 [interface.py:1457] Unknown vLLM environment variable detected: VLLM_ASCEND_ENABLE_NZ
+(MainProcess pid=114533) INFO 11-17 19:50:44 [model.py:733] Resolved architecture: DeepseekV41ForCausalLM
+(MainProcess pid=114533) INFO 11-17 19:50:44 [model.py:2152] Using max model len 2048
+(MainProcess pid=114533) WARNING 11-17 19:50:45 [vllm.py:1703] Enforce eager set, disabling torch.compile, CUDAGraphs, and JIT kernel warmup. This is equivalent to setting -cc.mode=none -cc.cudagraph_mode=none and --kernel_config.enable_jit_warmup=False
+(MainProcess pid=114533) WARNING 11-17 19:50:45 [vllm.py:1727] Inductor compilation was disabled by user settings, optimizations settings that are only active during inductor compilation will be ignored.
+(MainProcess pid=114533) INFO 11-17 19:50:45 [kernel.py:467] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['native'], fused_add_rms_norm=['native'], gelu_and_mul_sparse=['native'])
+(MainProcess pid=114533) INFO 11-17 19:50:45 [vllm.py:1929] Cudagraph is disabled under eager mode
+(MainProcess pid=114533) INFO 11-17 19:50:45 [mrv2_utils.py:91] VLLM_USE_V2_MODEL_RUNNER=True is set; using Model Runner V2.
+(MainProcess pid=114533) INFO 11-17 19:50:45 [utils.py:215] No ModelSlim quantization signature detected from model files for "/mnt/share/c00954197/Workspace/dsv41/basic/weight_update/model_b". To force a quantization method, pass "--quantization <method>" explicitly.
+(MainProcess pid=114533) WARNING 11-17 19:50:45 [platform.py:863] GPU-specific parameter is not supported on Ascend. parameter=disable_cascade_attn, value=True, action: resetting to False.
+(MainProcess pid=114533) INFO 11-17 19:50:45 [ascend_config.py:339] Dynamic EPLB is False
+(MainProcess pid=114533) INFO 11-17 19:50:45 [ascend_config.py:340] The number of redundant experts is 0
+(MainProcess pid=114533) INFO 11-17 19:50:45 [ascend_config.py:764] FlashComm1 is disabled. Using flashinfer_all2allv as the all2all backend.
+(MainProcess pid=114533) INFO 11-17 19:50:45 [platform.py:1368] Compilation disabled, using eager mode by default
+(MainProcess pid=114533) INFO 11-17 19:50:45 [compilation.py:317] Enabled custom fusions: norm_quant, act_quant
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:13: FutureWarning: triton.language.extra.cann.extension.atan2 is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.atan2 instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.atan2")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:35: FutureWarning: triton.language.extra.cann.extension.isfinited is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.isfinited instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.isfinited")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:49: FutureWarning: triton.language.extra.cann.extension.finitef is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.finitef instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.finitef")
+(VLLM_DP_Coordinator pid=114571) WARNING 11-17 19:50:53 [serial_utils.py:78] Allowing insecure serialization using pickle due to VLLM_ALLOW_INSECURE_SERIALIZATION=1
+(MainProcess pid=114533) INFO 11-17 19:50:53 [utils.py:1245] Started DP Coordinator process (PID: 114571)
+(MainProcess pid=114533) INFO 11-17 19:51:03 [utils.py:261] Started 4 API server processes
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:13: FutureWarning: triton.language.extra.cann.extension.atan2 is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.atan2 instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.atan2")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:35: FutureWarning: triton.language.extra.cann.extension.isfinited is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.isfinited instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.isfinited")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:49: FutureWarning: triton.language.extra.cann.extension.finitef is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.finitef instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.finitef")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:13: FutureWarning: triton.language.extra.cann.extension.atan2 is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.atan2 instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.atan2")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:35: FutureWarning: triton.language.extra.cann.extension.isfinited is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.isfinited instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.isfinited")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:49: FutureWarning: triton.language.extra.cann.extension.finitef is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.finitef instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.finitef")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:13: FutureWarning: triton.language.extra.cann.extension.atan2 is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.atan2 instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.atan2")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:35: FutureWarning: triton.language.extra.cann.extension.isfinited is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.isfinited instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.isfinited")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:49: FutureWarning: triton.language.extra.cann.extension.finitef is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.finitef instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.finitef")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:13: FutureWarning: triton.language.extra.cann.extension.atan2 is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.atan2 instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.atan2")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:35: FutureWarning: triton.language.extra.cann.extension.isfinited is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.isfinited instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.isfinited")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:49: FutureWarning: triton.language.extra.cann.extension.finitef is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.finitef instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.finitef")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:13: FutureWarning: triton.language.extra.cann.extension.atan2 is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.atan2 instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.atan2")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:13: FutureWarning: triton.language.extra.cann.extension.atan2 is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.atan2 instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.atan2")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:35: FutureWarning: triton.language.extra.cann.extension.isfinited is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.isfinited instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.isfinited")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:13: FutureWarning: triton.language.extra.cann.extension.atan2 is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.atan2 instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.atan2")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:35: FutureWarning: triton.language.extra.cann.extension.isfinited is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.isfinited instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.isfinited")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:49: FutureWarning: triton.language.extra.cann.extension.finitef is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.finitef instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.finitef")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:35: FutureWarning: triton.language.extra.cann.extension.isfinited is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.isfinited instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.isfinited")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:49: FutureWarning: triton.language.extra.cann.extension.finitef is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.finitef instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.finitef")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:49: FutureWarning: triton.language.extra.cann.extension.finitef is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.finitef instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.finitef")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:13: FutureWarning: triton.language.extra.cann.extension.atan2 is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.atan2 instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.atan2")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:35: FutureWarning: triton.language.extra.cann.extension.isfinited is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.isfinited instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.isfinited")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:49: FutureWarning: triton.language.extra.cann.extension.finitef is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.finitef instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.finitef")
+INFO 11-17 19:51:13 [logger.py:158] [vllm-ascend] - [ascend_log] applied level=INFO debug=[] modules={}
+INFO 11-17 19:51:14 [logger.py:158] [vllm-ascend] - [ascend_log] applied level=INFO debug=[] modules={}
+INFO 11-17 19:51:14 [logger.py:158] [vllm-ascend] - [ascend_log] applied level=INFO debug=[] modules={}
+INFO 11-17 19:51:14 [logger.py:158] [vllm-ascend] - [ascend_log] applied level=INFO debug=[] modules={}
+(ApiServer_1 pid=114612) INFO 11-17 19:51:14 [patch_indexer_kv_dtype.py:102] Patched AttentionConfig.indexer_kv_dtype to accept 'int8' (DeepSeek V4 Ascend indexer K cache dtype).
+(ApiServer_1 pid=114612) INFO 11-17 19:51:14 [patch_kv_cache_dtype.py:116] Patched CacheConfig.cache_dtype to accept 'int8' and 'mxfp8' (Ascend KV cache dtypes).
+(ApiServer_3 pid=114614) INFO 11-17 19:51:14 [patch_indexer_kv_dtype.py:102] Patched AttentionConfig.indexer_kv_dtype to accept 'int8' (DeepSeek V4 Ascend indexer K cache dtype).
+(ApiServer_3 pid=114614) INFO 11-17 19:51:14 [patch_kv_cache_dtype.py:116] Patched CacheConfig.cache_dtype to accept 'int8' and 'mxfp8' (Ascend KV cache dtypes).
+(ApiServer_2 pid=114613) INFO 11-17 19:51:14 [patch_indexer_kv_dtype.py:102] Patched AttentionConfig.indexer_kv_dtype to accept 'int8' (DeepSeek V4 Ascend indexer K cache dtype).
+(ApiServer_2 pid=114613) INFO 11-17 19:51:14 [patch_kv_cache_dtype.py:116] Patched CacheConfig.cache_dtype to accept 'int8' and 'mxfp8' (Ascend KV cache dtypes).
+(ApiServer_1 pid=114612) INFO 11-17 19:51:14 [__init__.py:113] Registered model loader `<class 'vllm_ascend.model_loader.netloader.netloader.ModelNetLoaderElastic'>` with load format `netloader`
+(ApiServer_3 pid=114614) INFO 11-17 19:51:14 [__init__.py:113] Registered model loader `<class 'vllm_ascend.model_loader.netloader.netloader.ModelNetLoaderElastic'>` with load format `netloader`
+(ApiServer_2 pid=114613) INFO 11-17 19:51:14 [__init__.py:113] Registered model loader `<class 'vllm_ascend.model_loader.netloader.netloader.ModelNetLoaderElastic'>` with load format `netloader`
+(ApiServer_1 pid=114612) INFO 11-17 19:51:14 [__init__.py:113] Registered model loader `<class 'vllm_ascend.model_loader.rfork.rfork_loader.RForkModelLoader'>` with load format `rfork`
+(ApiServer_3 pid=114614) INFO 11-17 19:51:14 [__init__.py:113] Registered model loader `<class 'vllm_ascend.model_loader.rfork.rfork_loader.RForkModelLoader'>` with load format `rfork`
+(ApiServer_2 pid=114613) INFO 11-17 19:51:14 [__init__.py:113] Registered model loader `<class 'vllm_ascend.model_loader.rfork.rfork_loader.RForkModelLoader'>` with load format `rfork`
+(ApiServer_1 pid=114612) WARNING 11-17 19:51:15 [interface.py:1457] Unknown vLLM environment variable detected: VLLM_ASCEND_ENABLE_NZ
+(ApiServer_3 pid=114614) WARNING 11-17 19:51:15 [interface.py:1457] Unknown vLLM environment variable detected: VLLM_ASCEND_ENABLE_NZ
+(ApiServer_2 pid=114613) WARNING 11-17 19:51:15 [interface.py:1457] Unknown vLLM environment variable detected: VLLM_ASCEND_ENABLE_NZ
+(ApiServer_1 pid=114612) INFO 11-17 19:51:15 [model.py:733] Resolved architecture: DeepseekV41ForCausalLM
+(ApiServer_1 pid=114612) INFO 11-17 19:51:15 [model.py:2152] Using max model len 2048
+(ApiServer_3 pid=114614) INFO 11-17 19:51:15 [model.py:733] Resolved architecture: DeepseekV41ForCausalLM
+(ApiServer_3 pid=114614) INFO 11-17 19:51:15 [model.py:2152] Using max model len 2048
+(ApiServer_2 pid=114613) INFO 11-17 19:51:15 [model.py:733] Resolved architecture: DeepseekV41ForCausalLM
+(ApiServer_2 pid=114613) INFO 11-17 19:51:15 [model.py:2152] Using max model len 2048
+(ApiServer_0 pid=114611) INFO 11-17 19:51:15 [patch_indexer_kv_dtype.py:102] Patched AttentionConfig.indexer_kv_dtype to accept 'int8' (DeepSeek V4 Ascend indexer K cache dtype).
+(ApiServer_0 pid=114611) INFO 11-17 19:51:15 [patch_kv_cache_dtype.py:116] Patched CacheConfig.cache_dtype to accept 'int8' and 'mxfp8' (Ascend KV cache dtypes).
+(ApiServer_0 pid=114611) INFO 11-17 19:51:15 [__init__.py:113] Registered model loader `<class 'vllm_ascend.model_loader.netloader.netloader.ModelNetLoaderElastic'>` with load format `netloader`
+(ApiServer_0 pid=114611) INFO 11-17 19:51:15 [__init__.py:113] Registered model loader `<class 'vllm_ascend.model_loader.rfork.rfork_loader.RForkModelLoader'>` with load format `rfork`
+(ApiServer_0 pid=114611) WARNING 11-17 19:51:15 [interface.py:1457] Unknown vLLM environment variable detected: VLLM_ASCEND_ENABLE_NZ
+(ApiServer_0 pid=114611) INFO 11-17 19:51:15 [model.py:733] Resolved architecture: DeepseekV41ForCausalLM
+(ApiServer_0 pid=114611) INFO 11-17 19:51:15 [model.py:2152] Using max model len 2048
+(ApiServer_1 pid=114612) INFO 11-17 19:51:15 [scheduler.py:307] Chunked prefill is enabled with max_num_batched_tokens=2048.
+(ApiServer_1 pid=114612) WARNING 11-17 19:51:15 [vllm.py:1703] Enforce eager set, disabling torch.compile, CUDAGraphs, and JIT kernel warmup. This is equivalent to setting -cc.mode=none -cc.cudagraph_mode=none and --kernel_config.enable_jit_warmup=False
+(ApiServer_1 pid=114612) WARNING 11-17 19:51:15 [vllm.py:1727] Inductor compilation was disabled by user settings, optimizations settings that are only active during inductor compilation will be ignored.
+(ApiServer_1 pid=114612) INFO 11-17 19:51:15 [kernel.py:467] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['native'], fused_add_rms_norm=['native'], gelu_and_mul_sparse=['native'])
+(ApiServer_1 pid=114612) INFO 11-17 19:51:15 [vllm.py:1929] Cudagraph is disabled under eager mode
+(ApiServer_1 pid=114612) INFO 11-17 19:51:15 [mrv2_utils.py:91] VLLM_USE_V2_MODEL_RUNNER=True is set; using Model Runner V2.
+(ApiServer_1 pid=114612) INFO 11-17 19:51:15 [utils.py:215] No ModelSlim quantization signature detected from model files for "/mnt/share/c00954197/Workspace/dsv41/basic/weight_update/model_b". To force a quantization method, pass "--quantization <method>" explicitly.
+(ApiServer_1 pid=114612) WARNING 11-17 19:51:15 [platform.py:863] GPU-specific parameter is not supported on Ascend. parameter=disable_cascade_attn, value=True, action: resetting to False.
+(ApiServer_3 pid=114614) INFO 11-17 19:51:15 [scheduler.py:307] Chunked prefill is enabled with max_num_batched_tokens=2048.
+(ApiServer_3 pid=114614) WARNING 11-17 19:51:15 [vllm.py:1703] Enforce eager set, disabling torch.compile, CUDAGraphs, and JIT kernel warmup. This is equivalent to setting -cc.mode=none -cc.cudagraph_mode=none and --kernel_config.enable_jit_warmup=False
+(ApiServer_3 pid=114614) WARNING 11-17 19:51:15 [vllm.py:1727] Inductor compilation was disabled by user settings, optimizations settings that are only active during inductor compilation will be ignored.
+(ApiServer_3 pid=114614) INFO 11-17 19:51:15 [kernel.py:467] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['native'], fused_add_rms_norm=['native'], gelu_and_mul_sparse=['native'])
+(ApiServer_3 pid=114614) INFO 11-17 19:51:15 [vllm.py:1929] Cudagraph is disabled under eager mode
+(ApiServer_3 pid=114614) INFO 11-17 19:51:15 [mrv2_utils.py:91] VLLM_USE_V2_MODEL_RUNNER=True is set; using Model Runner V2.
+(ApiServer_3 pid=114614) INFO 11-17 19:51:15 [utils.py:215] No ModelSlim quantization signature detected from model files for "/mnt/share/c00954197/Workspace/dsv41/basic/weight_update/model_b". To force a quantization method, pass "--quantization <method>" explicitly.
+(ApiServer_3 pid=114614) WARNING 11-17 19:51:15 [platform.py:863] GPU-specific parameter is not supported on Ascend. parameter=disable_cascade_attn, value=True, action: resetting to False.
+(ApiServer_2 pid=114613) INFO 11-17 19:51:15 [scheduler.py:307] Chunked prefill is enabled with max_num_batched_tokens=2048.
+(ApiServer_2 pid=114613) WARNING 11-17 19:51:15 [vllm.py:1703] Enforce eager set, disabling torch.compile, CUDAGraphs, and JIT kernel warmup. This is equivalent to setting -cc.mode=none -cc.cudagraph_mode=none and --kernel_config.enable_jit_warmup=False
+(ApiServer_2 pid=114613) WARNING 11-17 19:51:15 [vllm.py:1727] Inductor compilation was disabled by user settings, optimizations settings that are only active during inductor compilation will be ignored.
+(ApiServer_2 pid=114613) INFO 11-17 19:51:15 [kernel.py:467] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['native'], fused_add_rms_norm=['native'], gelu_and_mul_sparse=['native'])
+(ApiServer_2 pid=114613) INFO 11-17 19:51:15 [vllm.py:1929] Cudagraph is disabled under eager mode
+(ApiServer_2 pid=114613) INFO 11-17 19:51:15 [mrv2_utils.py:91] VLLM_USE_V2_MODEL_RUNNER=True is set; using Model Runner V2.
+(ApiServer_2 pid=114613) INFO 11-17 19:51:15 [utils.py:215] No ModelSlim quantization signature detected from model files for "/mnt/share/c00954197/Workspace/dsv41/basic/weight_update/model_b". To force a quantization method, pass "--quantization <method>" explicitly.
+(ApiServer_2 pid=114613) WARNING 11-17 19:51:15 [platform.py:863] GPU-specific parameter is not supported on Ascend. parameter=disable_cascade_attn, value=True, action: resetting to False.
+(ApiServer_1 pid=114612) INFO 11-17 19:51:15 [ascend_config.py:339] Dynamic EPLB is False
+(ApiServer_1 pid=114612) INFO 11-17 19:51:15 [ascend_config.py:340] The number of redundant experts is 0
+(ApiServer_1 pid=114612) INFO 11-17 19:51:15 [ascend_config.py:764] FlashComm1 is disabled. Using flashinfer_all2allv as the all2all backend.
+(ApiServer_1 pid=114612) INFO 11-17 19:51:15 [platform.py:1368] Compilation disabled, using eager mode by default
+(ApiServer_1 pid=114612) INFO 11-17 19:51:15 [compilation.py:317] Enabled custom fusions: norm_quant, act_quant
+(ApiServer_3 pid=114614) INFO 11-17 19:51:15 [ascend_config.py:339] Dynamic EPLB is False
+(ApiServer_3 pid=114614) INFO 11-17 19:51:15 [ascend_config.py:340] The number of redundant experts is 0
+(ApiServer_3 pid=114614) INFO 11-17 19:51:15 [ascend_config.py:764] FlashComm1 is disabled. Using flashinfer_all2allv as the all2all backend.
+(ApiServer_3 pid=114614) INFO 11-17 19:51:15 [platform.py:1368] Compilation disabled, using eager mode by default
+(ApiServer_3 pid=114614) INFO 11-17 19:51:15 [compilation.py:317] Enabled custom fusions: norm_quant, act_quant
+(ApiServer_2 pid=114613) INFO 11-17 19:51:15 [ascend_config.py:339] Dynamic EPLB is False
+(ApiServer_2 pid=114613) INFO 11-17 19:51:15 [ascend_config.py:340] The number of redundant experts is 0
+(ApiServer_2 pid=114613) INFO 11-17 19:51:15 [ascend_config.py:764] FlashComm1 is disabled. Using flashinfer_all2allv as the all2all backend.
+(ApiServer_2 pid=114613) INFO 11-17 19:51:15 [platform.py:1368] Compilation disabled, using eager mode by default
+(ApiServer_2 pid=114613) INFO 11-17 19:51:15 [compilation.py:317] Enabled custom fusions: norm_quant, act_quant
+(ApiServer_1 pid=114612) WARNING 11-17 19:51:16 [serial_utils.py:78] Allowing insecure serialization using pickle due to VLLM_ALLOW_INSECURE_SERIALIZATION=1
+(ApiServer_3 pid=114614) WARNING 11-17 19:51:16 [serial_utils.py:78] Allowing insecure serialization using pickle due to VLLM_ALLOW_INSECURE_SERIALIZATION=1
+(ApiServer_2 pid=114613) WARNING 11-17 19:51:16 [serial_utils.py:78] Allowing insecure serialization using pickle due to VLLM_ALLOW_INSECURE_SERIALIZATION=1
+(ApiServer_1 pid=114612) INFO 11-17 19:51:16 [base.py:280] Multi-modal warmup completed in 0.075s
+(ApiServer_3 pid=114614) INFO 11-17 19:51:16 [base.py:280] Multi-modal warmup completed in 0.078s
+(ApiServer_2 pid=114613) INFO 11-17 19:51:16 [base.py:280] Multi-modal warmup completed in 0.084s
+(ApiServer_0 pid=114611) INFO 11-17 19:51:16 [scheduler.py:307] Chunked prefill is enabled with max_num_batched_tokens=2048.
+(ApiServer_0 pid=114611) WARNING 11-17 19:51:16 [vllm.py:1703] Enforce eager set, disabling torch.compile, CUDAGraphs, and JIT kernel warmup. This is equivalent to setting -cc.mode=none -cc.cudagraph_mode=none and --kernel_config.enable_jit_warmup=False
+(ApiServer_0 pid=114611) WARNING 11-17 19:51:16 [vllm.py:1727] Inductor compilation was disabled by user settings, optimizations settings that are only active during inductor compilation will be ignored.
+(ApiServer_0 pid=114611) INFO 11-17 19:51:16 [kernel.py:467] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['native'], fused_add_rms_norm=['native'], gelu_and_mul_sparse=['native'])
+(ApiServer_0 pid=114611) INFO 11-17 19:51:16 [vllm.py:1929] Cudagraph is disabled under eager mode
+(ApiServer_0 pid=114611) INFO 11-17 19:51:16 [mrv2_utils.py:91] VLLM_USE_V2_MODEL_RUNNER=True is set; using Model Runner V2.
+(ApiServer_0 pid=114611) INFO 11-17 19:51:16 [utils.py:215] No ModelSlim quantization signature detected from model files for "/mnt/share/c00954197/Workspace/dsv41/basic/weight_update/model_b". To force a quantization method, pass "--quantization <method>" explicitly.
+(ApiServer_0 pid=114611) WARNING 11-17 19:51:16 [platform.py:863] GPU-specific parameter is not supported on Ascend. parameter=disable_cascade_attn, value=True, action: resetting to False.
+(ApiServer_0 pid=114611) INFO 11-17 19:51:16 [ascend_config.py:339] Dynamic EPLB is False
+(ApiServer_0 pid=114611) INFO 11-17 19:51:16 [ascend_config.py:340] The number of redundant experts is 0
+(ApiServer_0 pid=114611) INFO 11-17 19:51:16 [ascend_config.py:764] FlashComm1 is disabled. Using flashinfer_all2allv as the all2all backend.
+(ApiServer_0 pid=114611) INFO 11-17 19:51:16 [platform.py:1368] Compilation disabled, using eager mode by default
+(ApiServer_0 pid=114611) INFO 11-17 19:51:16 [compilation.py:317] Enabled custom fusions: norm_quant, act_quant
+(ApiServer_0 pid=114611) WARNING 11-17 19:51:16 [serial_utils.py:78] Allowing insecure serialization using pickle due to VLLM_ALLOW_INSECURE_SERIALIZATION=1
+(ApiServer_0 pid=114611) INFO 11-17 19:51:16 [base.py:280] Multi-modal warmup completed in 0.077s
+(EngineCore_DP1 pid=114608) INFO 11-17 19:51:44 [__init__.py:113] Registered model loader `<class 'vllm_ascend.model_loader.netloader.netloader.ModelNetLoaderElastic'>` with load format `netloader`
+(EngineCore_DP3 pid=114610) INFO 11-17 19:51:44 [__init__.py:113] Registered model loader `<class 'vllm_ascend.model_loader.netloader.netloader.ModelNetLoaderElastic'>` with load format `netloader`
+(EngineCore_DP0 pid=114607) INFO 11-17 19:51:44 [__init__.py:113] Registered model loader `<class 'vllm_ascend.model_loader.netloader.netloader.ModelNetLoaderElastic'>` with load format `netloader`
+(EngineCore_DP2 pid=114609) INFO 11-17 19:51:44 [__init__.py:113] Registered model loader `<class 'vllm_ascend.model_loader.netloader.netloader.ModelNetLoaderElastic'>` with load format `netloader`
+(EngineCore_DP0 pid=114607) INFO 11-17 19:51:44 [__init__.py:113] Registered model loader `<class 'vllm_ascend.model_loader.rfork.rfork_loader.RForkModelLoader'>` with load format `rfork`
+(EngineCore_DP3 pid=114610) INFO 11-17 19:51:44 [__init__.py:113] Registered model loader `<class 'vllm_ascend.model_loader.rfork.rfork_loader.RForkModelLoader'>` with load format `rfork`
+(EngineCore_DP1 pid=114608) INFO 11-17 19:51:44 [__init__.py:113] Registered model loader `<class 'vllm_ascend.model_loader.rfork.rfork_loader.RForkModelLoader'>` with load format `rfork`
+(EngineCore_DP0 pid=114607) INFO 11-17 19:51:44 [core.py:133] Initializing a V1 LLM engine (v0.32.0) with config: model='/mnt/share/c00954197/Workspace/dsv41/basic/weight_update/model_b', speculative_config=None, tokenizer='/mnt/share/c00954197/Workspace/dsv41/basic/weight_update/model_b', skip_tokenizer_init=False, tokenizer_mode=deepseek_v41, revision=None, tokenizer_revision=None, trust_remote_code=True, dtype=torch.bfloat16, max_seq_len=2048, download_dir=None, load_format=auto, tensor_parallel_size=1, pipeline_parallel_size=1, data_parallel_size=4, decode_context_parallel_size=1, dcp_comm_backend=ag_rs, disable_custom_all_reduce=True, quantization=None, quantization_config=None, enforce_eager=True, aux_output_config=AuxOutputConfig(enable_return_routed_experts=False, max_bytes=None), kv_cache_dtype=auto, device_config=npu, structured_outputs_config=StructuredOutputsConfig(backend='auto', disable_any_whitespace=False, disable_additional_properties=False, reasoning_parser='', reasoning_parser_plugin='', enable_in_reasoning=False), observability_config=ObservabilityConfig(show_hidden_metrics_for_version=None, otlp_traces_endpoint=None, collect_detailed_traces=None, per_request_spec_decode_metrics='none', kv_cache_metrics=False, kv_cache_metrics_sample=0.01, custom_histogram_buckets=None, cudagraph_metrics=False, enable_layerwise_nvtx_tracing=False, enable_mfu_metrics=False, enable_mm_processor_stats=False, enable_logging_iteration_details=False, jit_monitor_mode='warn', jit_monitor_verbose=False), seed=42, served_model_name=dsv41-weight-update, enable_prefix_caching=True, enable_chunked_prefill=True, pooler_config=None, compilation_config={'mode': <CompilationMode.NONE: 0>, 'debug_dump_path': None, 'cache_dir': '', 'compile_cache_save_format': 'binary', 'backend': 'vllm_ascend.compilation.compiler_interface.AscendCompiler', 'custom_ops': ['all'], 'ir_enable_torch_wrap': False, 'splitting_ops': [], 'compile_mm_encoder': False, 'cudagraph_mm_encoder': False, 'encoder_cudagraph_token_budgets': [], 'encoder_cudagraph_max_vision_items_per_batch': 0, 'encoder_cudagraph_max_frames_per_batch': None, 'cudagraph_decoder_replay': True, 'decoder_replay_cudagraph_capture_sizes': [], 'decoder_replay_trim_threshold': 768, 'compile_sizes': [], 'compile_ranges_endpoints': [2048], 'inductor_compile_config': {'enable_auto_functionalized_v2': False, 'size_asserts': False, 'alignment_asserts': False, 'scalar_asserts': False, 'combo_kernels': True, 'benchmark_combo_kernel': True}, 'inductor_passes': {}, 'cudagraph_mode': <CUDAGraphMode.NONE: 0>, 'cudagraph_num_of_warmups': 1, 'cudagraph_capture_sizes': [], 'cudagraph_copy_inputs': False, 'cudagraph_specialize_lora': True, 'use_inductor_graph_partition': False, 'pass_config': {'fuse_norm_quant': True, 'fuse_act_quant': True, 'fuse_attn_quant': False, 'fuse_allreduce_rms': False, 'enable_qk_norm_rope_fusion': False, 'fuse_rope_kvcache_cat_mla': False, 'fuse_act_padding': False, 'fuse_qk_norm_rope_kvcache': False}, 'max_cudagraph_capture_size': 0, 'dynamic_shapes_config': {'type': <DynamicShapesType.BACKED: 'backed'>, 'evaluate_guards': False, 'assume_32_bit_indexing': False}, 'local_cache_dir': None, 'fast_moe_cold_start': True, 'static_all_moe_layers': []}, kernel_config=KernelConfig(ir_op_priority=IrOpPriorityConfig(rms_norm=['native'], fused_add_rms_norm=['native'], gelu_and_mul_sparse=['native']), enable_flashinfer_autotune=True, enable_rocm_segmented_attn_autotune=False, enable_cutedsl_warmup=True, enable_jit_warmup=False, moe_backend='auto', sparse_indexer_topk_backend='auto', linear_backend='auto', linear_backend_per_quant=None)
+(EngineCore_DP3 pid=114610) INFO 11-17 19:51:44 [multiproc_executor.py:153] DP group leader: node_rank=0, node_rank_within_dp=0, master_addr=127.0.0.1, mq_connect_ip=177.42.22.1 (local), world_size=1, local_world_size=1
+(EngineCore_DP1 pid=114608) INFO 11-17 19:51:44 [multiproc_executor.py:153] DP group leader: node_rank=0, node_rank_within_dp=0, master_addr=127.0.0.1, mq_connect_ip=177.42.22.1 (local), world_size=1, local_world_size=1
+(EngineCore_DP0 pid=114607) INFO 11-17 19:51:44 [multiproc_executor.py:153] DP group leader: node_rank=0, node_rank_within_dp=0, master_addr=127.0.0.1, mq_connect_ip=177.42.22.1 (local), world_size=1, local_world_size=1
+(EngineCore_DP2 pid=114609) INFO 11-17 19:51:44 [__init__.py:113] Registered model loader `<class 'vllm_ascend.model_loader.rfork.rfork_loader.RForkModelLoader'>` with load format `rfork`
+(EngineCore_DP2 pid=114609) INFO 11-17 19:51:44 [multiproc_executor.py:153] DP group leader: node_rank=0, node_rank_within_dp=0, master_addr=127.0.0.1, mq_connect_ip=177.42.22.1 (local), world_size=1, local_world_size=1
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:13: FutureWarning: triton.language.extra.cann.extension.atan2 is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.atan2 instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.atan2")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:35: FutureWarning: triton.language.extra.cann.extension.isfinited is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.isfinited instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.isfinited")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:49: FutureWarning: triton.language.extra.cann.extension.finitef is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.finitef instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.finitef")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:13: FutureWarning: triton.language.extra.cann.extension.atan2 is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.atan2 instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.atan2")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:35: FutureWarning: triton.language.extra.cann.extension.isfinited is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.isfinited instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.isfinited")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:13: FutureWarning: triton.language.extra.cann.extension.atan2 is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.atan2 instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.atan2")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:49: FutureWarning: triton.language.extra.cann.extension.finitef is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.finitef instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.finitef")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:35: FutureWarning: triton.language.extra.cann.extension.isfinited is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.isfinited instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.isfinited")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:49: FutureWarning: triton.language.extra.cann.extension.finitef is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.finitef instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.finitef")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:13: FutureWarning: triton.language.extra.cann.extension.atan2 is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.atan2 instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.atan2")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:35: FutureWarning: triton.language.extra.cann.extension.isfinited is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.isfinited instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.isfinited")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:49: FutureWarning: triton.language.extra.cann.extension.finitef is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.finitef instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.finitef")
+(VllmWorker-0 pid=116490) INFO 11-17 19:51:54 [patch_indexer_kv_dtype.py:102] Patched AttentionConfig.indexer_kv_dtype to accept 'int8' (DeepSeek V4 Ascend indexer K cache dtype).
+(VllmWorker-0 pid=116490) INFO 11-17 19:51:54 [patch_kv_cache_dtype.py:116] Patched CacheConfig.cache_dtype to accept 'int8' and 'mxfp8' (Ascend KV cache dtypes).
+(VllmWorker-0 pid=116490) INFO 11-17 19:51:54 [__init__.py:113] Registered model loader `<class 'vllm_ascend.model_loader.netloader.netloader.ModelNetLoaderElastic'>` with load format `netloader`
+(VllmWorker-0 pid=116490) INFO 11-17 19:51:54 [__init__.py:113] Registered model loader `<class 'vllm_ascend.model_loader.rfork.rfork_loader.RForkModelLoader'>` with load format `rfork`
+(VllmWorker-0 pid=116489) INFO 11-17 19:51:54 [patch_indexer_kv_dtype.py:102] Patched AttentionConfig.indexer_kv_dtype to accept 'int8' (DeepSeek V4 Ascend indexer K cache dtype).
+(VllmWorker-0 pid=116488) INFO 11-17 19:51:54 [patch_indexer_kv_dtype.py:102] Patched AttentionConfig.indexer_kv_dtype to accept 'int8' (DeepSeek V4 Ascend indexer K cache dtype).
+(VllmWorker-0 pid=116491) INFO 11-17 19:51:54 [patch_indexer_kv_dtype.py:102] Patched AttentionConfig.indexer_kv_dtype to accept 'int8' (DeepSeek V4 Ascend indexer K cache dtype).
+(VllmWorker-0 pid=116489) INFO 11-17 19:51:54 [patch_kv_cache_dtype.py:116] Patched CacheConfig.cache_dtype to accept 'int8' and 'mxfp8' (Ascend KV cache dtypes).
+(VllmWorker-0 pid=116488) INFO 11-17 19:51:54 [patch_kv_cache_dtype.py:116] Patched CacheConfig.cache_dtype to accept 'int8' and 'mxfp8' (Ascend KV cache dtypes).
+(VllmWorker-0 pid=116491) INFO 11-17 19:51:54 [patch_kv_cache_dtype.py:116] Patched CacheConfig.cache_dtype to accept 'int8' and 'mxfp8' (Ascend KV cache dtypes).
+(VllmWorker-0 pid=116488) INFO 11-17 19:51:54 [__init__.py:113] Registered model loader `<class 'vllm_ascend.model_loader.netloader.netloader.ModelNetLoaderElastic'>` with load format `netloader`
+(VllmWorker-0 pid=116489) INFO 11-17 19:51:54 [__init__.py:113] Registered model loader `<class 'vllm_ascend.model_loader.netloader.netloader.ModelNetLoaderElastic'>` with load format `netloader`
+(VllmWorker-0 pid=116491) INFO 11-17 19:51:54 [__init__.py:113] Registered model loader `<class 'vllm_ascend.model_loader.netloader.netloader.ModelNetLoaderElastic'>` with load format `netloader`
+(VllmWorker-0 pid=116488) INFO 11-17 19:51:54 [__init__.py:113] Registered model loader `<class 'vllm_ascend.model_loader.rfork.rfork_loader.RForkModelLoader'>` with load format `rfork`
+(VllmWorker-0 pid=116489) INFO 11-17 19:51:54 [__init__.py:113] Registered model loader `<class 'vllm_ascend.model_loader.rfork.rfork_loader.RForkModelLoader'>` with load format `rfork`
+(VllmWorker-0 pid=116491) INFO 11-17 19:51:54 [__init__.py:113] Registered model loader `<class 'vllm_ascend.model_loader.rfork.rfork_loader.RForkModelLoader'>` with load format `rfork`
+[W1117 19:51:54.797675410 OptionRegister.cpp:95] Warning: Current device only support allow_internal_format=False, the requested value True is invalid and has been reverted to False. (function operator())
+(VllmWorker-0 pid=116490) INFO 11-17 19:51:54 [worker_base.py:317] Injected <class 'weight_probe.WeightProbe'> into <class 'vllm_ascend.worker.worker.NPUWorker'> for extended collective_rpc calls ['begin_weight_trace', 'weight_probe']
+(VllmWorker-0 pid=116490) INFO 11-17 19:51:54 [mrv2_utils.py:91] VLLM_USE_V2_MODEL_RUNNER=True is set; using Model Runner V2.
+[W1117 19:51:55.921293930 OptionRegister.cpp:95] Warning: Current device only support allow_internal_format=False, the requested value True is invalid and has been reverted to False. (function operator())
+(VllmWorker-0 pid=116491) INFO 11-17 19:51:55 [worker_base.py:317] Injected <class 'weight_probe.WeightProbe'> into <class 'vllm_ascend.worker.worker.NPUWorker'> for extended collective_rpc calls ['begin_weight_trace', 'weight_probe']
+(VllmWorker-0 pid=116491) INFO 11-17 19:51:55 [mrv2_utils.py:91] VLLM_USE_V2_MODEL_RUNNER=True is set; using Model Runner V2.
+[W1117 19:51:55.925785010 OptionRegister.cpp:95] Warning: Current device only support allow_internal_format=False, the requested value True is invalid and has been reverted to False. (function operator())
+(VllmWorker-0 pid=116488) INFO 11-17 19:51:55 [worker_base.py:317] Injected <class 'weight_probe.WeightProbe'> into <class 'vllm_ascend.worker.worker.NPUWorker'> for extended collective_rpc calls ['begin_weight_trace', 'weight_probe']
+(VllmWorker-0 pid=116488) INFO 11-17 19:51:55 [mrv2_utils.py:91] VLLM_USE_V2_MODEL_RUNNER=True is set; using Model Runner V2.
+[W1117 19:51:55.933072410 OptionRegister.cpp:95] Warning: Current device only support allow_internal_format=False, the requested value True is invalid and has been reverted to False. (function operator())
+(VllmWorker-0 pid=116489) INFO 11-17 19:51:55 [worker_base.py:317] Injected <class 'weight_probe.WeightProbe'> into <class 'vllm_ascend.worker.worker.NPUWorker'> for extended collective_rpc calls ['begin_weight_trace', 'weight_probe']
+(VllmWorker-0 pid=116489) INFO 11-17 19:51:55 [mrv2_utils.py:91] VLLM_USE_V2_MODEL_RUNNER=True is set; using Model Runner V2.
+(VllmWorker-0 pid=116490) WARNING 11-17 19:51:56 [patch_triton.py:69] NPU Triton causal_conv1d_update is unavailable (cannot import name 'causal_conv1d_update_npu' from 'vllm_ascend.ops.triton.mamba.causal_conv1d' (/vllm-workspace/vllm-ascend/vllm_ascend/ops/triton/mamba/causal_conv1d.py)); falling back to the PyTorch implementation, which syncs per request and therefore stalls ACL graph capture at decode-FULL.
+(VllmWorker-0 pid=116488) WARNING 11-17 19:51:56 [patch_triton.py:69] NPU Triton causal_conv1d_update is unavailable (cannot import name 'causal_conv1d_update_npu' from 'vllm_ascend.ops.triton.mamba.causal_conv1d' (/vllm-workspace/vllm-ascend/vllm_ascend/ops/triton/mamba/causal_conv1d.py)); falling back to the PyTorch implementation, which syncs per request and therefore stalls ACL graph capture at decode-FULL.
+(VllmWorker-0 pid=116489) WARNING 11-17 19:51:56 [patch_triton.py:69] NPU Triton causal_conv1d_update is unavailable (cannot import name 'causal_conv1d_update_npu' from 'vllm_ascend.ops.triton.mamba.causal_conv1d' (/vllm-workspace/vllm-ascend/vllm_ascend/ops/triton/mamba/causal_conv1d.py)); falling back to the PyTorch implementation, which syncs per request and therefore stalls ACL graph capture at decode-FULL.
+(VllmWorker-0 pid=116491) WARNING 11-17 19:51:56 [patch_triton.py:69] NPU Triton causal_conv1d_update is unavailable (cannot import name 'causal_conv1d_update_npu' from 'vllm_ascend.ops.triton.mamba.causal_conv1d' (/vllm-workspace/vllm-ascend/vllm_ascend/ops/triton/mamba/causal_conv1d.py)); falling back to the PyTorch implementation, which syncs per request and therefore stalls ACL graph capture at decode-FULL.
+INFO 11-17 19:51:56 [logger.py:158] [vllm-ascend] - [ascend_log] applied level=INFO debug=[] modules={}
+(VllmWorker-0 pid=116490) INFO 11-17 19:51:56 [ascend_config.py:339] Dynamic EPLB is False
+(VllmWorker-0 pid=116490) INFO 11-17 19:51:56 [ascend_config.py:340] The number of redundant experts is 0
+(VllmWorker-0 pid=116490) INFO 11-17 19:51:56 [ascend_config.py:764] FlashComm1 is disabled. Using flashinfer_all2allv as the all2all backend.
+INFO 11-17 19:51:57 [logger.py:158] [vllm-ascend] - [ascend_log] applied level=INFO debug=[] modules={}
+INFO 11-17 19:51:57 [logger.py:158] [vllm-ascend] - [ascend_log] applied level=INFO debug=[] modules={}
+INFO 11-17 19:51:57 [logger.py:158] [vllm-ascend] - [ascend_log] applied level=INFO debug=[] modules={}
+(VllmWorker-0 pid=116488) INFO 11-17 19:51:57 [ascend_config.py:339] Dynamic EPLB is False
+(VllmWorker-0 pid=116488) INFO 11-17 19:51:57 [ascend_config.py:340] The number of redundant experts is 0
+(VllmWorker-0 pid=116488) INFO 11-17 19:51:57 [ascend_config.py:764] FlashComm1 is disabled. Using flashinfer_all2allv as the all2all backend.
+(VllmWorker-0 pid=116489) INFO 11-17 19:51:57 [ascend_config.py:339] Dynamic EPLB is False
+(VllmWorker-0 pid=116489) INFO 11-17 19:51:57 [ascend_config.py:340] The number of redundant experts is 0
+(VllmWorker-0 pid=116489) INFO 11-17 19:51:57 [ascend_config.py:764] FlashComm1 is disabled. Using flashinfer_all2allv as the all2all backend.
+(VllmWorker-0 pid=116491) INFO 11-17 19:51:57 [ascend_config.py:339] Dynamic EPLB is False
+(VllmWorker-0 pid=116491) INFO 11-17 19:51:57 [ascend_config.py:340] The number of redundant experts is 0
+(VllmWorker-0 pid=116491) INFO 11-17 19:51:57 [ascend_config.py:764] FlashComm1 is disabled. Using flashinfer_all2allv as the all2all backend.
+(Worker pid=116491) INFO 11-17 19:52:18 [parallel_state.py:1906] world_size=4 rank=0 local_rank=0 distributed_init_method=tcp://127.0.0.1:41139 backend=hccl
+(Worker pid=116490) INFO 11-17 19:52:50 [parallel_state.py:1906] world_size=4 rank=2 local_rank=0 distributed_init_method=tcp://127.0.0.1:41139 backend=hccl
+(Worker pid=116488) INFO 11-17 19:52:50 [parallel_state.py:1906] world_size=4 rank=1 local_rank=0 distributed_init_method=tcp://127.0.0.1:41139 backend=hccl
+(Worker pid=116489) INFO 11-17 19:52:50 [parallel_state.py:1906] world_size=4 rank=3 local_rank=0 distributed_init_method=tcp://127.0.0.1:41139 backend=hccl
+[Gloo] Rank 3 is connected to 3 peer ranks. Expected number of connected peer ranks is : 3
+[Gloo] Rank 0 is connected to 3 peer ranks. Expected number of connected peer ranks is : 3
+[Gloo] Rank 1 is connected to 3 peer ranks. Expected number of connected peer ranks is : 3
+[Gloo] Rank 2 is connected to 3 peer ranks. Expected number of connected peer ranks is : 3
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 1 is connected to 3 peer ranks. Expected number of connected peer ranks is : 3
+[Gloo] Rank 0 is connected to 3 peer ranks. Expected number of connected peer ranks is : 3
+[Gloo] Rank 3 is connected to 3 peer ranks. Expected number of connected peer ranks is : 3
+[Gloo] Rank 2 is connected to 3 peer ranks. Expected number of connected peer ranks is : 3
+[Gloo] Rank 0 is connected to 3 peer ranks. Expected number of connected peer ranks is : 3
+[Gloo] Rank 2 is connected to 3 peer ranks. Expected number of connected peer ranks is : 3
+[Gloo] Rank 1 is connected to 3 peer ranks. Expected number of connected peer ranks is : 3
+[Gloo] Rank 3 is connected to 3 peer ranks. Expected number of connected peer ranks is : 3
+(Worker pid=116490) INFO 11-17 19:52:50 [parallel_state.py:2350] rank 2 in world size 4 is assigned as DP rank 2, PP rank 0, PCP rank 0, TP rank 0, ETP rank 0, EP rank 2, EPLB rank N/A
+(Worker pid=116491) INFO 11-17 19:52:50 [parallel_state.py:2350] rank 0 in world size 4 is assigned as DP rank 0, PP rank 0, PCP rank 0, TP rank 0, ETP rank 0, EP rank 0, EPLB rank N/A
+(Worker pid=116488) INFO 11-17 19:52:50 [parallel_state.py:2350] rank 1 in world size 4 is assigned as DP rank 1, PP rank 0, PCP rank 0, TP rank 0, ETP rank 0, EP rank 1, EPLB rank N/A
+(Worker pid=116489) INFO 11-17 19:52:50 [parallel_state.py:2350] rank 3 in world size 4 is assigned as DP rank 3, PP rank 0, PCP rank 0, TP rank 0, ETP rank 0, EP rank 3, EPLB rank N/A
+[Gloo] Rank 0 is connected to 3 peer ranks. Expected number of connected peer ranks is : 3
+[Gloo] Rank 3 is connected to 3 peer ranks. Expected number of connected peer ranks is : 3
+[Gloo] Rank 2 is connected to 3 peer ranks. Expected number of connected peer ranks is : 3
+[Gloo] Rank 1 is connected to 3 peer ranks. Expected number of connected peer ranks is : 3
+(Worker pid=116488) WARNING 11-17 19:52:50 [worker.py:603] npu model runner v2 is in developing, some features doesn't work for now.
+(Worker pid=116489) WARNING 11-17 19:52:50 [worker.py:603] npu model runner v2 is in developing, some features doesn't work for now.
+(Worker pid=116491) WARNING 11-17 19:52:50 [worker.py:603] npu model runner v2 is in developing, some features doesn't work for now.
+(Worker pid=116490) WARNING 11-17 19:52:50 [worker.py:603] npu model runner v2 is in developing, some features doesn't work for now.
+(Worker pid=116491) INFO 11-17 19:52:50 [utils.py:179] Wrapping torch.cuda with torch.npu.
+(Worker pid=116490) INFO 11-17 19:52:50 [utils.py:179] Wrapping torch.cuda with torch.npu.
+(Worker pid=116488) INFO 11-17 19:52:50 [utils.py:179] Wrapping torch.cuda with torch.npu.
+(Worker pid=116489) INFO 11-17 19:52:50 [utils.py:179] Wrapping torch.cuda with torch.npu.
+(Worker pid=116489) INFO 11-17 19:52:50 [ascend_config.py:339] Dynamic EPLB is False
+(Worker pid=116489) INFO 11-17 19:52:50 [ascend_config.py:340] The number of redundant experts is 0
+(Worker pid=116488) INFO 11-17 19:52:50 [ascend_config.py:339] Dynamic EPLB is False
+(Worker pid=116488) INFO 11-17 19:52:50 [ascend_config.py:340] The number of redundant experts is 0
+(Worker pid=116491) INFO 11-17 19:52:50 [ascend_config.py:339] Dynamic EPLB is False
+(Worker pid=116491) INFO 11-17 19:52:50 [ascend_config.py:340] The number of redundant experts is 0
+(Worker pid=116490) INFO 11-17 19:52:50 [ascend_config.py:339] Dynamic EPLB is False
+(Worker pid=116490) INFO 11-17 19:52:50 [ascend_config.py:340] The number of redundant experts is 0
+INFO 11-17 19:52:50 [config.py:709] [vllm-ascend] [observability] - [runtime_config] worker leader persisted path=/mnt/share/c00954197/Workspace/dsv41/basic/weight_update/runtime/config/runtime_config.json explicit_path=False (overwrote)
+INFO 11-17 19:52:50 [queue.py:78] [vllm-ascend] [observability] - [runtime_guard] action worker started name=runtime-guard-actions maxsize=64
+INFO 11-17 19:52:50 [bus_worker.py:109] [vllm-ascend] [observability] - [runtime_guard] bus worker started name=runtime-guard-bus
+INFO 11-17 19:52:50 [config.py:709] [vllm-ascend] [observability] - [runtime_config] worker leader persisted path=/mnt/share/c00954197/Workspace/dsv41/basic/weight_update/runtime/config/runtime_config.json explicit_path=False (overwrote)
+INFO 11-17 19:52:50 [queue.py:78] [vllm-ascend] [observability] - [runtime_guard] action worker started name=runtime-guard-actions maxsize=64
+INFO 11-17 19:52:50 [bus_worker.py:109] [vllm-ascend] [observability] - [runtime_guard] bus worker started name=runtime-guard-bus
+INFO 11-17 19:52:50 [config.py:709] [vllm-ascend] [observability] - [runtime_config] worker leader persisted path=/mnt/share/c00954197/Workspace/dsv41/basic/weight_update/runtime/config/runtime_config.json explicit_path=False (overwrote)
+INFO 11-17 19:52:50 [queue.py:78] [vllm-ascend] [observability] - [runtime_guard] action worker started name=runtime-guard-actions maxsize=64
+INFO 11-17 19:52:50 [bus_worker.py:109] [vllm-ascend] [observability] - [runtime_guard] bus worker started name=runtime-guard-bus
+INFO 11-17 19:52:50 [config.py:709] [vllm-ascend] [observability] - [runtime_config] worker leader persisted path=/mnt/share/c00954197/Workspace/dsv41/basic/weight_update/runtime/config/runtime_config.json explicit_path=False (overwrote)
+INFO 11-17 19:52:50 [queue.py:78] [vllm-ascend] [observability] - [runtime_guard] action worker started name=runtime-guard-actions maxsize=64
+INFO 11-17 19:52:50 [bus_worker.py:109] [vllm-ascend] [observability] - [runtime_guard] bus worker started name=runtime-guard-bus
+(Worker_DP3_EP3 pid=116489) INFO 11-17 19:52:51 [model_runner.py:392] Loading model from scratch...
+(Worker_DP3_EP3 pid=116489) INFO 11-17 19:52:51 [interface.py:429] Using default backend AttentionBackendEnum.TORCH_SDPA for vit attention
+(Worker_DP3_EP3 pid=116489) INFO 11-17 19:52:51 [mm_encoder_attention.py:372] Using AttentionBackendEnum.TORCH_SDPA for MMEncoderAttention.
+(Worker_DP2_EP2 pid=116490) INFO 11-17 19:52:51 [model_runner.py:392] Loading model from scratch...
+(Worker_DP2_EP2 pid=116490) INFO 11-17 19:52:51 [interface.py:429] Using default backend AttentionBackendEnum.TORCH_SDPA for vit attention
+(Worker_DP2_EP2 pid=116490) INFO 11-17 19:52:51 [mm_encoder_attention.py:372] Using AttentionBackendEnum.TORCH_SDPA for MMEncoderAttention.
+(Worker_DP1_EP1 pid=116488) INFO 11-17 19:52:51 [model_runner.py:392] Loading model from scratch...
+(Worker_DP1_EP1 pid=116488) INFO 11-17 19:52:51 [interface.py:429] Using default backend AttentionBackendEnum.TORCH_SDPA for vit attention
+(Worker_DP1_EP1 pid=116488) INFO 11-17 19:52:51 [mm_encoder_attention.py:372] Using AttentionBackendEnum.TORCH_SDPA for MMEncoderAttention.
+(Worker_DP0_EP0 pid=116491) INFO 11-17 19:52:51 [model_runner.py:392] Loading model from scratch...
+(Worker_DP0_EP0 pid=116491) INFO 11-17 19:52:51 [interface.py:429] Using default backend AttentionBackendEnum.TORCH_SDPA for vit attention
+(Worker_DP0_EP0 pid=116491) INFO 11-17 19:52:51 [mm_encoder_attention.py:372] Using AttentionBackendEnum.TORCH_SDPA for MMEncoderAttention.
+(Worker_DP3_EP3 pid=116489) INFO 11-17 19:52:51 [expert_map_manager.py:250] [EP Rank 3/4] Expert parallelism is enabled. Expert placement strategy: linear. Local/global number of experts: 8/32. Experts local to global index map: 0->24, 1->25, 2->26, 3->27, 4->28, 5->29, 6->30, 7->31.
+(Worker_DP2_EP2 pid=116490) INFO 11-17 19:52:51 [expert_map_manager.py:250] [EP Rank 2/4] Expert parallelism is enabled. Expert placement strategy: linear. Local/global number of experts: 8/32. Experts local to global index map: 0->16, 1->17, 2->18, 3->19, 4->20, 5->21, 6->22, 7->23.
+(Worker_DP1_EP1 pid=116488) INFO 11-17 19:52:51 [expert_map_manager.py:250] [EP Rank 1/4] Expert parallelism is enabled. Expert placement strategy: linear. Local/global number of experts: 8/32. Experts local to global index map: 0->8, 1->9, 2->10, 3->11, 4->12, 5->13, 6->14, 7->15.
+(Worker_DP0_EP0 pid=116491) INFO 11-17 19:52:51 [expert_map_manager.py:250] [EP Rank 0/4] Expert parallelism is enabled. Expert placement strategy: linear. Local/global number of experts: 8/32. Experts local to global index map: 0->0, 1->1, 2->2, 3->3, 4->4, 5->5, 6->6, 7->7.
+(Worker_DP0_EP0 pid=116491) INFO 11-17 19:52:54 [decoder_replay_layers.py:205] Ascend MRV2 decoder bounded replay: layers 20-39 keep each prefill's last 128 tokens.
+(Worker_DP1_EP1 pid=116488) INFO 11-17 19:52:54 [decoder_replay_layers.py:205] Ascend MRV2 decoder bounded replay: layers 20-39 keep each prefill's last 128 tokens.
+(Worker_DP2_EP2 pid=116490) INFO 11-17 19:52:54 [decoder_replay_layers.py:205] Ascend MRV2 decoder bounded replay: layers 20-39 keep each prefill's last 128 tokens.
+(Worker_DP3_EP3 pid=116489) INFO 11-17 19:52:54 [decoder_replay_layers.py:205] Ascend MRV2 decoder bounded replay: layers 20-39 keep each prefill's last 128 tokens.
+(Worker_DP0_EP0 pid=116491) INFO 11-17 19:52:54 [base_loader.py:82] Initializing model took 3.165802 seconds
+(Worker_DP1_EP1 pid=116488) INFO 11-17 19:52:54 [base_loader.py:82] Initializing model took 3.208957 seconds
+(Worker_DP2_EP2 pid=116490) INFO 11-17 19:52:54 [base_loader.py:82] Initializing model took 3.235867 seconds
+(Worker_DP3_EP3 pid=116489) INFO 11-17 19:52:54 [base_loader.py:82] Initializing model took 3.266692 seconds
+(Worker_DP2_EP2 pid=116490) INFO 11-17 19:52:55 [weight_utils.py:1108] Filesystem type for checkpoints: NFS. Checkpoint size: 309.70 GiB. Available RAM: 2176.57 GiB.
+(Worker_DP2_EP2 pid=116490) INFO 11-17 19:52:55 [weight_utils.py:1070] Prefetching checkpoint files into page cache started (in background, num_threads=8, block_size=16777216 bytes)
+(Worker_DP3_EP3 pid=116489) INFO 11-17 19:52:55 [weight_utils.py:1108] Filesystem type for checkpoints: NFS. Checkpoint size: 309.70 GiB. Available RAM: 2176.47 GiB.
+(Worker_DP0_EP0 pid=116491) INFO 11-17 19:52:55 [weight_utils.py:1108] Filesystem type for checkpoints: NFS. Checkpoint size: 309.70 GiB. Available RAM: 2176.47 GiB.
+(Worker_DP3_EP3 pid=116489) INFO 11-17 19:52:55 [weight_utils.py:1070] Prefetching checkpoint files into page cache started (in background, num_threads=8, block_size=16777216 bytes)
+(Worker_DP0_EP0 pid=116491) INFO 11-17 19:52:55 [weight_utils.py:1070] Prefetching checkpoint files into page cache started (in background, num_threads=8, block_size=16777216 bytes)
+Loading safetensors checkpoint shards:   0% Completed | 0/503 [00:00<?, ?it/s]
+(Worker_DP1_EP1 pid=116488) INFO 11-17 19:52:55 [weight_utils.py:1108] Filesystem type for checkpoints: NFS. Checkpoint size: 309.70 GiB. Available RAM: 2176.45 GiB.
+(Worker_DP1_EP1 pid=116488) INFO 11-17 19:52:55 [weight_utils.py:1070] Prefetching checkpoint files into page cache started (in background, num_threads=8, block_size=16777216 bytes)
+(Worker_DP2_EP2 pid=116490) INFO 11-17 19:52:55 [weight_utils.py:1042] Prefetching checkpoint files: 10% (13/126)
+(Worker_DP0_EP0 pid=116491) INFO 11-17 19:52:55 [weight_utils.py:1042] Prefetching checkpoint files: 10% (13/126)
+(Worker_DP1_EP1 pid=116488) INFO 11-17 19:52:55 [weight_utils.py:1042] Prefetching checkpoint files: 10% (13/126)
+(Worker_DP2_EP2 pid=116490) INFO 11-17 19:52:55 [weight_utils.py:1042] Prefetching checkpoint files: 20% (26/126)
+(Worker_DP1_EP1 pid=116488) INFO 11-17 19:52:55 [weight_utils.py:1042] Prefetching checkpoint files: 20% (26/126)
+(Worker_DP2_EP2 pid=116490) INFO 11-17 19:52:55 [weight_utils.py:1042] Prefetching checkpoint files: 30% (38/126)
+(Worker_DP3_EP3 pid=116489) INFO 11-17 19:52:55 [weight_utils.py:1042] Prefetching checkpoint files: 10% (13/125)
+(Worker_DP1_EP1 pid=116488) INFO 11-17 19:52:56 [weight_utils.py:1042] Prefetching checkpoint files: 30% (38/126)
+(Worker_DP0_EP0 pid=116491) INFO 11-17 19:52:56 [weight_utils.py:1042] Prefetching checkpoint files: 20% (26/126)
+(Worker_DP2_EP2 pid=116490) INFO 11-17 19:52:56 [weight_utils.py:1042] Prefetching checkpoint files: 40% (51/126)
+(Worker_DP1_EP1 pid=116488) INFO 11-17 19:52:56 [weight_utils.py:1042] Prefetching checkpoint files: 40% (51/126)
+(Worker_DP0_EP0 pid=116491) INFO 11-17 19:52:56 [weight_utils.py:1042] Prefetching checkpoint files: 30% (38/126)
+(Worker_DP1_EP1 pid=116488) INFO 11-17 19:52:56 [weight_utils.py:1042] Prefetching checkpoint files: 50% (63/126)
+(Worker_DP2_EP2 pid=116490) INFO 11-17 19:52:56 [weight_utils.py:1042] Prefetching checkpoint files: 50% (63/126)
+(Worker_DP3_EP3 pid=116489) INFO 11-17 19:52:57 [weight_utils.py:1042] Prefetching checkpoint files: 20% (25/125)
+(Worker_DP0_EP0 pid=116491) INFO 11-17 19:52:57 [weight_utils.py:1042] Prefetching checkpoint files: 40% (51/126)
+(Worker_DP2_EP2 pid=116490) INFO 11-17 19:52:57 [weight_utils.py:1042] Prefetching checkpoint files: 60% (76/126)
+(Worker_DP1_EP1 pid=116488) INFO 11-17 19:52:57 [weight_utils.py:1042] Prefetching checkpoint files: 60% (76/126)
+Loading safetensors checkpoint shards:   0% Completed | 1/503 [00:01<16:29,  1.97s/it]
+(Worker_DP2_EP2 pid=116490) INFO 11-17 19:52:57 [weight_utils.py:1042] Prefetching checkpoint files: 70% (89/126)
+(Worker_DP1_EP1 pid=116488) INFO 11-17 19:52:57 [weight_utils.py:1042] Prefetching checkpoint files: 70% (89/126)
+Loading safetensors checkpoint shards:   0% Completed | 2/503 [00:02<08:28,  1.01s/it]
+(Worker_DP0_EP0 pid=116491) INFO 11-17 19:52:57 [weight_utils.py:1042] Prefetching checkpoint files: 50% (63/126)
+(Worker_DP3_EP3 pid=116489) INFO 11-17 19:52:57 [weight_utils.py:1042] Prefetching checkpoint files: 30% (38/125)
+Loading safetensors checkpoint shards:   2% Completed | 9/503 [00:02<01:20,  6.11it/s]
+(Worker_DP2_EP2 pid=116490) INFO 11-17 19:52:57 [weight_utils.py:1042] Prefetching checkpoint files: 80% (101/126)
+Loading safetensors checkpoint shards:   3% Completed | 13/503 [00:02<00:54,  8.98it/s]
+(Worker_DP0_EP0 pid=116491) INFO 11-17 19:52:57 [weight_utils.py:1042] Prefetching checkpoint files: 60% (76/126)
+(Worker_DP3_EP3 pid=116489) INFO 11-17 19:52:57 [weight_utils.py:1042] Prefetching checkpoint files: 40% (50/125)
+(Worker_DP1_EP1 pid=116488) INFO 11-17 19:52:58 [weight_utils.py:1042] Prefetching checkpoint files: 80% (101/126)
+(Worker_DP2_EP2 pid=116490) INFO 11-17 19:52:58 [weight_utils.py:1042] Prefetching checkpoint files: 90% (114/126)
+Loading safetensors checkpoint shards:   3% Completed | 16/503 [00:02<00:56,  8.58it/s]
+(Worker_DP0_EP0 pid=116491) INFO 11-17 19:52:58 [weight_utils.py:1042] Prefetching checkpoint files: 70% (89/126)
+Loading safetensors checkpoint shards:   5% Completed | 23/503 [00:03<00:31, 15.01it/s]
+(Worker_DP3_EP3 pid=116489) INFO 11-17 19:52:58 [weight_utils.py:1042] Prefetching checkpoint files: 50% (63/125)
+(Worker_DP3_EP3 pid=116489) INFO 11-17 19:52:58 [weight_utils.py:1042] Prefetching checkpoint files: 60% (75/125)
+(Worker_DP0_EP0 pid=116491) INFO 11-17 19:52:58 [weight_utils.py:1042] Prefetching checkpoint files: 80% (101/126)
+Loading safetensors checkpoint shards:   5% Completed | 27/503 [00:03<00:36, 13.11it/s]
+Loading safetensors checkpoint shards:   7% Completed | 33/503 [00:03<00:25, 18.19it/s]
+Loading safetensors checkpoint shards:   7% Completed | 37/503 [00:03<00:24, 19.40it/s]
+(Worker_DP1_EP1 pid=116488) INFO 11-17 19:52:59 [weight_utils.py:1042] Prefetching checkpoint files: 90% (114/126)
+(Worker_DP0_EP0 pid=116491) INFO 11-17 19:52:59 [weight_utils.py:1042] Prefetching checkpoint files: 90% (114/126)
+Loading safetensors checkpoint shards:   8% Completed | 40/503 [00:04<00:29, 15.51it/s]
+(Worker_DP3_EP3 pid=116489) INFO 11-17 19:52:59 [weight_utils.py:1042] Prefetching checkpoint files: 70% (88/125)
+Loading safetensors checkpoint shards:   9% Completed | 45/503 [00:04<00:22, 20.38it/s]
+(Worker_DP3_EP3 pid=116489) INFO 11-17 19:52:59 [weight_utils.py:1042] Prefetching checkpoint files: 80% (100/125)
+Loading safetensors checkpoint shards:  10% Completed | 50/503 [00:04<00:21, 21.53it/s]
+Loading safetensors checkpoint shards:  11% Completed | 53/503 [00:04<00:23, 18.91it/s]
+Loading safetensors checkpoint shards:  12% Completed | 59/503 [00:04<00:17, 25.16it/s]
+(Worker_DP3_EP3 pid=116489) INFO 11-17 19:53:00 [weight_utils.py:1042] Prefetching checkpoint files: 90% (113/125)
+Loading safetensors checkpoint shards:  13% Completed | 63/503 [00:04<00:18, 23.92it/s]
+Loading safetensors checkpoint shards:  13% Completed | 66/503 [00:05<00:27, 16.02it/s]
+Loading safetensors checkpoint shards:  15% Completed | 73/503 [00:05<00:18, 23.67it/s]
+Loading safetensors checkpoint shards:  15% Completed | 77/503 [00:05<00:26, 15.81it/s]
+Loading safetensors checkpoint shards:  17% Completed | 86/503 [00:06<00:17, 23.78it/s]
+Loading safetensors checkpoint shards:  18% Completed | 90/503 [00:06<00:22, 18.76it/s]
+Loading safetensors checkpoint shards:  19% Completed | 98/503 [00:06<00:15, 26.59it/s]
+Loading safetensors checkpoint shards:  20% Completed | 103/503 [00:06<00:17, 22.43it/s]
+Loading safetensors checkpoint shards:  22% Completed | 109/503 [00:07<00:14, 26.57it/s]
+(Worker_DP0_EP0 pid=116491) INFO 11-17 19:53:02 [weight_utils.py:1042] Prefetching checkpoint files: 100% (126/126)
+(Worker_DP0_EP0 pid=116491) INFO 11-17 19:53:02 [weight_utils.py:1065] Prefetching checkpoint files into page cache finished in 7.06s
+Loading safetensors checkpoint shards:  22% Completed | 113/503 [00:07<00:20, 19.03it/s]
+Loading safetensors checkpoint shards:  24% Completed | 121/503 [00:07<00:14, 25.52it/s]
+Loading safetensors checkpoint shards:  25% Completed | 125/503 [00:08<00:20, 18.57it/s]
+Loading safetensors checkpoint shards:  27% Completed | 134/503 [00:08<00:14, 25.54it/s]
+Loading safetensors checkpoint shards:  27% Completed | 138/503 [00:08<00:19, 18.30it/s]
+Loading safetensors checkpoint shards:  28% Completed | 141/503 [00:08<00:18, 19.35it/s]
+Loading safetensors checkpoint shards:  29% Completed | 145/503 [00:08<00:16, 21.27it/s]
+Loading safetensors checkpoint shards:  29% Completed | 148/503 [00:09<00:17, 19.90it/s]
+Loading safetensors checkpoint shards:  30% Completed | 152/503 [00:09<00:15, 22.38it/s]
+Loading safetensors checkpoint shards:  32% Completed | 159/503 [00:09<00:17, 19.45it/s]
+Loading safetensors checkpoint shards:  32% Completed | 162/503 [00:09<00:17, 19.22it/s]
+Loading safetensors checkpoint shards:  34% Completed | 171/503 [00:09<00:12, 27.28it/s]
+Loading safetensors checkpoint shards:  35% Completed | 175/503 [00:10<00:15, 21.13it/s]
+Loading safetensors checkpoint shards:  36% Completed | 183/503 [00:10<00:11, 26.93it/s]
+Loading safetensors checkpoint shards:  37% Completed | 187/503 [00:10<00:13, 23.01it/s]
+Loading safetensors checkpoint shards:  38% Completed | 192/503 [00:10<00:11, 27.00it/s]
+Loading safetensors checkpoint shards:  39% Completed | 196/503 [00:11<00:16, 18.45it/s]
+Loading safetensors checkpoint shards:  40% Completed | 199/503 [00:11<00:16, 18.13it/s]
+Loading safetensors checkpoint shards:  41% Completed | 207/503 [00:11<00:10, 27.47it/s]
+Loading safetensors checkpoint shards:  42% Completed | 212/503 [00:11<00:13, 22.28it/s]
+Loading safetensors checkpoint shards:  44% Completed | 219/503 [00:12<00:10, 26.76it/s]
+Loading safetensors checkpoint shards:  44% Completed | 223/503 [00:12<00:13, 21.38it/s]
+Loading safetensors checkpoint shards:  46% Completed | 231/503 [00:12<00:09, 27.24it/s]
+Loading safetensors checkpoint shards:  47% Completed | 235/503 [00:13<00:17, 15.57it/s]
+Loading safetensors checkpoint shards:  48% Completed | 239/503 [00:13<00:14, 17.89it/s]
+(Worker_DP1_EP1 pid=116488) INFO 11-17 19:53:08 [weight_utils.py:1042] Prefetching checkpoint files: 100% (126/126)
+(Worker_DP1_EP1 pid=116488) INFO 11-17 19:53:08 [weight_utils.py:1065] Prefetching checkpoint files into page cache finished in 13.35s
+Loading safetensors checkpoint shards:  49% Completed | 245/503 [00:13<00:14, 17.63it/s]
+Loading safetensors checkpoint shards:  50% Completed | 254/503 [00:13<00:09, 26.63it/s]
+Loading safetensors checkpoint shards:  51% Completed | 259/503 [00:14<00:12, 19.42it/s]
+Loading safetensors checkpoint shards:  53% Completed | 268/503 [00:14<00:09, 25.75it/s]
+Loading safetensors checkpoint shards:  54% Completed | 272/503 [00:14<00:11, 20.31it/s]
+Loading safetensors checkpoint shards:  55% Completed | 279/503 [00:14<00:08, 26.46it/s]
+Loading safetensors checkpoint shards:  56% Completed | 284/503 [00:15<00:11, 19.76it/s]
+Loading safetensors checkpoint shards:  57% Completed | 288/503 [00:15<00:11, 18.59it/s]
+Loading safetensors checkpoint shards:  58% Completed | 294/503 [00:15<00:08, 23.34it/s]
+(Worker_DP3_EP3 pid=116489) INFO 11-17 19:53:10 [weight_utils.py:1042] Prefetching checkpoint files: 100% (125/125)
+(Worker_DP3_EP3 pid=116489) INFO 11-17 19:53:10 [weight_utils.py:1065] Prefetching checkpoint files into page cache finished in 15.76s
+Loading safetensors checkpoint shards:  59% Completed | 298/503 [00:16<00:10, 18.72it/s]
+Loading safetensors checkpoint shards:  60% Completed | 302/503 [00:16<00:09, 20.77it/s]
+Loading safetensors checkpoint shards:  61% Completed | 308/503 [00:16<00:09, 19.73it/s]
+Loading safetensors checkpoint shards:  62% Completed | 314/503 [00:16<00:07, 24.40it/s]
+Loading safetensors checkpoint shards:  63% Completed | 318/503 [00:16<00:07, 26.04it/s]
+Loading safetensors checkpoint shards:  64% Completed | 322/503 [00:17<00:08, 21.90it/s]
+Loading safetensors checkpoint shards:  66% Completed | 330/503 [00:17<00:06, 27.78it/s]
+Loading safetensors checkpoint shards:  66% Completed | 334/503 [00:17<00:08, 19.51it/s]
+Loading safetensors checkpoint shards:  68% Completed | 341/503 [00:17<00:06, 25.87it/s]
+Loading safetensors checkpoint shards:  69% Completed | 345/503 [00:18<00:08, 19.26it/s]
+Loading safetensors checkpoint shards:  70% Completed | 353/503 [00:18<00:05, 25.18it/s]
+Loading safetensors checkpoint shards:  71% Completed | 357/503 [00:18<00:07, 18.36it/s]
+Loading safetensors checkpoint shards:  72% Completed | 364/503 [00:18<00:05, 24.73it/s]
+Loading safetensors checkpoint shards:  73% Completed | 368/503 [00:19<00:06, 21.55it/s]
+Loading safetensors checkpoint shards:  75% Completed | 375/503 [00:19<00:04, 27.22it/s]
+Loading safetensors checkpoint shards:  75% Completed | 379/503 [00:19<00:05, 24.63it/s]
+Loading safetensors checkpoint shards:  76% Completed | 383/503 [00:19<00:05, 21.56it/s]
+Loading safetensors checkpoint shards:  78% Completed | 390/503 [00:19<00:04, 28.20it/s]
+Loading safetensors checkpoint shards:  78% Completed | 394/503 [00:20<00:06, 18.01it/s]
+Loading safetensors checkpoint shards:  80% Completed | 402/503 [00:20<00:03, 26.10it/s]
+Loading safetensors checkpoint shards:  81% Completed | 407/503 [00:20<00:04, 21.41it/s]
+Loading safetensors checkpoint shards:  83% Completed | 415/503 [00:20<00:03, 26.54it/s]
+Loading safetensors checkpoint shards:  83% Completed | 419/503 [00:21<00:04, 20.14it/s]
+Loading safetensors checkpoint shards:  85% Completed | 426/503 [00:21<00:03, 25.26it/s]
+Loading safetensors checkpoint shards:  85% Completed | 430/503 [00:22<00:04, 15.56it/s]
+Loading safetensors checkpoint shards:  87% Completed | 439/503 [00:22<00:02, 23.47it/s]
+Loading safetensors checkpoint shards:  88% Completed | 444/503 [00:22<00:03, 18.99it/s]
+Loading safetensors checkpoint shards:  90% Completed | 452/503 [00:22<00:01, 26.00it/s]
+Loading safetensors checkpoint shards:  91% Completed | 457/503 [00:23<00:02, 20.10it/s]
+Loading safetensors checkpoint shards:  92% Completed | 463/503 [00:23<00:01, 24.69it/s]
+Loading safetensors checkpoint shards:  93% Completed | 468/503 [00:23<00:01, 18.21it/s]
+Loading safetensors checkpoint shards:  94% Completed | 474/503 [00:23<00:01, 23.00it/s]
+Loading safetensors checkpoint shards:  95% Completed | 478/503 [00:24<00:01, 17.20it/s]
+Loading safetensors checkpoint shards:  96% Completed | 485/503 [00:24<00:00, 23.60it/s]
+Loading safetensors checkpoint shards:  97% Completed | 490/503 [00:25<00:01, 12.85it/s]
+Loading safetensors checkpoint shards:  98% Completed | 494/503 [00:25<00:00, 13.70it/s]
+Loading safetensors checkpoint shards:  99% Completed | 500/503 [00:25<00:00, 16.18it/s]
+Loading safetensors checkpoint shards: 100% Completed | 503/503 [00:25<00:00, 19.59it/s]
+
+(Worker_DP0_EP0 pid=116491) INFO 11-17 19:53:21 [default_loader.py:501] Loading weights took 25.80 seconds
+(Worker_DP3_EP3 pid=116489) INFO 11-17 19:53:21 [default_loader.py:501] Loading weights took 25.82 seconds
+(Worker_DP0_EP0 pid=116491) INFO 11-17 19:53:22 [model_runner.py:424] Model loading took 37.98 GiB memory and 31.961984 seconds
+(Worker_DP3_EP3 pid=116489) INFO 11-17 19:53:22 [model_runner.py:424] Model loading took 37.98 GiB memory and 32.045465 seconds
+(Worker_DP0_EP0 pid=116491) INFO 11-17 19:53:22 [factory.py:116] Creating weight transfer engine: HCCLWeightTransferEngine
+(EngineCore_DP0 pid=114607) WARNING 11-17 19:53:22 [torch_utils.py:283] OMP_NUM_THREADS=6 is set; leaving Torch threads at 6 for serving. Multi-threaded torch CPU ops during serving can degrade performance through spin-wait contention and cgroup CPU-quota throttling.
+(EngineCore_DP0 pid=114607) INFO 11-17 19:53:22 [utils.py:347] Using LBNHC KV cache layout.
+(Worker_DP3_EP3 pid=116489) INFO 11-17 19:53:22 [factory.py:116] Creating weight transfer engine: HCCLWeightTransferEngine
+(EngineCore_DP3 pid=114610) WARNING 11-17 19:53:22 [torch_utils.py:283] OMP_NUM_THREADS=6 is set; leaving Torch threads at 6 for serving. Multi-threaded torch CPU ops during serving can degrade performance through spin-wait contention and cgroup CPU-quota throttling.
+(EngineCore_DP3 pid=114610) INFO 11-17 19:53:22 [utils.py:347] Using LBNHC KV cache layout.
+(Worker_DP2_EP2 pid=116490) INFO 11-17 19:53:24 [default_loader.py:501] Loading weights took 29.21 seconds
+(Worker_DP1_EP1 pid=116488) INFO 11-17 19:53:24 [default_loader.py:501] Loading weights took 29.32 seconds
+(Worker_DP2_EP2 pid=116490) INFO 11-17 19:53:25 [model_runner.py:424] Model loading took 37.98 GiB memory and 34.674494 seconds
+(Worker_DP2_EP2 pid=116490) INFO 11-17 19:53:25 [factory.py:116] Creating weight transfer engine: HCCLWeightTransferEngine
+(EngineCore_DP2 pid=114609) WARNING 11-17 19:53:25 [torch_utils.py:283] OMP_NUM_THREADS=6 is set; leaving Torch threads at 6 for serving. Multi-threaded torch CPU ops during serving can degrade performance through spin-wait contention and cgroup CPU-quota throttling.
+(EngineCore_DP2 pid=114609) INFO 11-17 19:53:25 [utils.py:347] Using LBNHC KV cache layout.
+(Worker_DP1_EP1 pid=116488) INFO 11-17 19:53:25 [model_runner.py:424] Model loading took 37.98 GiB memory and 34.889870 seconds
+(Worker_DP1_EP1 pid=116488) INFO 11-17 19:53:25 [factory.py:116] Creating weight transfer engine: HCCLWeightTransferEngine
+(EngineCore_DP1 pid=114608) WARNING 11-17 19:53:25 [torch_utils.py:283] OMP_NUM_THREADS=6 is set; leaving Torch threads at 6 for serving. Multi-threaded torch CPU ops during serving can degrade performance through spin-wait contention and cgroup CPU-quota throttling.
+(EngineCore_DP1 pid=114608) INFO 11-17 19:53:25 [utils.py:347] Using LBNHC KV cache layout.
+[rank2]:[W1117 19:53:26.074301410 TensorFactories.cpp:437] Warning: Cannot create tensor with interal format while allow_internel_format=False, tensor will be created with base format. (function operator())
+[rank1]:[W1117 19:53:26.080134530 TensorFactories.cpp:437] Warning: Cannot create tensor with interal format while allow_internel_format=False, tensor will be created with base format. (function operator())
+[rank0]:[W1117 19:53:26.115295040 TensorFactories.cpp:437] Warning: Cannot create tensor with interal format while allow_internel_format=False, tensor will be created with base format. (function operator())
+[rank3]:[W1117 19:53:26.119344840 TensorFactories.cpp:437] Warning: Cannot create tensor with interal format while allow_internel_format=False, tensor will be created with base format. (function operator())
+(Worker_DP1_EP1 pid=116488) INFO 11-17 19:53:27 [encoder_runner.py:131] Encoder cache will be initialized with a budget of 2048 tokens, and profiled with 2 image items of the maximum feature size.
+(Worker_DP2_EP2 pid=116490) INFO 11-17 19:53:27 [encoder_runner.py:131] Encoder cache will be initialized with a budget of 2048 tokens, and profiled with 2 image items of the maximum feature size.
+(Worker_DP0_EP0 pid=116491) INFO 11-17 19:53:27 [encoder_runner.py:131] Encoder cache will be initialized with a budget of 2048 tokens, and profiled with 2 image items of the maximum feature size.
+(Worker_DP3_EP3 pid=116489) INFO 11-17 19:53:27 [encoder_runner.py:131] Encoder cache will be initialized with a budget of 2048 tokens, and profiled with 2 image items of the maximum feature size.
+(Worker_DP1_EP1 pid=116488) INFO 11-17 19:53:31 [worker.py:687] Initial free memory 91.04 GiB, reserved 2.00 GiB for KV Cache as specified by kv_cache_memory_bytes, skipping memory profiling. This does not respect the gpu_memory_utilization config. Only use kv_cache_memory_bytes when you want manual control of KV cache memory size. If OOM'ed, check the difference of initial free memory between the current run and the previous run where kv_cache_memory_bytes is suggested and update it correspondingly.
+(Worker_DP3_EP3 pid=116489) INFO 11-17 19:53:31 [worker.py:687] Initial free memory 91.05 GiB, reserved 2.00 GiB for KV Cache as specified by kv_cache_memory_bytes, skipping memory profiling. This does not respect the gpu_memory_utilization config. Only use kv_cache_memory_bytes when you want manual control of KV cache memory size. If OOM'ed, check the difference of initial free memory between the current run and the previous run where kv_cache_memory_bytes is suggested and update it correspondingly.
+(EngineCore_DP1 pid=114608) INFO 11-17 19:53:31 [kv_cache_utils.py:2327] NPU KV cache size: 50,805 tokens, Maximum concurrency for 2,048 tokens per request: 24.81x
+(Worker_DP2_EP2 pid=116490) INFO 11-17 19:53:31 [worker.py:687] Initial free memory 91.05 GiB, reserved 2.00 GiB for KV Cache as specified by kv_cache_memory_bytes, skipping memory profiling. This does not respect the gpu_memory_utilization config. Only use kv_cache_memory_bytes when you want manual control of KV cache memory size. If OOM'ed, check the difference of initial free memory between the current run and the previous run where kv_cache_memory_bytes is suggested and update it correspondingly.
+(EngineCore_DP3 pid=114610) INFO 11-17 19:53:31 [kv_cache_utils.py:2327] NPU KV cache size: 50,805 tokens, Maximum concurrency for 2,048 tokens per request: 24.81x
+(EngineCore_DP2 pid=114609) INFO 11-17 19:53:31 [kv_cache_utils.py:2327] NPU KV cache size: 50,805 tokens, Maximum concurrency for 2,048 tokens per request: 24.81x
+(Worker_DP0_EP0 pid=116491) INFO 11-17 19:53:31 [worker.py:687] Initial free memory 91.05 GiB, reserved 2.00 GiB for KV Cache as specified by kv_cache_memory_bytes, skipping memory profiling. This does not respect the gpu_memory_utilization config. Only use kv_cache_memory_bytes when you want manual control of KV cache memory size. If OOM'ed, check the difference of initial free memory between the current run and the previous run where kv_cache_memory_bytes is suggested and update it correspondingly.
+(EngineCore_DP0 pid=114607) INFO 11-17 19:53:31 [kv_cache_utils.py:2327] NPU KV cache size: 50,805 tokens, Maximum concurrency for 2,048 tokens per request: 24.81x
+(Worker_DP3_EP3 pid=116489) INFO 11-17 19:53:33 [cpu_binding.py:539] [cpu_bind_mode] mode=topo_affinity rank=0 visible_npus=[0, 1, 2, 3]
+(Worker_DP2_EP2 pid=116490) INFO 11-17 19:53:33 [cpu_binding.py:539] [cpu_bind_mode] mode=topo_affinity rank=0 visible_npus=[0, 1, 2, 3]
+(Worker_DP3_EP3 pid=116489) WARNING 11-17 19:53:34 [cpu_binding.py:347] [cpu_bind_ascend_950] uvb_poll_window_thread not found. If running in Docker, start the container with '--pid=host'.
+(Worker_DP2_EP2 pid=116490) WARNING 11-17 19:53:34 [cpu_binding.py:347] [cpu_bind_ascend_950] uvb_poll_window_thread not found. If running in Docker, start the container with '--pid=host'.
+(Worker_DP3_EP3 pid=116489) INFO 11-17 19:53:34 [cpu_binding.py:623] The CPU allocation plan is as follows:
+(Worker_DP3_EP3 pid=116489) INFO 11-17 19:53:34 [cpu_binding.py:631] Ascend 950 NPU3: worker=[112 113 114 115 116 117 118 119 120 121 122 123 124 125 126 127]
+(Worker_DP3_EP3 pid=116489) INFO 11-17 19:53:34 [cpu_binding.py:663] [migrate] NPU:3 -> NUMA [1]
+(Worker_DP2_EP2 pid=116490) INFO 11-17 19:53:34 [cpu_binding.py:623] The CPU allocation plan is as follows:
+(Worker_DP2_EP2 pid=116490) INFO 11-17 19:53:34 [cpu_binding.py:631] Ascend 950 NPU2: worker=[96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 111]
+(Worker_DP2_EP2 pid=116490) INFO 11-17 19:53:34 [cpu_binding.py:663] [migrate] NPU:2 -> NUMA [1]
+(Worker_DP1_EP1 pid=116488) INFO 11-17 19:53:34 [cpu_binding.py:539] [cpu_bind_mode] mode=topo_affinity rank=0 visible_npus=[0, 1, 2, 3]
+(Worker_DP0_EP0 pid=116491) INFO 11-17 19:53:34 [cpu_binding.py:539] [cpu_bind_mode] mode=topo_affinity rank=0 visible_npus=[0, 1, 2, 3]
+(Worker_DP1_EP1 pid=116488) WARNING 11-17 19:53:34 [cpu_binding.py:347] [cpu_bind_ascend_950] uvb_poll_window_thread not found. If running in Docker, start the container with '--pid=host'.
+(Worker_DP0_EP0 pid=116491) WARNING 11-17 19:53:34 [cpu_binding.py:347] [cpu_bind_ascend_950] uvb_poll_window_thread not found. If running in Docker, start the container with '--pid=host'.
+(Worker_DP1_EP1 pid=116488) INFO 11-17 19:53:34 [cpu_binding.py:623] The CPU allocation plan is as follows:
+(Worker_DP1_EP1 pid=116488) INFO 11-17 19:53:34 [cpu_binding.py:631] Ascend 950 NPU1: worker=[304 305 306 307 308 309 310 311 312 313 314 315 316 317 318 319]
+(Worker_DP0_EP0 pid=116491) INFO 11-17 19:53:34 [cpu_binding.py:623] The CPU allocation plan is as follows:
+(Worker_DP0_EP0 pid=116491) INFO 11-17 19:53:34 [cpu_binding.py:631] Ascend 950 NPU0: worker=[288 289 290 291 292 293 294 295 296 297 298 299 300 301 302 303]
+(Worker_DP1_EP1 pid=116488) INFO 11-17 19:53:34 [cpu_binding.py:663] [migrate] NPU:1 -> NUMA [3]
+(Worker_DP0_EP0 pid=116491) INFO 11-17 19:53:34 [cpu_binding.py:663] [migrate] NPU:0 -> NUMA [3]
+(Worker_DP2_EP2 pid=116490) INFO 11-17 19:53:36 [cpu_binding.py:695] [irq] IRQ binding skipped on Ascend 950.
+(EngineCore_DP2 pid=114609) INFO 11-17 19:53:36 [core.py:402] init engine (profile, create kv cache, warmup model) took 11.00 s
+(Worker_DP1_EP1 pid=116488) INFO 11-17 19:53:36 [cpu_binding.py:695] [irq] IRQ binding skipped on Ascend 950.
+(EngineCore_DP1 pid=114608) INFO 11-17 19:53:36 [core.py:402] init engine (profile, create kv cache, warmup model) took 11.01 s
+(EngineCore_DP2 pid=114609) INFO 11-17 19:53:37 [mrv2_utils.py:91] VLLM_USE_V2_MODEL_RUNNER=True is set; using Model Runner V2.
+INFO 11-17 19:53:37 [config.py:622] [vllm-ascend] [observability] - [runtime_config] bootstrap defaults (+ overlay) path=/mnt/share/c00954197/Workspace/dsv41/basic/weight_update/runtime/config/runtime_config.json will_persist=False (overwrites existing file when persisting)
+INFO 11-17 19:53:37 [config.py:529] [vllm-ascend] [observability] - [runtime_config] path=/mnt/share/c00954197/Workspace/dsv41/basic/weight_update/runtime/config/runtime_config.json explicit_path=False report_dir=/mnt/share/c00954197/Workspace/dsv41/basic/weight_update/runtime/report hot_reload=False persisted=False
+(EngineCore_DP2 pid=114609) INFO 11-17 19:53:37 [ascend_config.py:339] Dynamic EPLB is False
+(EngineCore_DP2 pid=114609) INFO 11-17 19:53:37 [ascend_config.py:340] The number of redundant experts is 0
+(Worker_DP0_EP0 pid=116491) INFO 11-17 19:53:37 [cpu_binding.py:695] [irq] IRQ binding skipped on Ascend 950.
+(EngineCore_DP0 pid=114607) INFO 11-17 19:53:37 [core.py:402] init engine (profile, create kv cache, warmup model) took 15.14 s
+(EngineCore_DP1 pid=114608) INFO 11-17 19:53:38 [mrv2_utils.py:91] VLLM_USE_V2_MODEL_RUNNER=True is set; using Model Runner V2.
+INFO 11-17 19:53:38 [config.py:622] [vllm-ascend] [observability] - [runtime_config] bootstrap defaults (+ overlay) path=/mnt/share/c00954197/Workspace/dsv41/basic/weight_update/runtime/config/runtime_config.json will_persist=False (overwrites existing file when persisting)
+INFO 11-17 19:53:38 [config.py:529] [vllm-ascend] [observability] - [runtime_config] path=/mnt/share/c00954197/Workspace/dsv41/basic/weight_update/runtime/config/runtime_config.json explicit_path=False report_dir=/mnt/share/c00954197/Workspace/dsv41/basic/weight_update/runtime/report hot_reload=False persisted=False
+(EngineCore_DP1 pid=114608) INFO 11-17 19:53:38 [ascend_config.py:339] Dynamic EPLB is False
+(EngineCore_DP1 pid=114608) INFO 11-17 19:53:38 [ascend_config.py:340] The number of redundant experts is 0
+(EngineCore_DP2 pid=114609) WARNING 11-17 19:53:38 [serial_utils.py:78] Allowing insecure serialization using pickle due to VLLM_ALLOW_INSECURE_SERIALIZATION=1
+(EngineCore_DP1 pid=114608) WARNING 11-17 19:53:38 [serial_utils.py:78] Allowing insecure serialization using pickle due to VLLM_ALLOW_INSECURE_SERIALIZATION=1
+(EngineCore_DP0 pid=114607) INFO 11-17 19:53:39 [mrv2_utils.py:91] VLLM_USE_V2_MODEL_RUNNER=True is set; using Model Runner V2.
+INFO 11-17 19:53:39 [config.py:622] [vllm-ascend] [observability] - [runtime_config] bootstrap defaults (+ overlay) path=/mnt/share/c00954197/Workspace/dsv41/basic/weight_update/runtime/config/runtime_config.json will_persist=False (overwrites existing file when persisting)
+INFO 11-17 19:53:39 [config.py:529] [vllm-ascend] [observability] - [runtime_config] path=/mnt/share/c00954197/Workspace/dsv41/basic/weight_update/runtime/config/runtime_config.json explicit_path=False report_dir=/mnt/share/c00954197/Workspace/dsv41/basic/weight_update/runtime/report hot_reload=False persisted=False
+(EngineCore_DP0 pid=114607) INFO 11-17 19:53:39 [ascend_config.py:339] Dynamic EPLB is False
+(EngineCore_DP0 pid=114607) INFO 11-17 19:53:39 [ascend_config.py:340] The number of redundant experts is 0
+(Worker_DP3_EP3 pid=116489) INFO 11-17 19:53:39 [cpu_binding.py:695] [irq] IRQ binding skipped on Ascend 950.
+(EngineCore_DP3 pid=114610) INFO 11-17 19:53:39 [core.py:402] init engine (profile, create kv cache, warmup model) took 16.72 s
+(EngineCore_DP0 pid=114607) WARNING 11-17 19:53:39 [serial_utils.py:78] Allowing insecure serialization using pickle due to VLLM_ALLOW_INSECURE_SERIALIZATION=1
+(EngineCore_DP3 pid=114610) INFO 11-17 19:53:41 [mrv2_utils.py:91] VLLM_USE_V2_MODEL_RUNNER=True is set; using Model Runner V2.
+INFO 11-17 19:53:41 [config.py:622] [vllm-ascend] [observability] - [runtime_config] bootstrap defaults (+ overlay) path=/mnt/share/c00954197/Workspace/dsv41/basic/weight_update/runtime/config/runtime_config.json will_persist=False (overwrites existing file when persisting)
+INFO 11-17 19:53:41 [config.py:529] [vllm-ascend] [observability] - [runtime_config] path=/mnt/share/c00954197/Workspace/dsv41/basic/weight_update/runtime/config/runtime_config.json explicit_path=False report_dir=/mnt/share/c00954197/Workspace/dsv41/basic/weight_update/runtime/report hot_reload=False persisted=False
+(EngineCore_DP3 pid=114610) INFO 11-17 19:53:41 [ascend_config.py:339] Dynamic EPLB is False
+(EngineCore_DP3 pid=114610) INFO 11-17 19:53:41 [ascend_config.py:340] The number of redundant experts is 0
+(EngineCore_DP3 pid=114610) WARNING 11-17 19:53:41 [serial_utils.py:78] Allowing insecure serialization using pickle due to VLLM_ALLOW_INSECURE_SERIALIZATION=1
+(VLLM_DP_Coordinator pid=114571) INFO 11-17 19:53:41 [coordinator.py:258] All engine subscriptions received by DP coordinator
+(EngineCore_DP0 pid=114607) WARNING 11-17 19:53:41 [vllm.py:1703] Enforce eager set, disabling torch.compile, CUDAGraphs, and JIT kernel warmup. This is equivalent to setting -cc.mode=none -cc.cudagraph_mode=none and --kernel_config.enable_jit_warmup=False
+(EngineCore_DP1 pid=114608) WARNING 11-17 19:53:41 [vllm.py:1703] Enforce eager set, disabling torch.compile, CUDAGraphs, and JIT kernel warmup. This is equivalent to setting -cc.mode=none -cc.cudagraph_mode=none and --kernel_config.enable_jit_warmup=False
+(EngineCore_DP2 pid=114609) WARNING 11-17 19:53:41 [vllm.py:1703] Enforce eager set, disabling torch.compile, CUDAGraphs, and JIT kernel warmup. This is equivalent to setting -cc.mode=none -cc.cudagraph_mode=none and --kernel_config.enable_jit_warmup=False
+(EngineCore_DP0 pid=114607) WARNING 11-17 19:53:41 [vllm.py:1727] Inductor compilation was disabled by user settings, optimizations settings that are only active during inductor compilation will be ignored.
+(EngineCore_DP1 pid=114608) WARNING 11-17 19:53:41 [vllm.py:1727] Inductor compilation was disabled by user settings, optimizations settings that are only active during inductor compilation will be ignored.
+(EngineCore_DP2 pid=114609) WARNING 11-17 19:53:41 [vllm.py:1727] Inductor compilation was disabled by user settings, optimizations settings that are only active during inductor compilation will be ignored.
+(EngineCore_DP3 pid=114610) WARNING 11-17 19:53:41 [vllm.py:1703] Enforce eager set, disabling torch.compile, CUDAGraphs, and JIT kernel warmup. This is equivalent to setting -cc.mode=none -cc.cudagraph_mode=none and --kernel_config.enable_jit_warmup=False
+(EngineCore_DP3 pid=114610) WARNING 11-17 19:53:41 [vllm.py:1727] Inductor compilation was disabled by user settings, optimizations settings that are only active during inductor compilation will be ignored.
+(ApiServer_1 pid=114612) WARNING 11-17 19:53:41 [loggers.py:1386] AsyncLLM created with api_server_count more than 1; disabling stats logging to avoid incomplete stats.
+(ApiServer_3 pid=114614) WARNING 11-17 19:53:41 [loggers.py:1386] AsyncLLM created with api_server_count more than 1; disabling stats logging to avoid incomplete stats.
+(EngineCore_DP1 pid=114608) INFO 11-17 19:53:41 [kernel.py:467] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['native'], fused_add_rms_norm=['native'], gelu_and_mul_sparse=['native'])
+(EngineCore_DP2 pid=114609) INFO 11-17 19:53:41 [kernel.py:467] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['native'], fused_add_rms_norm=['native'], gelu_and_mul_sparse=['native'])
+(EngineCore_DP1 pid=114608) INFO 11-17 19:53:41 [vllm.py:1929] Cudagraph is disabled under eager mode
+(EngineCore_DP0 pid=114607) INFO 11-17 19:53:41 [kernel.py:467] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['native'], fused_add_rms_norm=['native'], gelu_and_mul_sparse=['native'])
+(ApiServer_0 pid=114611) WARNING 11-17 19:53:41 [loggers.py:1386] AsyncLLM created with api_server_count more than 1; disabling stats logging to avoid incomplete stats.
+(ApiServer_2 pid=114613) WARNING 11-17 19:53:41 [loggers.py:1386] AsyncLLM created with api_server_count more than 1; disabling stats logging to avoid incomplete stats.
+(EngineCore_DP2 pid=114609) INFO 11-17 19:53:41 [vllm.py:1929] Cudagraph is disabled under eager mode
+(EngineCore_DP0 pid=114607) INFO 11-17 19:53:41 [vllm.py:1929] Cudagraph is disabled under eager mode
+(EngineCore_DP3 pid=114610) INFO 11-17 19:53:41 [kernel.py:467] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['native'], fused_add_rms_norm=['native'], gelu_and_mul_sparse=['native'])
+(MainProcess pid=114533) INFO 11-17 19:53:41 [utils.py:551] Waiting for API servers to complete ...
+(EngineCore_DP3 pid=114610) INFO 11-17 19:53:41 [vllm.py:1929] Cudagraph is disabled under eager mode
+(EngineCore_DP2 pid=114609) INFO 11-17 19:53:41 [utils.py:215] No ModelSlim quantization signature detected from model files for "/mnt/share/c00954197/Workspace/dsv41/basic/weight_update/model_b". To force a quantization method, pass "--quantization <method>" explicitly.
+(EngineCore_DP1 pid=114608) INFO 11-17 19:53:41 [utils.py:215] No ModelSlim quantization signature detected from model files for "/mnt/share/c00954197/Workspace/dsv41/basic/weight_update/model_b". To force a quantization method, pass "--quantization <method>" explicitly.
+INFO 11-17 19:53:41 [config.py:622] [vllm-ascend] [observability] - [runtime_config] bootstrap defaults (+ overlay) path=/mnt/share/c00954197/Workspace/dsv41/basic/weight_update/runtime/config/runtime_config.json will_persist=False (overwrites existing file when persisting)
+(EngineCore_DP0 pid=114607) INFO 11-17 19:53:41 [utils.py:215] No ModelSlim quantization signature detected from model files for "/mnt/share/c00954197/Workspace/dsv41/basic/weight_update/model_b". To force a quantization method, pass "--quantization <method>" explicitly.
+INFO 11-17 19:53:41 [config.py:529] [vllm-ascend] [observability] - [runtime_config] path=/mnt/share/c00954197/Workspace/dsv41/basic/weight_update/runtime/config/runtime_config.json explicit_path=False report_dir=/mnt/share/c00954197/Workspace/dsv41/basic/weight_update/runtime/report hot_reload=False persisted=False
+INFO 11-17 19:53:41 [config.py:622] [vllm-ascend] [observability] - [runtime_config] bootstrap defaults (+ overlay) path=/mnt/share/c00954197/Workspace/dsv41/basic/weight_update/runtime/config/runtime_config.json will_persist=False (overwrites existing file when persisting)
+(EngineCore_DP3 pid=114610) INFO 11-17 19:53:41 [utils.py:215] No ModelSlim quantization signature detected from model files for "/mnt/share/c00954197/Workspace/dsv41/basic/weight_update/model_b". To force a quantization method, pass "--quantization <method>" explicitly.
+INFO 11-17 19:53:41 [config.py:622] [vllm-ascend] [observability] - [runtime_config] bootstrap defaults (+ overlay) path=/mnt/share/c00954197/Workspace/dsv41/basic/weight_update/runtime/config/runtime_config.json will_persist=False (overwrites existing file when persisting)
+INFO 11-17 19:53:41 [config.py:529] [vllm-ascend] [observability] - [runtime_config] path=/mnt/share/c00954197/Workspace/dsv41/basic/weight_update/runtime/config/runtime_config.json explicit_path=False report_dir=/mnt/share/c00954197/Workspace/dsv41/basic/weight_update/runtime/report hot_reload=False persisted=False
+INFO 11-17 19:53:41 [config.py:622] [vllm-ascend] [observability] - [runtime_config] bootstrap defaults (+ overlay) path=/mnt/share/c00954197/Workspace/dsv41/basic/weight_update/runtime/config/runtime_config.json will_persist=False (overwrites existing file when persisting)
+INFO 11-17 19:53:41 [config.py:529] [vllm-ascend] [observability] - [runtime_config] path=/mnt/share/c00954197/Workspace/dsv41/basic/weight_update/runtime/config/runtime_config.json explicit_path=False report_dir=/mnt/share/c00954197/Workspace/dsv41/basic/weight_update/runtime/report hot_reload=False persisted=False
+INFO 11-17 19:53:41 [config.py:529] [vllm-ascend] [observability] - [runtime_config] path=/mnt/share/c00954197/Workspace/dsv41/basic/weight_update/runtime/config/runtime_config.json explicit_path=False report_dir=/mnt/share/c00954197/Workspace/dsv41/basic/weight_update/runtime/report hot_reload=False persisted=False
+(EngineCore_DP2 pid=114609) INFO 11-17 19:53:41 [ascend_config.py:339] Dynamic EPLB is False
+(EngineCore_DP2 pid=114609) INFO 11-17 19:53:41 [ascend_config.py:340] The number of redundant experts is 0
+(EngineCore_DP0 pid=114607) INFO 11-17 19:53:41 [ascend_config.py:339] Dynamic EPLB is False
+(EngineCore_DP1 pid=114608) INFO 11-17 19:53:41 [ascend_config.py:339] Dynamic EPLB is False
+(EngineCore_DP0 pid=114607) INFO 11-17 19:53:41 [ascend_config.py:340] The number of redundant experts is 0
+(EngineCore_DP1 pid=114608) INFO 11-17 19:53:41 [ascend_config.py:340] The number of redundant experts is 0
+(EngineCore_DP2 pid=114609) INFO 11-17 19:53:41 [platform.py:1368] Compilation disabled, using eager mode by default
+(EngineCore_DP2 pid=114609) INFO 11-17 19:53:41 [compilation.py:317] Enabled custom fusions: norm_quant, act_quant
+(EngineCore_DP3 pid=114610) INFO 11-17 19:53:41 [ascend_config.py:339] Dynamic EPLB is False
+(EngineCore_DP3 pid=114610) INFO 11-17 19:53:41 [ascend_config.py:340] The number of redundant experts is 0
+(EngineCore_DP1 pid=114608) INFO 11-17 19:53:41 [platform.py:1368] Compilation disabled, using eager mode by default
+(EngineCore_DP0 pid=114607) INFO 11-17 19:53:41 [platform.py:1368] Compilation disabled, using eager mode by default
+(EngineCore_DP1 pid=114608) INFO 11-17 19:53:41 [compilation.py:317] Enabled custom fusions: norm_quant, act_quant
+(EngineCore_DP0 pid=114607) INFO 11-17 19:53:41 [compilation.py:317] Enabled custom fusions: norm_quant, act_quant
+(EngineCore_DP3 pid=114610) INFO 11-17 19:53:41 [platform.py:1368] Compilation disabled, using eager mode by default
+(EngineCore_DP3 pid=114610) INFO 11-17 19:53:41 [compilation.py:317] Enabled custom fusions: norm_quant, act_quant
+(ApiServer_3 pid=114614) INFO 11-17 19:53:41 [entry.py:136] Supported tasks: ('generate',)
+(ApiServer_1 pid=114612) INFO 11-17 19:53:41 [entry.py:136] Supported tasks: ('generate',)
+(ApiServer_0 pid=114611) INFO 11-17 19:53:41 [entry.py:136] Supported tasks: ('generate',)
+(ApiServer_2 pid=114613) INFO 11-17 19:53:41 [entry.py:136] Supported tasks: ('generate',)
+(ApiServer_3 pid=114614) WARNING 11-17 19:53:41 [__init__.py:44] SECURITY WARNING: Development endpoints are enabled! This should NOT be used in production!
+(ApiServer_1 pid=114612) WARNING 11-17 19:53:41 [__init__.py:44] SECURITY WARNING: Development endpoints are enabled! This should NOT be used in production!
+(ApiServer_0 pid=114611) WARNING 11-17 19:53:41 [__init__.py:44] SECURITY WARNING: Development endpoints are enabled! This should NOT be used in production!
+(ApiServer_2 pid=114613) WARNING 11-17 19:53:41 [__init__.py:44] SECURITY WARNING: Development endpoints are enabled! This should NOT be used in production!
+(ApiServer_1 pid=114612) WARNING 11-17 19:53:42 [serving.py:262] The chat template requires system-first ordering, so inline system messages in /v1/messages requests (e.g. Claude Code's per-turn reminders) are merged into the leading system prompt. Each new one changes the prompt prefix, so the rest of the conversation misses the prefix cache. Pass a --chat-template that accepts non-leading system messages to avoid this.
+(ApiServer_1 pid=114612) INFO 11-17 19:53:42 [entry.py:140] Starting vLLM server on http://127.0.0.1:18243
+(ApiServer_1 pid=114612) INFO 11-17 19:53:42 [launcher.py:186] Available routes are:
+(ApiServer_1 pid=114612) INFO 11-17 19:53:42 [launcher.py:195] Route: /openapi.json, Methods: HEAD, GET
+(ApiServer_1 pid=114612) INFO 11-17 19:53:42 [launcher.py:195] Route: /docs, Methods: HEAD, GET
+(ApiServer_1 pid=114612) INFO 11-17 19:53:42 [launcher.py:195] Route: /docs/oauth2-redirect, Methods: HEAD, GET
+(ApiServer_1 pid=114612) INFO 11-17 19:53:42 [launcher.py:195] Route: /redoc, Methods: HEAD, GET
+(ApiServer_1 pid=114612) INFO 11-17 19:53:42 [launcher.py:195] Route: /load, Methods: GET
+(ApiServer_1 pid=114612) INFO 11-17 19:53:42 [launcher.py:195] Route: /version, Methods: GET
+(ApiServer_1 pid=114612) INFO 11-17 19:53:42 [launcher.py:195] Route: /kv_event_sources, Methods: GET
+(ApiServer_1 pid=114612) INFO 11-17 19:53:42 [launcher.py:195] Route: /health, Methods: GET
+(ApiServer_1 pid=114612) INFO 11-17 19:53:42 [launcher.py:195] Route: /metrics, Methods: GET
+(ApiServer_1 pid=114612) INFO 11-17 19:53:42 [launcher.py:195] Route: /tokenize, Methods: POST
+(ApiServer_1 pid=114612) INFO 11-17 19:53:42 [launcher.py:195] Route: /detokenize, Methods: POST
+(ApiServer_1 pid=114612) INFO 11-17 19:53:42 [launcher.py:195] Route: /v1/models, Methods: GET
+(ApiServer_1 pid=114612) INFO 11-17 19:53:42 [launcher.py:195] Route: /v1/systemone, Methods: POST
+(ApiServer_1 pid=114612) INFO 11-17 19:53:42 [launcher.py:195] Route: /ping, Methods: GET
+(ApiServer_1 pid=114612) INFO 11-17 19:53:42 [launcher.py:195] Route: /ping, Methods: POST
+(ApiServer_1 pid=114612) INFO 11-17 19:53:42 [launcher.py:195] Route: /invocations, Methods: POST
+(ApiServer_1 pid=114612) INFO 11-17 19:53:42 [launcher.py:195] Route: /reset_prefix_cache, Methods: POST
+(ApiServer_1 pid=114612) INFO 11-17 19:53:42 [launcher.py:195] Route: /reset_mm_cache, Methods: POST
+(ApiServer_1 pid=114612) INFO 11-17 19:53:42 [launcher.py:195] Route: /reset_encoder_cache, Methods: POST
+(ApiServer_1 pid=114612) INFO 11-17 19:53:42 [launcher.py:195] Route: /collective_rpc, Methods: POST
+(ApiServer_1 pid=114612) INFO 11-17 19:53:42 [launcher.py:195] Route: /server_info, Methods: GET
+(ApiServer_1 pid=114612) INFO 11-17 19:53:42 [launcher.py:195] Route: /sleep, Methods: POST
+(ApiServer_1 pid=114612) INFO 11-17 19:53:42 [launcher.py:195] Route: /release_kv_cache_memory, Methods: POST
+(ApiServer_1 pid=114612) INFO 11-17 19:53:42 [launcher.py:195] Route: /wake_up, Methods: POST
+(ApiServer_1 pid=114612) INFO 11-17 19:53:42 [launcher.py:195] Route: /is_sleeping, Methods: GET
+(ApiServer_1 pid=114612) INFO 11-17 19:53:42 [launcher.py:195] Route: /pause, Methods: POST
+(ApiServer_1 pid=114612) INFO 11-17 19:53:42 [launcher.py:195] Route: /resume, Methods: POST
+(ApiServer_1 pid=114612) INFO 11-17 19:53:42 [launcher.py:195] Route: /abort_requests, Methods: POST
+(ApiServer_1 pid=114612) INFO 11-17 19:53:42 [launcher.py:195] Route: /is_paused, Methods: GET
+(ApiServer_1 pid=114612) INFO 11-17 19:53:42 [launcher.py:195] Route: /init_weight_transfer_engine, Methods: POST
+(ApiServer_1 pid=114612) INFO 11-17 19:53:42 [launcher.py:195] Route: /shutdown_weight_transfer_engine, Methods: POST
+(ApiServer_1 pid=114612) INFO 11-17 19:53:42 [launcher.py:195] Route: /start_weight_update, Methods: POST
+(ApiServer_1 pid=114612) INFO 11-17 19:53:42 [launcher.py:195] Route: /start_draft_weight_update, Methods: POST
+(ApiServer_1 pid=114612) INFO 11-17 19:53:42 [launcher.py:195] Route: /update_weights, Methods: POST
+(ApiServer_1 pid=114612) INFO 11-17 19:53:42 [launcher.py:195] Route: /finish_weight_update, Methods: POST
+(ApiServer_1 pid=114612) INFO 11-17 19:53:42 [launcher.py:195] Route: /update_weight_version, Methods: POST
+(ApiServer_1 pid=114612) INFO 11-17 19:53:42 [launcher.py:195] Route: /weight_info, Methods: GET
+(ApiServer_1 pid=114612) INFO 11-17 19:53:42 [launcher.py:195] Route: /weight_checker, Methods: POST
+(ApiServer_1 pid=114612) INFO 11-17 19:53:42 [launcher.py:195] Route: /get_world_size, Methods: GET
+(ApiServer_1 pid=114612) INFO 11-17 19:53:42 [launcher.py:195] Route: /v1/chat/completions, Methods: POST
+(ApiServer_1 pid=114612) INFO 11-17 19:53:42 [launcher.py:195] Route: /v1/chat/completions/batch, Methods: POST
+(ApiServer_1 pid=114612) INFO 11-17 19:53:42 [launcher.py:195] Route: /v1/responses, Methods: POST
+(ApiServer_1 pid=114612) INFO 11-17 19:53:42 [launcher.py:195] Route: /v1/responses/{response_id}, Methods: GET
+(ApiServer_1 pid=114612) INFO 11-17 19:53:42 [launcher.py:195] Route: /v1/responses/{response_id}/cancel, Methods: POST
+(ApiServer_1 pid=114612) INFO 11-17 19:53:42 [launcher.py:195] Route: /v1/completions, Methods: POST
+(ApiServer_1 pid=114612) INFO 11-17 19:53:42 [launcher.py:195] Route: /v1/messages, Methods: POST
+(ApiServer_1 pid=114612) INFO 11-17 19:53:42 [launcher.py:195] Route: /v1/messages/count_tokens, Methods: POST
+(ApiServer_1 pid=114612) INFO 11-17 19:53:42 [launcher.py:195] Route: /generative_scoring, Methods: POST
+(ApiServer_1 pid=114612) INFO 11-17 19:53:42 [launcher.py:195] Route: /scale_elastic_ep, Methods: POST
+(ApiServer_1 pid=114612) INFO 11-17 19:53:42 [launcher.py:195] Route: /is_scaling_elastic_ep, Methods: POST
+(ApiServer_1 pid=114612) INFO 11-17 19:53:42 [launcher.py:195] Route: /v1/chat/completions/render, Methods: POST
+(ApiServer_1 pid=114612) INFO 11-17 19:53:42 [launcher.py:195] Route: /v1/messages/render, Methods: POST
+(ApiServer_1 pid=114612) INFO 11-17 19:53:42 [launcher.py:195] Route: /v1/completions/render, Methods: POST
+(ApiServer_1 pid=114612) INFO 11-17 19:53:42 [launcher.py:195] Route: /v1/responses/render, Methods: POST
+(ApiServer_1 pid=114612) INFO 11-17 19:53:42 [launcher.py:195] Route: /v1/chat/completions/derender, Methods: POST
+(ApiServer_1 pid=114612) INFO 11-17 19:53:42 [launcher.py:195] Route: /v1/completions/derender, Methods: POST
+(ApiServer_1 pid=114612) INFO 11-17 19:53:42 [launcher.py:195] Route: /inference/v1/generate, Methods: POST
+(ApiServer_1 pid=114612) INFO 11-17 19:53:42 [launcher.py:195] Route: /inference/v1/abort_requests, Methods: POST
+(ApiServer_2 pid=114613) WARNING 11-17 19:53:42 [serving.py:262] The chat template requires system-first ordering, so inline system messages in /v1/messages requests (e.g. Claude Code's per-turn reminders) are merged into the leading system prompt. Each new one changes the prompt prefix, so the rest of the conversation misses the prefix cache. Pass a --chat-template that accepts non-leading system messages to avoid this.
+(ApiServer_2 pid=114613) INFO 11-17 19:53:42 [entry.py:140] Starting vLLM server on http://127.0.0.1:18243
+(ApiServer_2 pid=114613) INFO 11-17 19:53:42 [launcher.py:186] Available routes are:
+(ApiServer_2 pid=114613) INFO 11-17 19:53:42 [launcher.py:195] Route: /openapi.json, Methods: HEAD, GET
+(ApiServer_2 pid=114613) INFO 11-17 19:53:42 [launcher.py:195] Route: /docs, Methods: HEAD, GET
+(ApiServer_2 pid=114613) INFO 11-17 19:53:42 [launcher.py:195] Route: /docs/oauth2-redirect, Methods: HEAD, GET
+(ApiServer_2 pid=114613) INFO 11-17 19:53:42 [launcher.py:195] Route: /redoc, Methods: HEAD, GET
+(ApiServer_2 pid=114613) INFO 11-17 19:53:42 [launcher.py:195] Route: /load, Methods: GET
+(ApiServer_2 pid=114613) INFO 11-17 19:53:42 [launcher.py:195] Route: /version, Methods: GET
+(ApiServer_2 pid=114613) INFO 11-17 19:53:42 [launcher.py:195] Route: /kv_event_sources, Methods: GET
+(ApiServer_2 pid=114613) INFO 11-17 19:53:42 [launcher.py:195] Route: /health, Methods: GET
+(ApiServer_2 pid=114613) INFO 11-17 19:53:42 [launcher.py:195] Route: /metrics, Methods: GET
+(ApiServer_2 pid=114613) INFO 11-17 19:53:42 [launcher.py:195] Route: /tokenize, Methods: POST
+(ApiServer_2 pid=114613) INFO 11-17 19:53:42 [launcher.py:195] Route: /detokenize, Methods: POST
+(ApiServer_2 pid=114613) INFO 11-17 19:53:42 [launcher.py:195] Route: /v1/models, Methods: GET
+(ApiServer_2 pid=114613) INFO 11-17 19:53:42 [launcher.py:195] Route: /v1/systemone, Methods: POST
+(ApiServer_2 pid=114613) INFO 11-17 19:53:42 [launcher.py:195] Route: /ping, Methods: GET
+(ApiServer_2 pid=114613) INFO 11-17 19:53:42 [launcher.py:195] Route: /ping, Methods: POST
+(ApiServer_2 pid=114613) INFO 11-17 19:53:42 [launcher.py:195] Route: /invocations, Methods: POST
+(ApiServer_2 pid=114613) INFO 11-17 19:53:42 [launcher.py:195] Route: /reset_prefix_cache, Methods: POST
+(ApiServer_2 pid=114613) INFO 11-17 19:53:42 [launcher.py:195] Route: /reset_mm_cache, Methods: POST
+(ApiServer_2 pid=114613) INFO 11-17 19:53:42 [launcher.py:195] Route: /reset_encoder_cache, Methods: POST
+(ApiServer_2 pid=114613) INFO 11-17 19:53:42 [launcher.py:195] Route: /collective_rpc, Methods: POST
+(ApiServer_2 pid=114613) INFO 11-17 19:53:42 [launcher.py:195] Route: /server_info, Methods: GET
+(ApiServer_2 pid=114613) INFO 11-17 19:53:42 [launcher.py:195] Route: /sleep, Methods: POST
+(ApiServer_2 pid=114613) INFO 11-17 19:53:42 [launcher.py:195] Route: /release_kv_cache_memory, Methods: POST
+(ApiServer_2 pid=114613) INFO 11-17 19:53:42 [launcher.py:195] Route: /wake_up, Methods: POST
+(ApiServer_2 pid=114613) INFO 11-17 19:53:42 [launcher.py:195] Route: /is_sleeping, Methods: GET
+(ApiServer_2 pid=114613) INFO 11-17 19:53:42 [launcher.py:195] Route: /pause, Methods: POST
+(ApiServer_2 pid=114613) INFO 11-17 19:53:42 [launcher.py:195] Route: /resume, Methods: POST
+(ApiServer_2 pid=114613) INFO 11-17 19:53:42 [launcher.py:195] Route: /abort_requests, Methods: POST
+(ApiServer_2 pid=114613) INFO 11-17 19:53:42 [launcher.py:195] Route: /is_paused, Methods: GET
+(ApiServer_2 pid=114613) INFO 11-17 19:53:42 [launcher.py:195] Route: /init_weight_transfer_engine, Methods: POST
+(ApiServer_2 pid=114613) INFO 11-17 19:53:42 [launcher.py:195] Route: /shutdown_weight_transfer_engine, Methods: POST
+(ApiServer_2 pid=114613) INFO 11-17 19:53:42 [launcher.py:195] Route: /start_weight_update, Methods: POST
+(ApiServer_2 pid=114613) INFO 11-17 19:53:42 [launcher.py:195] Route: /start_draft_weight_update, Methods: POST
+(ApiServer_2 pid=114613) INFO 11-17 19:53:42 [launcher.py:195] Route: /update_weights, Methods: POST
+(ApiServer_2 pid=114613) INFO 11-17 19:53:42 [launcher.py:195] Route: /finish_weight_update, Methods: POST
+(ApiServer_2 pid=114613) INFO 11-17 19:53:42 [launcher.py:195] Route: /update_weight_version, Methods: POST
+(ApiServer_2 pid=114613) INFO 11-17 19:53:42 [launcher.py:195] Route: /weight_info, Methods: GET
+(ApiServer_2 pid=114613) INFO 11-17 19:53:42 [launcher.py:195] Route: /weight_checker, Methods: POST
+(ApiServer_2 pid=114613) INFO 11-17 19:53:42 [launcher.py:195] Route: /get_world_size, Methods: GET
+(ApiServer_2 pid=114613) INFO 11-17 19:53:42 [launcher.py:195] Route: /v1/chat/completions, Methods: POST
+(ApiServer_2 pid=114613) INFO 11-17 19:53:42 [launcher.py:195] Route: /v1/chat/completions/batch, Methods: POST
+(ApiServer_2 pid=114613) INFO 11-17 19:53:42 [launcher.py:195] Route: /v1/responses, Methods: POST
+(ApiServer_2 pid=114613) INFO 11-17 19:53:42 [launcher.py:195] Route: /v1/responses/{response_id}, Methods: GET
+(ApiServer_2 pid=114613) INFO 11-17 19:53:42 [launcher.py:195] Route: /v1/responses/{response_id}/cancel, Methods: POST
+(ApiServer_2 pid=114613) INFO 11-17 19:53:42 [launcher.py:195] Route: /v1/completions, Methods: POST
+(ApiServer_2 pid=114613) INFO 11-17 19:53:42 [launcher.py:195] Route: /v1/messages, Methods: POST
+(ApiServer_2 pid=114613) INFO 11-17 19:53:42 [launcher.py:195] Route: /v1/messages/count_tokens, Methods: POST
+(ApiServer_2 pid=114613) INFO 11-17 19:53:42 [launcher.py:195] Route: /generative_scoring, Methods: POST
+(ApiServer_2 pid=114613) INFO 11-17 19:53:42 [launcher.py:195] Route: /scale_elastic_ep, Methods: POST
+(ApiServer_2 pid=114613) INFO 11-17 19:53:42 [launcher.py:195] Route: /is_scaling_elastic_ep, Methods: POST
+(ApiServer_2 pid=114613) INFO 11-17 19:53:42 [launcher.py:195] Route: /v1/chat/completions/render, Methods: POST
+(ApiServer_2 pid=114613) INFO 11-17 19:53:42 [launcher.py:195] Route: /v1/messages/render, Methods: POST
+(ApiServer_2 pid=114613) INFO 11-17 19:53:42 [launcher.py:195] Route: /v1/completions/render, Methods: POST
+(ApiServer_2 pid=114613) INFO 11-17 19:53:42 [launcher.py:195] Route: /v1/responses/render, Methods: POST
+(ApiServer_2 pid=114613) INFO 11-17 19:53:42 [launcher.py:195] Route: /v1/chat/completions/derender, Methods: POST
+(ApiServer_2 pid=114613) INFO 11-17 19:53:42 [launcher.py:195] Route: /v1/completions/derender, Methods: POST
+(ApiServer_2 pid=114613) INFO 11-17 19:53:42 [launcher.py:195] Route: /inference/v1/generate, Methods: POST
+(ApiServer_2 pid=114613) INFO 11-17 19:53:42 [launcher.py:195] Route: /inference/v1/abort_requests, Methods: POST
+INFO:     Started server process [114612]
+INFO:     Waiting for application startup.
+INFO:     Started server process [114613]
+INFO:     Waiting for application startup.
+(ApiServer_3 pid=114614) WARNING 11-17 19:53:42 [serving.py:262] The chat template requires system-first ordering, so inline system messages in /v1/messages requests (e.g. Claude Code's per-turn reminders) are merged into the leading system prompt. Each new one changes the prompt prefix, so the rest of the conversation misses the prefix cache. Pass a --chat-template that accepts non-leading system messages to avoid this.
+(ApiServer_0 pid=114611) WARNING 11-17 19:53:42 [serving.py:262] The chat template requires system-first ordering, so inline system messages in /v1/messages requests (e.g. Claude Code's per-turn reminders) are merged into the leading system prompt. Each new one changes the prompt prefix, so the rest of the conversation misses the prefix cache. Pass a --chat-template that accepts non-leading system messages to avoid this.
+(ApiServer_3 pid=114614) INFO 11-17 19:53:42 [entry.py:140] Starting vLLM server on http://127.0.0.1:18243
+(ApiServer_3 pid=114614) INFO 11-17 19:53:42 [launcher.py:186] Available routes are:
+(ApiServer_3 pid=114614) INFO 11-17 19:53:42 [launcher.py:195] Route: /openapi.json, Methods: GET, HEAD
+(ApiServer_3 pid=114614) INFO 11-17 19:53:42 [launcher.py:195] Route: /docs, Methods: GET, HEAD
+(ApiServer_3 pid=114614) INFO 11-17 19:53:42 [launcher.py:195] Route: /docs/oauth2-redirect, Methods: GET, HEAD
+(ApiServer_3 pid=114614) INFO 11-17 19:53:42 [launcher.py:195] Route: /redoc, Methods: GET, HEAD
+(ApiServer_3 pid=114614) INFO 11-17 19:53:42 [launcher.py:195] Route: /load, Methods: GET
+(ApiServer_3 pid=114614) INFO 11-17 19:53:42 [launcher.py:195] Route: /version, Methods: GET
+(ApiServer_3 pid=114614) INFO 11-17 19:53:42 [launcher.py:195] Route: /kv_event_sources, Methods: GET
+(ApiServer_3 pid=114614) INFO 11-17 19:53:42 [launcher.py:195] Route: /health, Methods: GET
+(ApiServer_3 pid=114614) INFO 11-17 19:53:42 [launcher.py:195] Route: /metrics, Methods: GET
+(ApiServer_3 pid=114614) INFO 11-17 19:53:42 [launcher.py:195] Route: /tokenize, Methods: POST
+(ApiServer_3 pid=114614) INFO 11-17 19:53:42 [launcher.py:195] Route: /detokenize, Methods: POST
+(ApiServer_3 pid=114614) INFO 11-17 19:53:42 [launcher.py:195] Route: /v1/models, Methods: GET
+(ApiServer_3 pid=114614) INFO 11-17 19:53:42 [launcher.py:195] Route: /v1/systemone, Methods: POST
+(ApiServer_3 pid=114614) INFO 11-17 19:53:42 [launcher.py:195] Route: /ping, Methods: GET
+(ApiServer_3 pid=114614) INFO 11-17 19:53:42 [launcher.py:195] Route: /ping, Methods: POST
+(ApiServer_3 pid=114614) INFO 11-17 19:53:42 [launcher.py:195] Route: /invocations, Methods: POST
+(ApiServer_3 pid=114614) INFO 11-17 19:53:42 [launcher.py:195] Route: /reset_prefix_cache, Methods: POST
+(ApiServer_3 pid=114614) INFO 11-17 19:53:42 [launcher.py:195] Route: /reset_mm_cache, Methods: POST
+(ApiServer_3 pid=114614) INFO 11-17 19:53:42 [launcher.py:195] Route: /reset_encoder_cache, Methods: POST
+(ApiServer_3 pid=114614) INFO 11-17 19:53:42 [launcher.py:195] Route: /collective_rpc, Methods: POST
+(ApiServer_3 pid=114614) INFO 11-17 19:53:42 [launcher.py:195] Route: /server_info, Methods: GET
+(ApiServer_3 pid=114614) INFO 11-17 19:53:42 [launcher.py:195] Route: /sleep, Methods: POST
+(ApiServer_3 pid=114614) INFO 11-17 19:53:42 [launcher.py:195] Route: /release_kv_cache_memory, Methods: POST
+(ApiServer_3 pid=114614) INFO 11-17 19:53:42 [launcher.py:195] Route: /wake_up, Methods: POST
+(ApiServer_3 pid=114614) INFO 11-17 19:53:42 [launcher.py:195] Route: /is_sleeping, Methods: GET
+(ApiServer_3 pid=114614) INFO 11-17 19:53:42 [launcher.py:195] Route: /pause, Methods: POST
+(ApiServer_3 pid=114614) INFO 11-17 19:53:42 [launcher.py:195] Route: /resume, Methods: POST
+(ApiServer_3 pid=114614) INFO 11-17 19:53:42 [launcher.py:195] Route: /abort_requests, Methods: POST
+(ApiServer_3 pid=114614) INFO 11-17 19:53:42 [launcher.py:195] Route: /is_paused, Methods: GET
+(ApiServer_3 pid=114614) INFO 11-17 19:53:42 [launcher.py:195] Route: /init_weight_transfer_engine, Methods: POST
+(ApiServer_3 pid=114614) INFO 11-17 19:53:42 [launcher.py:195] Route: /shutdown_weight_transfer_engine, Methods: POST
+(ApiServer_3 pid=114614) INFO 11-17 19:53:42 [launcher.py:195] Route: /start_weight_update, Methods: POST
+(ApiServer_3 pid=114614) INFO 11-17 19:53:42 [launcher.py:195] Route: /start_draft_weight_update, Methods: POST
+(ApiServer_3 pid=114614) INFO 11-17 19:53:42 [launcher.py:195] Route: /update_weights, Methods: POST
+(ApiServer_3 pid=114614) INFO 11-17 19:53:42 [launcher.py:195] Route: /finish_weight_update, Methods: POST
+(ApiServer_3 pid=114614) INFO 11-17 19:53:42 [launcher.py:195] Route: /update_weight_version, Methods: POST
+(ApiServer_3 pid=114614) INFO 11-17 19:53:42 [launcher.py:195] Route: /weight_info, Methods: GET
+(ApiServer_3 pid=114614) INFO 11-17 19:53:42 [launcher.py:195] Route: /weight_checker, Methods: POST
+(ApiServer_3 pid=114614) INFO 11-17 19:53:42 [launcher.py:195] Route: /get_world_size, Methods: GET
+(ApiServer_3 pid=114614) INFO 11-17 19:53:42 [launcher.py:195] Route: /v1/chat/completions, Methods: POST
+(ApiServer_3 pid=114614) INFO 11-17 19:53:42 [launcher.py:195] Route: /v1/chat/completions/batch, Methods: POST
+(ApiServer_3 pid=114614) INFO 11-17 19:53:42 [launcher.py:195] Route: /v1/responses, Methods: POST
+(ApiServer_3 pid=114614) INFO 11-17 19:53:42 [launcher.py:195] Route: /v1/responses/{response_id}, Methods: GET
+(ApiServer_3 pid=114614) INFO 11-17 19:53:42 [launcher.py:195] Route: /v1/responses/{response_id}/cancel, Methods: POST
+(ApiServer_3 pid=114614) INFO 11-17 19:53:42 [launcher.py:195] Route: /v1/completions, Methods: POST
+(ApiServer_3 pid=114614) INFO 11-17 19:53:42 [launcher.py:195] Route: /v1/messages, Methods: POST
+(ApiServer_3 pid=114614) INFO 11-17 19:53:42 [launcher.py:195] Route: /v1/messages/count_tokens, Methods: POST
+(ApiServer_3 pid=114614) INFO 11-17 19:53:42 [launcher.py:195] Route: /generative_scoring, Methods: POST
+(ApiServer_3 pid=114614) INFO 11-17 19:53:42 [launcher.py:195] Route: /scale_elastic_ep, Methods: POST
+(ApiServer_3 pid=114614) INFO 11-17 19:53:42 [launcher.py:195] Route: /is_scaling_elastic_ep, Methods: POST
+(ApiServer_3 pid=114614) INFO 11-17 19:53:42 [launcher.py:195] Route: /v1/chat/completions/render, Methods: POST
+(ApiServer_3 pid=114614) INFO 11-17 19:53:42 [launcher.py:195] Route: /v1/messages/render, Methods: POST
+(ApiServer_3 pid=114614) INFO 11-17 19:53:42 [launcher.py:195] Route: /v1/completions/render, Methods: POST
+(ApiServer_3 pid=114614) INFO 11-17 19:53:42 [launcher.py:195] Route: /v1/responses/render, Methods: POST
+(ApiServer_3 pid=114614) INFO 11-17 19:53:42 [launcher.py:195] Route: /v1/chat/completions/derender, Methods: POST
+(ApiServer_3 pid=114614) INFO 11-17 19:53:42 [launcher.py:195] Route: /v1/completions/derender, Methods: POST
+(ApiServer_3 pid=114614) INFO 11-17 19:53:42 [launcher.py:195] Route: /inference/v1/generate, Methods: POST
+(ApiServer_3 pid=114614) INFO 11-17 19:53:42 [launcher.py:195] Route: /inference/v1/abort_requests, Methods: POST
+INFO:     Started server process [114614]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+(ApiServer_0 pid=114611) INFO 11-17 19:53:42 [entry.py:140] Starting vLLM server on http://127.0.0.1:18243
+(ApiServer_0 pid=114611) INFO 11-17 19:53:42 [launcher.py:186] Available routes are:
+(ApiServer_0 pid=114611) INFO 11-17 19:53:42 [launcher.py:195] Route: /openapi.json, Methods: GET, HEAD
+(ApiServer_0 pid=114611) INFO 11-17 19:53:42 [launcher.py:195] Route: /docs, Methods: GET, HEAD
+(ApiServer_0 pid=114611) INFO 11-17 19:53:42 [launcher.py:195] Route: /docs/oauth2-redirect, Methods: GET, HEAD
+(ApiServer_0 pid=114611) INFO 11-17 19:53:42 [launcher.py:195] Route: /redoc, Methods: GET, HEAD
+(ApiServer_0 pid=114611) INFO 11-17 19:53:42 [launcher.py:195] Route: /load, Methods: GET
+(ApiServer_0 pid=114611) INFO 11-17 19:53:42 [launcher.py:195] Route: /version, Methods: GET
+(ApiServer_0 pid=114611) INFO 11-17 19:53:42 [launcher.py:195] Route: /kv_event_sources, Methods: GET
+(ApiServer_0 pid=114611) INFO 11-17 19:53:42 [launcher.py:195] Route: /health, Methods: GET
+(ApiServer_0 pid=114611) INFO 11-17 19:53:42 [launcher.py:195] Route: /metrics, Methods: GET
+(ApiServer_0 pid=114611) INFO 11-17 19:53:42 [launcher.py:195] Route: /tokenize, Methods: POST
+(ApiServer_0 pid=114611) INFO 11-17 19:53:42 [launcher.py:195] Route: /detokenize, Methods: POST
+(ApiServer_0 pid=114611) INFO 11-17 19:53:42 [launcher.py:195] Route: /v1/models, Methods: GET
+(ApiServer_0 pid=114611) INFO 11-17 19:53:42 [launcher.py:195] Route: /v1/systemone, Methods: POST
+(ApiServer_0 pid=114611) INFO 11-17 19:53:42 [launcher.py:195] Route: /ping, Methods: GET
+(ApiServer_0 pid=114611) INFO 11-17 19:53:42 [launcher.py:195] Route: /ping, Methods: POST
+(ApiServer_0 pid=114611) INFO 11-17 19:53:42 [launcher.py:195] Route: /invocations, Methods: POST
+(ApiServer_0 pid=114611) INFO 11-17 19:53:42 [launcher.py:195] Route: /reset_prefix_cache, Methods: POST
+(ApiServer_0 pid=114611) INFO 11-17 19:53:42 [launcher.py:195] Route: /reset_mm_cache, Methods: POST
+(ApiServer_0 pid=114611) INFO 11-17 19:53:42 [launcher.py:195] Route: /reset_encoder_cache, Methods: POST
+(ApiServer_0 pid=114611) INFO 11-17 19:53:42 [launcher.py:195] Route: /collective_rpc, Methods: POST
+(ApiServer_0 pid=114611) INFO 11-17 19:53:42 [launcher.py:195] Route: /server_info, Methods: GET
+(ApiServer_0 pid=114611) INFO 11-17 19:53:42 [launcher.py:195] Route: /sleep, Methods: POST
+(ApiServer_0 pid=114611) INFO 11-17 19:53:42 [launcher.py:195] Route: /release_kv_cache_memory, Methods: POST
+(ApiServer_0 pid=114611) INFO 11-17 19:53:42 [launcher.py:195] Route: /wake_up, Methods: POST
+(ApiServer_0 pid=114611) INFO 11-17 19:53:42 [launcher.py:195] Route: /is_sleeping, Methods: GET
+(ApiServer_0 pid=114611) INFO 11-17 19:53:42 [launcher.py:195] Route: /pause, Methods: POST
+(ApiServer_0 pid=114611) INFO 11-17 19:53:42 [launcher.py:195] Route: /resume, Methods: POST
+(ApiServer_0 pid=114611) INFO 11-17 19:53:42 [launcher.py:195] Route: /abort_requests, Methods: POST
+(ApiServer_0 pid=114611) INFO 11-17 19:53:42 [launcher.py:195] Route: /is_paused, Methods: GET
+(ApiServer_0 pid=114611) INFO 11-17 19:53:42 [launcher.py:195] Route: /init_weight_transfer_engine, Methods: POST
+(ApiServer_0 pid=114611) INFO 11-17 19:53:42 [launcher.py:195] Route: /shutdown_weight_transfer_engine, Methods: POST
+(ApiServer_0 pid=114611) INFO 11-17 19:53:42 [launcher.py:195] Route: /start_weight_update, Methods: POST
+(ApiServer_0 pid=114611) INFO 11-17 19:53:42 [launcher.py:195] Route: /start_draft_weight_update, Methods: POST
+(ApiServer_0 pid=114611) INFO 11-17 19:53:42 [launcher.py:195] Route: /update_weights, Methods: POST
+(ApiServer_0 pid=114611) INFO 11-17 19:53:42 [launcher.py:195] Route: /finish_weight_update, Methods: POST
+(ApiServer_0 pid=114611) INFO 11-17 19:53:42 [launcher.py:195] Route: /update_weight_version, Methods: POST
+(ApiServer_0 pid=114611) INFO 11-17 19:53:42 [launcher.py:195] Route: /weight_info, Methods: GET
+(ApiServer_0 pid=114611) INFO 11-17 19:53:42 [launcher.py:195] Route: /weight_checker, Methods: POST
+(ApiServer_0 pid=114611) INFO 11-17 19:53:42 [launcher.py:195] Route: /get_world_size, Methods: GET
+(ApiServer_0 pid=114611) INFO 11-17 19:53:42 [launcher.py:195] Route: /v1/chat/completions, Methods: POST
+(ApiServer_0 pid=114611) INFO 11-17 19:53:42 [launcher.py:195] Route: /v1/chat/completions/batch, Methods: POST
+(ApiServer_0 pid=114611) INFO 11-17 19:53:42 [launcher.py:195] Route: /v1/responses, Methods: POST
+(ApiServer_0 pid=114611) INFO 11-17 19:53:42 [launcher.py:195] Route: /v1/responses/{response_id}, Methods: GET
+(ApiServer_0 pid=114611) INFO 11-17 19:53:42 [launcher.py:195] Route: /v1/responses/{response_id}/cancel, Methods: POST
+(ApiServer_0 pid=114611) INFO 11-17 19:53:42 [launcher.py:195] Route: /v1/completions, Methods: POST
+(ApiServer_0 pid=114611) INFO 11-17 19:53:42 [launcher.py:195] Route: /v1/messages, Methods: POST
+(ApiServer_0 pid=114611) INFO 11-17 19:53:42 [launcher.py:195] Route: /v1/messages/count_tokens, Methods: POST
+(ApiServer_0 pid=114611) INFO 11-17 19:53:42 [launcher.py:195] Route: /generative_scoring, Methods: POST
+(ApiServer_0 pid=114611) INFO 11-17 19:53:42 [launcher.py:195] Route: /scale_elastic_ep, Methods: POST
+(ApiServer_0 pid=114611) INFO 11-17 19:53:42 [launcher.py:195] Route: /is_scaling_elastic_ep, Methods: POST
+(ApiServer_0 pid=114611) INFO 11-17 19:53:42 [launcher.py:195] Route: /v1/chat/completions/render, Methods: POST
+(ApiServer_0 pid=114611) INFO 11-17 19:53:42 [launcher.py:195] Route: /v1/messages/render, Methods: POST
+(ApiServer_0 pid=114611) INFO 11-17 19:53:42 [launcher.py:195] Route: /v1/completions/render, Methods: POST
+(ApiServer_0 pid=114611) INFO 11-17 19:53:42 [launcher.py:195] Route: /v1/responses/render, Methods: POST
+(ApiServer_0 pid=114611) INFO 11-17 19:53:42 [launcher.py:195] Route: /v1/chat/completions/derender, Methods: POST
+(ApiServer_0 pid=114611) INFO 11-17 19:53:42 [launcher.py:195] Route: /v1/completions/derender, Methods: POST
+(ApiServer_0 pid=114611) INFO 11-17 19:53:42 [launcher.py:195] Route: /inference/v1/generate, Methods: POST
+(ApiServer_0 pid=114611) INFO 11-17 19:53:42 [launcher.py:195] Route: /inference/v1/abort_requests, Methods: POST
+INFO:     Application startup complete.
+INFO:     Started server process [114611]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     127.0.0.1:38852 - "GET /health HTTP/1.1" 200 OK
+INFO:     Application startup complete.
+INFO:     127.0.0.1:38854 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53446 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53448 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53998 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54002 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54010 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54024 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56842 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56854 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56858 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56872 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56880 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60644 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60650 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60660 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60662 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60670 - "POST /collective_rpc HTTP/1.1" 200 OK
+(EngineCore_DP1 pid=114608) INFO 11-17 19:54:36 [core.py:1454] [shutdown] EngineCore: trigger received signal=SIGTERM
+(EngineCore_DP2 pid=114609) INFO 11-17 19:54:36 [core.py:1454] [shutdown] EngineCore: trigger received signal=SIGTERM
+(EngineCore_DP0 pid=114607) INFO 11-17 19:54:36 [core.py:1454] [shutdown] EngineCore: trigger received signal=SIGTERM
+(ApiServer_3 pid=114614) INFO 11-17 19:54:36 [launcher.py:254] [shutdown] API server: shutdown triggered
+(MainProcess pid=114533) INFO 11-17 19:54:36 [serve.py:396] Waiting up to 0 seconds for processes to exit
+(ApiServer_1 pid=114612) INFO 11-17 19:54:36 [launcher.py:254] [shutdown] API server: shutdown triggered
+(EngineCore_DP3 pid=114610) INFO 11-17 19:54:36 [core.py:1454] [shutdown] EngineCore: trigger received signal=SIGTERM
+(ApiServer_0 pid=114611) INFO 11-17 19:54:36 [launcher.py:254] [shutdown] API server: shutdown triggered
+(ApiServer_2 pid=114613) INFO 11-17 19:54:36 [launcher.py:254] [shutdown] API server: shutdown triggered
+(ApiServer_3 pid=114614) INFO 11-17 19:54:36 [launcher.py:270] [shutdown] API server: stopping engine client mode=abort timeout=0s
+(MainProcess pid=114533) INFO 11-17 19:54:36 [utils.py:628] [shutdown] Process manager: send sigterm to process ApiServer_0
+(ApiServer_1 pid=114612) INFO 11-17 19:54:36 [launcher.py:270] [shutdown] API server: stopping engine client mode=abort timeout=0s
+(EngineCore_DP1 pid=114608) INFO 11-17 19:54:36 [core.py:1635] [shutdown] EngineCore: start mode=abort timeout=0s
+(EngineCore_DP2 pid=114609) INFO 11-17 19:54:36 [core.py:1635] [shutdown] EngineCore: start mode=abort timeout=0s
+(ApiServer_0 pid=114611) INFO 11-17 19:54:36 [launcher.py:270] [shutdown] API server: stopping engine client mode=abort timeout=0s
+(ApiServer_2 pid=114613) INFO 11-17 19:54:36 [launcher.py:270] [shutdown] API server: stopping engine client mode=abort timeout=0s
+(EngineCore_DP0 pid=114607) INFO 11-17 19:54:36 [core.py:1635] [shutdown] EngineCore: start mode=abort timeout=0s
+(MainProcess pid=114533) INFO 11-17 19:54:36 [utils.py:628] [shutdown] Process manager: send sigterm to process ApiServer_1
+(EngineCore_DP1 pid=114608) INFO 11-17 19:54:36 [core.py:1666] [shutdown] EngineCore: request processing complete; starting resource teardown
+(EngineCore_DP2 pid=114609) INFO 11-17 19:54:36 [core.py:1666] [shutdown] EngineCore: request processing complete; starting resource teardown
+(MainProcess pid=114533) INFO 11-17 19:54:36 [utils.py:628] [shutdown] Process manager: send sigterm to process ApiServer_2
+(EngineCore_DP0 pid=114607) INFO 11-17 19:54:36 [core.py:1666] [shutdown] EngineCore: request processing complete; starting resource teardown
+(EngineCore_DP3 pid=114610) INFO 11-17 19:54:36 [core.py:1635] [shutdown] EngineCore: start mode=abort timeout=0s
+(EngineCore_DP1 pid=114608) INFO 11-17 19:54:36 [core.py:1499] [shutdown] EngineCore: exiting busy loop
+(MainProcess pid=114533) INFO 11-17 19:54:36 [utils.py:628] [shutdown] Process manager: send sigterm to process ApiServer_3
+(EngineCore_DP2 pid=114609) INFO 11-17 19:54:36 [core.py:1499] [shutdown] EngineCore: exiting busy loop
+(EngineCore_DP0 pid=114607) INFO 11-17 19:54:36 [core.py:1499] [shutdown] EngineCore: exiting busy loop
+(MainProcess pid=114533) WARNING 11-17 19:54:36 [utils.py:648] [shutdown] Process manager: force killing remaining processes count=4
+(EngineCore_DP3 pid=114610) INFO 11-17 19:54:36 [core.py:1666] [shutdown] EngineCore: request processing complete; starting resource teardown
+(MainProcess pid=114533) WARNING 11-17 19:54:36 [utils.py:653] [shutdown] Process manager: force killing remaining process ApiServer_0 pid 114611
+(EngineCore_DP1 pid=114608) INFO 11-17 19:54:36 [multiproc_executor.py:479] [shutdown] Executor: waiting for worker exit count=1
+(EngineCore_DP2 pid=114609) INFO 11-17 19:54:36 [multiproc_executor.py:479] [shutdown] Executor: waiting for worker exit count=1
+(EngineCore_DP3 pid=114610) INFO 11-17 19:54:36 [core.py:1499] [shutdown] EngineCore: exiting busy loop
+(EngineCore_DP0 pid=114607) INFO 11-17 19:54:36 [multiproc_executor.py:479] [shutdown] Executor: waiting for worker exit count=1
+(Worker_DP1_EP1 pid=116488) INFO 11-17 19:54:36 [multiproc_executor.py:843] Parent process exited, terminating worker queues
+(Worker_DP2_EP2 pid=116490) INFO 11-17 19:54:36 [multiproc_executor.py:843] Parent process exited, terminating worker queues
+(ApiServer_3 pid=114614) INFO 11-17 19:54:36 [core_client.py:770] [shutdown] MPClient: start timeout=0s
+(Worker_DP0_EP0 pid=116491) INFO 11-17 19:54:36 [multiproc_executor.py:843] Parent process exited, terminating worker queues
+(EngineCore_DP3 pid=114610) INFO 11-17 19:54:36 [multiproc_executor.py:479] [shutdown] Executor: waiting for worker exit count=1
+(ApiServer_2 pid=114613) INFO 11-17 19:54:36 [core_client.py:770] [shutdown] MPClient: start timeout=0s
+(Worker_DP3_EP3 pid=116489) INFO 11-17 19:54:36 [multiproc_executor.py:843] Parent process exited, terminating worker queues
+(ApiServer_0 pid=114611) INFO 11-17 19:54:36 [core_client.py:770] [shutdown] MPClient: start timeout=0s
+(ApiServer_1 pid=114612) INFO 11-17 19:54:36 [core_client.py:770] [shutdown] MPClient: start timeout=0s
+(ApiServer_3 pid=114614) INFO 11-17 19:54:36 [core_client.py:775] [shutdown] MPClient: cleaning up background resources
+(ApiServer_2 pid=114613) INFO 11-17 19:54:36 [core_client.py:775] [shutdown] MPClient: cleaning up background resources
+(ApiServer_3 pid=114614) INFO 11-17 19:54:36 [core_client.py:777] [shutdown] MPClient: complete
+(ApiServer_0 pid=114611) INFO 11-17 19:54:36 [core_client.py:775] [shutdown] MPClient: cleaning up background resources
+(ApiServer_2 pid=114613) INFO 11-17 19:54:36 [core_client.py:777] [shutdown] MPClient: complete
+(ApiServer_1 pid=114612) INFO 11-17 19:54:36 [core_client.py:775] [shutdown] MPClient: cleaning up background resources
+(ApiServer_0 pid=114611) INFO 11-17 19:54:36 [core_client.py:777] [shutdown] MPClient: complete
+(ApiServer_1 pid=114612) INFO 11-17 19:54:36 [core_client.py:777] [shutdown] MPClient: complete
+(ApiServer_0 pid=114611) INFO 11-17 19:54:36 [launcher.py:279] [shutdown] API server: engine client stopped
+(ApiServer_0 pid=114611) INFO 11-17 19:54:36 [launcher.py:282] [shutdown] API server: signalling HTTP server shutdown
+(ApiServer_1 pid=114612) ERROR 11-17 19:54:36 [async_llm.py:906] AsyncLLM output_handler failed.
+(ApiServer_1 pid=114612) ERROR 11-17 19:54:36 [async_llm.py:906] Traceback (most recent call last):
+(ApiServer_1 pid=114612) ERROR 11-17 19:54:36 [async_llm.py:906]   File "/vllm-workspace/vllm/vllm/v1/engine/async_llm.py", line 849, in output_handler
+(ApiServer_1 pid=114612) ERROR 11-17 19:54:36 [async_llm.py:906]     outputs = await engine_core.get_output_async()
+(ApiServer_1 pid=114612) ERROR 11-17 19:54:36 [async_llm.py:906]               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(ApiServer_1 pid=114612) ERROR 11-17 19:54:36 [async_llm.py:906]   File "/vllm-workspace/vllm/vllm/v1/engine/core_client.py", line 1235, in get_output_async
+(ApiServer_1 pid=114612) ERROR 11-17 19:54:36 [async_llm.py:906]     raise self._format_exception(outputs) from None
+(ApiServer_1 pid=114612) ERROR 11-17 19:54:36 [async_llm.py:906] vllm.v1.engine.exceptions.EngineDeadError: EngineCore encountered an issue. See stack trace (above) for the root cause.
+(ApiServer_2 pid=114613) ERROR 11-17 19:54:36 [async_llm.py:906] AsyncLLM output_handler failed.
+(ApiServer_2 pid=114613) ERROR 11-17 19:54:36 [async_llm.py:906] Traceback (most recent call last):
+(ApiServer_2 pid=114613) ERROR 11-17 19:54:36 [async_llm.py:906]   File "/vllm-workspace/vllm/vllm/v1/engine/async_llm.py", line 849, in output_handler
+(ApiServer_2 pid=114613) ERROR 11-17 19:54:36 [async_llm.py:906]     outputs = await engine_core.get_output_async()
+(ApiServer_2 pid=114613) ERROR 11-17 19:54:36 [async_llm.py:906]               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(ApiServer_2 pid=114613) ERROR 11-17 19:54:36 [async_llm.py:906]   File "/vllm-workspace/vllm/vllm/v1/engine/core_client.py", line 1235, in get_output_async
+(ApiServer_2 pid=114613) ERROR 11-17 19:54:36 [async_llm.py:906]     raise self._format_exception(outputs) from None
+(ApiServer_2 pid=114613) ERROR 11-17 19:54:36 [async_llm.py:906] vllm.v1.engine.exceptions.EngineDeadError: EngineCore encountered an issue. See stack trace (above) for the root cause.
+(ApiServer_3 pid=114614) ERROR 11-17 19:54:36 [async_llm.py:906] AsyncLLM output_handler failed.
+(ApiServer_3 pid=114614) ERROR 11-17 19:54:36 [async_llm.py:906] Traceback (most recent call last):
+(ApiServer_3 pid=114614) ERROR 11-17 19:54:36 [async_llm.py:906]   File "/vllm-workspace/vllm/vllm/v1/engine/async_llm.py", line 849, in output_handler
+(ApiServer_3 pid=114614) ERROR 11-17 19:54:36 [async_llm.py:906]     outputs = await engine_core.get_output_async()
+(ApiServer_3 pid=114614) ERROR 11-17 19:54:36 [async_llm.py:906]               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(ApiServer_3 pid=114614) ERROR 11-17 19:54:36 [async_llm.py:906]   File "/vllm-workspace/vllm/vllm/v1/engine/core_client.py", line 1235, in get_output_async
+(ApiServer_3 pid=114614) ERROR 11-17 19:54:36 [async_llm.py:906]     raise self._format_exception(outputs) from None
+(ApiServer_3 pid=114614) ERROR 11-17 19:54:36 [async_llm.py:906] vllm.v1.engine.exceptions.EngineDeadError: EngineCore encountered an issue. See stack trace (above) for the root cause.
+(ApiServer_1 pid=114612) INFO 11-17 19:54:36 [launcher.py:279] [shutdown] API server: engine client stopped
+(ApiServer_2 pid=114613) INFO 11-17 19:54:36 [launcher.py:279] [shutdown] API server: engine client stopped
+(ApiServer_1 pid=114612) INFO 11-17 19:54:36 [launcher.py:282] [shutdown] API server: signalling HTTP server shutdown
+(ApiServer_2 pid=114613) INFO 11-17 19:54:36 [launcher.py:282] [shutdown] API server: signalling HTTP server shutdown
+(ApiServer_3 pid=114614) INFO 11-17 19:54:36 [launcher.py:279] [shutdown] API server: engine client stopped
+(ApiServer_3 pid=114614) INFO 11-17 19:54:36 [launcher.py:282] [shutdown] API server: signalling HTTP server shutdown
+(MainProcess pid=114533) WARNING 11-17 19:54:36 [utils.py:653] [shutdown] Process manager: force killing remaining process ApiServer_1 pid 114612
+(MainProcess pid=114533) WARNING 11-17 19:54:36 [utils.py:653] [shutdown] Process manager: force killing remaining process ApiServer_2 pid 114613
+(ApiServer_2 pid=114613) WARNING 11-17 19:54:36 [launcher.py:298] port 18243 is used by process psutil.Process(pid=114614, name='VLLM::APIServer_3', status='running', started='19:51:03') launched with command:
+(ApiServer_2 pid=114613) WARNING 11-17 19:54:36 [launcher.py:298] VLLM::APIServer_3                                                                                                                                     
+(ApiServer_2 pid=114613) INFO 11-17 19:54:37 [launcher.py:304] [shutdown] API server: shutting down FastAPI HTTP server
+INFO:     Shutting down
+(ApiServer_3 pid=114614) INFO 11-17 19:54:37 [launcher.py:304] [shutdown] API server: shutting down FastAPI HTTP server
+INFO:     Shutting down
+(MainProcess pid=114533) WARNING 11-17 19:54:37 [utils.py:653] [shutdown] Process manager: force killing remaining process ApiServer_3 pid 114614
+(MainProcess pid=114533) INFO 11-17 19:54:37 [utils.py:628] [shutdown] Process manager: send sigterm to process EngineCore_DP0
+(MainProcess pid=114533) INFO 11-17 19:54:37 [utils.py:628] [shutdown] Process manager: send sigterm to process EngineCore_DP1
+(MainProcess pid=114533) INFO 11-17 19:54:37 [utils.py:628] [shutdown] Process manager: send sigterm to process EngineCore_DP2
+(MainProcess pid=114533) INFO 11-17 19:54:37 [utils.py:628] [shutdown] Process manager: send sigterm to process EngineCore_DP3
+(MainProcess pid=114533) WARNING 11-17 19:54:37 [utils.py:648] [shutdown] Process manager: force killing remaining processes count=4
+(MainProcess pid=114533) WARNING 11-17 19:54:37 [utils.py:653] [shutdown] Process manager: force killing remaining process EngineCore_DP0 pid 114607
+(MainProcess pid=114533) WARNING 11-17 19:54:37 [system_utils.py:225] [shutdown] force killing sub process VLLM::Worker_DP0_EP0 pid 116491
+(MainProcess pid=114533) WARNING 11-17 19:54:37 [utils.py:653] [shutdown] Process manager: force killing remaining process EngineCore_DP1 pid 114608
+(MainProcess pid=114533) WARNING 11-17 19:54:37 [system_utils.py:225] [shutdown] force killing sub process VLLM::Worker_DP1_EP1 pid 116488
+(MainProcess pid=114533) WARNING 11-17 19:54:37 [utils.py:653] [shutdown] Process manager: force killing remaining process EngineCore_DP2 pid 114609
+(MainProcess pid=114533) WARNING 11-17 19:54:37 [system_utils.py:225] [shutdown] force killing sub process VLLM::Worker_DP2_EP2 pid 116490
+(MainProcess pid=114533) WARNING 11-17 19:54:37 [utils.py:653] [shutdown] Process manager: force killing remaining process EngineCore_DP3 pid 114610
+(MainProcess pid=114533) WARNING 11-17 19:54:37 [system_utils.py:225] [shutdown] force killing sub process VLLM::Worker_DP3_EP3 pid 116489
+(MainProcess pid=114533) INFO 11-17 19:54:37 [utils.py:628] [shutdown] Process manager: send sigterm to process VLLM_DP_Coordinator
+(MainProcess pid=114533) WARNING 11-17 19:54:37 [utils.py:648] [shutdown] Process manager: force killing remaining processes count=1
+(MainProcess pid=114533) WARNING 11-17 19:54:37 [utils.py:653] [shutdown] Process manager: force killing remaining process VLLM_DP_Coordinator pid 114571
+(MainProcess pid=114533) WARNING 11-17 19:54:37 [system_utils.py:225] [shutdown] force killing sub process asc_dumper pid 120051
+/usr/local/python3.12.16/lib/python3.12/multiprocessing/resource_tracker.py:279: UserWarning: resource_tracker: There appear to be 4 leaked semaphore objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '
+/usr/local/python3.12.16/lib/python3.12/multiprocessing/resource_tracker.py:279: UserWarning: resource_tracker: There appear to be 8 leaked shared_memory objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '

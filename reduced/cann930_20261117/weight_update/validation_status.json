@@ -4,13 +4,13 @@
     "npu_ipc": "passed"
   },
   "receiver_loading_quota_fix": "npu_verified",
-  "ipc_reference_counter_fix": "cpu_verified_npu_pending_resources",
-  "resource_state": "All experiment NPU processes released; user requests waiting for device availability",
-  "roundtrip_packed_source_sha256": "2bfcde4bdf2fd2cb3638af8ad49cce0736a3c2d01081d147e22cf9d2081780aa",
+  "ipc_reference_counter_fix": "npu_verified_20_rounds_and_8card_A_B_A",
+  "resource_state": "All eight NPUs free; all experiment processes released",
+  "roundtrip_packed_source_sha256": "1f8e4edc8f691bbb4cdbfbe2eef0c37c8163ad8090471eeb3b661e801c8f0b1e",
   "pending_test": "scripts/ipc_reclamation_retest.py",
-  "task_status": "IN_PROGRESS",
+  "task_status": "COMPLETE",
   "result": "PARTIAL",
-  "hardware_gate": "Await user-provided NPU resource window",
+  "hardware_gate": "Current retest completed and devices released",
   "ipc_fixed_source_sha256": "1f8e4edc8f691bbb4cdbfbe2eef0c37c8163ad8090471eeb3b661e801c8f0b1e",
   "offline_evidence_audit": "passed",
   "evidence_run": "transfer_20261117_03",
@@ -20,5 +20,10 @@
     "engram_enabled": false,
     "indexed_tensors": 6248,
     "indexed_tensor_bytes": 135927315272
-  }
+  },
+  "current_retest": "runs/retest_20261118_01",
+  "latest_npu_evidence_run": "runs/retest_20261118_01",
+  "cache_invalidation": "passed_cold_zero_warm_256_for_both_backends",
+  "cache_generation_consistency": "cold_vs_cache_hit_output_differs_root_cause_pending",
+  "remaining_issue": "Prefix-cache-hit greedy output differs from cold output in this Top32 configuration"
 }

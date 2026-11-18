@@ -1,8 +1,8 @@
 # DSV41 模型开箱交付件
 
-更新日期为 2026-11-17。本轮使用 **c00954197_dsv41_cann930 容器、CANN 9.3.0**。177.42.22.1 的 8 卡专项使用 40 层、32 路由专家、BF16、关闭 Engram 的模型。177.42.23.1/24.1 双机 16 卡性能与精度验证使用完整 384 专家 BF16 模型，Engram 和视觉模块开启。
+更新日期为 2026-11-18。本轮使用 **c00954197_dsv41_cann930 容器、CANN 9.3.0**。177.42.22.1 的 8 卡专项使用 40 层、32 路由专家、BF16、关闭 Engram 的模型。177.42.23.1/24.1 双机 16 卡性能与精度验证使用完整 384 专家 BF16 模型，Engram 和视觉模块开启。
 
-Sleep level-2 修复后完成五轮恢复验证，8 个副本的双接口共 80 次恢复后请求与首次加载基准严格一致。HCCL 和 NPU IPC 均完成缩减模型全量 A→B→A 更新。后续 IPC 发送缓冲引用计数补丁已通过 CPU 测试，实际回收效果等待设备复验。完整模型在同一次 CANN930 服务启动中完成三场景各四轮性能压测和 GPQA Diamond 198 题正式评测，最终 content 评分为 164/198，82.828283%，24 题达到输出预算。其余基础功能保留各自的实测环境与日期，整体开箱验收仍有待完成项。
+Sleep level-2 修复后完成五轮恢复验证，8 个副本的双接口共 80 次恢复后请求与首次加载基准严格一致。HCCL 和 NPU IPC 均完成缩减模型全量 A→B→A 更新。IPC 发送缓冲引用计数补丁于 2026-11-18 完成单卡 20 轮和 8 卡全量 A→B→A 实机复验，两轮发送端 allocated 均为 0，退出共享张量告警为 0。有效缓存失效计数和同缓存状态下的数值对照通过，冷缓存与缓存命中请求的输出差异仍待定位。完整模型在同一次 CANN930 服务启动中完成三场景各四轮性能压测和 GPQA Diamond 198 题正式评测，最终 content 评分为 164/198，82.828283%，24 题达到输出预算。其余基础功能保留各自的实测环境与日期，整体开箱验收仍有待完成项。
 
 ## 验收总览
 
@@ -19,7 +19,7 @@ Sleep level-2 修复后完成五轮恢复验证，8 个副本的双接口共 80 
 | sleep level-1 | 1108 历史裁剪模型五轮恢复一致性通过 | 历史配置与结果保留在基础功能报告 |
 | sleep level-2 | CANN930 缩减模型五轮通过，双接口文本/token/logprob 全部严格一致 | 80 次恢复后请求，最大单卡 HBM 增量 40 MiB，首轮后最大增长 1 MiB |
 | 专家路由返回 / replay | 裁剪模型双请求断言/HTTP500 | 完整模型待验证；不能由普通MoE推理推出replay支持 |
-| Checkpoint / HCCL / NPU IPC更新 | CANN930 缩减模型 checkpoint 恢复与两种全量 A→B→A 均通过 | 每轮每端 6248 张量、135927315272 字节，完整 head 哈希和逐副本双接口数值一致；IPC 最新回收补丁待实机复验 |
+| Checkpoint / HCCL / NPU IPC更新 | CANN930 缩减模型 checkpoint 恢复与两种全量 A→B→A 均通过 | 每轮每端 6248 张量、135927315272 字节，完整 head 哈希和逐副本双接口数值一致；IPC 回收补丁已于 2026-11-18 实机通过，冷热缓存输出差异待定位 |
 | 1M输入 | 裁剪模型容量通过，检索0/3 | 不能替代完整模型1M可读回答与精度 |
 | 0.8硬件目标 | 单卡decode经验评分通过；理论峰值口径未证明 | E23文本2K→6K profile，不外推4K图文→32K全阶段或16卡 |
 | GPQA Diamond | CANN930 198/198 请求完成，最终 content 164/198，82.828283% | AISBench 原始 165/198，24 题无可提取最终答案，精度阈值待确定 |
@@ -60,7 +60,7 @@ Sleep level-2 修复后完成五轮恢复验证，8 个副本的双接口共 80 
 
 1108 两节点环境报告与原始快照用于解释 E23 历史性能。原报告中的 KV BF16 为 CLI 配置，实际 packed cache 布局见模型结构分析。[历史环境](environment/1108_environment_20261112.md) [历史快照](environment/environment_snapshot.json)
 
-本轮修复涉及 RMSNorm 常量 buffer、attention sink 的 layerwise 加载，以及运行时专家通信映射的加载配额。三项已完成实机验证。IPC 逐 chunk 导出 rebuild 参数的后续补丁已完成 CPU 验证，NPU 回收效果待验证。[Sleep 补丁](reduced/cann930_20261117/sleep_level2/patches/) [权重更新补丁](reduced/cann930_20261117/weight_update/patches/)
+本轮修复涉及 RMSNorm 常量 buffer、attention sink 的 layerwise 加载，以及运行时专家通信映射的加载配额。三项已完成实机验证。IPC 逐 chunk 导出 rebuild 参数的后续补丁已于 2026-11-18 完成单卡和 8 卡全量实机验证。[Sleep 补丁](reduced/cann930_20261117/sleep_level2/patches/) [权重更新补丁](reduced/cann930_20261117/weight_update/patches/)
 
 ## CANN930 完整模型服务与客户端
 
@@ -204,11 +204,13 @@ OOM 根因为运行时通信映射 `expert_ids_per_ep_rank` 被计入 checkpoint
 |---|---|---|
 | checkpoint reload | Sleep level-2 五轮，逐副本双接口恢复一致 | 最大单卡稳态增量 40 MiB |
 | HCCL | DP4/EP4 推理 NPU0–3，独立发送端 NPU7，完整 A→B→A | 更新阶段接收卡峰值 61552 MiB |
-| NPU IPC | DP8/EP8 与 8 个同置发送进程，完整 A→B→A | 更新阶段接收卡峰值 44611 MiB，IPC 回收补丁待实机复验 |
+| NPU IPC | DP8/EP8 与 8 个同置发送进程，完整 A→B→A | 更新阶段接收卡峰值 44611 MiB，IPC 回收补丁已通过 8 卡实机复验 |
+
+2026-11-18 复验的全部逐端计数、分配量、缓存状态与资源记录见最新报告。[实机闭环报告](reduced/cann930_20261117/weight_update/runs/retest_20261118_01/REPORT.md)
 
 显式 KV 为 2 GiB，单 packed buffer 为 1280 MiB，HCCL_BUFFSIZE 为 256 MiB。最大单张量为 1262.5 MiB，当前打包器要求单缓冲可容纳该张量。[完整报告](reduced/cann930_20261117/weight_update/REPORT.md) [HCCL 逐端审计](reduced/cann930_20261117/weight_update/runs/transfer_20261117_03/hccl_producer/full_transfer_audit.json) [IPC 逐端审计](reduced/cann930_20261117/weight_update/runs/transfer_20261117_03/npu_ipc_producer/full_transfer_audit.json)
 
-后续审计发现旧 IPC 实现各发送进程的分配量在 B 轮后为 1.25 GiB、恢复 A 后为 2.5 GiB，退出共出现 8 条共享张量释放告警。逐 chunk 导出新 rebuild 参数的补丁通过新增 5 项 CPU 回归和仓库 106 项 CPU 测试，实际回收效果等待资源安排。当前 prompt 的 cached_tokens 始终为 0，有效缓存命中后的更新失效仍待覆盖。[验证状态](reduced/cann930_20261117/weight_update/validation_status.json) [后续复验步骤](reduced/cann930_20261117/weight_update/pending_validation.md)
+后续审计发现旧 IPC 实现各发送进程的分配量在 B 轮后为 1.25 GiB、恢复 A 后为 2.5 GiB，退出共出现 8 条共享张量释放告警。逐 chunk 导出新 rebuild 参数的补丁通过新增 5 项 CPU 回归和仓库 106 项 CPU 测试。2026-11-18 单卡修复前 20 轮累计增长 160 MiB，修复后增长为 0；8 卡全量两轮各发送端 allocated 在显式清理前后均为 0，退出共享张量告警为 0。长提示词补测中，更新后首次 cached_tokens 为 0，重复请求为 256；冷/命中请求各自与同缓存状态基准严格一致，冷热状态之间存在生成差异。[验证状态](reduced/cann930_20261117/weight_update/validation_status.json) [后续复验步骤](reduced/cann930_20261117/weight_update/pending_validation.md)
 
 1108 的更新 OOM 和本轮 CANN930 修复前失败日志继续保留。完整 384 专家模型的更新验证需要独立容量预算和实机结果。[1108 HCCL](reduced/basic_feature/results/node26_F13_hccl_20261113T112758/) [1108 IPC](reduced/basic_feature/results/node26_F13_ipc_20261113T115009/) [本轮失败现场](reduced/cann930_20261117/weight_update/diagnostics/oom_reproduction.json)
 
@@ -312,7 +314,7 @@ Math-500、TextVQA 的正式评测、同条件多轮对照和 T 检验仍待完�
 4. **完整模型CANN9.3.0 E25：**同权重和Engram，关闭async后4K图文→32K三轮通过；耗时1400.80/1378.84/1370.71秒，吞吐1497.11/1520.95/1529.98 tok/s。见[三轮结果](full/E25/results/)与[环境](environment/cann930_container_build_report.md)。
 5. E23平均约2205 tok/s，E25约1516 tok/s。CANN版本和async开关同时改变，不能把约31%的差距直接归因CANN升级。现有ArgSort转AiCPU、internal format等告警并非E25独有；未找到证明稳态性能下降根因的单条告警。[日志对比](diagnostics/E23_E25/)。需补9.2.1＋async关闭的同条件控制组。
 6. **Sleep level-2 恢复差异已修复。** attention sink 加载改为调用 layerwise weight_loader，无学习权重 RMSNorm 常量注册为非持久 buffer，CANN930 五轮逐副本双接口验证通过。[修复与实测](reduced/cann930_20261117/sleep_level2/REPORT.md)
-7. **全量权重更新接收端 OOM 已修复。** 排除运行时通信映射的加载配额后，HCCL、IPC 均完成全量 A→B→A。IPC 发送端的缓冲回收问题已完成 CPU 修复验证，NPU 复验等待资源安排。[修复与实测](reduced/cann930_20261117/weight_update/REPORT.md)
+7. **全量权重更新接收端 OOM 已修复。** 排除运行时通信映射的加载配额后，HCCL、IPC 均完成全量 A→B→A。IPC 发送端缓冲回收已完成 2026-11-18 单卡及 8 卡实机验证，冷/热缓存输出差异待定位。[修复与实测](reduced/cann930_20261117/weight_update/REPORT.md)
 8. **CANN930 完整模型异步配置已复验。** 双节点使用 CCU_SCHED 和 Gloo CPU 超时透传修复，完成 12 轮完整性能与 GPQA 请求。默认通信展开模式超时的底层机制仍待确认。[当前完整模型报告](full/cann930_20261117/REPORT.md)
 
 # 交付物与复现范围
@@ -328,7 +330,7 @@ Math-500、TextVQA 的正式评测、同条件多轮对照和 T 检验仍待完�
 | P0 | 完整模型Math-500、TextVQA精度 | 数据/命令/版本、逐题输出、提取与截断、评分和同口径对照/T检验 |
 | P0 | 完整模型Level-2 sleep/wake五轮 | 双接口固定greedy请求，文本/token/logprobs恢复一致，各卡逐轮显存无持续增长 |
 | P0 | routing专家返回及需要时训练侧replay | 单/多请求原始专家、dtype/shape/范围，实际回放路径无报错 |
-| P0 | IPC 最新引用计数补丁实机复验 | 单卡 20 轮回收、数据一致性、轮后 allocated/reserved、退出告警，再执行 8 卡全量 A→B→A |
+| P0 | 冷缓存与命中缓存输出差异定位 | 固定权重、输入及副本，对照 prefix replay、注意力状态与 logits/logprob，保留相同缓存状态的数值对照 |
 | P0 | 完整 384 专家模型 checkpoint、HCCL、NPU IPC 更新 | 独立容量预算、全量计数、版本、权重哈希、生成对照和连续更新回收检查 |
 | P1 | GPQA 65536 输出预算复验 | 固定数据、实际采样参数与评分口径，报告预算命中和最终答案提取率 |
 | P1 | 完整模型1M有效回答 | tokenizer输入计数、完整请求/响应、检索命中与无乱码；不只容量 |

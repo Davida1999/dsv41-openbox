@@ -1,0 +1,546 @@
+{
+  "dp0_completions": {
+    "text": " capital of France. Berlin is the capital",
+    "token_ids": [
+      6102,
+      294,
+      8760,
+      16,
+      17575,
+      344,
+      270,
+      6102
+    ],
+    "tokens": [
+      " capital",
+      " of",
+      " France",
+      ".",
+      " Berlin",
+      " is",
+      " the",
+      " capital"
+    ],
+    "token_logprobs": [
+      -0.4973335266113281,
+      -0.8043804168701172,
+      -0.3146038055419922,
+      -0.35039710998535156,
+      -0.9326133728027344,
+      -0.2092876434326172,
+      -0.10965347290039062,
+      -0.028661727905273438
+    ],
+    "cached_tokens": 0
+  },
+  "dp0_chat_completions": {
+    "text": " seemingly to France and Germany. The capital",
+    "token_ids": [
+      28848,
+      304,
+      8760,
+      305,
+      10322,
+      16,
+      455,
+      6102
+    ],
+    "tokens": [
+      " seemingly",
+      " to",
+      " France",
+      " and",
+      " Germany",
+      ".",
+      " The",
+      " capital"
+    ],
+    "token_logprobs": [
+      -2.565673828125,
+      -1.5460891723632812,
+      -1.4363346099853516,
+      -1.1359338760375977,
+      -0.25169944763183594,
+      -0.9818267822265625,
+      -1.8856000900268555,
+      -2.5202112197875977
+    ],
+    "cached_tokens": 0
+  },
+  "dp1_completions": {
+    "text": " capital of France. Berlin is the capital",
+    "token_ids": [
+      6102,
+      294,
+      8760,
+      16,
+      17575,
+      344,
+      270,
+      6102
+    ],
+    "tokens": [
+      " capital",
+      " of",
+      " France",
+      ".",
+      " Berlin",
+      " is",
+      " the",
+      " capital"
+    ],
+    "token_logprobs": [
+      -0.4973335266113281,
+      -0.8043804168701172,
+      -0.3146038055419922,
+      -0.35039710998535156,
+      -0.9326133728027344,
+      -0.2092876434326172,
+      -0.10965347290039062,
+      -0.028661727905273438
+    ],
+    "cached_tokens": 0
+  },
+  "dp1_chat_completions": {
+    "text": " seemingly to France and Germany. The capital",
+    "token_ids": [
+      28848,
+      304,
+      8760,
+      305,
+      10322,
+      16,
+      455,
+      6102
+    ],
+    "tokens": [
+      " seemingly",
+      " to",
+      " France",
+      " and",
+      " Germany",
+      ".",
+      " The",
+      " capital"
+    ],
+    "token_logprobs": [
+      -2.565673828125,
+      -1.5460891723632812,
+      -1.4363346099853516,
+      -1.1359338760375977,
+      -0.25169944763183594,
+      -0.9818267822265625,
+      -1.8856000900268555,
+      -2.5202112197875977
+    ],
+    "cached_tokens": 0
+  },
+  "dp2_completions": {
+    "text": " capital of France. Berlin is the capital",
+    "token_ids": [
+      6102,
+      294,
+      8760,
+      16,
+      17575,
+      344,
+      270,
+      6102
+    ],
+    "tokens": [
+      " capital",
+      " of",
+      " France",
+      ".",
+      " Berlin",
+      " is",
+      " the",
+      " capital"
+    ],
+    "token_logprobs": [
+      -0.4973335266113281,
+      -0.8043804168701172,
+      -0.3146038055419922,
+      -0.35039710998535156,
+      -0.9326133728027344,
+      -0.2092876434326172,
+      -0.10965347290039062,
+      -0.028661727905273438
+    ],
+    "cached_tokens": 0
+  },
+  "dp2_chat_completions": {
+    "text": " seemingly to France and Germany. The capital",
+    "token_ids": [
+      28848,
+      304,
+      8760,
+      305,
+      10322,
+      16,
+      455,
+      6102
+    ],
+    "tokens": [
+      " seemingly",
+      " to",
+      " France",
+      " and",
+      " Germany",
+      ".",
+      " The",
+      " capital"
+    ],
+    "token_logprobs": [
+      -2.565673828125,
+      -1.5460891723632812,
+      -1.4363346099853516,
+      -1.1359338760375977,
+      -0.25169944763183594,
+      -0.9818267822265625,
+      -1.8856000900268555,
+      -2.5202112197875977
+    ],
+    "cached_tokens": 0
+  },
+  "dp3_completions": {
+    "text": " capital of France. Berlin is the capital",
+    "token_ids": [
+      6102,
+      294,
+      8760,
+      16,
+      17575,
+      344,
+      270,
+      6102
+    ],
+    "tokens": [
+      " capital",
+      " of",
+      " France",
+      ".",
+      " Berlin",
+      " is",
+      " the",
+      " capital"
+    ],
+    "token_logprobs": [
+      -0.4973335266113281,
+      -0.8043804168701172,
+      -0.3146038055419922,
+      -0.35039710998535156,
+      -0.9326133728027344,
+      -0.2092876434326172,
+      -0.10965347290039062,
+      -0.028661727905273438
+    ],
+    "cached_tokens": 0
+  },
+  "dp3_chat_completions": {
+    "text": " seemingly to France and Germany. The capital",
+    "token_ids": [
+      28848,
+      304,
+      8760,
+      305,
+      10322,
+      16,
+      455,
+      6102
+    ],
+    "tokens": [
+      " seemingly",
+      " to",
+      " France",
+      " and",
+      " Germany",
+      ".",
+      " The",
+      " capital"
+    ],
+    "token_logprobs": [
+      -2.565673828125,
+      -1.5460891723632812,
+      -1.4363346099853516,
+      -1.1359338760375977,
+      -0.25169944763183594,
+      -0.9818267822265625,
+      -1.8856000900268555,
+      -2.5202112197875977
+    ],
+    "cached_tokens": 0
+  },
+  "dp4_completions": {
+    "text": " capital of France. Berlin is the capital",
+    "token_ids": [
+      6102,
+      294,
+      8760,
+      16,
+      17575,
+      344,
+      270,
+      6102
+    ],
+    "tokens": [
+      " capital",
+      " of",
+      " France",
+      ".",
+      " Berlin",
+      " is",
+      " the",
+      " capital"
+    ],
+    "token_logprobs": [
+      -0.4973335266113281,
+      -0.8043804168701172,
+      -0.3146038055419922,
+      -0.35039710998535156,
+      -0.9326133728027344,
+      -0.2092876434326172,
+      -0.10965347290039062,
+      -0.028661727905273438
+    ],
+    "cached_tokens": 0
+  },
+  "dp4_chat_completions": {
+    "text": " seemingly to France and Germany. The capital",
+    "token_ids": [
+      28848,
+      304,
+      8760,
+      305,
+      10322,
+      16,
+      455,
+      6102
+    ],
+    "tokens": [
+      " seemingly",
+      " to",
+      " France",
+      " and",
+      " Germany",
+      ".",
+      " The",
+      " capital"
+    ],
+    "token_logprobs": [
+      -2.565673828125,
+      -1.5460891723632812,
+      -1.4363346099853516,
+      -1.1359338760375977,
+      -0.25169944763183594,
+      -0.9818267822265625,
+      -1.8856000900268555,
+      -2.5202112197875977
+    ],
+    "cached_tokens": 0
+  },
+  "dp5_completions": {
+    "text": " capital of France. Berlin is the capital",
+    "token_ids": [
+      6102,
+      294,
+      8760,
+      16,
+      17575,
+      344,
+      270,
+      6102
+    ],
+    "tokens": [
+      " capital",
+      " of",
+      " France",
+      ".",
+      " Berlin",
+      " is",
+      " the",
+      " capital"
+    ],
+    "token_logprobs": [
+      -0.4973335266113281,
+      -0.8043804168701172,
+      -0.3146038055419922,
+      -0.35039710998535156,
+      -0.9326133728027344,
+      -0.2092876434326172,
+      -0.10965347290039062,
+      -0.028661727905273438
+    ],
+    "cached_tokens": 0
+  },
+  "dp5_chat_completions": {
+    "text": " seemingly to France and Germany. The capital",
+    "token_ids": [
+      28848,
+      304,
+      8760,
+      305,
+      10322,
+      16,
+      455,
+      6102
+    ],
+    "tokens": [
+      " seemingly",
+      " to",
+      " France",
+      " and",
+      " Germany",
+      ".",
+      " The",
+      " capital"
+    ],
+    "token_logprobs": [
+      -2.565673828125,
+      -1.5460891723632812,
+      -1.4363346099853516,
+      -1.1359338760375977,
+      -0.25169944763183594,
+      -0.9818267822265625,
+      -1.8856000900268555,
+      -2.5202112197875977
+    ],
+    "cached_tokens": 0
+  },
+  "dp6_completions": {
+    "text": " capital of France. Berlin is the capital",
+    "token_ids": [
+      6102,
+      294,
+      8760,
+      16,
+      17575,
+      344,
+      270,
+      6102
+    ],
+    "tokens": [
+      " capital",
+      " of",
+      " France",
+      ".",
+      " Berlin",
+      " is",
+      " the",
+      " capital"
+    ],
+    "token_logprobs": [
+      -0.4973335266113281,
+      -0.8043804168701172,
+      -0.3146038055419922,
+      -0.35039710998535156,
+      -0.9326133728027344,
+      -0.2092876434326172,
+      -0.10965347290039062,
+      -0.028661727905273438
+    ],
+    "cached_tokens": 0
+  },
+  "dp6_chat_completions": {
+    "text": " seemingly to France and Germany. The capital",
+    "token_ids": [
+      28848,
+      304,
+      8760,
+      305,
+      10322,
+      16,
+      455,
+      6102
+    ],
+    "tokens": [
+      " seemingly",
+      " to",
+      " France",
+      " and",
+      " Germany",
+      ".",
+      " The",
+      " capital"
+    ],
+    "token_logprobs": [
+      -2.565673828125,
+      -1.5460891723632812,
+      -1.4363346099853516,
+      -1.1359338760375977,
+      -0.25169944763183594,
+      -0.9818267822265625,
+      -1.8856000900268555,
+      -2.5202112197875977
+    ],
+    "cached_tokens": 0
+  },
+  "dp7_completions": {
+    "text": " capital of France. Berlin is the capital",
+    "token_ids": [
+      6102,
+      294,
+      8760,
+      16,
+      17575,
+      344,
+      270,
+      6102
+    ],
+    "tokens": [
+      " capital",
+      " of",
+      " France",
+      ".",
+      " Berlin",
+      " is",
+      " the",
+      " capital"
+    ],
+    "token_logprobs": [
+      -0.4973335266113281,
+      -0.8043804168701172,
+      -0.3146038055419922,
+      -0.35039710998535156,
+      -0.9326133728027344,
+      -0.2092876434326172,
+      -0.10965347290039062,
+      -0.028661727905273438
+    ],
+    "cached_tokens": 0
+  },
+  "dp7_chat_completions": {
+    "text": " seemingly to France and Germany. The capital",
+    "token_ids": [
+      28848,
+      304,
+      8760,
+      305,
+      10322,
+      16,
+      455,
+      6102
+    ],
+    "tokens": [
+      " seemingly",
+      " to",
+      " France",
+      " and",
+      " Germany",
+      ".",
+      " The",
+      " capital"
+    ],
+    "token_logprobs": [
+      -2.565673828125,
+      -1.5460891723632812,
+      -1.4363346099853516,
+      -1.1359338760375977,
+      -0.25169944763183594,
+      -0.9818267822265625,
+      -1.8856000900268555,
+      -2.5202112197875977
+    ],
+    "cached_tokens": 0
+  }
+}

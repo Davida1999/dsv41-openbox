@@ -7,7 +7,7 @@ import urllib.request
 from pathlib import Path
 
 BASE_URL = "http://127.0.0.1:18243"
-PROMPT = "Paris is the capital of France. Berlin is the capital of Germany. " * 8
+PROMPT = "Paris is the capital of France. Berlin is the capital of Germany. " * 24
 
 
 def save(path, data):
@@ -70,7 +70,7 @@ def generate(directory, dp_size, label):
             assert tokens and choice.get("token_ids") and len(probabilities) == len(tokens)
             assert all(math.isfinite(value) for value in probabilities)
             result[identity] = {"text": text, "token_ids": choice["token_ids"],
-                                "tokens": tokens, "token_logprobs": probabilities}
+                                "tokens": tokens, "token_logprobs": probabilities, "cached_tokens": (response.get("usage", {}).get("prompt_tokens_details") or {}).get("cached_tokens", 0)}
             print(label, identity, f"{time.monotonic()-started:.2f}s", repr(text), flush=True)
     save(directory / f"{label}_normalized.json", result)
     return result

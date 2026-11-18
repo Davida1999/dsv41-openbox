@@ -1,0 +1,103 @@
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:13: FutureWarning: triton.language.extra.cann.extension.atan2 is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.atan2 instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.atan2")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:35: FutureWarning: triton.language.extra.cann.extension.isfinited is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.isfinited instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.isfinited")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:49: FutureWarning: triton.language.extra.cann.extension.finitef is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.finitef instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.finitef")
+A_cold dp0_completions 19.56s ' capital of France. Berlin is the capital'
+A_cold dp0_chat_completions 1.58s ' Bov.  The sentence is a well'
+A_cold dp1_completions 4.10s ' capital of France. Berlin is the capital'
+A_cold dp1_chat_completions 1.54s ' Bov.  The sentence is a well'
+A_cold dp2_completions 3.99s ' Fritz is the capital of France. Berlin'
+A_cold dp2_chat_completions 1.39s '\n\nThe capital of France is Paris.'
+A_cold dp3_completions 3.98s ' capital of France. Berlin is the capital'
+A_cold dp3_chat_completions 1.42s ' seemingly to the capital of France. Berlin'
+A_warm dp0_completions 1.41s ' capital of France. Berlin is the capital'
+A_warm dp0_chat_completions 1.39s ' seemingly the capital of France. Berlin is'
+A_warm dp1_completions 1.39s ' capital of France. Berlin is the capital'
+A_warm dp1_chat_completions 1.38s ' seemingly the capital of France. Berlin is'
+A_warm dp2_completions 1.40s ' Paris is the capital of France. Berlin'
+A_warm dp2_chat_completions 1.41s ' unres\nThe text is a sequence of'
+A_warm dp3_completions 1.41s ' capital of France. Berlin is the capital'
+A_warm dp3_chat_completions 1.42s ' ...  Paris is the capital of France'
+TRANSFER_PROGRESS B 256 vision.blocks.31.attn.wqkv.bias 2271625216
+TRANSFER_PROGRESS B 512 layers.2.attn.wq_b.weight 2237155840
+TRANSFER_PROGRESS B 768 layers.4.ffn.experts.13.w1.weight 2475256832
+TRANSFER_PROGRESS B 1024 layers.6.ffn.experts.16.w3.weight 1413571072
+TRANSFER_PROGRESS B 1280 layers.8.ffn.experts.24.w1.weight 1552639488
+TRANSFER_PROGRESS B 1536 layers.10.ffn.experts.3.w3.weight 1698703360
+TRANSFER_PROGRESS B 1792 layers.12.ffn.experts.6.w2.weight 1981808640
+TRANSFER_PROGRESS B 2048 layers.14.hc_attn_fn 1960521216
+TRANSFER_PROGRESS B 2304 layers.17.ffn.experts.7.w1.weight 2192141312
+TRANSFER_PROGRESS B 2560 layers.19.ffn.experts.13.w3.weight 2475256832
+TRANSFER_PROGRESS B 2816 layers.21.ffn.experts.18.w2.weight 2616814080
+TRANSFER_PROGRESS B 3072 layers.23.ffn.experts.25.w1.weight 1439180800
+TRANSFER_PROGRESS B 3328 layers.25.ffn.experts.4.w1.weight 1675100160
+TRANSFER_PROGRESS B 3584 layers.27.ffn.gate.weight 1887765504
+TRANSFER_PROGRESS B 3840 layers.30.attn.wq_b.weight 2026980352
+TRANSFER_PROGRESS B 4096 layers.32.ffn.experts.9.w2.weight 2250140672
+TRANSFER_PROGRESS B 4352 layers.34.ffn.experts.17.w1.weight 2522442240
+TRANSFER_PROGRESS B 4608 layers.36.ffn.experts.24.w1.weight 2722637824
+TRANSFER_PROGRESS B 4864 layers.38.ffn.experts.29.w3.weight 1580728320
+TRANSFER_PROGRESS B 5120 mtp.0.ffn.experts.126.w2.weight 1863843840
+TRANSFER_PROGRESS B 5376 mtp.0.ffn.experts.89.w3.weight 2524446720
+TRANSFER_PROGRESS B 5632 mtp.1.ffn.experts.43.w1.weight 1745879040
+TRANSFER_PROGRESS B 5888 mtp.2.ffn.experts.111.w3.weight 2193133056
+TRANSFER_PROGRESS B 6144 mtp.2.ffn.experts.75.w1.weight 1509949440
+B dp0_completions 1.23s ' oil/\x7f/\x7f0/1'
+B dp0_chat_completions 1.39s ' Hicks价or�Ile/ catalysts'
+B dp1_completions 1.40s ' oil/\x7f/\x7f0/1'
+B dp1_chat_completions 1.44s ' Hicks价or�Ile/ catalysts'
+B dp2_completions 1.37s ' später\x7f\x7f\x7f\x7f/\x7f\x7f'
+B dp2_chat_completions 1.40s 'ororesesores cor'
+B dp3_completions 1.42s ' oil/\x7f/\x7f0/1'
+B dp3_chat_completions 1.38s ' breedingororesoreses c'
+B_warm dp0_completions 1.38s ' oil/ towards\n\n就\x7foror'
+B_warm dp0_chat_completions 1.27s ' breeding\x7for\n\n就'
+B_warm dp1_completions 1.39s ' oil/ towards\n\n就\x7foror'
+B_warm dp1_chat_completions 1.42s ' breeding\x7for\n\n就'
+B_warm dp2_completions 1.36s '分类限制il\x7f/\x7f0/'
+B_warm dp2_chat_completions 1.39s '来访le�le，\x7f， catalysts'
+B_warm dp3_completions 1.59s ' oil/ towards\n\n就\x7foror'
+B_warm dp3_chat_completions 1.35s 'leftilsilsうilsうう购'
+TRANSFER_PROGRESS A-restored 256 vision.blocks.31.attn.wqkv.bias 2271625216
+TRANSFER_PROGRESS A-restored 512 layers.2.attn.wq_b.weight 2237155840
+TRANSFER_PROGRESS A-restored 768 layers.4.ffn.experts.13.w1.weight 2475256832
+TRANSFER_PROGRESS A-restored 1024 layers.6.ffn.experts.16.w3.weight 1413571072
+TRANSFER_PROGRESS A-restored 1280 layers.8.ffn.experts.24.w1.weight 1552639488
+TRANSFER_PROGRESS A-restored 1536 layers.10.ffn.experts.3.w3.weight 1698703360
+TRANSFER_PROGRESS A-restored 1792 layers.12.ffn.experts.6.w2.weight 1981808640
+TRANSFER_PROGRESS A-restored 2048 layers.14.hc_attn_fn 1960521216
+TRANSFER_PROGRESS A-restored 2304 layers.17.ffn.experts.7.w1.weight 2192141312
+TRANSFER_PROGRESS A-restored 2560 layers.19.ffn.experts.13.w3.weight 2475256832
+TRANSFER_PROGRESS A-restored 2816 layers.21.ffn.experts.18.w2.weight 2616814080
+TRANSFER_PROGRESS A-restored 3072 layers.23.ffn.experts.25.w1.weight 1439180800
+TRANSFER_PROGRESS A-restored 3328 layers.25.ffn.experts.4.w1.weight 1675100160
+TRANSFER_PROGRESS A-restored 3584 layers.27.ffn.gate.weight 1887765504
+TRANSFER_PROGRESS A-restored 3840 layers.30.attn.wq_b.weight 2026980352
+TRANSFER_PROGRESS A-restored 4096 layers.32.ffn.experts.9.w2.weight 2250140672
+TRANSFER_PROGRESS A-restored 4352 layers.34.ffn.experts.17.w1.weight 2522442240
+TRANSFER_PROGRESS A-restored 4608 layers.36.ffn.experts.24.w1.weight 2722637824
+TRANSFER_PROGRESS A-restored 4864 layers.38.ffn.experts.29.w3.weight 1580728320
+TRANSFER_PROGRESS A-restored 5120 mtp.0.ffn.experts.126.w2.weight 1863843840
+TRANSFER_PROGRESS A-restored 5376 mtp.0.ffn.experts.89.w3.weight 2524446720
+TRANSFER_PROGRESS A-restored 5632 mtp.1.ffn.experts.43.w1.weight 1745879040
+TRANSFER_PROGRESS A-restored 5888 mtp.2.ffn.experts.111.w3.weight 2193133056
+TRANSFER_PROGRESS A-restored 6144 mtp.2.ffn.experts.75.w1.weight 1509949440
+A-restored dp0_completions 1.25s ' capital of France. Berlin is the capital'
+A-restored dp0_chat_completions 1.35s ' Bov.  The sentence is a well'
+A-restored dp1_completions 1.47s ' capital of France. Berlin is the capital'
+A-restored dp1_chat_completions 1.54s ' Bov.  The sentence is a well'
+A-restored dp2_completions 1.47s ' Fritz is the capital of France. Berlin'
+A-restored dp2_chat_completions 1.42s '\n\nThe capital of France is Paris.'
+A-restored dp3_completions 1.37s ' capital of France. Berlin is the capital'
+A-restored dp3_chat_completions 1.41s ' seemingly to the capital of France. Berlin'
+A-restored_warm dp0_completions 1.36s ' capital of France. Berlin is the capital'
+A-restored_warm dp0_chat_completions 1.23s ' seemingly the capital of France. Berlin is'
+A-restored_warm dp1_completions 1.40s ' capital of France. Berlin is the capital'
+A-restored_warm dp1_chat_completions 1.40s ' seemingly the capital of France. Berlin is'
+A-restored_warm dp2_completions 1.39s ' Paris is the capital of France. Berlin'
+A-restored_warm dp2_chat_completions 1.40s ' unres\nThe text is a sequence of'
+A-restored_warm dp3_completions 1.41s ' capital of France. Berlin is the capital'
+A-restored_warm dp3_chat_completions 1.42s ' ...  Paris is the capital of France'
+BACKEND_COMPLETE hccl 0 passed

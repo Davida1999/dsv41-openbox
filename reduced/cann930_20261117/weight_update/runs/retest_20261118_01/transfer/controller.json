@@ -1,0 +1,10 @@
+{
+  "status": "passed",
+  "completed": [
+    "/mnt/share/c00954197/Workspace/dsv41/basic/weight_update/runs/retest_20261118_01/transfer/hccl_oracle",
+    "/mnt/share/c00954197/Workspace/dsv41/basic/weight_update/runs/retest_20261118_01/transfer/hccl_producer",
+    "/mnt/share/c00954197/Workspace/dsv41/basic/weight_update/runs/retest_20261118_01/transfer/npu_ipc_oracle",
+    "/mnt/share/c00954197/Workspace/dsv41/basic/weight_update/runs/retest_20261118_01/transfer/npu_ipc_producer"
+  ],
+  "current": "/mnt/share/c00954197/Workspace/dsv41/basic/weight_update/runs/retest_20261118_01/transfer/npu_ipc_producer"
+}

@@ -1,10 +1,10 @@
 {
   "validation_type": "offline_delivery_checks_of_recorded_npu_evidence",
-  "date": "2026-11-17",
-  "json_files_parsed": 1736,
-  "relative_links_checked": 245,
-  "new_python_files_syntax_checked": 42,
-  "new_shell_files_bash_n": 25,
+  "date": "2026-11-18",
+  "json_files_parsed": 2281,
+  "relative_links_checked": 266,
+  "new_python_files_syntax_checked": 59,
+  "new_shell_files_bash_n": 29,
   "authored_paths_whitespace_checked": 23,
   "sleep_level2": {
     "verified_restore_requests": 80,
@@ -34,6 +34,8 @@
       "prediction_sha256_verified": true
     }
   ],
-  "ipc_latest_lifecycle_patch": "cpu_verified_npu_pending",
+  "ipc_latest_lifecycle_patch": "npu_verified_20_rounds_and_8card_A_B_A",
+  "weight_update_retest": "runs/retest_20261118_01",
+  "prefix_cache_output_consistency": "cold_vs_cache_hit_output_differs",
   "errors": []
 }

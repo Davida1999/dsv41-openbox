@@ -1,0 +1,16 @@
+[
+  "docker",
+  "-H",
+  "unix:///run/c00954197-cann930/docker.sock",
+  "exec",
+  "-e",
+  "DSV41_WEIGHT_RUN_DIR=/mnt/share/c00954197/Workspace/dsv41/basic/weight_update/runs/retest_20261118_01/single_card_fixed",
+  "-e",
+  "ASCEND_RT_VISIBLE_DEVICES=0",
+  "c00954197_dsv41_cann930",
+  "python3",
+  "-u",
+  "/mnt/share/c00954197/Workspace/dsv41/basic/weight_update/scripts/ipc_reclamation_retest.py",
+  "--report",
+  "/mnt/share/c00954197/Workspace/dsv41/basic/weight_update/runs/retest_20261118_01/ipc_fixed.json"
+]

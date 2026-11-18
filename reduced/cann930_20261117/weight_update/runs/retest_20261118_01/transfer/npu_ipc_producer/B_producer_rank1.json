@@ -1,0 +1,9 @@
+{
+  "allocated_before_cleanup_bytes": 0,
+  "tensor_count": 6248,
+  "tensor_bytes": 135927315272,
+  "allocated_bytes": 0,
+  "reserved_bytes": 0,
+  "elapsed_seconds": 191.7067762799561,
+  "device": 1
+}

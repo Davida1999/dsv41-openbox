@@ -1,0 +1,11 @@
+[
+  "docker",
+  "-H",
+  "unix:///run/c00954197-cann930/docker.sock",
+  "exec",
+  "-d",
+  "c00954197_dsv41_cann930",
+  "bash",
+  "-lc",
+  "exec setsid bash /mnt/share/c00954197/Workspace/dsv41/basic/weight_update/scripts/start_server.sh hccl /mnt/share/c00954197/Workspace/dsv41/basic/model /mnt/share/c00954197/Workspace/dsv41/basic/weight_update/runs/retest_20261118_01/transfer/hccl_producer > /mnt/share/c00954197/Workspace/dsv41/basic/weight_update/runs/retest_20261118_01/transfer/hccl_producer/server.log 2>&1 < /dev/null"
+]

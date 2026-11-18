@@ -1,0 +1,129 @@
+{
+  "status": "passed",
+  "rounds": [
+    {
+      "round": 1,
+      "tensors": 8,
+      "allocated_bytes": 0,
+      "reserved_bytes": 0
+    },
+    {
+      "round": 2,
+      "tensors": 8,
+      "allocated_bytes": 0,
+      "reserved_bytes": 0
+    },
+    {
+      "round": 3,
+      "tensors": 8,
+      "allocated_bytes": 0,
+      "reserved_bytes": 0
+    },
+    {
+      "round": 4,
+      "tensors": 8,
+      "allocated_bytes": 0,
+      "reserved_bytes": 0
+    },
+    {
+      "round": 5,
+      "tensors": 8,
+      "allocated_bytes": 0,
+      "reserved_bytes": 0
+    },
+    {
+      "round": 6,
+      "tensors": 8,
+      "allocated_bytes": 0,
+      "reserved_bytes": 0
+    },
+    {
+      "round": 7,
+      "tensors": 8,
+      "allocated_bytes": 0,
+      "reserved_bytes": 0
+    },
+    {
+      "round": 8,
+      "tensors": 8,
+      "allocated_bytes": 0,
+      "reserved_bytes": 0
+    },
+    {
+      "round": 9,
+      "tensors": 8,
+      "allocated_bytes": 0,
+      "reserved_bytes": 0
+    },
+    {
+      "round": 10,
+      "tensors": 8,
+      "allocated_bytes": 0,
+      "reserved_bytes": 0
+    },
+    {
+      "round": 11,
+      "tensors": 8,
+      "allocated_bytes": 0,
+      "reserved_bytes": 0
+    },
+    {
+      "round": 12,
+      "tensors": 8,
+      "allocated_bytes": 0,
+      "reserved_bytes": 0
+    },
+    {
+      "round": 13,
+      "tensors": 8,
+      "allocated_bytes": 0,
+      "reserved_bytes": 0
+    },
+    {
+      "round": 14,
+      "tensors": 8,
+      "allocated_bytes": 0,
+      "reserved_bytes": 0
+    },
+    {
+      "round": 15,
+      "tensors": 8,
+      "allocated_bytes": 0,
+      "reserved_bytes": 0
+    },
+    {
+      "round": 16,
+      "tensors": 8,
+      "allocated_bytes": 0,
+      "reserved_bytes": 0
+    },
+    {
+      "round": 17,
+      "tensors": 8,
+      "allocated_bytes": 0,
+      "reserved_bytes": 0
+    },
+    {
+      "round": 18,
+      "tensors": 8,
+      "allocated_bytes": 0,
+      "reserved_bytes": 0
+    },
+    {
+      "round": 19,
+      "tensors": 8,
+      "allocated_bytes": 0,
+      "reserved_bytes": 0
+    },
+    {
+      "round": 20,
+      "tensors": 8,
+      "allocated_bytes": 0,
+      "reserved_bytes": 0
+    }
+  ],
+  "baseline_allocated_bytes": 0,
+  "source": "/vllm-workspace/vllm-ascend/vllm_ascend/distributed/weight_transfer/packed_tensor.py",
+  "source_sha256": "1f8e4edc8f691bbb4cdbfbe2eef0c37c8163ad8090471eeb3b661e801c8f0b1e",
+  "max_growth_bytes": 0
+}

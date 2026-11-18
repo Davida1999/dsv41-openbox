@@ -1,0 +1,9 @@
+[
+  "python3",
+  "-u",
+  "/mnt/share/c00954197/Workspace/dsv41/basic/weight_update/scripts/run_host.py",
+  "--tag",
+  "retest_20261118_01/transfer",
+  "--backend",
+  "both"
+]

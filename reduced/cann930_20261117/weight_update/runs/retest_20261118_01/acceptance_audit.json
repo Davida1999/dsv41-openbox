@@ -1,0 +1,1262 @@
+{
+  "single_card": {
+    "rounds": 20,
+    "old_growth_bytes": 167772160,
+    "fixed_growth_bytes": 0,
+    "fixed_exit_warnings": 0
+  },
+  "backends": {
+    "hccl": {
+      "full_roundtrip": "passed",
+      "producer_exit_warnings": 0,
+      "stages": [
+        {
+          "stage": "B",
+          "producer_records": [
+            {
+              "allocated_before_cleanup_bytes": 0,
+              "tensor_count": 6248,
+              "tensor_bytes": 135927315272,
+              "allocated_bytes": 0,
+              "reserved_bytes": 0,
+              "elapsed_seconds": 83.68334802007303,
+              "device": 7
+            }
+          ],
+          "receiver_records": [
+            {
+              "file": "receiver_dp0.jsonl",
+              "tensors": 6248,
+              "bytes": 135927315272,
+              "max_deferred_bytes": 2194145280
+            },
+            {
+              "file": "receiver_dp1.jsonl",
+              "tensors": 6248,
+              "bytes": 135927315272,
+              "max_deferred_bytes": 2099773440
+            },
+            {
+              "file": "receiver_dp2.jsonl",
+              "tensors": 6248,
+              "bytes": 135927315272,
+              "max_deferred_bytes": 1179648000
+            },
+            {
+              "file": "receiver_dp3.jsonl",
+              "tensors": 6248,
+              "bytes": 135927315272,
+              "max_deferred_bytes": 1911029760
+            }
+          ],
+          "receiver_hbm_sample_peak_mib": 61555,
+          "cache_checks": {
+            "dp0_completions": {
+              "cold_cached_tokens": 0,
+              "warm_cached_tokens": 256,
+              "warm_text_equal": false,
+              "warm_token_ids_equal": false
+            },
+            "dp0_chat_completions": {
+              "cold_cached_tokens": 0,
+              "warm_cached_tokens": 256,
+              "warm_text_equal": false,
+              "warm_token_ids_equal": false
+            },
+            "dp1_completions": {
+              "cold_cached_tokens": 0,
+              "warm_cached_tokens": 256,
+              "warm_text_equal": false,
+              "warm_token_ids_equal": false
+            },
+            "dp1_chat_completions": {
+              "cold_cached_tokens": 0,
+              "warm_cached_tokens": 256,
+              "warm_text_equal": false,
+              "warm_token_ids_equal": false
+            },
+            "dp2_completions": {
+              "cold_cached_tokens": 0,
+              "warm_cached_tokens": 256,
+              "warm_text_equal": false,
+              "warm_token_ids_equal": false
+            },
+            "dp2_chat_completions": {
+              "cold_cached_tokens": 0,
+              "warm_cached_tokens": 256,
+              "warm_text_equal": false,
+              "warm_token_ids_equal": false
+            },
+            "dp3_completions": {
+              "cold_cached_tokens": 0,
+              "warm_cached_tokens": 256,
+              "warm_text_equal": false,
+              "warm_token_ids_equal": false
+            },
+            "dp3_chat_completions": {
+              "cold_cached_tokens": 0,
+              "warm_cached_tokens": 256,
+              "warm_text_equal": false,
+              "warm_token_ids_equal": false
+            }
+          },
+          "cold_reference_checks": {
+            "dp0_completions": {
+              "text": true,
+              "token_ids": true,
+              "tokens": true,
+              "token_logprobs": true
+            },
+            "dp0_chat_completions": {
+              "text": true,
+              "token_ids": true,
+              "tokens": true,
+              "token_logprobs": true
+            },
+            "dp1_completions": {
+              "text": true,
+              "token_ids": true,
+              "tokens": true,
+              "token_logprobs": true
+            },
+            "dp1_chat_completions": {
+              "text": true,
+              "token_ids": true,
+              "tokens": true,
+              "token_logprobs": true
+            },
+            "dp2_completions": {
+              "text": true,
+              "token_ids": true,
+              "tokens": true,
+              "token_logprobs": true
+            },
+            "dp2_chat_completions": {
+              "text": true,
+              "token_ids": true,
+              "tokens": true,
+              "token_logprobs": true
+            },
+            "dp3_completions": {
+              "text": true,
+              "token_ids": true,
+              "tokens": true,
+              "token_logprobs": true
+            },
+            "dp3_chat_completions": {
+              "text": true,
+              "token_ids": true,
+              "tokens": true,
+              "token_logprobs": true
+            }
+          },
+          "warm_reference_checks": {
+            "dp0_completions": {
+              "text": true,
+              "token_ids": true,
+              "tokens": true,
+              "token_logprobs": true
+            },
+            "dp0_chat_completions": {
+              "text": true,
+              "token_ids": true,
+              "tokens": true,
+              "token_logprobs": true
+            },
+            "dp1_completions": {
+              "text": true,
+              "token_ids": true,
+              "tokens": true,
+              "token_logprobs": true
+            },
+            "dp1_chat_completions": {
+              "text": true,
+              "token_ids": true,
+              "tokens": true,
+              "token_logprobs": true
+            },
+            "dp2_completions": {
+              "text": true,
+              "token_ids": true,
+              "tokens": true,
+              "token_logprobs": true
+            },
+            "dp2_chat_completions": {
+              "text": true,
+              "token_ids": true,
+              "tokens": true,
+              "token_logprobs": true
+            },
+            "dp3_completions": {
+              "text": true,
+              "token_ids": true,
+              "tokens": true,
+              "token_logprobs": true
+            },
+            "dp3_chat_completions": {
+              "text": true,
+              "token_ids": true,
+              "tokens": true,
+              "token_logprobs": true
+            }
+          },
+          "warm_output_drift_count": 8
+        },
+        {
+          "stage": "A-restored",
+          "producer_records": [
+            {
+              "allocated_before_cleanup_bytes": 0,
+              "tensor_count": 6248,
+              "tensor_bytes": 135927315272,
+              "allocated_bytes": 0,
+              "reserved_bytes": 0,
+              "elapsed_seconds": 86.19336865004152,
+              "device": 7
+            }
+          ],
+          "receiver_records": [
+            {
+              "file": "receiver_dp0.jsonl",
+              "tensors": 6248,
+              "bytes": 135927315272,
+              "max_deferred_bytes": 2194145280
+            },
+            {
+              "file": "receiver_dp1.jsonl",
+              "tensors": 6248,
+              "bytes": 135927315272,
+              "max_deferred_bytes": 2099773440
+            },
+            {
+              "file": "receiver_dp2.jsonl",
+              "tensors": 6248,
+              "bytes": 135927315272,
+              "max_deferred_bytes": 1179648000
+            },
+            {
+              "file": "receiver_dp3.jsonl",
+              "tensors": 6248,
+              "bytes": 135927315272,
+              "max_deferred_bytes": 1911029760
+            }
+          ],
+          "receiver_hbm_sample_peak_mib": 57115,
+          "cache_checks": {
+            "dp0_completions": {
+              "cold_cached_tokens": 0,
+              "warm_cached_tokens": 256,
+              "warm_text_equal": true,
+              "warm_token_ids_equal": true
+            },
+            "dp0_chat_completions": {
+              "cold_cached_tokens": 0,
+              "warm_cached_tokens": 256,
+              "warm_text_equal": false,
+              "warm_token_ids_equal": false
+            },
+            "dp1_completions": {
+              "cold_cached_tokens": 0,
+              "warm_cached_tokens": 256,
+              "warm_text_equal": true,
+              "warm_token_ids_equal": true
+            },
+            "dp1_chat_completions": {
+              "cold_cached_tokens": 0,
+              "warm_cached_tokens": 256,
+              "warm_text_equal": false,
+              "warm_token_ids_equal": false
+            },
+            "dp2_completions": {
+              "cold_cached_tokens": 0,
+              "warm_cached_tokens": 256,
+              "warm_text_equal": false,
+              "warm_token_ids_equal": false
+            },
+            "dp2_chat_completions": {
+              "cold_cached_tokens": 0,
+              "warm_cached_tokens": 256,
+              "warm_text_equal": false,
+              "warm_token_ids_equal": false
+            },
+            "dp3_completions": {
+              "cold_cached_tokens": 0,
+              "warm_cached_tokens": 256,
+              "warm_text_equal": true,
+              "warm_token_ids_equal": true
+            },
+            "dp3_chat_completions": {
+              "cold_cached_tokens": 0,
+              "warm_cached_tokens": 256,
+              "warm_text_equal": false,
+              "warm_token_ids_equal": false
+            }
+          },
+          "cold_reference_checks": {
+            "dp0_completions": {
+              "text": true,
+              "token_ids": true,
+              "tokens": true,
+              "token_logprobs": true
+            },
+            "dp0_chat_completions": {
+              "text": true,
+              "token_ids": true,
+              "tokens": true,
+              "token_logprobs": true
+            },
+            "dp1_completions": {
+              "text": true,
+              "token_ids": true,
+              "tokens": true,
+              "token_logprobs": true
+            },
+            "dp1_chat_completions": {
+              "text": true,
+              "token_ids": true,
+              "tokens": true,
+              "token_logprobs": true
+            },
+            "dp2_completions": {
+              "text": true,
+              "token_ids": true,
+              "tokens": true,
+              "token_logprobs": true
+            },
+            "dp2_chat_completions": {
+              "text": true,
+              "token_ids": true,
+              "tokens": true,
+              "token_logprobs": true
+            },
+            "dp3_completions": {
+              "text": true,
+              "token_ids": true,
+              "tokens": true,
+              "token_logprobs": true
+            },
+            "dp3_chat_completions": {
+              "text": true,
+              "token_ids": true,
+              "tokens": true,
+              "token_logprobs": true
+            }
+          },
+          "warm_reference_checks": {
+            "dp0_completions": {
+              "text": true,
+              "token_ids": true,
+              "tokens": true,
+              "token_logprobs": true
+            },
+            "dp0_chat_completions": {
+              "text": true,
+              "token_ids": true,
+              "tokens": true,
+              "token_logprobs": true
+            },
+            "dp1_completions": {
+              "text": true,
+              "token_ids": true,
+              "tokens": true,
+              "token_logprobs": true
+            },
+            "dp1_chat_completions": {
+              "text": true,
+              "token_ids": true,
+              "tokens": true,
+              "token_logprobs": true
+            },
+            "dp2_completions": {
+              "text": true,
+              "token_ids": true,
+              "tokens": true,
+              "token_logprobs": true
+            },
+            "dp2_chat_completions": {
+              "text": true,
+              "token_ids": true,
+              "tokens": true,
+              "token_logprobs": true
+            },
+            "dp3_completions": {
+              "text": true,
+              "token_ids": true,
+              "tokens": true,
+              "token_logprobs": true
+            },
+            "dp3_chat_completions": {
+              "text": true,
+              "token_ids": true,
+              "tokens": true,
+              "token_logprobs": true
+            }
+          },
+          "warm_output_drift_count": 5
+        }
+      ]
+    },
+    "npu_ipc": {
+      "full_roundtrip": "passed",
+      "producer_exit_warnings": 0,
+      "stages": [
+        {
+          "stage": "B",
+          "producer_records": [
+            {
+              "allocated_before_cleanup_bytes": 0,
+              "tensor_count": 6248,
+              "tensor_bytes": 135927315272,
+              "allocated_bytes": 0,
+              "reserved_bytes": 0,
+              "elapsed_seconds": 191.4832507702522,
+              "device": 0
+            },
+            {
+              "allocated_before_cleanup_bytes": 0,
+              "tensor_count": 6248,
+              "tensor_bytes": 135927315272,
+              "allocated_bytes": 0,
+              "reserved_bytes": 0,
+              "elapsed_seconds": 191.7067762799561,
+              "device": 1
+            },
+            {
+              "allocated_before_cleanup_bytes": 0,
+              "tensor_count": 6248,
+              "tensor_bytes": 135927315272,
+              "allocated_bytes": 0,
+              "reserved_bytes": 0,
+              "elapsed_seconds": 191.55095899989828,
+              "device": 2
+            },
+            {
+              "allocated_before_cleanup_bytes": 0,
+              "tensor_count": 6248,
+              "tensor_bytes": 135927315272,
+              "allocated_bytes": 0,
+              "reserved_bytes": 0,
+              "elapsed_seconds": 191.54877085005865,
+              "device": 3
+            },
+            {
+              "allocated_before_cleanup_bytes": 0,
+              "tensor_count": 6248,
+              "tensor_bytes": 135927315272,
+              "allocated_bytes": 0,
+              "reserved_bytes": 0,
+              "elapsed_seconds": 191.55841381009668,
+              "device": 4
+            },
+            {
+              "allocated_before_cleanup_bytes": 0,
+              "tensor_count": 6248,
+              "tensor_bytes": 135927315272,
+              "allocated_bytes": 0,
+              "reserved_bytes": 0,
+              "elapsed_seconds": 191.4235461698845,
+              "device": 5
+            },
+            {
+              "allocated_before_cleanup_bytes": 0,
+              "tensor_count": 6248,
+              "tensor_bytes": 135927315272,
+              "allocated_bytes": 0,
+              "reserved_bytes": 0,
+              "elapsed_seconds": 191.530982399825,
+              "device": 6
+            },
+            {
+              "allocated_before_cleanup_bytes": 0,
+              "tensor_count": 6248,
+              "tensor_bytes": 135927315272,
+              "allocated_bytes": 0,
+              "reserved_bytes": 0,
+              "elapsed_seconds": 191.41183962998912,
+              "device": 7
+            }
+          ],
+          "receiver_records": [
+            {
+              "file": "receiver_dp0.jsonl",
+              "tensors": 6248,
+              "bytes": 135927315272,
+              "max_deferred_bytes": 2194145280
+            },
+            {
+              "file": "receiver_dp1.jsonl",
+              "tensors": 6248,
+              "bytes": 135927315272,
+              "max_deferred_bytes": 2241331200
+            },
+            {
+              "file": "receiver_dp2.jsonl",
+              "tensors": 6248,
+              "bytes": 135927315272,
+              "max_deferred_bytes": 2099773440
+            },
+            {
+              "file": "receiver_dp3.jsonl",
+              "tensors": 6248,
+              "bytes": 135927315272,
+              "max_deferred_bytes": 1250426880
+            },
+            {
+              "file": "receiver_dp4.jsonl",
+              "tensors": 6248,
+              "bytes": 135927315272,
+              "max_deferred_bytes": 1014497280
+            },
+            {
+              "file": "receiver_dp5.jsonl",
+              "tensors": 6248,
+              "bytes": 135927315272,
+              "max_deferred_bytes": 1250426880
+            },
+            {
+              "file": "receiver_dp6.jsonl",
+              "tensors": 6248,
+              "bytes": 135927315272,
+              "max_deferred_bytes": 1580728320
+            },
+            {
+              "file": "receiver_dp7.jsonl",
+              "tensors": 6248,
+              "bytes": 135927315272,
+              "max_deferred_bytes": 1911029760
+            }
+          ],
+          "receiver_hbm_sample_peak_mib": 44611,
+          "cache_checks": {
+            "dp0_completions": {
+              "cold_cached_tokens": 0,
+              "warm_cached_tokens": 256,
+              "warm_text_equal": false,
+              "warm_token_ids_equal": false
+            },
+            "dp0_chat_completions": {
+              "cold_cached_tokens": 0,
+              "warm_cached_tokens": 256,
+              "warm_text_equal": false,
+              "warm_token_ids_equal": false
+            },
+            "dp1_completions": {
+              "cold_cached_tokens": 0,
+              "warm_cached_tokens": 256,
+              "warm_text_equal": false,
+              "warm_token_ids_equal": false
+            },
+            "dp1_chat_completions": {
+              "cold_cached_tokens": 0,
+              "warm_cached_tokens": 256,
+              "warm_text_equal": false,
+              "warm_token_ids_equal": false
+            },
+            "dp2_completions": {
+              "cold_cached_tokens": 0,
+              "warm_cached_tokens": 256,
+              "warm_text_equal": false,
+              "warm_token_ids_equal": false
+            },
+            "dp2_chat_completions": {
+              "cold_cached_tokens": 0,
+              "warm_cached_tokens": 256,
+              "warm_text_equal": false,
+              "warm_token_ids_equal": false
+            },
+            "dp3_completions": {
+              "cold_cached_tokens": 0,
+              "warm_cached_tokens": 256,
+              "warm_text_equal": false,
+              "warm_token_ids_equal": false
+            },
+            "dp3_chat_completions": {
+              "cold_cached_tokens": 0,
+              "warm_cached_tokens": 256,
+              "warm_text_equal": false,
+              "warm_token_ids_equal": false
+            },
+            "dp4_completions": {
+              "cold_cached_tokens": 0,
+              "warm_cached_tokens": 256,
+              "warm_text_equal": false,
+              "warm_token_ids_equal": false
+            },
+            "dp4_chat_completions": {
+              "cold_cached_tokens": 0,
+              "warm_cached_tokens": 256,
+              "warm_text_equal": false,
+              "warm_token_ids_equal": false
+            },
+            "dp5_completions": {
+              "cold_cached_tokens": 0,
+              "warm_cached_tokens": 256,
+              "warm_text_equal": false,
+              "warm_token_ids_equal": false
+            },
+            "dp5_chat_completions": {
+              "cold_cached_tokens": 0,
+              "warm_cached_tokens": 256,
+              "warm_text_equal": false,
+              "warm_token_ids_equal": false
+            },
+            "dp6_completions": {
+              "cold_cached_tokens": 0,
+              "warm_cached_tokens": 256,
+              "warm_text_equal": false,
+              "warm_token_ids_equal": false
+            },
+            "dp6_chat_completions": {
+              "cold_cached_tokens": 0,
+              "warm_cached_tokens": 256,
+              "warm_text_equal": false,
+              "warm_token_ids_equal": false
+            },
+            "dp7_completions": {
+              "cold_cached_tokens": 0,
+              "warm_cached_tokens": 256,
+              "warm_text_equal": false,
+              "warm_token_ids_equal": false
+            },
+            "dp7_chat_completions": {
+              "cold_cached_tokens": 0,
+              "warm_cached_tokens": 256,
+              "warm_text_equal": false,
+              "warm_token_ids_equal": false
+            }
+          },
+          "cold_reference_checks": {
+            "dp0_completions": {
+              "text": true,
+              "token_ids": true,
+              "tokens": true,
+              "token_logprobs": true
+            },
+            "dp0_chat_completions": {
+              "text": true,
+              "token_ids": true,
+              "tokens": true,
+              "token_logprobs": true
+            },
+            "dp1_completions": {
+              "text": true,
+              "token_ids": true,
+              "tokens": true,
+              "token_logprobs": true
+            },
+            "dp1_chat_completions": {
+              "text": true,
+              "token_ids": true,
+              "tokens": true,
+              "token_logprobs": true
+            },
+            "dp2_completions": {
+              "text": true,
+              "token_ids": true,
+              "tokens": true,
+              "token_logprobs": true
+            },
+            "dp2_chat_completions": {
+              "text": true,
+              "token_ids": true,
+              "tokens": true,
+              "token_logprobs": true
+            },
+            "dp3_completions": {
+              "text": true,
+              "token_ids": true,
+              "tokens": true,
+              "token_logprobs": true
+            },
+            "dp3_chat_completions": {
+              "text": true,
+              "token_ids": true,
+              "tokens": true,
+              "token_logprobs": true
+            },
+            "dp4_completions": {
+              "text": true,
+              "token_ids": true,
+              "tokens": true,
+              "token_logprobs": true
+            },
+            "dp4_chat_completions": {
+              "text": true,
+              "token_ids": true,
+              "tokens": true,
+              "token_logprobs": true
+            },
+            "dp5_completions": {
+              "text": true,
+              "token_ids": true,
+              "tokens": true,
+              "token_logprobs": true
+            },
+            "dp5_chat_completions": {
+              "text": true,
+              "token_ids": true,
+              "tokens": true,
+              "token_logprobs": true
+            },
+            "dp6_completions": {
+              "text": true,
+              "token_ids": true,
+              "tokens": true,
+              "token_logprobs": true
+            },
+            "dp6_chat_completions": {
+              "text": true,
+              "token_ids": true,
+              "tokens": true,
+              "token_logprobs": true
+            },
+            "dp7_completions": {
+              "text": true,
+              "token_ids": true,
+              "tokens": true,
+              "token_logprobs": true
+            },
+            "dp7_chat_completions": {
+              "text": true,
+              "token_ids": true,
+              "tokens": true,
+              "token_logprobs": true
+            }
+          },
+          "warm_reference_checks": {
+            "dp0_completions": {
+              "text": true,
+              "token_ids": true,
+              "tokens": true,
+              "token_logprobs": true
+            },
+            "dp0_chat_completions": {
+              "text": true,
+              "token_ids": true,
+              "tokens": true,
+              "token_logprobs": true
+            },
+            "dp1_completions": {
+              "text": true,
+              "token_ids": true,
+              "tokens": true,
+              "token_logprobs": true
+            },
+            "dp1_chat_completions": {
+              "text": true,
+              "token_ids": true,
+              "tokens": true,
+              "token_logprobs": true
+            },
+            "dp2_completions": {
+              "text": true,
+              "token_ids": true,
+              "tokens": true,
+              "token_logprobs": true
+            },
+            "dp2_chat_completions": {
+              "text": true,
+              "token_ids": true,
+              "tokens": true,
+              "token_logprobs": true
+            },
+            "dp3_completions": {
+              "text": true,
+              "token_ids": true,
+              "tokens": true,
+              "token_logprobs": true
+            },
+            "dp3_chat_completions": {
+              "text": true,
+              "token_ids": true,
+              "tokens": true,
+              "token_logprobs": true
+            },
+            "dp4_completions": {
+              "text": true,
+              "token_ids": true,
+              "tokens": true,
+              "token_logprobs": true
+            },
+            "dp4_chat_completions": {
+              "text": true,
+              "token_ids": true,
+              "tokens": true,
+              "token_logprobs": true
+            },
+            "dp5_completions": {
+              "text": true,
+              "token_ids": true,
+              "tokens": true,
+              "token_logprobs": true
+            },
+            "dp5_chat_completions": {
+              "text": true,
+              "token_ids": true,
+              "tokens": true,
+              "token_logprobs": true
+            },
+            "dp6_completions": {
+              "text": true,
+              "token_ids": true,
+              "tokens": true,
+              "token_logprobs": true
+            },
+            "dp6_chat_completions": {
+              "text": true,
+              "token_ids": true,
+              "tokens": true,
+              "token_logprobs": true
+            },
+            "dp7_completions": {
+              "text": true,
+              "token_ids": true,
+              "tokens": true,
+              "token_logprobs": true
+            },
+            "dp7_chat_completions": {
+              "text": true,
+              "token_ids": true,
+              "tokens": true,
+              "token_logprobs": true
+            }
+          },
+          "warm_output_drift_count": 16
+        },
+        {
+          "stage": "A-restored",
+          "producer_records": [
+            {
+              "allocated_before_cleanup_bytes": 0,
+              "tensor_count": 6248,
+              "tensor_bytes": 135927315272,
+              "allocated_bytes": 0,
+              "reserved_bytes": 0,
+              "elapsed_seconds": 468.65698006981984,
+              "device": 0
+            },
+            {
+              "allocated_before_cleanup_bytes": 0,
+              "tensor_count": 6248,
+              "tensor_bytes": 135927315272,
+              "allocated_bytes": 0,
+              "reserved_bytes": 0,
+              "elapsed_seconds": 468.71013225009665,
+              "device": 1
+            },
+            {
+              "allocated_before_cleanup_bytes": 0,
+              "tensor_count": 6248,
+              "tensor_bytes": 135927315272,
+              "allocated_bytes": 0,
+              "reserved_bytes": 0,
+              "elapsed_seconds": 468.7357544498518,
+              "device": 2
+            },
+            {
+              "allocated_before_cleanup_bytes": 0,
+              "tensor_count": 6248,
+              "tensor_bytes": 135927315272,
+              "allocated_bytes": 0,
+              "reserved_bytes": 0,
+              "elapsed_seconds": 468.7283975603059,
+              "device": 3
+            },
+            {
+              "allocated_before_cleanup_bytes": 0,
+              "tensor_count": 6248,
+              "tensor_bytes": 135927315272,
+              "allocated_bytes": 0,
+              "reserved_bytes": 0,
+              "elapsed_seconds": 468.6384037300013,
+              "device": 4
+            },
+            {
+              "allocated_before_cleanup_bytes": 0,
+              "tensor_count": 6248,
+              "tensor_bytes": 135927315272,
+              "allocated_bytes": 0,
+              "reserved_bytes": 0,
+              "elapsed_seconds": 468.607022840064,
+              "device": 5
+            },
+            {
+              "allocated_before_cleanup_bytes": 0,
+              "tensor_count": 6248,
+              "tensor_bytes": 135927315272,
+              "allocated_bytes": 0,
+              "reserved_bytes": 0,
+              "elapsed_seconds": 468.7316485401243,
+              "device": 6
+            },
+            {
+              "allocated_before_cleanup_bytes": 0,
+              "tensor_count": 6248,
+              "tensor_bytes": 135927315272,
+              "allocated_bytes": 0,
+              "reserved_bytes": 0,
+              "elapsed_seconds": 468.7102161399089,
+              "device": 7
+            }
+          ],
+          "receiver_records": [
+            {
+              "file": "receiver_dp0.jsonl",
+              "tensors": 6248,
+              "bytes": 135927315272,
+              "max_deferred_bytes": 2194145280
+            },
+            {
+              "file": "receiver_dp1.jsonl",
+              "tensors": 6248,
+              "bytes": 135927315272,
+              "max_deferred_bytes": 2241331200
+            },
+            {
+              "file": "receiver_dp2.jsonl",
+              "tensors": 6248,
+              "bytes": 135927315272,
+              "max_deferred_bytes": 2099773440
+            },
+            {
+              "file": "receiver_dp3.jsonl",
+              "tensors": 6248,
+              "bytes": 135927315272,
+              "max_deferred_bytes": 1250426880
+            },
+            {
+              "file": "receiver_dp4.jsonl",
+              "tensors": 6248,
+              "bytes": 135927315272,
+              "max_deferred_bytes": 1014497280
+            },
+            {
+              "file": "receiver_dp5.jsonl",
+              "tensors": 6248,
+              "bytes": 135927315272,
+              "max_deferred_bytes": 1250426880
+            },
+            {
+              "file": "receiver_dp6.jsonl",
+              "tensors": 6248,
+              "bytes": 135927315272,
+              "max_deferred_bytes": 1580728320
+            },
+            {
+              "file": "receiver_dp7.jsonl",
+              "tensors": 6248,
+              "bytes": 135927315272,
+              "max_deferred_bytes": 1911029760
+            }
+          ],
+          "receiver_hbm_sample_peak_mib": 41954,
+          "cache_checks": {
+            "dp0_completions": {
+              "cold_cached_tokens": 0,
+              "warm_cached_tokens": 256,
+              "warm_text_equal": true,
+              "warm_token_ids_equal": true
+            },
+            "dp0_chat_completions": {
+              "cold_cached_tokens": 0,
+              "warm_cached_tokens": 256,
+              "warm_text_equal": false,
+              "warm_token_ids_equal": false
+            },
+            "dp1_completions": {
+              "cold_cached_tokens": 0,
+              "warm_cached_tokens": 256,
+              "warm_text_equal": true,
+              "warm_token_ids_equal": true
+            },
+            "dp1_chat_completions": {
+              "cold_cached_tokens": 0,
+              "warm_cached_tokens": 256,
+              "warm_text_equal": false,
+              "warm_token_ids_equal": false
+            },
+            "dp2_completions": {
+              "cold_cached_tokens": 0,
+              "warm_cached_tokens": 256,
+              "warm_text_equal": true,
+              "warm_token_ids_equal": true
+            },
+            "dp2_chat_completions": {
+              "cold_cached_tokens": 0,
+              "warm_cached_tokens": 256,
+              "warm_text_equal": false,
+              "warm_token_ids_equal": false
+            },
+            "dp3_completions": {
+              "cold_cached_tokens": 0,
+              "warm_cached_tokens": 256,
+              "warm_text_equal": true,
+              "warm_token_ids_equal": true
+            },
+            "dp3_chat_completions": {
+              "cold_cached_tokens": 0,
+              "warm_cached_tokens": 256,
+              "warm_text_equal": false,
+              "warm_token_ids_equal": false
+            },
+            "dp4_completions": {
+              "cold_cached_tokens": 0,
+              "warm_cached_tokens": 256,
+              "warm_text_equal": true,
+              "warm_token_ids_equal": true
+            },
+            "dp4_chat_completions": {
+              "cold_cached_tokens": 0,
+              "warm_cached_tokens": 256,
+              "warm_text_equal": false,
+              "warm_token_ids_equal": false
+            },
+            "dp5_completions": {
+              "cold_cached_tokens": 0,
+              "warm_cached_tokens": 256,
+              "warm_text_equal": true,
+              "warm_token_ids_equal": true
+            },
+            "dp5_chat_completions": {
+              "cold_cached_tokens": 0,
+              "warm_cached_tokens": 256,
+              "warm_text_equal": false,
+              "warm_token_ids_equal": false
+            },
+            "dp6_completions": {
+              "cold_cached_tokens": 0,
+              "warm_cached_tokens": 256,
+              "warm_text_equal": true,
+              "warm_token_ids_equal": true
+            },
+            "dp6_chat_completions": {
+              "cold_cached_tokens": 0,
+              "warm_cached_tokens": 256,
+              "warm_text_equal": false,
+              "warm_token_ids_equal": false
+            },
+            "dp7_completions": {
+              "cold_cached_tokens": 0,
+              "warm_cached_tokens": 256,
+              "warm_text_equal": true,
+              "warm_token_ids_equal": true
+            },
+            "dp7_chat_completions": {
+              "cold_cached_tokens": 0,
+              "warm_cached_tokens": 256,
+              "warm_text_equal": false,
+              "warm_token_ids_equal": false
+            }
+          },
+          "cold_reference_checks": {
+            "dp0_completions": {
+              "text": true,
+              "token_ids": true,
+              "tokens": true,
+              "token_logprobs": true
+            },
+            "dp0_chat_completions": {
+              "text": true,
+              "token_ids": true,
+              "tokens": true,
+              "token_logprobs": true
+            },
+            "dp1_completions": {
+              "text": true,
+              "token_ids": true,
+              "tokens": true,
+              "token_logprobs": true
+            },
+            "dp1_chat_completions": {
+              "text": true,
+              "token_ids": true,
+              "tokens": true,
+              "token_logprobs": true
+            },
+            "dp2_completions": {
+              "text": true,
+              "token_ids": true,
+              "tokens": true,
+              "token_logprobs": true
+            },
+            "dp2_chat_completions": {
+              "text": true,
+              "token_ids": true,
+              "tokens": true,
+              "token_logprobs": true
+            },
+            "dp3_completions": {
+              "text": true,
+              "token_ids": true,
+              "tokens": true,
+              "token_logprobs": true
+            },
+            "dp3_chat_completions": {
+              "text": true,
+              "token_ids": true,
+              "tokens": true,
+              "token_logprobs": true
+            },
+            "dp4_completions": {
+              "text": true,
+              "token_ids": true,
+              "tokens": true,
+              "token_logprobs": true
+            },
+            "dp4_chat_completions": {
+              "text": true,
+              "token_ids": true,
+              "tokens": true,
+              "token_logprobs": true
+            },
+            "dp5_completions": {
+              "text": true,
+              "token_ids": true,
+              "tokens": true,
+              "token_logprobs": true
+            },
+            "dp5_chat_completions": {
+              "text": true,
+              "token_ids": true,
+              "tokens": true,
+              "token_logprobs": true
+            },
+            "dp6_completions": {
+              "text": true,
+              "token_ids": true,
+              "tokens": true,
+              "token_logprobs": true
+            },
+            "dp6_chat_completions": {
+              "text": true,
+              "token_ids": true,
+              "tokens": true,
+              "token_logprobs": true
+            },
+            "dp7_completions": {
+              "text": true,
+              "token_ids": true,
+              "tokens": true,
+              "token_logprobs": true
+            },
+            "dp7_chat_completions": {
+              "text": true,
+              "token_ids": true,
+              "tokens": true,
+              "token_logprobs": true
+            }
+          },
+          "warm_reference_checks": {
+            "dp0_completions": {
+              "text": true,
+              "token_ids": true,
+              "tokens": true,
+              "token_logprobs": true
+            },
+            "dp0_chat_completions": {
+              "text": true,
+              "token_ids": true,
+              "tokens": true,
+              "token_logprobs": true
+            },
+            "dp1_completions": {
+              "text": true,
+              "token_ids": true,
+              "tokens": true,
+              "token_logprobs": true
+            },
+            "dp1_chat_completions": {
+              "text": true,
+              "token_ids": true,
+              "tokens": true,
+              "token_logprobs": true
+            },
+            "dp2_completions": {
+              "text": true,
+              "token_ids": true,
+              "tokens": true,
+              "token_logprobs": true
+            },
+            "dp2_chat_completions": {
+              "text": true,
+              "token_ids": true,
+              "tokens": true,
+              "token_logprobs": true
+            },
+            "dp3_completions": {
+              "text": true,
+              "token_ids": true,
+              "tokens": true,
+              "token_logprobs": true
+            },
+            "dp3_chat_completions": {
+              "text": true,
+              "token_ids": true,
+              "tokens": true,
+              "token_logprobs": true
+            },
+            "dp4_completions": {
+              "text": true,
+              "token_ids": true,
+              "tokens": true,
+              "token_logprobs": true
+            },
+            "dp4_chat_completions": {
+              "text": true,
+              "token_ids": true,
+              "tokens": true,
+              "token_logprobs": true
+            },
+            "dp5_completions": {
+              "text": true,
+              "token_ids": true,
+              "tokens": true,
+              "token_logprobs": true
+            },
+            "dp5_chat_completions": {
+              "text": true,
+              "token_ids": true,
+              "tokens": true,
+              "token_logprobs": true
+            },
+            "dp6_completions": {
+              "text": true,
+              "token_ids": true,
+              "tokens": true,
+              "token_logprobs": true
+            },
+            "dp6_chat_completions": {
+              "text": true,
+              "token_ids": true,
+              "tokens": true,
+              "token_logprobs": true
+            },
+            "dp7_completions": {
+              "text": true,
+              "token_ids": true,
+              "tokens": true,
+              "token_logprobs": true
+            },
+            "dp7_chat_completions": {
+              "text": true,
+              "token_ids": true,
+              "tokens": true,
+              "token_logprobs": true
+            }
+          },
+          "warm_output_drift_count": 8
+        }
+      ]
+    }
+  },
+  "resource_guard": {
+    "samples": 560,
+    "foreign_process_samples": 1,
+    "after_noon_samples": 406,
+    "after_noon_foreign_process_samples": 0,
+    "yield_recorded": false,
+    "clock_offset_seconds": 28800
+  },
+  "status": "passed",
+  "remaining_issue": "Greedy output changes between cold and prefix-cache-hit requests"
+}

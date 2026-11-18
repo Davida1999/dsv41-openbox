@@ -1,0 +1,33 @@
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:13: FutureWarning: triton.language.extra.cann.extension.atan2 is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.atan2 instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.atan2")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:35: FutureWarning: triton.language.extra.cann.extension.isfinited is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.isfinited instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.isfinited")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:49: FutureWarning: triton.language.extra.cann.extension.finitef is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.finitef instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.finitef")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:13: FutureWarning: triton.language.extra.cann.extension.atan2 is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.atan2 instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.atan2")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:35: FutureWarning: triton.language.extra.cann.extension.isfinited is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.isfinited instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.isfinited")
+/usr/local/python3.12.16/lib/python3.12/site-packages/triton/language/extra/cann/extension/math_ops.py:49: FutureWarning: triton.language.extra.cann.extension.finitef is deprecated and will be removed in the next release; use triton.language.extra.cann.libdevice.finitef instead.
+  @_deprecated(replacement="triton.language.extra.cann.libdevice.finitef")
+RECLAMATION_ROUND 1 8388608
+RECLAMATION_ROUND 2 16777216
+RECLAMATION_ROUND 3 25165824
+RECLAMATION_ROUND 4 33554432
+RECLAMATION_ROUND 5 41943040
+RECLAMATION_ROUND 6 50331648
+RECLAMATION_ROUND 7 58720256
+RECLAMATION_ROUND 8 67108864
+RECLAMATION_ROUND 9 75497472
+RECLAMATION_ROUND 10 83886080
+RECLAMATION_ROUND 11 92274688
+RECLAMATION_ROUND 12 100663296
+RECLAMATION_ROUND 13 109051904
+RECLAMATION_ROUND 14 117440512
+RECLAMATION_ROUND 15 125829120
+RECLAMATION_ROUND 16 134217728
+RECLAMATION_ROUND 17 142606336
+RECLAMATION_ROUND 18 150994944
+RECLAMATION_ROUND 19 159383552
+RECLAMATION_ROUND 20 167772160
+[W1117 19:49:37.594531500 NPUIPCTypes.cpp:23] Producer process has been terminated before all shared NPU tensors released. See Note [Sharing NPU tensors]

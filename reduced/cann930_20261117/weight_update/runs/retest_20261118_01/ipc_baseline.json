@@ -1,0 +1,129 @@
+{
+  "status": "failed",
+  "rounds": [
+    {
+      "round": 1,
+      "tensors": 8,
+      "allocated_bytes": 8388608,
+      "reserved_bytes": 20971520
+    },
+    {
+      "round": 2,
+      "tensors": 8,
+      "allocated_bytes": 16777216,
+      "reserved_bytes": 20971520
+    },
+    {
+      "round": 3,
+      "tensors": 8,
+      "allocated_bytes": 25165824,
+      "reserved_bytes": 41943040
+    },
+    {
+      "round": 4,
+      "tensors": 8,
+      "allocated_bytes": 33554432,
+      "reserved_bytes": 41943040
+    },
+    {
+      "round": 5,
+      "tensors": 8,
+      "allocated_bytes": 41943040,
+      "reserved_bytes": 62914560
+    },
+    {
+      "round": 6,
+      "tensors": 8,
+      "allocated_bytes": 50331648,
+      "reserved_bytes": 62914560
+    },
+    {
+      "round": 7,
+      "tensors": 8,
+      "allocated_bytes": 58720256,
+      "reserved_bytes": 83886080
+    },
+    {
+      "round": 8,
+      "tensors": 8,
+      "allocated_bytes": 67108864,
+      "reserved_bytes": 83886080
+    },
+    {
+      "round": 9,
+      "tensors": 8,
+      "allocated_bytes": 75497472,
+      "reserved_bytes": 104857600
+    },
+    {
+      "round": 10,
+      "tensors": 8,
+      "allocated_bytes": 83886080,
+      "reserved_bytes": 104857600
+    },
+    {
+      "round": 11,
+      "tensors": 8,
+      "allocated_bytes": 92274688,
+      "reserved_bytes": 125829120
+    },
+    {
+      "round": 12,
+      "tensors": 8,
+      "allocated_bytes": 100663296,
+      "reserved_bytes": 125829120
+    },
+    {
+      "round": 13,
+      "tensors": 8,
+      "allocated_bytes": 109051904,
+      "reserved_bytes": 146800640
+    },
+    {
+      "round": 14,
+      "tensors": 8,
+      "allocated_bytes": 117440512,
+      "reserved_bytes": 146800640
+    },
+    {
+      "round": 15,
+      "tensors": 8,
+      "allocated_bytes": 125829120,
+      "reserved_bytes": 167772160
+    },
+    {
+      "round": 16,
+      "tensors": 8,
+      "allocated_bytes": 134217728,
+      "reserved_bytes": 167772160
+    },
+    {
+      "round": 17,
+      "tensors": 8,
+      "allocated_bytes": 142606336,
+      "reserved_bytes": 188743680
+    },
+    {
+      "round": 18,
+      "tensors": 8,
+      "allocated_bytes": 150994944,
+      "reserved_bytes": 188743680
+    },
+    {
+      "round": 19,
+      "tensors": 8,
+      "allocated_bytes": 159383552,
+      "reserved_bytes": 209715200
+    },
+    {
+      "round": 20,
+      "tensors": 8,
+      "allocated_bytes": 167772160,
+      "reserved_bytes": 209715200
+    }
+  ],
+  "baseline_allocated_bytes": 0,
+  "source": "/mnt/share/c00954197/Workspace/dsv41/basic/weight_update/patches/packed_tensor.before.py",
+  "source_sha256": "2bfcde4bdf2fd2cb3638af8ad49cce0736a3c2d01081d147e22cf9d2081780aa",
+  "max_growth_bytes": 167772160
+}

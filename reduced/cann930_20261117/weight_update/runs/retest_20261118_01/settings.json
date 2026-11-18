@@ -1,0 +1,7 @@
+{
+  "cutoff_beijing": "2026-11-18 12:00:00+08:00",
+  "cutoff_utc_epoch": 1794974400.0,
+  "host_clock_offset_seconds": 28800,
+  "rule": "After noon, stop only this session when foreign NPU processes appear",
+  "prompt_repetitions": 24
+}

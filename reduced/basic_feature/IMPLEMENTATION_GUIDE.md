@@ -4,7 +4,7 @@
 
 ## 当前 CANN930 入口
 
-2026-11-17 的 Sleep level-2 和全量权重更新使用 `177.42.22.1` 的 `c00954197_dsv41_cann930` 容器。当前已完成五轮 level-2 恢复，以及 HCCL、NPU IPC 全量 A→B→A。IPC 最新生命周期补丁的 NPU 回收效果等待设备复验。[当前环境](../../environment/cann930_environment_20261117.md) [Sleep 执行步骤](../cann930_20261117/sleep_level2/REPORT.md) [权重更新执行步骤](../cann930_20261117/weight_update/REPORT.md)
+2026-11-17 的 Sleep level-2 和全量权重更新使用 `177.42.22.1` 的 `c00954197_dsv41_cann930` 容器。当前已完成五轮 level-2 恢复，以及 HCCL、NPU IPC 全量 A→B→A。IPC 最新生命周期补丁已于 2026-11-18 完成单卡及 8 卡实机复验，当前待定位冷/热缓存输出差异。[当前环境](../../environment/cann930_environment_20261117.md) [Sleep 执行步骤](../cann930_20261117/sleep_level2/REPORT.md) [权重更新执行步骤](../cann930_20261117/weight_update/REPORT.md)
 
 以下章节记录 2026-11-13 的 1108 实施过程。该轮的 norm 缩放变体、2 GiB packed buffer、容器名和模型路径属于历史配置，本轮 6248 张量全量更新使用独立 B checkpoint、1280 MiB buffer 和输出头哈希对照。
 

@@ -1,0 +1,10 @@
+[
+  "docker",
+  "-H",
+  "unix:///run/c00954197-cann930/docker.sock",
+  "exec",
+  "c00954197_dsv41_cann930",
+  "bash",
+  "-lc",
+  "exec env DSV41_WEIGHT_RUN_DIR=/mnt/share/c00954197/Workspace/dsv41/basic/weight_update/runs/retest_20261118_01/transfer/npu_ipc_producer ASCEND_RT_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 VLLM_SERVER_DEV_MODE=1 VLLM_ALLOW_INSECURE_SERIALIZATION=1 HCCL_OP_EXPANSION_MODE=CCU_SCHED HCCL_BUFFSIZE=256 GLOO_SOCKET_IFNAME=enp39s0f0 HCCL_IF_IP=177.42.22.1 HCCL_SOCKET_IFNAME=enp35s0f2 OMP_NUM_THREADS=6 PYTHONPATH=/mnt/share/c00954197/Workspace/dsv41/basic/weight_update/scripts torchrun --nnodes=1 --nproc-per-node=8 --master-addr=127.0.0.1 --master-port=29644 /mnt/share/c00954197/Workspace/dsv41/basic/weight_update/scripts/producer.py --backend npu_ipc --run /mnt/share/c00954197/Workspace/dsv41/basic/weight_update/runs/retest_20261118_01/transfer/npu_ipc_producer --oracle /mnt/share/c00954197/Workspace/dsv41/basic/weight_update/runs/retest_20261118_01/transfer/npu_ipc_oracle/oracle/oracle.json"
+]

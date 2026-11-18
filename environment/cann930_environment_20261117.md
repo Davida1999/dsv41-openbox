@@ -1,6 +1,6 @@
 # CANN930 验证环境
 
-更新日期为 2026-11-17。Sleep level-2、HCCL 和 NPU IPC 专项在 22.1 实测，完整模型性能与 GPQA 在 23/24 双节点实测。
+更新日期为 2026-11-18。Sleep level-2、HCCL 和 NPU IPC 专项在 22.1 实测，完整模型性能与 GPQA 在 23/24 双节点实测。
 
 | 项目 | 实际配置 |
 |---|---|
@@ -49,9 +49,9 @@
 | RMSNorm 非持久 buffer | 将无学习权重的常量纳入 level-2 备份与恢复 | 3 项 CPU 回归与五轮 NPU 验证通过 |
 | attention sink weight_loader | 恢复 layerwise 加载计数与原地权重恢复 | 3 项 CPU 回归与五轮 NPU 验证通过 |
 | expert_ids_per_ep_rank 跳过加载配额 | 排除运行时通信映射，释放逐层暂存输入 | 3 项 CPU 回归及两种后端全量回环通过 |
-| IPC 逐 chunk 导出 rebuild 参数 | 为每次接收重建生成对应的引用计数参数 | 5 项新增 CPU 回归及 106 项仓库测试通过，NPU 回收效果待复验 |
+| IPC 逐 chunk 导出 rebuild 参数 | 为每次接收重建生成对应的引用计数参数 | 5 项新增 CPU 回归、106 项仓库测试和 2026-11-18 单卡 20 轮及 8 卡全量实机复验通过 |
 
-前三项已包含在完成实机验收的源码中。最新 IPC 生命周期补丁在实机回环完成后加入，源码哈希与验证边界见专项报告。[Sleep 补丁](../reduced/cann930_20261117/sleep_level2/patches/) [权重更新补丁](../reduced/cann930_20261117/weight_update/patches/)
+前三项已包含在完成实机验收的源码中。最新 IPC 生命周期补丁已于 2026-11-18 使用相同源码完成实机复验，发送端 allocated 回到 0。源码哈希与覆盖范围见专项报告。[Sleep 补丁](../reduced/cann930_20261117/sleep_level2/patches/) [权重更新补丁](../reduced/cann930_20261117/weight_update/patches/)
 
 23/24 双节点额外使用 Gloo CPU 超时透传补丁，完整模型 12 轮性能和 GPQA 实测覆盖该环境。对应源码 SHA256 为 `ccf708b35a36e1c5606cc9c0841253d9a08e2887f8f7ccd3368d16a8f72ca2c6`。[补丁](../full/cann930_20261117/patches/cpu_timeout_fix.patch) [完整模型报告](../full/cann930_20261117/REPORT.md)
 
@@ -63,7 +63,7 @@
 docker -H unix:///run/c00954197-cann930/docker.sock exec -it c00954197_dsv41_cann930 bash -l
 ```
 
-服务端与验证命令见各专项报告。新的设备复验等待资源窗口，优先完成 IPC 单卡多轮回收测试，再执行完整 IPC 回环。
+服务端与验证命令见各专项报告。2026-11-18 已完成 IPC 单卡多轮回收和完整 IPC 回环，实验后 8 张卡全部释放。当前待定位为冷/热缓存请求输出差异。
 
 ## 历史实验环境
 

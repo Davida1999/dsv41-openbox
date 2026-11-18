@@ -82,7 +82,10 @@ def main():
     if rank == 0:
         assert request("GET", "/get_world_size?include_dp=true")["world_size"] == dp_size
         baseline = generate(arguments.run / "validation", dp_size, "A_cold")
-        generate(arguments.run / "validation", dp_size, "A_warm")
+        warmup = generate(arguments.run / "validation", dp_size, "A_warm")
+        assert all(row["cached_tokens"] == 0 for row in baseline.values())
+        assert all(row["cached_tokens"] > 0 for row in warmup.values())
+        summary["initial_cache_checks"] = {key: {"cold_cached_tokens": row["cached_tokens"], "warm_cached_tokens": warmup[key]["cached_tokens"], "warm_token_ids_equal": warmup[key]["token_ids"] == row["token_ids"]} for key, row in baseline.items()}
         heads = probe(arguments.run / "validation/head_A_initial", dp_size)
         assert all(head["head_sha256"] == manifest["a_head_sha256"] for head in heads)
         oracle = json.loads(arguments.oracle.read_text())
@@ -124,7 +127,13 @@ def main():
             torch.npu.synchronize()
             assert source.tensor_count == summary["source_A"]["tensor_count"]
             assert source.tensor_bytes == summary["source_A"]["total_tensor_bytes"]
+            allocated_before_cleanup = torch.npu.memory_allocated()
+            gc.collect()
+            torch.npu.ipc_collect()
+            torch.npu.empty_cache()
+            torch.npu.synchronize()
             save(arguments.run / f"{label}_producer_rank{rank}.json", {
+                "allocated_before_cleanup_bytes": allocated_before_cleanup,
                 "tensor_count": source.tensor_count, "tensor_bytes": source.tensor_bytes,
                 "allocated_bytes": torch.npu.memory_allocated(), "reserved_bytes": torch.npu.memory_reserved(),
                 "elapsed_seconds": time.monotonic() - started, "device": device,
@@ -147,7 +156,9 @@ def main():
                 expected = oracle["cold"] if label == "B" else baseline
                 checks = require_equal(output, expected)
                 warm = generate(arguments.run / "validation", dp_size, label + "_warm")
-                row = {"version": version, "label": label, "checks": checks, "heads": heads,
+                cache_checks = {key: {"cold_cached_tokens": value["cached_tokens"], "warm_cached_tokens": warm[key]["cached_tokens"], "warm_text_equal": warm[key]["text"] == value["text"], "warm_token_ids_equal": warm[key]["token_ids"] == value["token_ids"]} for key, value in output.items()}
+                assert all(value["cold_cached_tokens"] == 0 and value["warm_cached_tokens"] > 0 for value in cache_checks.values()), cache_checks
+                row = {"cache_checks": cache_checks, "version": version, "label": label, "checks": checks, "heads": heads,
                        "output_differs_from_A": output != baseline, "warm_outputs": warm}
                 if label == "B":
                     assert output != baseline, "B must visibly change the committed model"

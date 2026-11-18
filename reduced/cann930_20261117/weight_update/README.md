@@ -2,7 +2,7 @@
 
 主报告为 `REPORT.md`，状态为 `validation_status.json`，后续设备复验步骤为 `pending_validation.md`。
 
-服务器为 `177.42.22.1`，实验目录为 `/mnt/share/c00954197/Workspace/dsv41/basic/weight_update`。HCCL 和 IPC 全量 A→B→A 已通过。最新 IPC 引用计数补丁完成 CPU 验证，NPU 回收效果等待用户安排设备。
+服务器为 `177.42.22.1`，实验目录为 `/mnt/share/c00954197/Workspace/dsv41/basic/weight_update`。HCCL 和 IPC 全量 A→B→A 已通过。最新 IPC 引用计数补丁于 2026-11-18 完成单卡 20 轮和 8 卡全量实机复验，发送端分配量归零，退出共享张量告警为 0。当前待定位为冷缓存与缓存命中请求的输出差异。
 
 | 目录或文件 | 内容 |
 |---|---|
@@ -24,3 +24,5 @@
 ```bash
 python3 scripts/audit_saved_evidence.py
 ```
+
+[2026-11-18 实机复验报告](runs/retest_20261118_01/REPORT.md)
