@@ -1,0 +1,30 @@
+{
+  "round": 1,
+  "exit_code": 0,
+  "seconds": 3260.485638159793,
+  "attempt_dir": "/mnt/share/c00954197/Workspace/dsv41/precision_cann930/runs/low_65536_3rounds_20261119_172734/clients/round1/attempt1",
+  "counters_before": {
+    "vllm:request_success_total": 0.0,
+    "vllm:generation_tokens_total": 0.0
+  },
+  "pass": true,
+  "result_dir": "/mnt/share/c00954197/Workspace/dsv41/precision_cann930/results/gpqa_20261119T095717Z_s3im7f/20261119_095718",
+  "audit": {
+    "questions": 198,
+    "max_out_len": 65536,
+    "successful_requests": 198,
+    "correct": 180,
+    "accuracy": 90.9090909090909,
+    "aisbench_accuracy": 90.9090909090909,
+    "aisbench_raw_recomputed_accuracy": 90.9090909090909,
+    "scoring_difference_ids": [],
+    "scoring_validated": true,
+    "unparsed_answer_ids": [
+      79,
+      142
+    ],
+    "output_limit_ids": [
+      79
+    ]
+  }
+}

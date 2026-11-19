@@ -1,0 +1,19 @@
+{
+  "questions": 198,
+  "max_out_len": 65536,
+  "successful_requests": 198,
+  "correct": 178,
+  "accuracy": 89.8989898989899,
+  "aisbench_accuracy": 89.8989898989899,
+  "aisbench_raw_recomputed_accuracy": 89.8989898989899,
+  "scoring_difference_ids": [],
+  "scoring_validated": true,
+  "unparsed_answer_ids": [
+    79,
+    147
+  ],
+  "output_limit_ids": [
+    79,
+    147
+  ]
+}

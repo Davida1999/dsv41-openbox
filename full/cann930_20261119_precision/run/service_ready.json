@@ -1,0 +1,37 @@
+{
+  "time_host23": 1795082237.438123,
+  "models": {
+    "object": "list",
+    "data": [
+      {
+        "id": "dsv41-bf16-cann930",
+        "object": "model",
+        "created": 1795082237,
+        "owned_by": "vllm",
+        "root": "/mnt/share/c00954197/model/deepseek-V4.1-Flash-1017-bf16",
+        "parent": null,
+        "max_model_len": 73728,
+        "permission": [
+          {
+            "id": "modelperm-891a75e29cdbee11",
+            "object": "model_permission",
+            "created": 1795082237,
+            "allow_create_engine": false,
+            "allow_sampling": true,
+            "allow_logprobs": true,
+            "allow_search_indices": false,
+            "allow_view": true,
+            "allow_fine_tuning": false,
+            "organization": "*",
+            "group": null,
+            "is_blocking": false
+          }
+        ]
+      }
+    ]
+  },
+  "counters": {
+    "vllm:request_success_total": 0.0,
+    "vllm:generation_tokens_total": 0.0
+  }
+}

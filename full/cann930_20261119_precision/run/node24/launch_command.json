@@ -1,0 +1,11 @@
+[
+  "docker",
+  "-H",
+  "unix:///run/c00954197-cann930/docker.sock",
+  "exec",
+  "-e",
+  "DSV41_PERFORMANCE_RUN=low_65536_3rounds_20261119_172734",
+  "c00954197_dsv41_cann930",
+  "bash",
+  "/mnt/share/c00954197/Workspace/dsv41/precision_cann930/run_worker.sh"
+]

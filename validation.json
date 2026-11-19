@@ -1,11 +1,11 @@
 {
   "validation_type": "offline_delivery_checks_of_recorded_npu_evidence",
-  "date": "2026-11-18",
-  "json_files_parsed": 2281,
-  "relative_links_checked": 266,
-  "new_python_files_syntax_checked": 59,
-  "new_shell_files_bash_n": 29,
-  "authored_paths_whitespace_checked": 23,
+  "date": "2026-11-19",
+  "json_files_parsed": 2318,
+  "relative_links_checked": 296,
+  "new_python_files_syntax_checked": 70,
+  "new_shell_files_bash_n": 32,
+  "authored_paths_whitespace_checked": 26,
   "sleep_level2": {
     "verified_restore_requests": 80,
     "max_growth_mib": 40,
@@ -37,5 +37,61 @@
   "ipc_latest_lifecycle_patch": "npu_verified_20_rounds_and_8card_A_B_A",
   "weight_update_retest": "runs/retest_20261118_01",
   "prefix_cache_output_consistency": "cold_vs_cache_hit_output_differs",
+  "gpqa_65536_three_rounds_20261119": {
+    "status": "passed",
+    "scope": "CPU audit of saved predictions, scores, configs and release records",
+    "rounds": [
+      {
+        "round": 1,
+        "successful_requests": 198,
+        "correct": 180,
+        "accuracy": 90.9090909090909,
+        "output_limit_ids": [
+          79
+        ],
+        "unparsed_answer_ids": [
+          79,
+          142
+        ],
+        "scoring_difference_ids": [],
+        "prediction_sha256_verified": true,
+        "config_sha256_verified": true
+      },
+      {
+        "round": 2,
+        "successful_requests": 198,
+        "correct": 178,
+        "accuracy": 89.8989898989899,
+        "output_limit_ids": [],
+        "unparsed_answer_ids": [
+          149
+        ],
+        "scoring_difference_ids": [],
+        "prediction_sha256_verified": true,
+        "config_sha256_verified": true
+      },
+      {
+        "round": 3,
+        "successful_requests": 198,
+        "correct": 178,
+        "accuracy": 89.8989898989899,
+        "output_limit_ids": [
+          79,
+          147
+        ],
+        "unparsed_answer_ids": [
+          79,
+          147
+        ],
+        "scoring_difference_ids": [],
+        "prediction_sha256_verified": true,
+        "config_sha256_verified": true
+      }
+    ],
+    "mean_accuracy": 90.23569023569023,
+    "successful_requests": 594,
+    "correct_across_rounds": 536,
+    "original_data_preserved": true
+  },
   "errors": []
 }

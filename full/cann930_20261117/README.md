@@ -11,3 +11,5 @@
 - [Gloo CPU 超时补丁](patches/cpu_timeout_fix.patch)
 
 本轮 GPQA 使用 32768 输出预算，最终 content 评分为 164/198，82.828283%，24 题达到输出上限。当前入口已适配新的模型和 precision_cann930 路径，运行快照保留当时参数。预测及遥测 JSONL 使用 gzip 无损归档。
+
+2026-11-19 的 65536 预算三轮结果已归档，平均准确率为 90.235690%。[最新三轮精度](../cann930_20261119_precision/REPORT.md)

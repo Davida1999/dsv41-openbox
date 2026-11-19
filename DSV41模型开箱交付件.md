@@ -1,8 +1,8 @@
 # DSV41 模型开箱交付件
 
-更新日期为 2026-11-18。本轮使用 **c00954197_dsv41_cann930 容器、CANN 9.3.0**。177.42.22.1 的 8 卡专项使用 40 层、32 路由专家、BF16、关闭 Engram 的模型。177.42.23.1/24.1 双机 16 卡性能与精度验证使用完整 384 专家 BF16 模型，Engram 和视觉模块开启。
+更新日期为 2026-11-19。本轮使用 **c00954197_dsv41_cann930 容器、CANN 9.3.0**。177.42.22.1 的 8 卡专项使用 40 层、32 路由专家、BF16、关闭 Engram 的模型。177.42.23.1/24.1 双机 16 卡性能与精度验证使用完整 384 专家 BF16 模型，Engram 和视觉模块开启。
 
-Sleep level-2 修复后完成五轮恢复验证，8 个副本的双接口共 80 次恢复后请求与首次加载基准严格一致。HCCL 和 NPU IPC 均完成缩减模型全量 A→B→A 更新。IPC 发送缓冲引用计数补丁于 2026-11-18 完成单卡 20 轮和 8 卡全量 A→B→A 实机复验，两轮发送端 allocated 均为 0，退出共享张量告警为 0。有效缓存失效计数和同缓存状态下的数值对照通过，冷缓存与缓存命中请求的输出差异仍待定位。完整模型在同一次 CANN930 服务启动中完成三场景各四轮性能压测和 GPQA Diamond 198 题正式评测，最终 content 评分为 164/198，82.828283%，24 题达到输出预算。其余基础功能保留各自的实测环境与日期，整体开箱验收仍有待完成项。
+Sleep level-2 修复后完成五轮恢复验证，8 个副本的双接口共 80 次恢复后请求与首次加载基准严格一致。HCCL 和 NPU IPC 均完成缩减模型全量 A→B→A 更新。IPC 发送缓冲引用计数补丁于 2026-11-18 完成单卡 20 轮和 8 卡全量 A→B→A 实机复验，两轮发送端 allocated 均为 0，退出共享张量告警为 0。有效缓存失效计数和同缓存状态下的数值对照通过，冷缓存与缓存命中请求的输出差异仍待定位。完整模型在 2026-11-17 完成三场景各四轮性能和 32768 预算 GPQA。2026-11-19 使用 65536 输出预算、reasoning_effort=low、temperature=1.0 完成 GPQA 三轮，每轮 198 题，正确数分别为 180、178、178，平均准确率为 90.235690%。三轮全部 594 请求成功，未解析最终选项分别为 2、1、2 题。其余基础功能保留各自的实测环境与日期，整体开箱验收仍有待完成项。
 
 ## 验收总览
 
@@ -22,10 +22,12 @@ Sleep level-2 修复后完成五轮恢复验证，8 个副本的双接口共 80 
 | Checkpoint / HCCL / NPU IPC更新 | CANN930 缩减模型 checkpoint 恢复与两种全量 A→B→A 均通过 | 每轮每端 6248 张量、135927315272 字节，完整 head 哈希和逐副本双接口数值一致；IPC 回收补丁已于 2026-11-18 实机通过，冷热缓存输出差异待定位 |
 | 1M输入 | 裁剪模型容量通过，检索0/3 | 不能替代完整模型1M可读回答与精度 |
 | 0.8硬件目标 | 单卡decode经验评分通过；理论峰值口径未证明 | E23文本2K→6K profile，不外推4K图文→32K全阶段或16卡 |
-| GPQA Diamond | CANN930 198/198 请求完成，最终 content 164/198，82.828283% | AISBench 原始 165/198，24 题无可提取最终答案，精度阈值待确定 |
+| GPQA Diamond | CANN930 65536 预算三轮完成，594/594 请求成功，平均准确率 90.235690% | 每轮 180/198、178/198、178/198，未解析最终选项 2/1/2，原始评分与最终 content 一致，精度阈值待确定 |
 | Math-500 / TextVQA | 待开展 | 正式评分、同条件多轮对照及 T 检验等待完成 |
 
-当前 Sleep、权重更新和完整模型性能精度证据均已归档，原始失败运行继续保留。[CANN930 完整模型结果](full/cann930_20261117/REPORT.md)E13 使用 27/28 节点，E23 使用 1108/CANN9.2.1，E25 使用 CANN9.3.0。其余基础功能在当前 CANN930 环境的复验仍待资源安排。[本轮专项入口](reduced/cann930_20261117/README.md) [基础功能矩阵](reduced/basic_feature/VALIDATION_REPORT.md)
+当前 Sleep、权重更新和完整模型性能精度证据均已归档，原始失败运行继续保留。[最新三轮精度](full/cann930_20261119_precision/REPORT.md) [CANN930 历史性能](full/cann930_20261117/REPORT.md)
+
+E13 使用 27/28 节点，E23 使用 1108/CANN9.2.1，E25 使用 CANN9.3.0。其余基础功能在当前 CANN930 环境的复验仍待资源安排。[本轮专项入口](reduced/cann930_20261117/README.md) [基础功能矩阵](reduced/basic_feature/VALIDATION_REPORT.md)
 
 # 模型结构分析
 
@@ -62,7 +64,7 @@ Sleep level-2 修复后完成五轮恢复验证，8 个副本的双接口共 80 
 
 本轮修复涉及 RMSNorm 常量 buffer、attention sink 的 layerwise 加载，以及运行时专家通信映射的加载配额。三项已完成实机验证。IPC 逐 chunk 导出 rebuild 参数的后续补丁已于 2026-11-18 完成单卡和 8 卡全量实机验证。[Sleep 补丁](reduced/cann930_20261117/sleep_level2/patches/) [权重更新补丁](reduced/cann930_20261117/weight_update/patches/)
 
-## CANN930 完整模型服务与客户端
+## 当前 GPQA 服务与客户端
 
 主节点为 177.42.23.1，子节点为 177.42.24.1，使用 TP1/PCP8/DP2/EP16、async、FULL_DECODE_ONLY 和 CCU_SCHED。进入容器的命令如下。
 
@@ -70,9 +72,9 @@ Sleep level-2 修复后完成五轮恢复验证，8 个副本的双接口共 80 
 docker -H unix:///run/c00954197-cann930/docker.sock exec -it c00954197_dsv41_cann930 bash -l
 ```
 
-服务启动脚本基于实测快照更新模型和工作目录路径，当前模型路径为 `/mnt/share/c00954197/model/deepseek-V4.1-Flash-1017-bf16`。主、子节点分别运行对应服务脚本，随后在主节点串行执行三场景各四轮和 GPQA 8/198 题。实际运行快照保留当时的路径与参数。[主节点](full/cann930_20261117/scripts/run_master.sh) [子节点](full/cann930_20261117/scripts/run_worker.sh) [客户端与审计](full/cann930_20261117/scripts/) [实测快照](full/cann930_20261117/combined_run/snapshots/)
+当前精度实验使用 `/mnt/share/c00954197/Workspace/dsv41/precision_cann930` 中的服务端与客户端，模型路径为 `/mnt/share/c00954197/model/deepseek-V4.1-Flash-1017-bf16`。主、子节点完成一次模型加载后，在主节点串行执行三轮 GPQA，每轮 198 题。六份实测脚本及配置的 SHA256 与运行记录一致。[主节点](full/cann930_20261119_precision/scripts/run_master.sh) [子节点](full/cann930_20261119_precision/scripts/run_worker.sh) [客户端与审计](full/cann930_20261119_precision/scripts/) [实际配置审计](full/cann930_20261119_precision/run/config_audit.json)
 
-服务上下文 40960、batched tokens 2048、每 DP 最大序列数 32、显存比例 0.96。GPQA 使用 32768 输出预算、temperature=0、thinking=true、reasoning_effort=100。65536 预算为后续复验方案。
+本轮 GPQA 服务上下文为 73728，batched tokens 为 2048，每 DP 最大序列数 32，显存比例 0.96。客户端使用 65536 输出预算、temperature=1.0、top_p=0.95、top_k=0、enable_thinking=true、reasoning_effort=low、seed=42、并发 8，HTTP 超时 360000 秒。
 
 ## 完整模型历史服务与客户端脚本
 
@@ -298,13 +300,21 @@ no_stack客户端完整结束64成功/0失败、393216输出token；with_stack�
 
 ## 精度验证
 
-CANN930 完整模型完成 GPQA Diamond 8 题预检和 198 题正式评测。正式评测请求成功 198/198，AISBench 原始评分为 165/198、83.333333%，最终 content 审计为 164/198、82.828283%。零基题号 52 的最终 content 为空，原评分从推理文本提取答案并计对，造成 1 题差异。24 题达到 32768 输出上限且无可提取最终答案，均随分数报告。[GPQA 报告](full/cann930_20261117/REPORT.md) [正式审计](full/cann930_20261117/precision_results/gpqa_198/gpqa_audit.json)
+2026-11-19 在 177.42.23.1/24.1 的同一套 CANN930 完整模型服务上完成 GPQA Diamond 三轮，每轮 198 题，共 594 个请求全部成功。评分使用 AISBench GPQAEvaluator，以最终 content 提取的选项为准，无可解析最终选项的回答计错。
 
-实际参数为 temperature=0、top_p=1、seed=42、thinking=true、reasoning_effort=100、并发 8、max_out_len=32768。原始两轮审计分别因 JSONL Unicode 读取和空最终答案评分差异退出 1，修正后的 CPU 复核均退出 0。精度达标阈值与同条件对照仍待确定，65536 输出预算的真实推理等待资源安排。
+| 轮次 | 正确题数 | 准确率 | 请求成功 | 客户端总耗时 | 达输出上限 | 未解析最终选项 |
+|---|---|---|---|---|---|---|
+| 1 | 180/198 | 90.909091% | 198/198 | 54 分 20 秒 | 1 | 2 |
+| 2 | 178/198 | 89.898990% | 198/198 | 48 分 25 秒 | 0 | 1 |
+| 3 | 178/198 | 89.898990% | 198/198 | 61 分 35 秒 | 2 | 2 |
 
-Math-500、TextVQA 的正式评测、同条件多轮对照和 T 检验仍待完成。现有结果覆盖单请求算术样例与随机长输出性能。
+三轮准确率算术平均为 **90.235690%**。每轮 AISBench 原始分数、原始分数复算和最终 content 分数均一致，评分差异题号均为空。三轮使用相同数据集与 seed=42，输出预算为 65536，temperature=1.0、top_p=0.95、top_k=0、enable_thinking=true、reasoning_effort=low、并发 8。最长输入 2595 token，加输出预算为 68131 token，服务上下文为 73728。[最新精度报告](full/cann930_20261119_precision/REPORT.md) [三轮审计](full/cann930_20261119_precision/evidence_validation.json) [原始预测与评分](full/cann930_20261119_precision/results/)
 
-后续使用完整 BF16＋Engram 模型，以 ais_bench 固定数据集版本、prompt、图像处理、tokenizer、采样参数、最大输出长度和 seed，保存逐题输出、提取率、截断率与评分。具备同条件多轮分数时执行 T 检验，评估阈值需明确采用绝对百分点或相对误差。
+第 1 轮未解析题号为 79、142，第 2 轮为 149，第 3 轮为 79、147，均为零基题号。输出上限题号分别为 79、空、79/147，所有未解析回答均计入 198 题分母。服务启动耗时约 28 分 49 秒，客户端耗时包含推理、评分与审计。两端各初始化一次引擎，结束后的本任务进程、NPU 进程和服务端口均释放，共享内存可用量回到启动前基线。[运行汇总](full/cann930_20261119_precision/run/results_summary.json)
+
+2026-11-17 的历史实验使用 32768 输出预算、temperature=0、top_p=1、reasoning_effort=100，最终 content 为 164/198、82.828283%，24 题达到输出上限。该轮原始 AISBench 评分为 165/198，零基题号 52 从推理文本提取到正确选项而最终 content 为空，形成 1 题差异。历史参数、评分与修正过程继续保留。[32768 预算历史报告](full/cann930_20261117/REPORT.md)
+
+本次三轮与历史实验涉及输出预算、采样和思考配置的变化。精度达标阈值及同条件对照仍待确定。Math-500、TextVQA 的正式评测、同条件多轮对照和 T 检验仍待完成。
 
 # 问题、规避与CANN9.3.0补充结果
 
@@ -332,7 +342,6 @@ Math-500、TextVQA 的正式评测、同条件多轮对照和 T 检验仍待完�
 | P0 | routing专家返回及需要时训练侧replay | 单/多请求原始专家、dtype/shape/范围，实际回放路径无报错 |
 | P0 | 冷缓存与命中缓存输出差异定位 | 固定权重、输入及副本，对照 prefix replay、注意力状态与 logits/logprob，保留相同缓存状态的数值对照 |
 | P0 | 完整 384 专家模型 checkpoint、HCCL、NPU IPC 更新 | 独立容量预算、全量计数、版本、权重哈希、生成对照和连续更新回收检查 |
-| P1 | GPQA 65536 输出预算复验 | 固定数据、实际采样参数与评分口径，报告预算命中和最终答案提取率 |
 | P1 | 完整模型1M有效回答 | tokenizer输入计数、完整请求/响应、检索命中与无乱码；不只容量 |
 | P1 | 主场景4K图文→32K硬件验收 | 视觉/prefill/decode、多卡取证；明确经验评分与理论峰值目标区别 |
 | P1 | 完整模型功能开关精度对照 | PCP档位、eager/graph、async、chunk，固定输入和比较口径 |

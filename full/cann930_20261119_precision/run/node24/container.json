@@ -1,0 +1,8 @@
+{
+  "id": "37514d74b1622108800ce9b406d8fbbfd8ee77372e6dfae78cc51919e7604737",
+  "image": "sha256:3614b7afe7000897bf6f1c60a415f2547feb0e033bae0c9bf76c68a76ecf944f",
+  "name": "c00954197_dsv41_cann930",
+  "node": "24",
+  "role": "worker",
+  "tag": "low_65536_3rounds_20261119_172734"
+}

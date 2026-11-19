@@ -1,0 +1,53 @@
+{
+  "run_dir": "/mnt/share/c00954197/Workspace/dsv41/precision_cann930/runs/low_65536_3rounds_20261119_172734",
+  "requested_at": "2026-11-19T17:27:34.766282+08:00",
+  "servers": [
+    "177.42.23.1",
+    "177.42.24.1"
+  ],
+  "container": "c00954197_dsv41_cann930",
+  "model_path": "/mnt/share/c00954197/model/deepseek-V4.1-Flash-1017-bf16",
+  "rounds": 3,
+  "questions_per_round": 198,
+  "temperature": 1.0,
+  "top_p": 0.95,
+  "top_k": 0,
+  "reasoning_effort": "low",
+  "enable_thinking": true,
+  "max_tokens": 65536,
+  "seed": 42,
+  "concurrency": 8,
+  "max_model_len": 73728,
+  "request_timeout_seconds": 360000,
+  "reuse_service": true,
+  "release_on_completion": true,
+  "resource_policy": "Release this experiment on both nodes on foreign NPU contention",
+  "prior_failure": "507056 / UB LINK ERROR, RAS 0x81afaa02; cause unresolved",
+  "launch_reason": "User granted current machine time and requested execution",
+  "files": [
+    {
+      "path": "/mnt/share/c00954197/Workspace/dsv41/precision_cann930/run_master.sh",
+      "sha256": "5d3c1d854998e74bbde0299d98e7b4e809fe0d1706cc01c11b056ed12f2314c1"
+    },
+    {
+      "path": "/mnt/share/c00954197/Workspace/dsv41/precision_cann930/run_worker.sh",
+      "sha256": "6f1a26e98bd0f17fde3801c5cca3d2502c80abc82a7f8babad812d86d9c76702"
+    },
+    {
+      "path": "/mnt/share/c00954197/Workspace/dsv41/precision_cann930/run_gpqa.sh",
+      "sha256": "be0288d7ec87514724ea2ba5d80fefa2b4d655dc5305400a18b4851fcab44d78"
+    },
+    {
+      "path": "/mnt/share/c00954197/Workspace/dsv41/precision_cann930/gpqa_config.py",
+      "sha256": "8fbdfcfcdcd1eec41b4372961670251da8532ee7f710ff9b80665be4c211410e"
+    },
+    {
+      "path": "/mnt/share/c00954197/Workspace/dsv41/precision_cann930/gpqa_api.py",
+      "sha256": "18f42fe7cfc3a8b3bf54827bfb7553984863a6cb28c9df1b87f264b994414501"
+    },
+    {
+      "path": "/mnt/share/c00954197/Workspace/dsv41/precision_cann930/check_results.py",
+      "sha256": "7b701ac6b371dd895a9ed3a13b044a35dd0b266376db4914a2cf403171c83517"
+    }
+  ]
+}

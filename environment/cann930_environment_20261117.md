@@ -1,6 +1,6 @@
 # CANN930 验证环境
 
-更新日期为 2026-11-18。Sleep level-2、HCCL 和 NPU IPC 专项在 22.1 实测，完整模型性能与 GPQA 在 23/24 双节点实测。
+更新日期为 2026-11-19。Sleep level-2、HCCL 和 NPU IPC 专项在 22.1 实测，完整模型性能与 GPQA 在 23/24 双节点实测。
 
 | 项目 | 实际配置 |
 |---|---|
@@ -68,3 +68,5 @@ docker -H unix:///run/c00954197-cann930/docker.sock exec -it c00954197_dsv41_can
 ## 历史实验环境
 
 E13 为 27/28 节点的完整模型单请求实验，E23 为 1108/CANN9.2.1 双机性能实验，E25 为 CANN9.3.0 完整模型补充性能实验。2026-11-13 基础功能矩阵在 1108 容器执行。上述原始数据继续按各自环境解释，其余功能在当前 CANN930 容器的复验范围见主交付件。
+
+2026-11-19 的完整模型 GPQA 使用 73728 服务上下文和 65536 输出预算，temperature=1.0、top_p=0.95、top_k=0、reasoning_effort=low、enable_thinking=true。双节点同一次启动完成三轮各 198 题，原始镜像、实际配置及脚本哈希随结果保存。[最新精度报告](../full/cann930_20261119_precision/REPORT.md)

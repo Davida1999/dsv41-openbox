@@ -1,0 +1,56 @@
+{
+  "status": "passed",
+  "scope": "CPU audit of saved predictions, scores, configs and release records",
+  "rounds": [
+    {
+      "round": 1,
+      "successful_requests": 198,
+      "correct": 180,
+      "accuracy": 90.9090909090909,
+      "output_limit_ids": [
+        79
+      ],
+      "unparsed_answer_ids": [
+        79,
+        142
+      ],
+      "scoring_difference_ids": [],
+      "prediction_sha256_verified": true,
+      "config_sha256_verified": true
+    },
+    {
+      "round": 2,
+      "successful_requests": 198,
+      "correct": 178,
+      "accuracy": 89.8989898989899,
+      "output_limit_ids": [],
+      "unparsed_answer_ids": [
+        149
+      ],
+      "scoring_difference_ids": [],
+      "prediction_sha256_verified": true,
+      "config_sha256_verified": true
+    },
+    {
+      "round": 3,
+      "successful_requests": 198,
+      "correct": 178,
+      "accuracy": 89.8989898989899,
+      "output_limit_ids": [
+        79,
+        147
+      ],
+      "unparsed_answer_ids": [
+        79,
+        147
+      ],
+      "scoring_difference_ids": [],
+      "prediction_sha256_verified": true,
+      "config_sha256_verified": true
+    }
+  ],
+  "mean_accuracy": 90.23569023569023,
+  "successful_requests": 594,
+  "correct_across_rounds": 536,
+  "original_data_preserved": true
+}
