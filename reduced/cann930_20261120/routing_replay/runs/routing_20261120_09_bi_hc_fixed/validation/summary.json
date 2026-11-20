@@ -1,0 +1,197 @@
+{
+  "status": "passed",
+  "cases": [
+    {
+      "name": "single_completions",
+      "endpoint": "completions",
+      "dp_rank": 0,
+      "shape": [
+        20,
+        40,
+        6
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 31,
+      "token_ids": [
+        223,
+        6793,
+        16,
+        455,
+        6102,
+        294,
+        8760,
+        344,
+        223,
+        6793,
+        16,
+        455,
+        6102,
+        294,
+        8760,
+        344
+      ],
+      "cached_tokens": 0
+    },
+    {
+      "name": "same_dp_pair_completions_0",
+      "endpoint": "completions",
+      "dp_rank": 0,
+      "shape": [
+        20,
+        40,
+        6
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 31,
+      "token_ids": [
+        223,
+        6793,
+        16,
+        455,
+        6102,
+        294,
+        8760,
+        344,
+        223,
+        6793,
+        16,
+        455,
+        6102,
+        294,
+        8760,
+        344
+      ],
+      "cached_tokens": 0
+    },
+    {
+      "name": "same_dp_pair_completions_1",
+      "endpoint": "completions",
+      "dp_rank": 0,
+      "shape": [
+        22,
+        40,
+        6
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 31,
+      "token_ids": [
+        455,
+        12709,
+        344,
+        8295,
+        1754,
+        436,
+        344,
+        8295,
+        1754,
+        436,
+        344,
+        8295,
+        1754,
+        436,
+        344,
+        8295
+      ],
+      "cached_tokens": 0
+    },
+    {
+      "name": "single_chat_completions",
+      "endpoint": "chat/completions",
+      "dp_rank": 0,
+      "shape": [
+        24,
+        40,
+        6
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 31,
+      "token_ids": [
+        28,
+        455,
+        6102,
+        294,
+        8760,
+        344,
+        2619,
+        51725,
+        42499,
+        343,
+        1162,
+        344,
+        270,
+        7213,
+        29,
+        223
+      ],
+      "cached_tokens": 0
+    },
+    {
+      "name": "same_dp_pair_chat_completions_0",
+      "endpoint": "chat/completions",
+      "dp_rank": 0,
+      "shape": [
+        24,
+        40,
+        6
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 31,
+      "token_ids": [
+        28,
+        455,
+        6102,
+        294,
+        8760,
+        344,
+        2619,
+        51725,
+        42499,
+        343,
+        1162,
+        344,
+        270,
+        7213,
+        29,
+        223
+      ],
+      "cached_tokens": 0
+    },
+    {
+      "name": "same_dp_pair_chat_completions_1",
+      "endpoint": "chat/completions",
+      "dp_rank": 0,
+      "shape": [
+        26,
+        40,
+        6
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 31,
+      "token_ids": [
+        271,
+        671,
+        12709,
+        344,
+        8295,
+        1754,
+        436,
+        344,
+        270,
+        12709,
+        344,
+        8295,
+        1754,
+        436,
+        344,
+        270
+      ],
+      "cached_tokens": 0
+    }
+  ]
+}

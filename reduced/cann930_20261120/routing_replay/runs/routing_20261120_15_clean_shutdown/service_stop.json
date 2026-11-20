@@ -1,0 +1,9 @@
+{
+  "signalled": [
+    296217
+  ],
+  "main_pid": 296217,
+  "forced": [],
+  "fast_policy_release": false,
+  "grace_seconds": 45.0
+}

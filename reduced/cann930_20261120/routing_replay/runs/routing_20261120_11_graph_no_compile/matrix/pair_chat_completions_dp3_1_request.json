@@ -1,0 +1,24 @@
+{
+  "path": "/v1/chat/completions",
+  "rank": 3,
+  "payload": {
+    "model": "dsv41-routing",
+    "max_tokens": 16,
+    "temperature": 0,
+    "top_p": 1,
+    "seed": 42,
+    "ignore_eos": true,
+    "return_token_ids": true,
+    "messages": [
+      {
+        "role": "user",
+        "content": "Explain why the sky is blue."
+      }
+    ],
+    "logprobs": true,
+    "top_logprobs": 5,
+    "chat_template_kwargs": {
+      "thinking": false
+    }
+  }
+}

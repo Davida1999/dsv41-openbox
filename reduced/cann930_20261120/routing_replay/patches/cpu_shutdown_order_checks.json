@@ -1,0 +1,15 @@
+{
+  "before": {
+    "expected_failure": "Engine closed while output consumer was still awaiting data"
+  },
+  "after": [
+    "metrics_shutdown",
+    "consumer_cancel_requested",
+    "renderer_shutdown",
+    "engine_shutdown"
+  ],
+  "before_sha256": "3491dde64ef226b9f65e4341c944615cf6ebd23de3210293dc66767c4c18365c",
+  "after_sha256": "e153cc3a6f2c0818b7831910e1fe0c25e0821d8a9a3e65d4b190a81e4ae9a23a",
+  "applied": false,
+  "scope": "Actual shutdown method call ordering; normal service stop requires NPU rerun"
+}

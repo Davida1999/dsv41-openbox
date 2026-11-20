@@ -1,0 +1,9 @@
+{
+  "same_validation_as": "routing_20261120_14_torchcompile_opaque",
+  "change": "cancel output consumer before engine teardown; signal main server first for normal shutdown",
+  "compilation_mode": 3,
+  "cudagraph_mode": "FULL_DECODE_ONLY",
+  "batch_invariant": true,
+  "sleep_level": 1,
+  "resource_policy": "yield immediately on foreign occupation or external stop"
+}

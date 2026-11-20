@@ -1,0 +1,6 @@
+{
+  "status": "failed",
+  "phase": "waiting_for_service",
+  "mode": "eager",
+  "error": "Traceback (most recent call last):\n  File \"/mnt/share/c00954197/Workspace/dsv41/basic/routing_replay/scripts/run_host_bi_20261120.py\", line 58, in main\n    assert alive.returncode == 0, \"Service exited during startup\"\n           ^^^^^^^^^^^^^^^^^^^^^\nAssertionError: Service exited during startup\n"
+}

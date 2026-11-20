@@ -1,0 +1,27 @@
+[
+  {
+    "mib": 8,
+    "allocated": true,
+    "pinned": true
+  },
+  {
+    "mib": 64,
+    "allocated": true,
+    "pinned": true
+  },
+  {
+    "mib": 128,
+    "allocated": true,
+    "pinned": true
+  },
+  {
+    "mib": 512,
+    "allocated": true,
+    "pinned": true
+  },
+  {
+    "mib": 1262.5,
+    "allocated": true,
+    "pinned": true
+  }
+]

@@ -20,7 +20,7 @@ flowchart LR
 
 图示为主要模块依赖，省略层内残差与归一化；具体配置与实现说明见模型分析。
 
-本次BF16资产由FP8/FP4权重反量化获得。[反量化脚本](model/conversion/convert_deepseek_v41_flash_bf16.py)、[执行脚本](model/conversion/run_deepseek_v41_flash_bf16.sh)及[完成日志](model/conversion/dsv41-flash-bf16-convert.log)已归档。完整模型输出525个分片、48496个索引张量；转换完成，独立FP4/FP8数值误差校验待补。
+本次BF16资产由FP8/FP4权重反量化获得。[反量化脚本](model/conversion/convert_deepseek_v41_flash_bf16.py)、[执行脚本](model/conversion/run_deepseek_v41_flash_bf16.sh)及[完成日志](model/conversion/dsv41-flash-bf16-convert.log)已归档。完整模型输出525个分片、48496个索引张量；转换已完成。[独立FP4/FP8抽样核验](model/dequant_validation_20261120/REPORT.md)覆盖34个张量、4624个标量，BF16位模式全部一致。
 
 | 模型 | 当前服务器路径 | 验证用途 |
 |---|---|---|
@@ -47,7 +47,7 @@ Slim-E32为无软链接的实体副本，保留全部6248个有效张量、503�
 | vLLM-Ascend | 0.19.1rc2.dev3401+g28e9e97ba；`28e9e97ba254b076a88275e8a275556cb9a11664` |
 | 网络 | Docker host网络/IPC；Gloo `enp39s0f0`，HCCL `enp35s0f2`；CCU_SCHED |
 
-实际代码在上述提交上包含已归档补丁；Sleep、权重更新及Gloo CPU超时透传的补丁与文件指纹见[环境记录](environment/cann930_environment_20261117.md)。路由补丁仍为待NPU复验的候选。必要的上游PR/公网源码可达性及镜像导出文件校验待补。
+实际代码在上述提交上包含已归档补丁；Sleep、权重更新及Gloo CPU超时透传的补丁与文件指纹见[环境记录](environment/cann930_environment_20261117.md)。路由补丁已完成本轮NPU验收，见[路由报告](reduced/cann930_20261120/routing_replay/REPORT.md)。两个基础提交已核验在公开源码仓库可达。本轮修复以补丁和实际源码指纹交付；尚未提交上游修复PR。
 
 ### 服务端启动与请求
 
@@ -84,21 +84,21 @@ curl --noproxy '*' --fail-with-body http://127.0.0.1:8000/v1/chat/completions \
 >
 > Answer: D
 
-该输出来自CANN930实测GPQA第二次完整评测的第0题，完整[预测记录](full/cann930_basic/examples/gpqa_question_0_saved_prediction.json)已保存。curl正文按该题提示词与实际生成参数重建，本次文档整理没有重新调用NPU；独立单curl运行记录仍需补齐。不能将重建请求视为原始HTTP抓包。
+该输出来自CANN930实测GPQA第二次完整评测的第0题，完整[预测记录](full/cann930_basic/examples/gpqa_question_0_saved_prediction.json)已保存。curl正文按该题提示词与实际生成参数重建，本次文档整理没有重新调用NPU；缩减模型另有[实际单请求原文及响应](reduced/cann930_20261120/routing_replay/examples/single_response.json)，可用其[请求原文](reduced/cann930_20261120/routing_replay/examples/single_request.json)进行curl复现；两种模型的证据分别记录。
 
 ## 基本功能验证
 
-各功能统一交付服务端脚本、请求/校验脚本、请求与输出、日志与统计四类内容。相同服务覆盖的功能复用同一组真实文件；未实测项目明确列出缺口。
+各功能统一交付服务端脚本、请求/校验脚本、请求与输出、日志与统计四类内容。相同服务覆盖的功能复用同一组真实文件；通过结论限于受测配置，不声明未测参数组合数值等价。TP>1、DCP、SP、PP按当前DSV4.1支持范围排除。
 
 | 功能 | CANN930结论 | 范围 |
 |---|---|---|
-| TP/EP及DP | TP1/EP16/DP2组合通过运行验证 | TP>1待验证 |
-| CP | PCP8组合通过运行验证 | DCP及其他PCP档位待验证 |
-| SP | 待验证 | 当前没有独立启用SP的验收记录 |
-| PP | 待验证 | 当前仅PP1 |
-| 图模式 | FULL_DECODE_ONLY组合通过运行验证 | 独立开关对照待验证 |
-| 异步调度 | async组合通过运行验证 | 独立开关对照待验证 |
-| chunk_prefill | 开启组合通过运行验证 | 独立开关对照待验证 |
+| TP/EP及DP | TP1/EP16/DP2组合通过运行验证 | 当前模型不支持TP>1，本轮排除 |
+| CP | PCP8组合通过运行验证 | DCP依赖TP>1，本轮排除 |
+| SP | 本轮不适用 | SP依赖TP>1，当前模型未支持 |
+| PP | 本轮不适用 | 当前DSV4.1的Engram实现限制PP |
+| 图模式 | FULL_DECODE_ONLY组合通过运行验证 | 受测组合通过 |
+| 异步调度 | async组合通过运行验证 | 受测组合通过 |
+| chunk_prefill | 开启组合通过运行验证 | 受测组合通过 |
 
 ### 并行切分TP/EP
 
@@ -106,7 +106,7 @@ curl --noproxy '*' --fail-with-body http://127.0.0.1:8000/v1/chat/completions \
 
 **方法与通过条件：** 启用专家并行，完成真实生成；核对请求成功数与完整输出。
 
-**结果：** 三场景各4轮64/64成功；四次完整GPQA共792/792请求成功。TP1通路与EP/DP组合已验证，TP>1尚无本环境验收。
+**结果：** 三场景各4轮64/64成功；四次完整GPQA共792/792请求成功。TP1通路与EP/DP组合已验证。当前DSV4.1不支持TP>1，该项排除本轮验收。
 
 | 交付类型 | 文件 |
 |---|---|
@@ -119,9 +119,9 @@ curl --noproxy '*' --fail-with-body http://127.0.0.1:8000/v1/chat/completions \
 
 **验证配置：** 完整模型；`--prefill-context-parallel-size 8`。
 
-**方法与通过条件：** PCP8下完成真实推理；DCP需另行启用并保存输出。
+**方法与通过条件：** PCP8下完成真实推理；DCP按当前TP支持限制排除。
 
-**结果：** PCP8组合运行通过。DCP及PCP不同档位尚未验收。
+**结果：** PCP8组合运行通过。DCP依赖TP>1，排除本轮验收；PCP其他档位不由本次组合结果外推。
 
 | 交付类型 | 文件 |
 |---|---|
@@ -132,33 +132,33 @@ curl --noproxy '*' --fail-with-body http://127.0.0.1:8000/v1/chat/completions \
 
 ### SP 功能
 
-**验证配置：** 目标开关为`--compilation-config '{"pass_config":{"enable_sp":true}}'`，当前未专项启用。
+**验证配置：** 当前DSV4.1不支持TP>1，SP依赖TP>1。
 
-**方法与通过条件：** 启用SP后完成可读生成，保存启动命令和实际响应。
+**方法与通过条件：** 按当前模型支持范围排除，本轮不执行SP专项验收。
 
-**结果：** 待验证。现有TP1服务结果不替代SP验收。
+**结果：** 本轮不适用，不列为待完成或待修复项。
 
 | 交付类型 | 文件 |
 |---|---|
-| 服务端脚本 | 未产生对应CANN930专项启动快照 |
-| 请求／校验脚本 | 未产生对应CANN930专项请求记录 |
-| 请求与输出 | 未产生对应CANN930专项输出 |
-| 日志与统计 | 未产生对应CANN930专项日志 |
+| 服务端脚本 | 不适用（当前模型支持限制） |
+| 请求／校验脚本 | 不适用（当前模型支持限制） |
+| 请求与输出 | 不适用（当前模型支持限制） |
+| 日志与统计 | 不适用（当前模型支持限制） |
 
 ### PP 功能
 
-**验证配置：** 目标配置为`--pipeline-parallel-size 2`，当前完整模型使用PP1。
+**验证配置：** 当前DSV4.1的Engram实现限制PP，基线使用PP1。
 
-**方法与通过条件：** PP>1启动、跨stage推理及可读输出均需实测。
+**方法与通过条件：** 按当前模型支持范围排除，本轮不执行PP专项验收。
 
-**结果：** 待验证。
+**结果：** 本轮不适用，不列为待完成或待修复项。
 
 | 交付类型 | 文件 |
 |---|---|
-| 服务端脚本 | 未产生对应CANN930专项启动快照 |
-| 请求／校验脚本 | 未产生对应CANN930专项请求记录 |
-| 请求与输出 | 未产生对应CANN930专项输出 |
-| 日志与统计 | 未产生对应CANN930专项日志 |
+| 服务端脚本 | 不适用（当前模型支持限制） |
+| 请求／校验脚本 | 不适用（当前模型支持限制） |
+| 请求与输出 | 不适用（当前模型支持限制） |
+| 日志与统计 | 不适用（当前模型支持限制） |
 
 ### 图模式功能
 
@@ -166,7 +166,7 @@ curl --noproxy '*' --fail-with-body http://127.0.0.1:8000/v1/chat/completions \
 
 **方法与通过条件：** 在该模式下完成真实生成并检查运行日志。
 
-**结果：** 与PCP8、async及chunked prefill组合运行通过；图模式相对eager的独立精度对照待验证。
+**结果：** 与PCP8、async及chunked prefill组合运行通过；本轮严格一致性额外回归见RL章节。
 
 | 交付类型 | 文件 |
 |---|---|
@@ -181,7 +181,7 @@ curl --noproxy '*' --fail-with-body http://127.0.0.1:8000/v1/chat/completions \
 
 **方法与通过条件：** 异步服务完成真实生成，核对请求与运行期日志。
 
-**结果：** 三场景性能与四次GPQA完成；11月19日服务运行及清理日志ERROR为0。同步/异步精度对照待验证。
+**结果：** 三场景性能与四次GPQA完成；11月19日服务运行及清理日志ERROR为0。本轮缩减模型async与chunked prefill已完成1M实测。
 
 | 交付类型 | 文件 |
 |---|---|
@@ -196,7 +196,7 @@ curl --noproxy '*' --fail-with-body http://127.0.0.1:8000/v1/chat/completions \
 
 **方法与通过条件：** 开启分块预填充完成真实生成，核对输出完整性。
 
-**结果：** 组合运行通过；开启/关闭的独立精度对照待验证。
+**结果：** 组合运行通过；本轮缩减模型已完成1M分块输入实测。
 
 | 交付类型 | 文件 |
 |---|---|
@@ -238,18 +238,18 @@ curl --noproxy '*' --fail-with-body http://127.0.0.1:8000/v1/chat/completions \
 
 ### routing replay 功能验证
 
-**验证配置：** 缩减模型；MRV2、TP1/DP8/EP8，启用返回专家及prefix caching。
+**验证配置：** 32专家、MRV2、TP1/DP8/EP8；BI=1、prefix caching开启、SWA bounded replay关闭；Eager及FULL_DECODE_ONLY（TorchCompile=0/3）。
 
-**方法与通过条件：** 保存返回专家的shape、dtype、ID范围及Top-6唯一性；单/多请求无错误，缓存与恢复后按token对齐比较。
+**方法与通过条件：** 单/双请求、逐DP与跨DP、每接口20组长短混合；核对完整专家shape/dtype/范围/唯一性，以及cold/hit/repeat、sleep/wake后的完整数组和生成结果。
 
-**结果：** 未通过。单请求返回`[20,40,6]`、uint8、ID 0–31，各Top-6互异；同DP双请求触发`topk_ids`维度断言及HTTP500。候选补丁的7项专项、8项仓库CPU检查通过，修复后NPU复验待完成。训练侧强制replay未验证。
+**结果：** 通过。最终常规TorchCompile图模式153/153请求完成，真实同批双请求步骤879；两接口文本、token IDs、完整专家和逐token logprob严格一致，最大logprob差0。最终启动、推理及正常关闭日志ERROR/Traceback均为0，设备已释放。
 
 | 交付类型 | 文件 |
 |---|---|
-| 服务端脚本 | [启动脚本](reduced/cann930_20261118/routing_replay/scripts/start_server.sh)、[实际命令](reduced/cann930_20261118/routing_replay/runs/routing_20261118_02/actual_server_command.sh.gz) |
-| 请求／校验脚本 | [校验客户端](reduced/cann930_20261118/routing_replay/scripts/validate_routing.py) |
-| 请求与输出 | [返回专家JSON](reduced/cann930_20261118/routing_replay/runs/routing_20261118_02/validation/single_completions_experts.json)、[请求与响应](reduced/cann930_20261118/routing_replay/runs/routing_20261118_02/validation/) |
-| 日志与统计 | [服务日志](reduced/cann930_20261118/routing_replay/runs/routing_20261118_02/server.log.gz)、[校验汇总](reduced/cann930_20261118/routing_replay/runs/routing_20261118_02/validation/summary.json)、[阶段报告](reduced/cann930_20261118/routing_replay/REPORT.md) |
+| 服务端脚本 | [完整启动脚本](reduced/cann930_20261120/routing_replay/scripts/start_final_graph_20261120.sh) |
+| 请求／校验脚本 | [完整客户端](reduced/cann930_20261120/routing_replay/scripts/validate_routing_matrix_open_20261120.py) |
+| 请求与输出 | [完整专家JSON](reduced/cann930_20261120/routing_replay/examples/single_experts.json)、[全部原始响应与NPY](reduced/cann930_20261120/routing_replay/runs/routing_20261120_15_clean_shutdown/matrix/) |
+| 日志与统计 | [服务日志](reduced/cann930_20261120/routing_replay/runs/routing_20261120_15_clean_shutdown/server.log.gz)、[结果与修复报告](reduced/cann930_20261120/routing_replay/REPORT.md)、[独立复核](reduced/cann930_20261120/routing_replay/evidence_audit.json) |
 
 ### 权重更新 功能验证
 
@@ -257,7 +257,7 @@ curl --noproxy '*' --fail-with-body http://127.0.0.1:8000/v1/chat/completions \
 
 **方法与通过条件：** 完整A→B→A，逐端计数、版本及权重哈希核对；双接口文本/token/logprob对照对应权重、相同缓存状态的独立基准；检查连续更新显存回收。
 
-**结果：** HCCL和NPU IPC全量回环通过。每轮每端6248张量、135927315272字节。接收端OOM与IPC缓冲滞留已修复；相同缓存状态下输出严格一致。另有冷缓存与缓存命中输出差异，根因待定位。
+**结果：** HCCL和NPU IPC全量回环通过。每轮每端6248张量、135927315272字节。接收端OOM与IPC缓冲滞留已修复；相同缓存状态下输出严格一致。此前冷热缓存差异已在本轮[严格路由配置](reduced/cann930_20261120/routing_replay/REPORT.md)中定位并验收通过。权重更新本身仍按当时记录的同缓存状态基准对照。
 
 | 交付类型 | 文件 |
 |---|---|
@@ -272,24 +272,24 @@ curl --noproxy '*' --fail-with-body http://127.0.0.1:8000/v1/chat/completions \
 | 接收端OOM | 排除运行时`expert_ids_per_ep_rank`加载配额后，层级暂存能释放，轮后延迟引用归零 |
 | IPC缓冲回收 | 修复后单卡20轮增长0；8卡两轮发送端allocated为0，清理后reserved为0，共享张量退出告警0 |
 | 缓存失效 | 更新后首次cached_tokens=0，重复请求cached_tokens=256 |
-| 冷/热缓存生成 | 同缓存状态下与对应基准一致；冷与热之间仍有差异 |
+| 冷/热缓存生成 | 同缓存状态更新对照通过；跨缓存状态一致性已由[本轮严格配置](reduced/cann930_20261120/routing_replay/REPORT.md)闭环 |
 
 内存预算为显式KV 2 GiB、单packed buffer 1280 MiB、HCCL_BUFFSIZE 256 MiB，更新服务最大上下文/批处理预算2048。当前打包器要求单buffer容纳最大1262.5 MiB张量。后续可按设备容量限制KV、批处理与发送缓冲，使用level-2分阶段恢复并顺序传输；完整384专家模型需重新测算容量。[补丁](reduced/cann930_20261117/weight_update/patches/)与[最新状态](reduced/cann930_20261117/weight_update/validation_status.json)已归档。
 
 ### 1M长序列功能验证
 
-**验证配置：** 完整模型上下文配置上限1048576；当前性能/精度服务实际上限40960/73728。
+**验证配置：** 32专家、Engram关闭、TP1/DP8/EP8；max-model-len=1048576，batched tokens=8192，max-num-seqs=1，KV16 GiB/卡；async、chunked prefill和FULL_DECODE_ONLY开启。
 
-**方法与通过条件：** 按tokenizer记录实际输入token数，启用长上下文服务，保存完整请求、可读回答及检索结果。
+**方法与通过条件：** 真实tokenizer构造100万token输入，在约5%/50%/95%处放置三个检索键，末尾提问；保存完整请求和自然结束输出。
 
-**结果：** 待验证。CANN930当前归档没有1M输入专项结果，不能由配置上限判定通过。
+**结果：** 通过。实际输入1,000,000 token、HTTP200、148.02秒自然结束，输出43 token，三处键3/3命中且可读。
 
 | 交付类型 | 文件 |
 |---|---|
-| 服务端脚本 | 未产生对应CANN930专项启动快照 |
-| 请求／校验脚本 | 未产生对应CANN930专项请求记录 |
-| 请求与输出 | 未产生对应CANN930专项输出 |
-| 日志与统计 | 未产生对应CANN930专项日志 |
+| 服务端脚本 | [启动脚本](reduced/cann930_20261120/long_context/scripts/start_server.sh) |
+| 请求／校验脚本 | [构造与验证客户端](reduced/cann930_20261120/long_context/scripts/verify_long_context.py) |
+| 请求与输出 | [完整输入请求](reduced/cann930_20261120/long_context/runs/long_context_20261120_12/validation/request.json.gz)、[原始响应](reduced/cann930_20261120/long_context/runs/long_context_20261120_12/validation/response.json)、[可读输出](reduced/cann930_20261120/long_context/runs/long_context_20261120_12/validation/output.txt) |
+| 日志与统计 | [专项报告](reduced/cann930_20261120/long_context/REPORT.md)、[离线核验](reduced/cann930_20261120/long_context/evidence_audit.json)、[资源释放](reduced/cann930_20261120/long_context/runs/long_context_20261120_12/release_review.json) |
 
 ## 性能与精度验证
 
@@ -368,17 +368,18 @@ DeepSeek官方DeepInfer仓库评测文档给出的GPQA Diamond参考值为 **93.
 | 请求与输出 | [第1次完整结果](full/cann930_20261117/precision_results/gpqa_198/)、[后三次完整结果](full/cann930_20261119_precision/results/)、[逐题配对CSV](full/gpqa_four_runs/paired_scores.csv) |
 | 日志与统计 | [第1次报告](full/cann930_20261117/REPORT.md)、[后三次报告](full/cann930_20261119_precision/REPORT.md)、[四次统计JSON](full/gpqa_four_runs/results.json)、[四次统计报告](full/gpqa_four_runs/REPORT.md) |
 
-#### 剩余问题与交付清单
+#### 验收范围与后续条件
 
-| 项目 | 当前状态 / 后续动作 |
+本轮32专家、Engram关闭的RL与1M功能已按指定范围验收；完整模型的基础推理、性能与GPQA测量分别保留各自配置和日期，不把缩减模型结论外推。
+
+| 项目 | 当前状态 |
 |---|---|
-| 路由双请求 | HTTP500已定位；候选补丁等待NPU复验及完整路由一致性检查 |
-| 冷/热缓存生成差异 | 权重更新同缓存状态对照通过，冷热状态差异根因待定位 |
-| 完整模型RL | Sleep五轮、checkpoint/HCCL/IPC专项待实测 |
-| 并行与功能补测 | TP>1、DCP、SP、PP>1及独立开关对照待CANN930实测 |
-| 独立单curl与1M输入 | 补当前环境单curl原始HTTP记录、1M有效回答与检索结果 |
-| 主场景硬件性能 | 补视觉/prefill/decode及跨rank分析，完成0.8目标验收 |
-| 精度官方对齐 | GPQA已完成四次测量及统计；当前相对官方93.4%差距3.164310个百分点，需先对齐生成/评分方法再确定验收 |
-| 交付补证 | FP4/FP8数值误差、必要源码/PR依据、镜像导出与校验 |
+| TP>1 / DCP / SP / PP | 当前支持范围排除：TP>1未支持，DCP/SP依赖TP>1，PP受Engram限制；不列为待修复项 |
+| 主场景硬件性能 | CANN930完整模型4K图文→32K的视觉/prefill/decode及跨rank分析、0.8目标验收尚需补齐；本轮按22单机范围交付，双机16卡实验留待后续资源安排 |
+| 图片方向 | 已测图片为宽1080×高1920；若严格要求宽1920×高1080，需按[横图客户端](full/cann930_20261117/scripts/run_client_mm_4k_32k_landscape.sh)补测 |
+| 精度官方对照 | 四次GPQA测量和T统计已完成；官方参考与当前生成/评分方法不同，正式同条件对照及门限尚需明确 |
+| 源码交付 | 基础提交公开可达；本轮源码、补丁与SHA已交付，上游修复PR尚未提交 |
 
-所有已通过结论仅适用于本节列明的配置。文件完整性可在仓库根目录运行`shasum -a 256 -c manifest.sha256`核对。
+资源策略为发现外部NPU占用或本任务进程被停止即释放并停止，不自动重启；当前实验结束后8张卡已释放。[本轮验收总览](reduced/cann930_20261120/README.md)
+
+仓库保存脚本、原始输出、日志、源码指纹及补丁，不包含模型权重、tokenizer或镜像二进制。所有通过结论仅限列明配置。文件完整性可在仓库根目录运行`shasum -a 256 -c manifest.sha256`核对。

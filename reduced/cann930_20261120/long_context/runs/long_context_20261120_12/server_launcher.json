@@ -1,0 +1,11 @@
+[
+  "docker",
+  "-H",
+  "unix:///run/c00954197-cann930/docker.sock",
+  "exec",
+  "-d",
+  "c00954197_dsv41_cann930",
+  "bash",
+  "-lc",
+  "exec bash /mnt/share/c00954197/Workspace/dsv41/basic/long_context/scripts/start_server.sh /mnt/share/c00954197/Workspace/dsv41/basic/long_context/runs/long_context_20261120_12 graph > /mnt/share/c00954197/Workspace/dsv41/basic/long_context/runs/long_context_20261120_12/server.log 2>&1"
+]

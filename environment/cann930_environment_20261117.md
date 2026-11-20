@@ -16,8 +16,8 @@
 | torch / torch_npu | 2.10.0+cpu / 2.10.0.post7 |
 | vLLM | 0.32.0+empty，源码 `5df63a7203cdb9328d824a27b682e77c7b9928be` |
 | vLLM-Ascend | 0.19.1rc2.dev3401+g28e9e97ba，源码 `28e9e97ba254b076a88275e8a275556cb9a11664` |
-| Transformers | 5.19.0 |
-| 执行模式 | 专项 MRV2、eager、同步调度，完整模型 MRV2、FULL_DECODE_ONLY、异步调度 |
+| Triton-Ascend / Transformers | 3.6.0.post2 / 5.19.0 |
+| 执行模式 | 既有Sleep/权重更新：eager同步；新路由：BI=1、eager及FULL_DECODE_ONLY；1M：async+chunked prefill+FULL_DECODE_ONLY |
 | 23/24 驱动 | 26.2.0.b020 |
 | 通信接口 | Gloo `enp39s0f0`，HCCL `enp35s0f2` |
 | 专项目录 | `/mnt/share/c00954197/Workspace/dsv41/basic` |
@@ -62,10 +62,20 @@
 docker -H unix:///run/c00954197-cann930/docker.sock exec -it c00954197_dsv41_cann930 bash -l
 ```
 
-服务端与验证命令见各专项报告。2026-11-18 已完成 IPC 单卡多轮回收和完整 IPC 回环，实验后 8 张卡全部释放。当前待定位为冷/热缓存请求输出差异。
+服务端与验证命令见各专项报告。2026-11-18 已完成 IPC 单卡多轮回收和完整 IPC 回环，实验后 8 张卡全部释放。冷热缓存差异已由[2026-11-20严格配置](../reduced/cann930_20261120/routing_replay/REPORT.md)闭环。
 
 ## 完整模型精度配置
 
 2026-11-19 的完整模型 GPQA 使用 73728 服务上下文和 65536 输出预算，temperature=1.0、top_p=0.95、top_k=0、reasoning_effort=low、enable_thinking=true。双节点同一次启动完成三轮各 198 题，原始镜像、实际配置及脚本哈希随结果保存。[最新精度报告](../full/cann930_20261119_precision/REPORT.md)
 
-正式精度范围为GPQA Diamond，四次完整结果、官方DeepInfer参考与T检验见[精度统计报告](../full/gpqa_four_runs/REPORT.md)。专家返回候选补丁已完成CPU回归，NPU复验待完成，见[路由报告](../reduced/cann930_20261118/routing_replay/REPORT.md)。
+正式精度范围为GPQA Diamond，四次完整结果、官方DeepInfer参考与T检验见[精度统计报告](../full/gpqa_four_runs/REPORT.md)。专家返回、缓存和生命周期新验收已完成，见[路由报告](../reduced/cann930_20261120/routing_replay/REPORT.md)。
+
+## 2026-11-20实际代码叠加与配置
+
+路由完整捕获需关闭SWA bounded replay并保留prefix caching；严格一致性使用BI=1。mHC固定64行计算封装为不透明NPU算子以兼容TorchCompile；缺失AscendC API库时使用现有Triton NPU实现。正常退出先取消异步输出消费者，再关闭engine，停服先通知主进程。level-1使用跨NUMA交错Host分配。
+
+实际文件SHA与库版本见[当前源码清单](../reduced/cann930_20261120/routing_replay/source/final/source_versions.json)，前一代码阶段也保留快照。基础提交均已核验公开可达：[vLLM](https://github.com/vllm-project/vllm/commit/5df63a7203cdb9328d824a27b682e77c7b9928be)、[vLLM-Ascend](https://github.com/vllm-project/vllm-ascend/commit/28e9e97ba254b076a88275e8a275556cb9a11664)。基础镜像ID不代表容器内后续Python补丁已进入镜像二进制。
+
+1M配置为上下文1048576、batch8192、max-seqs1、KV16 GiB/卡、利用率参数0.80；BI=0、async/chunked prefill开启、SWA bounded replay关闭。[1M实测](../reduced/cann930_20261120/long_context/REPORT.md)
+
+TP>1、DCP、SP、PP不在本轮支持范围；其中DCP/SP依赖TP>1，PP受Engram限制。实验资源策略已改为外部占用或本任务进程停止即释放、不自动重启。

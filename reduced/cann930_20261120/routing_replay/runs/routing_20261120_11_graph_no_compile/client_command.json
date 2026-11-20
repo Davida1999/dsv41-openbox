@@ -1,0 +1,14 @@
+[
+  "docker",
+  "-H",
+  "unix:///run/c00954197-cann930/docker.sock",
+  "exec",
+  "-e",
+  "DSV41_ROUTING_RUN_DIR=/mnt/share/c00954197/Workspace/dsv41/basic/routing_replay/runs/routing_20261120_11_graph_no_compile/client",
+  "c00954197_dsv41_cann930",
+  "python3",
+  "-u",
+  "/mnt/share/c00954197/Workspace/dsv41/basic/routing_replay/scripts/validate_routing.py",
+  "--run",
+  "/mnt/share/c00954197/Workspace/dsv41/basic/routing_replay/runs/routing_20261120_11_graph_no_compile"
+]

@@ -20,3 +20,5 @@ python3 reduced/cann930_20261117/weight_update/scripts/audit_saved_evidence.py
 ```
 
 2026-11-18 的实机复验补充了有效缓存命中、完整回收与退出告警检查，新增冷/热缓存输出差异观察。[最新报告](weight_update/runs/retest_20261118_01/REPORT.md)
+
+2026-11-20补充：[路由返回及冷热一致性已闭环](../cann930_20261120/routing_replay/REPORT.md)，[1M及异步/分块已实测](../cann930_20261120/long_context/REPORT.md)。当前验收入口见[最新专项总览](../cann930_20261120/README.md)。

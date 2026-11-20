@@ -1,0 +1,21 @@
+{
+  "cpu_checks": [
+    {
+      "case": "missing_library",
+      "passed": true
+    },
+    {
+      "case": "missing_symbols",
+      "passed": true
+    },
+    {
+      "case": "complete_api",
+      "passed": true
+    }
+  ],
+  "actual_ascendc_api_available": false,
+  "existing_fallback": "vllm_ascend.ops.triton.batch_invariant",
+  "before_sha256": "699dae5e294c50cd6fb86d13b2b485d6b2021a00cc2d20c6a789abb8e3a5899e",
+  "after_sha256": "0e149f7ebe2b6f8f630ab78080d912ee5fb6182404705283b31e648d7d4238da",
+  "applied": false
+}

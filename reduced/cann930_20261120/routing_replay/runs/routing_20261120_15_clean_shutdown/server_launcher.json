@@ -1,0 +1,11 @@
+[
+  "docker",
+  "-H",
+  "unix:///run/c00954197-cann930/docker.sock",
+  "exec",
+  "-d",
+  "c00954197_dsv41_cann930",
+  "bash",
+  "-lc",
+  "exec bash /mnt/share/c00954197/Workspace/dsv41/basic/routing_replay/scripts/start_final_graph_20261120.sh /mnt/share/c00954197/Workspace/dsv41/basic/routing_replay/runs/routing_20261120_15_clean_shutdown graph > /mnt/share/c00954197/Workspace/dsv41/basic/routing_replay/runs/routing_20261120_15_clean_shutdown/server.log 2>&1"
+]

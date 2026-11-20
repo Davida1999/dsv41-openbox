@@ -1,0 +1,45 @@
+{
+  "server": "177.42.22.1",
+  "container": "c00954197_dsv41_cann930",
+  "cann": "9.3.0",
+  "versions": {
+    "vllm": "0.32.0+empty",
+    "vllm-ascend": "0.19.1rc2.dev3401+g28e9e97ba",
+    "torch": "2.10.0+cpu",
+    "torch-npu": "2.10.0.post7",
+    "triton-ascend": "3.6.0.post2"
+  },
+  "files": [
+    {
+      "path": "/vllm-workspace/vllm-ascend/vllm_ascend/patch/worker/patch_routed_experts_capture.py",
+      "sha256": "63738a9505e2d4b8c020745461c5652c82fdb9b0e7cf1773ddff14dc759995a5"
+    },
+    {
+      "path": "/vllm-workspace/vllm-ascend/vllm_ascend/platform.py",
+      "sha256": "fc66c2bfde979f2bd275f447c22d4026c22811cdfcdb3bb7f2de5d3a280bfb18"
+    },
+    {
+      "path": "/vllm-workspace/vllm-ascend/vllm_ascend/batch_invariant.py",
+      "sha256": "0e149f7ebe2b6f8f630ab78080d912ee5fb6182404705283b31e648d7d4238da"
+    },
+    {
+      "path": "/vllm-workspace/vllm-ascend/vllm_ascend/models/deepseek_v41/model.py",
+      "sha256": "37b190da04627f2fec0f1d8c9430bf9d32770b90cfd506d48a75184f483e7c4f"
+    },
+    {
+      "path": "/vllm-workspace/vllm-ascend/vllm_ascend/models/deepseek_v41/vl_model.py",
+      "sha256": "478009a71b95ec233610332a90cad5c8fde98d830dfe2fa5611d113a42830c6b"
+    }
+  ],
+  "excluded_features": {
+    "TP>1": "not supported for current DSV4.1",
+    "DCP": "requires TP>1",
+    "SP": "requires TP>1",
+    "PP": "Engram limitation"
+  },
+  "full_model_capacity": {
+    "non_engram_bytes": 1132638237512,
+    "non_engram_gib": 1054.8515594676137,
+    "single_node_hbm_gib": 768
+  }
+}

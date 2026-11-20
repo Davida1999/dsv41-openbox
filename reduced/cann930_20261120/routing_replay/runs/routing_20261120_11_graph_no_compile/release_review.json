@@ -1,0 +1,13 @@
+{
+  "date": "2026-11-20",
+  "release_utc": "2026-11-20T03:55:18.000227+00:00",
+  "user_cutoff_beijing": "12:00",
+  "remaining_owned_npu_pids": [],
+  "all_npu_pids": [],
+  "service_listeners": [],
+  "session_status": {
+    "status": "running",
+    "phase": "ready_for_extended_validation",
+    "mode": "graph"
+  }
+}

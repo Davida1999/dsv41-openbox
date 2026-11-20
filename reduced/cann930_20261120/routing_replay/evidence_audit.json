@@ -1,0 +1,176 @@
+{
+  "scope": "CPU audit of saved real-NPU evidence; no generation",
+  "runs": [
+    {
+      "run": "routing_20261120_09_bi_hc_fixed",
+      "status": "passed",
+      "requests_checked": 9,
+      "all_expert_arrays_valid": true,
+      "comparisons": [
+        {
+          "name": "cold_warm_completions",
+          "text_equal": true,
+          "tokens_equal": true,
+          "all_routes_equal": true,
+          "selected_logprobs_equal": true,
+          "selected_logprob_max_abs": 0.0
+        },
+        {
+          "name": "warm_repeat_completions",
+          "text_equal": true,
+          "tokens_equal": true,
+          "all_routes_equal": true,
+          "selected_logprobs_equal": true,
+          "selected_logprob_max_abs": 0.0
+        },
+        {
+          "name": "sleep_restore_completions",
+          "text_equal": true,
+          "tokens_equal": true,
+          "all_routes_equal": true,
+          "selected_logprobs_equal": true,
+          "selected_logprob_max_abs": 0.0
+        },
+        {
+          "name": "cold_warm_chat_completions",
+          "text_equal": true,
+          "tokens_equal": true,
+          "all_routes_equal": true,
+          "selected_logprobs_equal": true,
+          "selected_logprob_max_abs": 0.0
+        },
+        {
+          "name": "warm_repeat_chat_completions",
+          "text_equal": true,
+          "tokens_equal": true,
+          "all_routes_equal": true,
+          "selected_logprobs_equal": true,
+          "selected_logprob_max_abs": 0.0
+        },
+        {
+          "name": "sleep_restore_chat_completions",
+          "text_equal": true,
+          "tokens_equal": true,
+          "all_routes_equal": true,
+          "selected_logprobs_equal": true,
+          "selected_logprob_max_abs": 0.0
+        }
+      ],
+      "same_step_multi_request_steps": 0
+    },
+    {
+      "run": "routing_20261120_11_graph_no_compile",
+      "status": "passed",
+      "requests_checked": 153,
+      "all_expert_arrays_valid": true,
+      "comparisons": [
+        {
+          "name": "cold_warm_completions",
+          "text_equal": true,
+          "tokens_equal": true,
+          "all_routes_equal": true,
+          "selected_logprobs_equal": true,
+          "selected_logprob_max_abs": 0.0
+        },
+        {
+          "name": "warm_repeat_completions",
+          "text_equal": true,
+          "tokens_equal": true,
+          "all_routes_equal": true,
+          "selected_logprobs_equal": true,
+          "selected_logprob_max_abs": 0.0
+        },
+        {
+          "name": "sleep_restore_completions",
+          "text_equal": true,
+          "tokens_equal": true,
+          "all_routes_equal": true,
+          "selected_logprobs_equal": true,
+          "selected_logprob_max_abs": 0.0
+        },
+        {
+          "name": "cold_warm_chat_completions",
+          "text_equal": true,
+          "tokens_equal": true,
+          "all_routes_equal": true,
+          "selected_logprobs_equal": true,
+          "selected_logprob_max_abs": 0.0
+        },
+        {
+          "name": "warm_repeat_chat_completions",
+          "text_equal": true,
+          "tokens_equal": true,
+          "all_routes_equal": true,
+          "selected_logprobs_equal": true,
+          "selected_logprob_max_abs": 0.0
+        },
+        {
+          "name": "sleep_restore_chat_completions",
+          "text_equal": true,
+          "tokens_equal": true,
+          "all_routes_equal": true,
+          "selected_logprobs_equal": true,
+          "selected_logprob_max_abs": 0.0
+        }
+      ],
+      "same_step_multi_request_steps": 879
+    },
+    {
+      "run": "routing_20261120_15_clean_shutdown",
+      "status": "passed",
+      "requests_checked": 153,
+      "all_expert_arrays_valid": true,
+      "comparisons": [
+        {
+          "name": "cold_warm_completions",
+          "text_equal": true,
+          "tokens_equal": true,
+          "all_routes_equal": true,
+          "selected_logprobs_equal": true,
+          "selected_logprob_max_abs": 0.0
+        },
+        {
+          "name": "warm_repeat_completions",
+          "text_equal": true,
+          "tokens_equal": true,
+          "all_routes_equal": true,
+          "selected_logprobs_equal": true,
+          "selected_logprob_max_abs": 0.0
+        },
+        {
+          "name": "sleep_restore_completions",
+          "text_equal": true,
+          "tokens_equal": true,
+          "all_routes_equal": true,
+          "selected_logprobs_equal": true,
+          "selected_logprob_max_abs": 0.0
+        },
+        {
+          "name": "cold_warm_chat_completions",
+          "text_equal": true,
+          "tokens_equal": true,
+          "all_routes_equal": true,
+          "selected_logprobs_equal": true,
+          "selected_logprob_max_abs": 0.0
+        },
+        {
+          "name": "warm_repeat_chat_completions",
+          "text_equal": true,
+          "tokens_equal": true,
+          "all_routes_equal": true,
+          "selected_logprobs_equal": true,
+          "selected_logprob_max_abs": 0.0
+        },
+        {
+          "name": "sleep_restore_chat_completions",
+          "text_equal": true,
+          "tokens_equal": true,
+          "all_routes_equal": true,
+          "selected_logprobs_equal": true,
+          "selected_logprob_max_abs": 0.0
+        }
+      ],
+      "same_step_multi_request_steps": 879
+    }
+  ]
+}

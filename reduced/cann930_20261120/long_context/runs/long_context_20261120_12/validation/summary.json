@@ -1,0 +1,19 @@
+{
+  "status": "passed",
+  "phase": "complete",
+  "target_prompt_tokens": 1000000,
+  "max_output_tokens": 1024,
+  "http": 200,
+  "prompt_tokens": 1000000,
+  "output_tokens": 43,
+  "seconds": 148.020925919991,
+  "utf8_without_replacement_character": true,
+  "retrieval_hits": 3,
+  "retrieval_total": 3,
+  "retrieved_keys": [
+    "K8Z7Q4",
+    "M2V9P6",
+    "R5T1X3"
+  ],
+  "acceptance_scope": "1M token capacity and non-garbled response; retrieval is a separate reduced-model quality observation"
+}

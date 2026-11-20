@@ -1,0 +1,6 @@
+{
+  "status": "yielded",
+  "phase": "waiting_for_service",
+  "mode": "graph",
+  "error": "Traceback (most recent call last):\n  File \"/mnt/share/c00954197/Workspace/dsv41/basic/routing_replay/scripts/run_final_graph_20261120.py\", line 61, in main\n    time.sleep(3)\n  File \"/mnt/share/c00954197/Workspace/dsv41/basic/routing_replay/scripts/run_final_graph_20261120.py\", line 33, in interrupted\n    raise SystemExit(f\"Interrupted by signal {signum}\")\nSystemExit: Interrupted by signal 15\n"
+}

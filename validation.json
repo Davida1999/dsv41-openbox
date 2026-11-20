@@ -36,7 +36,7 @@
   ],
   "ipc_latest_lifecycle_patch": "npu_verified_20_rounds_and_8card_A_B_A",
   "weight_update_retest": "runs/retest_20261118_01",
-  "prefix_cache_output_consistency": "cold_vs_cache_hit_output_differs",
+  "prefix_cache_output_consistency": "resolved_in_strict_BI_routing_configuration_20261120",
   "gpqa_65536_three_rounds_20261119": {
     "status": "passed",
     "scope": "CPU audit of saved predictions, scores, configs and release records",
@@ -105,14 +105,15 @@
       "性能与精度验证"
     ],
     "precision_scope": "GPQA Diamond only",
-    "relative_links_checked_in_current_documents": 175,
+    "relative_links_checked_in_current_documents": 248,
     "broken_links": 0,
-    "new_python_files_syntax_checked": 11,
-    "new_shell_files_bash_n": 3,
-    "new_json_files_parsed": 15,
+    "new_python_files_syntax_checked": 33,
+    "new_shell_files_bash_n": 11,
+    "new_json_files_parsed": 858,
     "routing_raw_files_byte_identical": 42,
     "independent_single_curl_npu_rerun": false,
-    "raw_routing_gzip_preserves_original_bytes": true
+    "raw_routing_gzip_preserves_original_bytes": true,
+    "actual_single_request_http_archive": true
   },
   "gpqa_four_full_runs": {
     "correct": [
@@ -131,13 +132,74 @@
     "historical_paired_tests": "computed; exploratory cross-configuration comparisons, Holm adjusted"
   },
   "routing_cann930": {
-    "single_request_experts": [
-      20,
-      40,
-      6
+    "status": "passed",
+    "scope": "E32, Engram off, TP1 DP8 EP8, BI=1, prefix cache on, no SWA bounded replay",
+    "runs": [
+      {
+        "run": "routing_20261120_09_bi_hc_fixed",
+        "status": "passed",
+        "requests_checked": 9,
+        "same_step_multi_request_steps": 0
+      },
+      {
+        "run": "routing_20261120_11_graph_no_compile",
+        "status": "passed",
+        "requests_checked": 153,
+        "same_step_multi_request_steps": 879
+      },
+      {
+        "run": "routing_20261120_15_clean_shutdown",
+        "status": "passed",
+        "requests_checked": 153,
+        "same_step_multi_request_steps": 879
+      }
     ],
-    "same_dp_pair_http": 500,
-    "candidate_cpu_checks_passed": 15,
-    "fixed_npu_rerun_completed": false
+    "fixed_npu_rerun_completed": true,
+    "all_full_expert_arrays_checked": true,
+    "all_cache_and_restore_text_tokens_routes_logprobs_equal": true,
+    "max_logprob_delta": 0,
+    "final_log_error_count": 0,
+    "final_log_traceback_count": 0,
+    "evidence": "reduced/cann930_20261120/routing_replay/evidence_audit.json"
+  },
+  "long_context_cann930": {
+    "status": "passed",
+    "scope": "Offline audit of actual 1M request and response",
+    "prompt_tokens": 1000000,
+    "output_tokens": 43,
+    "keys_embedded_at_recorded_positions": true,
+    "retrieval_hits": 3,
+    "natural_stop": true,
+    "output_text_source": "Live /detokenize of saved response token_ids; tokenizer not included for independent offline decode",
+    "output_contains_all_saved_keys": true
+  },
+  "dequant_sample_check": {
+    "status": "passed",
+    "tensors_checked": 34,
+    "values_checked": 4624,
+    "mismatch_count": 0,
+    "exhaustive": false
+  },
+  "current_delivery_20261120": {
+    "validation_type": "offline_checks_of_saved_real_NPU_evidence",
+    "counts": {
+      "python_ast": 33,
+      "bash_syntax": 11,
+      "json_parsed": 858,
+      "jsonl_rows_parsed": 57601,
+      "gzip_integrity": 443,
+      "relative_links": 248,
+      "source_sha_verified": 11
+    },
+    "template_sections_verified": true,
+    "scope_exclusions": [
+      "TP>1",
+      "DCP",
+      "SP",
+      "PP"
+    ],
+    "all_eight_npus_released": true,
+    "raw_export_archive_sha256": "952584947abacdf545c381d9603c4b499f6f842b72e624ac254787e7ef83b3a9",
+    "errors": []
   }
 }

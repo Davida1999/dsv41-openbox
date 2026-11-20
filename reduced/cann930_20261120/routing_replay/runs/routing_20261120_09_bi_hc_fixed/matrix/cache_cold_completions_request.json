@@ -1,0 +1,15 @@
+{
+  "path": "/v1/completions",
+  "rank": 0,
+  "payload": {
+    "model": "dsv41-routing",
+    "max_tokens": 16,
+    "temperature": 0,
+    "top_p": 1,
+    "seed": 42,
+    "ignore_eos": true,
+    "return_token_ids": true,
+    "prompt": "Paris is the capital of France. Paris is the capital of France. Paris is the capital of France. Paris is the capital of France. Paris is the capital of France. Paris is the capital of France. Paris is the capital of France. Paris is the capital of France. Paris is the capital of France. Paris is the capital of France. Paris is the capital of France. Paris is the capital of France. Paris is the capital of France. Paris is the capital of France. Paris is the capital of France. Paris is the capital of France. Paris is the capital of France. Paris is the capital of France. Paris is the capital of France. Paris is the capital of France. Paris is the capital of France. Paris is the capital of France. Paris is the capital of France. Paris is the capital of France. Paris is the capital of France. Paris is the capital of France. Paris is the capital of France. Paris is the capital of France. Paris is the capital of France. Paris is the capital of France. Paris is the capital of France. Paris is the capital of France. Paris is the capital of France. Paris is the capital of France. Paris is the capital of France. Paris is the capital of France. Paris is the capital of France. Paris is the capital of France. Paris is the capital of France. Paris is the capital of France. Paris is the capital of France. Paris is the capital of France. Paris is the capital of France. Paris is the capital of France. Paris is the capital of France. Paris is the capital of France. Paris is the capital of France. Paris is the capital of France. Paris is the capital of France. Paris is the capital of France. Paris is the capital of France. Paris is the capital of France. Paris is the capital of France. Paris is the capital of France. Paris is the capital of France. Paris is the capital of France. Paris is the capital of France. Paris is the capital of France. Paris is the capital of France. Paris is the capital of France. Paris is the capital of France. Paris is the capital of France. Paris is the capital of France. Paris is the capital of France. Paris is the capital of France. Paris is the capital of France. Paris is the capital of France. Paris is the capital of France. Paris is the capital of France. Paris is the capital of France. Paris is the capital of France. Paris is the capital of France. Paris is the capital of France. Paris is the capital of France. Paris is the capital of France. Paris is the capital of France. Paris is the capital of France. Paris is the capital of France. Paris is the capital of France. Paris is the capital of France. ",
+    "logprobs": 5
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "endpoint": "completions",
+  "dp_rank": 0,
+  "payload": {
+    "model": "dsv41-routing",
+    "max_tokens": 16,
+    "temperature": 0,
+    "seed": 42,
+    "ignore_eos": true,
+    "return_token_ids": true,
+    "top_p": 1,
+    "prompt": "The capital of France is",
+    "logprobs": 5
+  }
+}

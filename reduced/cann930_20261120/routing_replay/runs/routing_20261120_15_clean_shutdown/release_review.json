@@ -1,0 +1,7 @@
+{
+  "release_utc": "2026-11-20T05:11:44.560689+00:00",
+  "all_eight_npus_free": true,
+  "service_listeners": [],
+  "forced_processes": [],
+  "resource_policy": "yield on foreign occupation or external stop; no automatic restart"
+}

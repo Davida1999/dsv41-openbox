@@ -1,0 +1,1 @@
+No fixed noon cutoff. Stop and release on any foreign NPU occupation or external process stop; no automatic restart.

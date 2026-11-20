@@ -1,0 +1,15 @@
+{
+  "model": "Slim-E32 BF16",
+  "engram": false,
+  "tp": 1,
+  "dp": 8,
+  "ep": 8,
+  "pp": 1,
+  "compilation_mode": 0,
+  "cudagraph_mode": "FULL_DECODE_ONLY",
+  "batch_invariant": true,
+  "prefix_caching": true,
+  "swa_bounded_replay": false,
+  "host_memory_policy": "numactl --interleave=all",
+  "sleep_level": 1
+}

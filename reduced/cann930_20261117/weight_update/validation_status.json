@@ -7,9 +7,9 @@
   "ipc_reference_counter_fix": "npu_verified_20_rounds_and_8card_A_B_A",
   "resource_state": "All eight NPUs free; all experiment processes released",
   "roundtrip_packed_source_sha256": "1f8e4edc8f691bbb4cdbfbe2eef0c37c8163ad8090471eeb3b661e801c8f0b1e",
-  "pending_test": "scripts/ipc_reclamation_retest.py",
+  "pending_test": null,
   "task_status": "COMPLETE",
-  "result": "PARTIAL",
+  "result": "SUPPORTED_WITH_RECORDED_CONFIGURATION_SCOPE",
   "hardware_gate": "Current retest completed and devices released",
   "ipc_fixed_source_sha256": "1f8e4edc8f691bbb4cdbfbe2eef0c37c8163ad8090471eeb3b661e801c8f0b1e",
   "offline_evidence_audit": "passed",
@@ -24,6 +24,12 @@
   "current_retest": "runs/retest_20261118_01",
   "latest_npu_evidence_run": "runs/retest_20261118_01",
   "cache_invalidation": "passed_cold_zero_warm_256_for_both_backends",
-  "cache_generation_consistency": "cold_vs_cache_hit_output_differs_root_cause_pending",
-  "remaining_issue": "Prefix-cache-hit greedy output differs from cold output in this Top32 configuration"
+  "cache_generation_consistency": "resolved_in_strict_routing_configuration_20261120",
+  "remaining_issue": null,
+  "followup_20261120": {
+    "scope": "Cross-cache generation consistency; original HCCL/IPC data and settings unchanged",
+    "configuration": "BI=1, no SWA bounded replay, fixed-row HC, NPU graph/TorchCompile3",
+    "evidence": "../../cann930_20261120/routing_replay/REPORT.md",
+    "status": "passed"
+  }
 }

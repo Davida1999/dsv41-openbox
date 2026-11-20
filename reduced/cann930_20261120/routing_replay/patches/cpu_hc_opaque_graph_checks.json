@@ -1,0 +1,15 @@
+{
+  "cpu_fullgraph_dynamic_batches": [
+    1,
+    2,
+    49,
+    561
+  ],
+  "graphs": 2,
+  "opaque_op_visible_in_all_graphs": true,
+  "production_dispatch": "PrivateUse1 (NPU)",
+  "cpu_implementation": "shape-only in this test process; not in runtime patch",
+  "before_sha256": "37b190da04627f2fec0f1d8c9430bf9d32770b90cfd506d48a75184f483e7c4f",
+  "after_sha256": "c82ce66bd2a235a2cc96fef9069bf20f66c9689aaed6eb038b78fe5ce162f18c",
+  "applied": false
+}

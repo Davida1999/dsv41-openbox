@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "scope": "Offline audit of actual 1M request and response",
+  "prompt_tokens": 1000000,
+  "output_tokens": 43,
+  "keys_embedded_at_recorded_positions": true,
+  "retrieval_hits": 3,
+  "natural_stop": true,
+  "output_text_source": "Live /detokenize of saved response token_ids; tokenizer not included for independent offline decode",
+  "output_contains_all_saved_keys": true
+}

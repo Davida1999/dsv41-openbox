@@ -1,0 +1,69 @@
+{
+  "before": [
+    {
+      "case": "capture",
+      "actual": true,
+      "expected": false,
+      "passed": false
+    },
+    {
+      "case": "ordinary",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "case": "other_model",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "case": "explicit_off",
+      "actual": false,
+      "expected": false,
+      "passed": true
+    },
+    {
+      "case": "unsupported_scheduler",
+      "actual": false,
+      "expected": false,
+      "passed": true
+    }
+  ],
+  "after": [
+    {
+      "case": "capture",
+      "actual": false,
+      "expected": false,
+      "passed": true
+    },
+    {
+      "case": "ordinary",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "case": "other_model",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "case": "explicit_off",
+      "actual": false,
+      "expected": false,
+      "passed": true
+    },
+    {
+      "case": "unsupported_scheduler",
+      "actual": false,
+      "expected": false,
+      "passed": true
+    }
+  ],
+  "before_sha256": "fda98c9ec6ae68412c60608b3fef3afb4608ba8eac57750c6c8ac92625d7f641",
+  "after_sha256": "fc66c2bfde979f2bd275f447c22d4026c22811cdfcdb3bb7f2de5d3a280bfb18",
+  "applied": false
+}

@@ -1,0 +1,7 @@
+{
+  "pp_changes_reverted": true,
+  "active_model_change": "HC fixed rows only under VLLM_BATCH_INVARIANT",
+  "model_sha256": "37b190da04627f2fec0f1d8c9430bf9d32770b90cfd506d48a75184f483e7c4f",
+  "vl_model_sha256": "478009a71b95ec233610332a90cad5c8fde98d830dfe2fa5611d113a42830c6b",
+  "tested_hc_function_ast_identical": true
+}

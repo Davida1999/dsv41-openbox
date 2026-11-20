@@ -1,0 +1,18 @@
+{
+  "path": "/inference/v1/generate",
+  "rank": 0,
+  "payload": {
+    "model": "dsv41-routing",
+    "token_ids": [
+      1,
+      2,
+      3
+    ],
+    "stream": false,
+    "sampling_params": {
+      "max_tokens": 8,
+      "temperature": 0,
+      "ignore_eos": true
+    }
+  }
+}
