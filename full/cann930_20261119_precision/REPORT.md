@@ -41,7 +41,7 @@
 
 两端运行期及资源清理阶段的 ERROR 计数均为 0，停止前日志字节位置和 SHA256 已核对。结束后两端本任务进程、NPU 进程和服务端口监听均为 0，`/dev/shm` 可用量回到启动前基线。遥测 JSONL 已采用 gzip 无损归档。[23 节点释放核验](run/node23/release_check.json) [24 节点释放核验](run/node24/release_check.json) [23 共享内存核对](run/node23/shm_release_review.json) [24 共享内存核对](run/node24/shm_release_review.json)
 
-本次结果对应 65536 输出预算、temperature=1.0、top_p=0.95 和 reasoning_effort=low。2026-11-17 的 32768 预算实验保留其原始设置与分数，跨实验差异涉及多项配置变化。精度达标阈值和同条件对照仍待确定。11 月 17 日出现的 UB LINK ERROR 底层根因仍待确认。[32768 预算历史报告](../cann930_20261117/REPORT.md) [本轮原始报告](run/REPORT.md)
+本次结果对应 65536 输出预算、temperature=1.0、top_p=0.95 和 reasoning_effort=low。2026-11-17 的 32768 预算实验保留其原始设置与分数，跨实验差异涉及多项配置变化。四次完整实验、官方DeepInfer 93.4%参考与T检验已汇总，当前三轮低3.164310个百分点且方法尚未完全对齐。[四次精度统计报告](../gpqa_four_runs/REPORT.md) 11 月 17 日出现的 UB LINK ERROR 底层根因仍待确认。[32768 预算历史报告](../cann930_20261117/REPORT.md) [本轮原始报告](run/REPORT.md)
 
 在仓库根目录运行以下命令，可使用 Python 标准库重新核对保存证据。
 

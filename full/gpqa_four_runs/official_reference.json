@@ -1,0 +1,47 @@
+{
+  "checked_date": "2026-11-20",
+  "flash_1017_deepinfer": {
+    "organization": "deepseek-ai",
+    "repository_commit": "a679bb86ce36e883a98a97733492b686e5b9a08e",
+    "gpqa_pass_at_1_percent": 93.4,
+    "default_model": "deepseek-ai/DeepSeek-V4.1-Flash-1017",
+    "questions": 198,
+    "samples_per_question": 8,
+    "reasoning_effort": 100,
+    "temperature": 1.0,
+    "top_p": 1.0,
+    "max_prompt_plus_output_tokens": 147456,
+    "scoring": "LLM judge by default; rule judge also available",
+    "status": "published sanity-check reference, not a matched acceptance run",
+    "files": {
+      "eval/README.md": {
+        "url": "https://github.com/deepseek-ai/DeepInfer/blob/a679bb86ce36e883a98a97733492b686e5b9a08e/eval/README.md",
+        "sha256": "34b856541650407e0193bf4d58a5df980b4b43e8ea9232374ac5ae357a4cc1dc"
+      },
+      "eval/gpqa/run.sh": {
+        "url": "https://github.com/deepseek-ai/DeepInfer/blob/a679bb86ce36e883a98a97733492b686e5b9a08e/eval/gpqa/run.sh",
+        "sha256": "490680d3cbe37ed44adea018f2e6948dd84273d55fb7db02f17021ecf3e5e43e"
+      },
+      "eval/run_eval.py": {
+        "url": "https://github.com/deepseek-ai/DeepInfer/blob/a679bb86ce36e883a98a97733492b686e5b9a08e/eval/run_eval.py",
+        "sha256": "5f1fd6d70da0a15858b53a4724e79501e85f5cbd889ae117ec383b4981f66fc5"
+      }
+    },
+    "official_per_question_outputs_obtained": false,
+    "official_repeated_run_scores_obtained": false
+  },
+  "original_flash_0910": {
+    "model": "DeepSeek-V4.1-Flash (September release)",
+    "gpqa_pass_at_1_percent": 90.9,
+    "reasoning_effort": 100,
+    "temperature": 1.0,
+    "top_p": 0.95,
+    "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash/blob/main/README.md",
+    "same_checkpoint_as_1017": false
+  },
+  "flash_1017_model_card": {
+    "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017/blob/main/README.md",
+    "separate_gpqa_score_in_model_card": false
+  },
+  "source_policy": "Only DeepSeek official sources used; differing versions and methods are not merged."
+}

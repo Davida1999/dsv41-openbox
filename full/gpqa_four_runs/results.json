@@ -1,0 +1,220 @@
+{
+  "analysis": "paired_question_correctness_t_tests",
+  "alpha": 0.05,
+  "dataset_sha256": "41d1213cd7a4998605a26c2798500652572007161b3a92817ba46b35befcd305",
+  "all_prompts_and_gold_match": true,
+  "scoring": "final content; unparsed answers counted incorrect",
+  "runs": [
+    {
+      "run": 1,
+      "date": "2026-11-17",
+      "source_round": null,
+      "questions": 198,
+      "successful_requests": 198,
+      "correct": 164,
+      "accuracy_percent": 82.82828282828282,
+      "raw_correct": 165,
+      "output_budget": 32768,
+      "unparsed_answer_ids": [
+        10,
+        15,
+        27,
+        48,
+        52,
+        64,
+        71,
+        74,
+        76,
+        79,
+        81,
+        88,
+        90,
+        94,
+        99,
+        101,
+        118,
+        127,
+        130,
+        140,
+        145,
+        147,
+        162,
+        187
+      ],
+      "output_limit_ids": [
+        10,
+        15,
+        27,
+        48,
+        52,
+        64,
+        71,
+        74,
+        76,
+        79,
+        81,
+        88,
+        90,
+        94,
+        99,
+        101,
+        118,
+        127,
+        130,
+        140,
+        145,
+        147,
+        162,
+        187
+      ],
+      "prediction_sha256": "6099992560a3b729c9c0de83198f9226741f186da85a327353e2c5e5f822eba2",
+      "source": "full/cann930_20261117/precision_results/gpqa_198/predictions/dsv41-bf16-cann930-gpqa/GPQA_diamond.jsonl.gz"
+    },
+    {
+      "run": 2,
+      "date": "2026-11-19",
+      "source_round": 1,
+      "questions": 198,
+      "successful_requests": 198,
+      "correct": 180,
+      "accuracy_percent": 90.9090909090909,
+      "raw_correct": 180,
+      "output_budget": 65536,
+      "unparsed_answer_ids": [
+        79,
+        142
+      ],
+      "output_limit_ids": [
+        79
+      ],
+      "prediction_sha256": "d7f422daff911f101f0554623fa015c79dfcd88c780f5557fef5828bec9d64ce",
+      "source": "full/cann930_20261119_precision/results/round_1/predictions/dsv41-bf16-cann930-gpqa/GPQA_diamond.jsonl.gz"
+    },
+    {
+      "run": 3,
+      "date": "2026-11-19",
+      "source_round": 2,
+      "questions": 198,
+      "successful_requests": 198,
+      "correct": 178,
+      "accuracy_percent": 89.8989898989899,
+      "raw_correct": 178,
+      "output_budget": 65536,
+      "unparsed_answer_ids": [
+        149
+      ],
+      "output_limit_ids": [],
+      "prediction_sha256": "36b31cb9ab88e7848dc6fa77042b6786499533cc26ddcd96fa1c0ace272fde38",
+      "source": "full/cann930_20261119_precision/results/round_2/predictions/dsv41-bf16-cann930-gpqa/GPQA_diamond.jsonl.gz"
+    },
+    {
+      "run": 4,
+      "date": "2026-11-19",
+      "source_round": 3,
+      "questions": 198,
+      "successful_requests": 198,
+      "correct": 178,
+      "accuracy_percent": 89.8989898989899,
+      "raw_correct": 178,
+      "output_budget": 65536,
+      "unparsed_answer_ids": [
+        79,
+        147
+      ],
+      "output_limit_ids": [
+        79,
+        147
+      ],
+      "prediction_sha256": "cfbb6fdadf66e286e24af5b2b1e24c57637d6589a93fb3694acdf4775bb70694",
+      "source": "full/cann930_20261119_precision/results/round_3/predictions/dsv41-bf16-cann930-gpqa/GPQA_diamond.jsonl.gz"
+    }
+  ],
+  "four_run_descriptive_mean_percent": 88.38383838383838,
+  "latest_three_mean_percent": 90.23569023569023,
+  "comparisons": [
+    {
+      "reference_run": 1,
+      "later_run": 2,
+      "pairs": 198,
+      "df": 197,
+      "gains": 20,
+      "losses": 4,
+      "mean_difference_percentage_points": 8.080808080808081,
+      "t_statistic": 3.3491912233453927,
+      "p_two_sided": 0.000971119458651838,
+      "ci95_percentage_points": [
+        3.3226467429099698,
+        12.838969418706192
+      ],
+      "mcnemar_exact_p_two_sided": 0.001543879508972168,
+      "p_holm_three_comparisons": 0.0029133583759555137,
+      "significant_after_holm_at_0_05": true
+    },
+    {
+      "reference_run": 1,
+      "later_run": 3,
+      "pairs": 198,
+      "df": 197,
+      "gains": 19,
+      "losses": 5,
+      "mean_difference_percentage_points": 7.07070707070707,
+      "t_statistic": 2.9111815558157583,
+      "p_two_sided": 0.004015514154565559,
+      "ci95_percentage_points": [
+        2.2809016598165477,
+        11.860512481597594
+      ],
+      "mcnemar_exact_p_two_sided": 0.006610751152038574,
+      "p_holm_three_comparisons": 0.004015514154565559,
+      "significant_after_holm_at_0_05": true
+    },
+    {
+      "reference_run": 1,
+      "later_run": 4,
+      "pairs": 198,
+      "df": 197,
+      "gains": 17,
+      "losses": 3,
+      "mean_difference_percentage_points": 7.07070707070707,
+      "t_statistic": 3.2028480949359515,
+      "p_two_sided": 0.0015869429837249219,
+      "ci95_percentage_points": [
+        2.7170840593073198,
+        11.42433008210682
+      ],
+      "mcnemar_exact_p_two_sided": 0.0025768280029296875,
+      "p_holm_three_comparisons": 0.0031738859674498437,
+      "significant_after_holm_at_0_05": true
+    }
+  ],
+  "confidence_intervals": "individual, not simultaneous",
+  "official_fixed_reference_exploratory_t": {
+    "method": "exploratory one-sample t on the three latest run-level accuracies",
+    "reference_percent": 93.4,
+    "n_runs": 3,
+    "df": 2,
+    "observed_mean_percent": 90.23569023569023,
+    "difference_percentage_points": -3.1643097643097775,
+    "t_statistic": -9.398000000000035,
+    "nominal_p_two_sided": 0.011133426820404493,
+    "ci95_percent": [
+      88.78698561287896,
+      91.68439485850149
+    ],
+    "acceptance_status": "not established",
+    "limitations": [
+      "The official percentage is treated as a fixed rounded reference, ignoring its uncertainty.",
+      "Only three runs, sharing seed, questions and service; independence is not established.",
+      "Reasoning effort, sampling count, top_p, token budget, scoring and backend differ.",
+      "This is not a two-sample, paired official comparison, equivalence or non-inferiority test."
+    ]
+  },
+  "limitations": [
+    "Generation configuration differs between run 1 and runs 2-4.",
+    "All runs use the same 198 questions and seed 42; not 792 independent questions.",
+    "No matched competitor or official reference responses were supplied.",
+    "A difference test is not an equivalence or non-inferiority acceptance test.",
+    "Binary paired differences use a large-sample t approximation; exact McNemar is also reported."
+  ],
+  "numerics": "standard-library incomplete beta; analytic and critical-value checks passed"
+}

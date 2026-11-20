@@ -1,6 +1,6 @@
 {
   "validation_type": "offline_delivery_checks_of_recorded_npu_evidence",
-  "date": "2026-11-19",
+  "date": "2026-11-20",
   "json_files_parsed": 2318,
   "relative_links_checked": 296,
   "new_python_files_syntax_checked": 70,
@@ -93,5 +93,51 @@
     "correct_across_rounds": 536,
     "original_data_preserved": true
   },
-  "errors": []
+  "errors": [],
+  "current_report": {
+    "environment": "CANN930",
+    "template": "模型开箱交付件模板.md",
+    "sections": [
+      "模型结构分析",
+      "模型开箱打通",
+      "基本功能验证",
+      "RL功能验证",
+      "性能与精度验证"
+    ],
+    "precision_scope": "GPQA Diamond only",
+    "relative_links_checked_in_current_documents": 175,
+    "broken_links": 0,
+    "new_python_files_syntax_checked": 11,
+    "new_shell_files_bash_n": 3,
+    "new_json_files_parsed": 15,
+    "routing_raw_files_byte_identical": 42,
+    "independent_single_curl_npu_rerun": false,
+    "raw_routing_gzip_preserves_original_bytes": true
+  },
+  "gpqa_four_full_runs": {
+    "correct": [
+      164,
+      180,
+      178,
+      178
+    ],
+    "successful_requests": 792,
+    "same_198_questions_and_prompts": true,
+    "latest_three_mean_accuracy": 90.23569023569023,
+    "official_reference_percent": 93.4,
+    "official_source_commit": "a679bb86ce36e883a98a97733492b686e5b9a08e",
+    "official_fixed_reference_nominal_p": 0.011133426820404493,
+    "official_comparison_acceptance": "not established; configuration mismatch and limited repeated samples",
+    "historical_paired_tests": "computed; exploratory cross-configuration comparisons, Holm adjusted"
+  },
+  "routing_cann930": {
+    "single_request_experts": [
+      20,
+      40,
+      6
+    ],
+    "same_dp_pair_http": 500,
+    "candidate_cpu_checks_passed": 15,
+    "fixed_npu_rerun_completed": false
+  }
 }

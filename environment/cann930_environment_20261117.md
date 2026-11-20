@@ -1,6 +1,6 @@
 # CANN930 验证环境
 
-更新日期为 2026-11-19。Sleep level-2、HCCL 和 NPU IPC 专项在 22.1 实测，完整模型性能与 GPQA 在 23/24 双节点实测。
+更新日期为 2026-11-20。Sleep level-2、HCCL 和 NPU IPC 专项在 22.1 实测，完整模型性能与 GPQA 在 23/24 双节点实测。
 
 | 项目 | 实际配置 |
 |---|---|
@@ -8,7 +8,6 @@
 | 宿主系统 | openEuler，Linux 6.6.0-145.3.35.166.oe2403sp3.aarch64 |
 | 容器 | `c00954197_dsv41_cann930` |
 | Docker socket | `/run/c00954197-cann930/docker.sock` |
-| 镜像标签 | `c00954197/vllm-ascend:1108-cann930-20261113` |
 | 镜像 ID | `sha256:3614b7afe7000897bf6f1c60a415f2547feb0e033bae0c9bf76c68a76ecf944f` |
 | 网络与 IPC | host / host |
 | CANN toolkit | 9.3.0，V100R001C25B114 |
@@ -65,8 +64,8 @@ docker -H unix:///run/c00954197-cann930/docker.sock exec -it c00954197_dsv41_can
 
 服务端与验证命令见各专项报告。2026-11-18 已完成 IPC 单卡多轮回收和完整 IPC 回环，实验后 8 张卡全部释放。当前待定位为冷/热缓存请求输出差异。
 
-## 历史实验环境
-
-E13 为 27/28 节点的完整模型单请求实验，E23 为 1108/CANN9.2.1 双机性能实验，E25 为 CANN9.3.0 完整模型补充性能实验。2026-11-13 基础功能矩阵在 1108 容器执行。上述原始数据继续按各自环境解释，其余功能在当前 CANN930 容器的复验范围见主交付件。
+## 完整模型精度配置
 
 2026-11-19 的完整模型 GPQA 使用 73728 服务上下文和 65536 输出预算，temperature=1.0、top_p=0.95、top_k=0、reasoning_effort=low、enable_thinking=true。双节点同一次启动完成三轮各 198 题，原始镜像、实际配置及脚本哈希随结果保存。[最新精度报告](../full/cann930_20261119_precision/REPORT.md)
+
+正式精度范围为GPQA Diamond，四次完整结果、官方DeepInfer参考与T检验见[精度统计报告](../full/gpqa_four_runs/REPORT.md)。专家返回候选补丁已完成CPU回归，NPU复验待完成，见[路由报告](../reduced/cann930_20261118/routing_replay/REPORT.md)。

@@ -1,0 +1,39 @@
+{"host_epoch": 1794955341.142229, "dp_rank": 6, "event": "dummy_run", "num_tokens": 1, "uniform_decode": true}
+{"host_epoch": 1794955341.1469896, "dp_rank": 6, "event": "execute_model", "requests": {"_dummy_req_0": 1}, "num_real_requests": 1, "tokens": 1}
+{"host_epoch": 1794955361.9201658, "dp_rank": 6, "event": "dummy_run", "num_tokens": 1, "uniform_decode": true}
+{"host_epoch": 1794955361.9209695, "dp_rank": 6, "event": "execute_model", "requests": {"_dummy_req_0": 1}, "num_real_requests": 1, "tokens": 1}
+{"host_epoch": 1794955362.1103718, "dp_rank": 6, "event": "dummy_run", "num_tokens": 1, "uniform_decode": true}
+{"host_epoch": 1794955362.1121993, "dp_rank": 6, "event": "execute_model", "requests": {"_dummy_req_0": 1}, "num_real_requests": 1, "tokens": 1}
+{"host_epoch": 1794955362.2848055, "dp_rank": 6, "event": "dummy_run", "num_tokens": 1, "uniform_decode": true}
+{"host_epoch": 1794955362.286724, "dp_rank": 6, "event": "execute_model", "requests": {"_dummy_req_0": 1}, "num_real_requests": 1, "tokens": 1}
+{"host_epoch": 1794955362.4578671, "dp_rank": 6, "event": "dummy_run", "num_tokens": 1, "uniform_decode": true}
+{"host_epoch": 1794955362.4586308, "dp_rank": 6, "event": "execute_model", "requests": {"_dummy_req_0": 1}, "num_real_requests": 1, "tokens": 1}
+{"host_epoch": 1794955362.6310194, "dp_rank": 6, "event": "dummy_run", "num_tokens": 1, "uniform_decode": true}
+{"host_epoch": 1794955362.632744, "dp_rank": 6, "event": "execute_model", "requests": {"_dummy_req_0": 1}, "num_real_requests": 1, "tokens": 1}
+{"host_epoch": 1794955362.7998228, "dp_rank": 6, "event": "dummy_run", "num_tokens": 1, "uniform_decode": true}
+{"host_epoch": 1794955362.8006268, "dp_rank": 6, "event": "execute_model", "requests": {"_dummy_req_0": 1}, "num_real_requests": 1, "tokens": 1}
+{"host_epoch": 1794955362.9677205, "dp_rank": 6, "event": "dummy_run", "num_tokens": 1, "uniform_decode": true}
+{"host_epoch": 1794955362.9694738, "dp_rank": 6, "event": "execute_model", "requests": {"_dummy_req_0": 1}, "num_real_requests": 1, "tokens": 1}
+{"host_epoch": 1794955363.137329, "dp_rank": 6, "event": "dummy_run", "num_tokens": 1, "uniform_decode": true}
+{"host_epoch": 1794955363.1383734, "dp_rank": 6, "event": "execute_model", "requests": {"_dummy_req_0": 1}, "num_real_requests": 1, "tokens": 1}
+{"host_epoch": 1794955363.3046386, "dp_rank": 6, "event": "dummy_run", "num_tokens": 1, "uniform_decode": true}
+{"host_epoch": 1794955363.3068821, "dp_rank": 6, "event": "execute_model", "requests": {"_dummy_req_0": 1}, "num_real_requests": 1, "tokens": 1}
+{"host_epoch": 1794955363.4692445, "dp_rank": 6, "event": "dummy_run", "num_tokens": 1, "uniform_decode": true}
+{"host_epoch": 1794955363.4716084, "dp_rank": 6, "event": "execute_model", "requests": {"_dummy_req_0": 1}, "num_real_requests": 1, "tokens": 1}
+{"host_epoch": 1794955363.6371737, "dp_rank": 6, "event": "dummy_run", "num_tokens": 1, "uniform_decode": true}
+{"host_epoch": 1794955363.6397572, "dp_rank": 6, "event": "execute_model", "requests": {"_dummy_req_0": 1}, "num_real_requests": 1, "tokens": 1}
+{"host_epoch": 1794955363.8037348, "dp_rank": 6, "event": "dummy_run", "num_tokens": 1, "uniform_decode": true}
+{"host_epoch": 1794955363.805664, "dp_rank": 6, "event": "execute_model", "requests": {"_dummy_req_0": 1}, "num_real_requests": 1, "tokens": 1}
+{"host_epoch": 1794955363.9708815, "dp_rank": 6, "event": "dummy_run", "num_tokens": 1, "uniform_decode": true}
+{"host_epoch": 1794955363.9729342, "dp_rank": 6, "event": "execute_model", "requests": {"_dummy_req_0": 1}, "num_real_requests": 1, "tokens": 1}
+{"host_epoch": 1794955364.136274, "dp_rank": 6, "event": "dummy_run", "num_tokens": 1, "uniform_decode": true}
+{"host_epoch": 1794955364.1383398, "dp_rank": 6, "event": "execute_model", "requests": {"_dummy_req_0": 1}, "num_real_requests": 1, "tokens": 1}
+{"host_epoch": 1794955364.3043327, "dp_rank": 6, "event": "dummy_run", "num_tokens": 1, "uniform_decode": true}
+{"host_epoch": 1794955364.306096, "dp_rank": 6, "event": "execute_model", "requests": {"_dummy_req_0": 1}, "num_real_requests": 1, "tokens": 1}
+{"host_epoch": 1794955364.5180442, "dp_rank": 6, "event": "dummy_run", "num_tokens": 1, "uniform_decode": true}
+{"host_epoch": 1794955364.5188894, "dp_rank": 6, "event": "execute_model", "requests": {"_dummy_req_0": 1}, "num_real_requests": 1, "tokens": 1}
+{"host_epoch": 1794955364.696331, "dp_rank": 6, "event": "dummy_run", "num_tokens": 1, "uniform_decode": true}
+{"host_epoch": 1794955364.6982696, "dp_rank": 6, "event": "execute_model", "requests": {"_dummy_req_0": 1}, "num_real_requests": 1, "tokens": 1}
+{"host_epoch": 1794955368.7317042, "dp_rank": 6, "event": "dummy_run", "num_tokens": 1, "uniform_decode": true}
+{"host_epoch": 1794955368.7325273, "dp_rank": 6, "event": "execute_model", "requests": {"_dummy_req_0": 1}, "num_real_requests": 1, "tokens": 1}
+{"host_epoch": 1794955368.7523804, "dp_rank": 6, "event": "error", "error_type": "AssertionError", "error": "RoutedExpertsCapturer: unexpected topk_ids batch dim 2 (expected 9, 1, 16, or 1 for dp_rank=6, tp_size=1)"}

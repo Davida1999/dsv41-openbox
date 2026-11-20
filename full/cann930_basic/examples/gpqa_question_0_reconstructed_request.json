@@ -1,0 +1,19 @@
+{
+  "model": "dsv41-bf16-cann930",
+  "messages": [
+    {
+      "role": "user",
+      "content": "Answer the following multiple choice question. The last line of your response should be of the following format: 'Answer: $LETTER' (without quotes) where LETTER is one of ABCD. Think step by step before answering.\n\nTwo quantum states with energies E1 and E2 have a lifetime of 10^-9 sec and 10^-8 sec, respectively. We want to clearly distinguish these two energy levels. Which one of the following options could be their energy difference so that they can be clearly resolved?\n\n\nA) 10^-11 eV\nB) 10^-8 eV\n\nC) 10^-9 eV\nD) 10^-4 eV"
+    }
+  ],
+  "max_tokens": 65536,
+  "temperature": 1.0,
+  "top_p": 0.95,
+  "top_k": 0,
+  "seed": 42,
+  "ignore_eos": false,
+  "chat_template_kwargs": {
+    "enable_thinking": true,
+    "reasoning_effort": "low"
+  }
+}

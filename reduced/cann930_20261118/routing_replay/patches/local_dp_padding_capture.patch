@@ -1,0 +1,22 @@
+diff --git a/vllm_ascend/patch/worker/patch_routed_experts_capture.py b/vllm_ascend/patch/worker/patch_routed_experts_capture.py
+index 1253a8d2a..1fe0ce724 100644
+--- a/vllm_ascend/patch/worker/patch_routed_experts_capture.py
++++ b/vllm_ascend/patch/worker/patch_routed_experts_capture.py
+@@ -251,6 +251,17 @@ def capture(self, layer_id: int, topk_ids: torch.Tensor) -> None:
+             topk_ids = gather_topk_ids
+             start_loc = 0
+             end_loc = token_num_per_dp
++        elif (
++            self.tp_size == 1
++            and _EXTRA_CTX.moe_comm_type in _TP_SHARDED_COMM_TYPES
++            and n > token_num_per_dp
++            and n == _padded_batch_rows(self.tp_size)
++        ):
++            # Dispatch can pad a TP1 rank's local input, including DP dummy
++            # forwards. Its declared target identifies this local layout.
++            # Only this rank's unpadded rows belong in the capture buffer.
++            start_loc = 0
++            end_loc = token_num_per_dp
+         else:
+             sp_expected = (token_num_per_dp + self.tp_size - 1) // self.tp_size if self.tp_size > 0 else -1
+             raise AssertionError(

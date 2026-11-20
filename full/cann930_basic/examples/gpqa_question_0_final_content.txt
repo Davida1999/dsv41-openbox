@@ -1,0 +1,11 @@
+To resolve two energy levels, their energy difference must be greater than the uncertainty in energy caused by their finite lifetimes:
+
+\[
+\Delta E \sim \frac{\hbar}{\tau}
+\]
+
+For lifetimes \(10^{-9}\,\text{s}\) and \(10^{-8}\,\text{s}\), the corresponding energy uncertainties are on the order of \(10^{-7}\) to \(10^{-6}\,\text{eV}\). Therefore, only an energy difference much larger than these uncertainties can clearly distinguish the levels.
+
+Among the options, \(10^{-4}\,\text{eV}\) is large enough to clearly resolve them.
+
+Answer: D
