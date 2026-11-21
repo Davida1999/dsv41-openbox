@@ -1,24 +1,16 @@
 # DSV41 模型开箱交付件
 
-更新日期：2026-11-20。验证环境为 **CANN930（CANN 9.3.0）**。完整模型为 DeepSeek-V4.1-Flash-1017 BF16、40层、384路由专家、Engram和视觉模块开启；RL专项使用40层、32路由专家、Engram关闭的缩减模型。两种模型的结论分别记录。
+更新日期：2026-11-21（补充结构图；原验收结论沿用2026-11-20归档）。验证环境为 **CANN930（CANN 9.3.0）**。完整模型为 DeepSeek-V4.1-Flash-1017 BF16、40层、384路由专家、Engram和视觉模块开启；RL专项使用40层、32路由专家、Engram关闭的缩减模型。两种模型的结论分别记录。
 
 ## 模型结构分析
 
 [模型结构图与分析](model/模型结构分析.md)说明文本主干、视觉编码器、稀疏注意力、MoE和Engram；配置与权重索引见[模型配置](model/config.json)、[权重索引](model/model.safetensors.index.json)。MoE每层384个路由专家，Top-6，另有1个共享专家。
 
-```mermaid
-flowchart LR
-  T[文本token] --> E[Embedding]
-  I[图片] --> V[视觉编码器与投影]
-  E --> D[40层文本主干]
-  V --> D
-  G[Engram条件记忆] --> D
-  D --> A[稀疏注意力]
-  A --> M[MoE 384专家 Top-6]
-  M --> O[归一化与LM Head]
-```
+![DeepSeek V4.1 Flash 完整模型开箱结构图](model/architecture/model-architecture.png)
 
-图示为主要模块依赖，省略层内残差与归一化；具体配置与实现说明见模型分析。
+[可编辑SVG](model/architecture/model-architecture.svg) · [配置/源码参数依据](model/architecture/facts.json) · [读图与复现](model/architecture/README.md)
+
+本图按MindSpeed-Agent结构图交付规范，展开40层主干、mHC、视觉、Attention/MoE、Engram与独立MTP，列出跨层KV/Indexer复用。逻辑尺寸、E384/E32与已测窗口分别标注；结构核对不新增NPU验证结果，完整审计见[图示依据](model/architecture/audit.md)。
 
 本次BF16资产由FP8/FP4权重反量化获得。[反量化脚本](model/conversion/convert_deepseek_v41_flash_bf16.py)、[执行脚本](model/conversion/run_deepseek_v41_flash_bf16.sh)及[完成日志](model/conversion/dsv41-flash-bf16-convert.log)已归档。完整模型输出525个分片、48496个索引张量；转换已完成。[独立FP4/FP8抽样核验](model/dequant_validation_20261120/REPORT.md)覆盖34个张量、4624个标量，BF16位模式全部一致。
 

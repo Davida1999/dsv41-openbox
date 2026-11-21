@@ -201,5 +201,32 @@
     "all_eight_npus_released": true,
     "raw_export_archive_sha256": "952584947abacdf545c381d9603c4b499f6f842b72e624ac254787e7ef83b3a9",
     "errors": []
+  },
+  "architecture_delivery_20261121": {
+    "validation_type": "offline_model_architecture_audit_and_render",
+    "source_commit": "7e53afe992ca5276ea94155797804e398cb6c2cd",
+    "fact_count": 83,
+    "verified_source_identities": 8,
+    "backbone_layers": 40,
+    "vision_layers": 32,
+    "mtp_checkpoint_layers": 3,
+    "routed_experts_in_each_backbone_layer": 384,
+    "relative_links_checked": 169,
+    "png_dimensions": [
+      2600,
+      2540
+    ],
+    "svg_xml_valid": true,
+    "new_python_ast_valid": true,
+    "new_npu_execution": false,
+    "artifacts_sha256": {
+      "facts.json": "1127deece8703356059ec50a7b942cbc08927bec298ef68bfc735f35fc3af40f",
+      "model-architecture.svg": "a2759230fb0c18baf796ff16b1d187a1b291c0576537a16be7c133705ff8ee97",
+      "model-architecture.png": "b7f832bf05cf77dd6e68d274e68aa4d49648321b80a911af9d26e1991e2519ba",
+      "render_architecture.py": "8e9c64e643e6d1b6f5211a0fc9f96748d798dc8cbb5a791020f7530114dc1194",
+      "README.md": "097764ac240678ad79861c7981b3821518041f8481fe018f554fb746567ff7d0",
+      "audit.md": "2980e393850e88e7a7f4850531b0d38811d6f7acda51a83705a10b271843a2fc"
+    },
+    "errors": []
   }
 }

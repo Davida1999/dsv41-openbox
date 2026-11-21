@@ -1,9 +1,10 @@
 # DSV41 Flash 模型开箱交付
 
-更新日期：2026-11-20。[正式交付报告](DSV41模型开箱交付件.md)按模板组织，统一CANN930环境。完整384专家＋Engram用于性能与GPQA；32专家、Engram关闭用于本轮RL与1M专项。
+更新日期：2026-11-21（补充结构图；实机结论沿用原归档）。[正式交付报告](DSV41模型开箱交付件.md)按模板组织，统一CANN930环境。完整384专家＋Engram用于性能与GPQA；32专家、Engram关闭用于本轮RL与1M专项。
 
 | 模块 | 当前结论 | 交付入口 |
 |---|---|---|
+| 模型结构图 | 40层主干、视觉、mHC、跨层KV/Indexer、Engram及独立MTP；配置/索引/源码静态核对 | [PNG](model/architecture/model-architecture.png) · [SVG与依据](model/architecture/README.md) |
 | 基础推理与支持范围 | TP1/PCP8/DP2/EP16及图、async、chunked prefill组合通过；TP>1/DCP/SP/PP排除本轮 | [正式报告](DSV41模型开箱交付件.md) |
 | Sleep level-2 | 五轮、80次恢复后请求严格一致；最大单卡稳态增量40 MiB | [Sleep报告](reduced/cann930_20261117/sleep_level2/REPORT.md) |
 | HCCL / NPU IPC | 全量A→B→A、OOM及IPC回收已闭环 | [实机报告](reduced/cann930_20261117/weight_update/runs/retest_20261118_01/REPORT.md) |

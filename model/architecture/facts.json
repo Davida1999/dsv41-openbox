@@ -1,0 +1,1527 @@
+{
+  "schema_version": "dsv41-architecture-facts-v1",
+  "date": "2026-11-21",
+  "model": "DeepSeek-V4.1-Flash-1017 (dequantized BF16)",
+  "repository_source_commit": "7e53afe992ca5276ea94155797804e398cb6c2cd",
+  "source_identity": {
+    "config": {
+      "path": "model/config.json",
+      "sha256": "011d6c138d3e4fd028e5d52208a6a8d860bb38c0fecd95cb30fca455e52292ab"
+    },
+    "weight_index": {
+      "path": "model/model.safetensors.index.json",
+      "sha256": "0418e4757ce4ccc91f12216f5ca8b4135485f67f012c0b0d167bb74c2354520d"
+    },
+    "archived_excerpts": {
+      "path": "model/source_excerpts.txt",
+      "sha256": "d7a932746ea91c63a0cd2e3afdb0b12c69e037d58896854dba4d76c91a4b826b"
+    },
+    "deployed_model.py": {
+      "path": "reduced/cann930_20261120/routing_replay/source/final/model.py.gz",
+      "compression": "gzip",
+      "sha256": "e91fcd4b89d0d33f6e31595f8fd266c8ebd207f2fe0264091a2c82fb754c0558",
+      "decompressed_sha256": "c82ce66bd2a235a2cc96fef9069bf20f66c9689aaed6eb038b78fe5ce162f18c",
+      "baseline_commit": "28e9e97ba254b076a88275e8a275556cb9a11664",
+      "scope": "2026-11-20 E32 routing deployment; contains archived runtime patches"
+    },
+    "deployed_vl_model.py": {
+      "path": "reduced/cann930_20261120/routing_replay/source/final/vl_model.py.gz",
+      "compression": "gzip",
+      "sha256": "90e63e6bb5c861d380f4da7a010e21412b64a498ef3e277e2aac3b5837170c93",
+      "decompressed_sha256": "478009a71b95ec233610332a90cad5c8fde98d830dfe2fa5611d113a42830c6b",
+      "baseline_commit": "28e9e97ba254b076a88275e8a275556cb9a11664",
+      "scope": "2026-11-20 E32 routing deployment; contains archived runtime patches"
+    },
+    "baseline_vision.py": {
+      "path": "model/architecture/source/vision.py.txt",
+      "sha256": "b40a59a5a3bb8adf47cbcfaf024bc1d557db9dcf3ba89a519a6591f5906d9562",
+      "repository": "https://github.com/vllm-project/vllm-ascend",
+      "commit": "28e9e97ba254b076a88275e8a275556cb9a11664",
+      "url": "https://github.com/vllm-project/vllm-ascend/blob/28e9e97ba254b076a88275e8a275556cb9a11664/vllm_ascend/models/deepseek_v41/vision.py",
+      "scope": "pinned public baseline source; no live deployment attestation for this file"
+    },
+    "baseline_dspark.py": {
+      "path": "model/architecture/source/dspark.py.txt",
+      "sha256": "8dc77f8fcf2b3293a11ef2e4ff5c9aac32a09d5ed9f5c482e9ce31e47d88d9f2",
+      "repository": "https://github.com/vllm-project/vllm-ascend",
+      "commit": "28e9e97ba254b076a88275e8a275556cb9a11664",
+      "url": "https://github.com/vllm-project/vllm-ascend/blob/28e9e97ba254b076a88275e8a275556cb9a11664/vllm_ascend/models/deepseek_v41/dspark.py",
+      "scope": "pinned public baseline source; no live deployment attestation for this file"
+    },
+    "baseline_cache_config.py": {
+      "path": "model/architecture/source/cache_config.py.txt",
+      "sha256": "f2f1599430821c86751d17badf9b3af30177c62d46d00ba0e46808948984cba7",
+      "repository": "https://github.com/vllm-project/vllm-ascend",
+      "commit": "28e9e97ba254b076a88275e8a275556cb9a11664",
+      "url": "https://github.com/vllm-project/vllm-ascend/blob/28e9e97ba254b076a88275e8a275556cb9a11664/vllm_ascend/models/deepseek_v41/cache_config.py",
+      "scope": "pinned public baseline source; no live deployment attestation for this file"
+    }
+  },
+  "facts": [
+    {
+      "name": "text.model_type",
+      "value": "deepseek_v41_text",
+      "sources": [
+        {
+          "source": "config",
+          "json_pointer": "/text_config/model_type"
+        }
+      ]
+    },
+    {
+      "name": "text.vocab_size",
+      "value": 129280,
+      "sources": [
+        {
+          "source": "config",
+          "json_pointer": "/text_config/vocab_size"
+        }
+      ]
+    },
+    {
+      "name": "text.hidden_size",
+      "value": 5120,
+      "sources": [
+        {
+          "source": "config",
+          "json_pointer": "/text_config/hidden_size"
+        }
+      ]
+    },
+    {
+      "name": "text.moe_intermediate_size",
+      "value": 2304,
+      "sources": [
+        {
+          "source": "config",
+          "json_pointer": "/text_config/moe_intermediate_size"
+        }
+      ]
+    },
+    {
+      "name": "text.num_hidden_layers",
+      "value": 40,
+      "sources": [
+        {
+          "source": "config",
+          "json_pointer": "/text_config/num_hidden_layers"
+        }
+      ]
+    },
+    {
+      "name": "text.num_attention_heads",
+      "value": 64,
+      "sources": [
+        {
+          "source": "config",
+          "json_pointer": "/text_config/num_attention_heads"
+        }
+      ]
+    },
+    {
+      "name": "text.num_key_value_heads",
+      "value": 1,
+      "sources": [
+        {
+          "source": "config",
+          "json_pointer": "/text_config/num_key_value_heads"
+        }
+      ]
+    },
+    {
+      "name": "text.head_dim",
+      "value": 512,
+      "sources": [
+        {
+          "source": "config",
+          "json_pointer": "/text_config/head_dim"
+        }
+      ]
+    },
+    {
+      "name": "text.qk_rope_head_dim",
+      "value": 64,
+      "sources": [
+        {
+          "source": "config",
+          "json_pointer": "/text_config/qk_rope_head_dim"
+        }
+      ]
+    },
+    {
+      "name": "text.q_lora_rank",
+      "value": 1280,
+      "sources": [
+        {
+          "source": "config",
+          "json_pointer": "/text_config/q_lora_rank"
+        }
+      ]
+    },
+    {
+      "name": "text.o_lora_rank",
+      "value": 1024,
+      "sources": [
+        {
+          "source": "config",
+          "json_pointer": "/text_config/o_lora_rank"
+        }
+      ]
+    },
+    {
+      "name": "text.o_groups",
+      "value": 8,
+      "sources": [
+        {
+          "source": "config",
+          "json_pointer": "/text_config/o_groups"
+        }
+      ]
+    },
+    {
+      "name": "text.hidden_act",
+      "value": "silu",
+      "sources": [
+        {
+          "source": "config",
+          "json_pointer": "/text_config/hidden_act"
+        }
+      ]
+    },
+    {
+      "name": "text.swiglu_limit",
+      "value": 10.0,
+      "sources": [
+        {
+          "source": "config",
+          "json_pointer": "/text_config/swiglu_limit"
+        }
+      ]
+    },
+    {
+      "name": "text.rms_norm_eps",
+      "value": 1e-20,
+      "sources": [
+        {
+          "source": "config",
+          "json_pointer": "/text_config/rms_norm_eps"
+        }
+      ]
+    },
+    {
+      "name": "text.attention_bias",
+      "value": false,
+      "sources": [
+        {
+          "source": "config",
+          "json_pointer": "/text_config/attention_bias"
+        }
+      ]
+    },
+    {
+      "name": "text.attention_dropout",
+      "value": 0.0,
+      "sources": [
+        {
+          "source": "config",
+          "json_pointer": "/text_config/attention_dropout"
+        }
+      ]
+    },
+    {
+      "name": "text.initializer_range",
+      "value": 0.02,
+      "sources": [
+        {
+          "source": "config",
+          "json_pointer": "/text_config/initializer_range"
+        }
+      ]
+    },
+    {
+      "name": "text.use_cache",
+      "value": true,
+      "sources": [
+        {
+          "source": "config",
+          "json_pointer": "/text_config/use_cache"
+        }
+      ]
+    },
+    {
+      "name": "text.tie_word_embeddings",
+      "value": false,
+      "sources": [
+        {
+          "source": "config",
+          "json_pointer": "/text_config/tie_word_embeddings"
+        }
+      ]
+    },
+    {
+      "name": "text.max_position_embeddings",
+      "value": 1048576,
+      "sources": [
+        {
+          "source": "config",
+          "json_pointer": "/text_config/max_position_embeddings"
+        }
+      ]
+    },
+    {
+      "name": "text.rope_theta",
+      "value": 10000,
+      "sources": [
+        {
+          "source": "config",
+          "json_pointer": "/text_config/rope_theta"
+        }
+      ]
+    },
+    {
+      "name": "text.rope_scaling",
+      "value": {
+        "rope_type": "yarn",
+        "factor": 16,
+        "beta_fast": 32,
+        "beta_slow": 1,
+        "original_max_position_embeddings": 65536
+      },
+      "sources": [
+        {
+          "source": "config",
+          "json_pointer": "/text_config/rope_scaling"
+        }
+      ]
+    },
+    {
+      "name": "text.n_routed_experts",
+      "value": 384,
+      "sources": [
+        {
+          "source": "config",
+          "json_pointer": "/text_config/n_routed_experts"
+        }
+      ]
+    },
+    {
+      "name": "text.n_shared_experts",
+      "value": 1,
+      "sources": [
+        {
+          "source": "config",
+          "json_pointer": "/text_config/n_shared_experts"
+        }
+      ]
+    },
+    {
+      "name": "text.num_experts_per_tok",
+      "value": 6,
+      "sources": [
+        {
+          "source": "config",
+          "json_pointer": "/text_config/num_experts_per_tok"
+        }
+      ]
+    },
+    {
+      "name": "text.scoring_func",
+      "value": "sqrtsoftplus",
+      "sources": [
+        {
+          "source": "config",
+          "json_pointer": "/text_config/scoring_func"
+        }
+      ]
+    },
+    {
+      "name": "text.topk_method",
+      "value": "noaux_tc",
+      "sources": [
+        {
+          "source": "config",
+          "json_pointer": "/text_config/topk_method"
+        }
+      ]
+    },
+    {
+      "name": "text.norm_topk_prob",
+      "value": true,
+      "sources": [
+        {
+          "source": "config",
+          "json_pointer": "/text_config/norm_topk_prob"
+        }
+      ]
+    },
+    {
+      "name": "text.routed_scaling_factor",
+      "value": 1.5,
+      "sources": [
+        {
+          "source": "config",
+          "json_pointer": "/text_config/routed_scaling_factor"
+        }
+      ]
+    },
+    {
+      "name": "text.sliding_window",
+      "value": 128,
+      "sources": [
+        {
+          "source": "config",
+          "json_pointer": "/text_config/sliding_window"
+        }
+      ]
+    },
+    {
+      "name": "text.compress_ratios",
+      "value": [
+        0,
+        0,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0
+      ],
+      "sources": [
+        {
+          "source": "config",
+          "json_pointer": "/text_config/compress_ratios"
+        }
+      ]
+    },
+    {
+      "name": "text.compress_rope_theta",
+      "value": 160000,
+      "sources": [
+        {
+          "source": "config",
+          "json_pointer": "/text_config/compress_rope_theta"
+        }
+      ]
+    },
+    {
+      "name": "text.kv_source_layer_ids",
+      "value": [
+        2,
+        8,
+        14,
+        20
+      ],
+      "sources": [
+        {
+          "source": "config",
+          "json_pointer": "/text_config/kv_source_layer_ids"
+        }
+      ]
+    },
+    {
+      "name": "text.index_source_layer_ids",
+      "value": [
+        2,
+        8,
+        14,
+        20,
+        24,
+        28,
+        32,
+        36
+      ],
+      "sources": [
+        {
+          "source": "config",
+          "json_pointer": "/text_config/index_source_layer_ids"
+        }
+      ]
+    },
+    {
+      "name": "text.index_n_heads",
+      "value": 32,
+      "sources": [
+        {
+          "source": "config",
+          "json_pointer": "/text_config/index_n_heads"
+        }
+      ]
+    },
+    {
+      "name": "text.index_head_dim",
+      "value": 128,
+      "sources": [
+        {
+          "source": "config",
+          "json_pointer": "/text_config/index_head_dim"
+        }
+      ]
+    },
+    {
+      "name": "text.index_topk",
+      "value": 512,
+      "sources": [
+        {
+          "source": "config",
+          "json_pointer": "/text_config/index_topk"
+        }
+      ]
+    },
+    {
+      "name": "text.candidate_source_layer_id",
+      "value": 20,
+      "sources": [
+        {
+          "source": "config",
+          "json_pointer": "/text_config/candidate_source_layer_id"
+        }
+      ]
+    },
+    {
+      "name": "text.candidate_topk_blocks",
+      "value": 2048,
+      "sources": [
+        {
+          "source": "config",
+          "json_pointer": "/text_config/candidate_topk_blocks"
+        }
+      ]
+    },
+    {
+      "name": "text.candidate_block_size",
+      "value": 8,
+      "sources": [
+        {
+          "source": "config",
+          "json_pointer": "/text_config/candidate_block_size"
+        }
+      ]
+    },
+    {
+      "name": "text.hc_mult",
+      "value": 4,
+      "sources": [
+        {
+          "source": "config",
+          "json_pointer": "/text_config/hc_mult"
+        }
+      ]
+    },
+    {
+      "name": "text.hc_sinkhorn_iters",
+      "value": 20,
+      "sources": [
+        {
+          "source": "config",
+          "json_pointer": "/text_config/hc_sinkhorn_iters"
+        }
+      ]
+    },
+    {
+      "name": "text.hc_eps",
+      "value": 1e-06,
+      "sources": [
+        {
+          "source": "config",
+          "json_pointer": "/text_config/hc_eps"
+        }
+      ]
+    },
+    {
+      "name": "text.engram_layer_ids",
+      "value": [
+        1,
+        14
+      ],
+      "sources": [
+        {
+          "source": "config",
+          "json_pointer": "/text_config/engram_layer_ids"
+        }
+      ]
+    },
+    {
+      "name": "text.engram_num_embeddings",
+      "value": [
+        384006168,
+        384016682
+      ],
+      "sources": [
+        {
+          "source": "config",
+          "json_pointer": "/text_config/engram_num_embeddings"
+        }
+      ]
+    },
+    {
+      "name": "text.engram_max_ngram_size",
+      "value": 4,
+      "sources": [
+        {
+          "source": "config",
+          "json_pointer": "/text_config/engram_max_ngram_size"
+        }
+      ]
+    },
+    {
+      "name": "text.engram_vocab_size",
+      "value": 16000000,
+      "sources": [
+        {
+          "source": "config",
+          "json_pointer": "/text_config/engram_vocab_size"
+        }
+      ]
+    },
+    {
+      "name": "text.engram_n_heads",
+      "value": 8,
+      "sources": [
+        {
+          "source": "config",
+          "json_pointer": "/text_config/engram_n_heads"
+        }
+      ]
+    },
+    {
+      "name": "text.engram_head_dim",
+      "value": 256,
+      "sources": [
+        {
+          "source": "config",
+          "json_pointer": "/text_config/engram_head_dim"
+        }
+      ]
+    },
+    {
+      "name": "text.engram_pad_token_id",
+      "value": 2,
+      "sources": [
+        {
+          "source": "config",
+          "json_pointer": "/text_config/engram_pad_token_id"
+        }
+      ]
+    },
+    {
+      "name": "text.engram_compressed_vocab_size",
+      "value": 99092,
+      "sources": [
+        {
+          "source": "config",
+          "json_pointer": "/text_config/engram_compressed_vocab_size"
+        }
+      ]
+    },
+    {
+      "name": "text.num_nextn_predict_layers",
+      "value": 3,
+      "sources": [
+        {
+          "source": "config",
+          "json_pointer": "/text_config/num_nextn_predict_layers"
+        }
+      ]
+    },
+    {
+      "name": "text.dspark_block_size",
+      "value": 5,
+      "sources": [
+        {
+          "source": "config",
+          "json_pointer": "/text_config/dspark_block_size"
+        }
+      ]
+    },
+    {
+      "name": "text.dspark_noise_token_id",
+      "value": 128799,
+      "sources": [
+        {
+          "source": "config",
+          "json_pointer": "/text_config/dspark_noise_token_id"
+        }
+      ]
+    },
+    {
+      "name": "text.dspark_target_layer_ids",
+      "value": [
+        37,
+        38,
+        39
+      ],
+      "sources": [
+        {
+          "source": "config",
+          "json_pointer": "/text_config/dspark_target_layer_ids"
+        }
+      ]
+    },
+    {
+      "name": "text.dspark_markov_rank",
+      "value": 256,
+      "sources": [
+        {
+          "source": "config",
+          "json_pointer": "/text_config/dspark_markov_rank"
+        }
+      ]
+    },
+    {
+      "name": "text.dspark_n_routed_experts",
+      "value": 128,
+      "sources": [
+        {
+          "source": "config",
+          "json_pointer": "/text_config/dspark_n_routed_experts"
+        }
+      ]
+    },
+    {
+      "name": "text.dspark_num_experts_per_tok",
+      "value": 3,
+      "sources": [
+        {
+          "source": "config",
+          "json_pointer": "/text_config/dspark_num_experts_per_tok"
+        }
+      ]
+    },
+    {
+      "name": "vision.model_type",
+      "value": "deepseek_v41_vision",
+      "sources": [
+        {
+          "source": "config",
+          "json_pointer": "/vision_config/model_type"
+        }
+      ]
+    },
+    {
+      "name": "vision.num_hidden_layers",
+      "value": 32,
+      "sources": [
+        {
+          "source": "config",
+          "json_pointer": "/vision_config/num_hidden_layers"
+        }
+      ]
+    },
+    {
+      "name": "vision.hidden_size",
+      "value": 1024,
+      "sources": [
+        {
+          "source": "config",
+          "json_pointer": "/vision_config/hidden_size"
+        }
+      ]
+    },
+    {
+      "name": "vision.num_attention_heads",
+      "value": 16,
+      "sources": [
+        {
+          "source": "config",
+          "json_pointer": "/vision_config/num_attention_heads"
+        }
+      ]
+    },
+    {
+      "name": "vision.intermediate_size",
+      "value": 2816,
+      "sources": [
+        {
+          "source": "config",
+          "json_pointer": "/vision_config/intermediate_size"
+        }
+      ]
+    },
+    {
+      "name": "vision.patch_size",
+      "value": 14,
+      "sources": [
+        {
+          "source": "config",
+          "json_pointer": "/vision_config/patch_size"
+        }
+      ]
+    },
+    {
+      "name": "vision.rope_theta",
+      "value": 10000,
+      "sources": [
+        {
+          "source": "config",
+          "json_pointer": "/vision_config/rope_theta"
+        }
+      ]
+    },
+    {
+      "name": "vision.downsample_ratio",
+      "value": 3,
+      "sources": [
+        {
+          "source": "config",
+          "json_pointer": "/vision_config/downsample_ratio"
+        }
+      ]
+    },
+    {
+      "name": "vision.max_image_tokens",
+      "value": 1024,
+      "sources": [
+        {
+          "source": "config",
+          "json_pointer": "/vision_config/max_image_tokens"
+        }
+      ]
+    },
+    {
+      "name": "vision.min_pixels",
+      "value": 295936,
+      "sources": [
+        {
+          "source": "config",
+          "json_pointer": "/vision_config/min_pixels"
+        }
+      ]
+    },
+    {
+      "name": "vision.max_wh_ratio",
+      "value": null,
+      "sources": [
+        {
+          "source": "config",
+          "json_pointer": "/vision_config/max_wh_ratio"
+        }
+      ]
+    },
+    {
+      "name": "checkpoint.backbone_layer_ids",
+      "value": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39
+      ],
+      "sources": [
+        {
+          "source": "weight_index",
+          "key_pattern": "^layers\\.(\\d+)\\."
+        }
+      ]
+    },
+    {
+      "name": "checkpoint.mtp_layer_ids",
+      "value": [
+        0,
+        1,
+        2
+      ],
+      "sources": [
+        {
+          "source": "weight_index",
+          "key_pattern": "^mtp\\.(\\d+)\\."
+        }
+      ]
+    },
+    {
+      "name": "checkpoint.vision_layer_ids",
+      "value": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31
+      ],
+      "sources": [
+        {
+          "source": "weight_index",
+          "key_pattern": "^vision\\.blocks\\.(\\d+)\\."
+        }
+      ]
+    },
+    {
+      "name": "checkpoint.routed_experts_per_backbone_layer",
+      "value": {
+        "0": 384,
+        "1": 384,
+        "2": 384,
+        "3": 384,
+        "4": 384,
+        "5": 384,
+        "6": 384,
+        "7": 384,
+        "8": 384,
+        "9": 384,
+        "10": 384,
+        "11": 384,
+        "12": 384,
+        "13": 384,
+        "14": 384,
+        "15": 384,
+        "16": 384,
+        "17": 384,
+        "18": 384,
+        "19": 384,
+        "20": 384,
+        "21": 384,
+        "22": 384,
+        "23": 384,
+        "24": 384,
+        "25": 384,
+        "26": 384,
+        "27": 384,
+        "28": 384,
+        "29": 384,
+        "30": 384,
+        "31": 384,
+        "32": 384,
+        "33": 384,
+        "34": 384,
+        "35": 384,
+        "36": 384,
+        "37": 384,
+        "38": 384,
+        "39": 384
+      },
+      "sources": [
+        {
+          "source": "weight_index",
+          "key_pattern": "^layers\\.(\\d+)\\.ffn\\.experts\\.(\\d+)\\."
+        }
+      ]
+    },
+    {
+      "name": "topology.layer_roles",
+      "value": [
+        {
+          "layer": 0,
+          "compress_ratio": 0,
+          "kv_source": null,
+          "index_source": null,
+          "uses_candidate_filter": false,
+          "has_engram": false
+        },
+        {
+          "layer": 1,
+          "compress_ratio": 0,
+          "kv_source": null,
+          "index_source": null,
+          "uses_candidate_filter": false,
+          "has_engram": true
+        },
+        {
+          "layer": 2,
+          "compress_ratio": 2,
+          "kv_source": 2,
+          "index_source": 2,
+          "uses_candidate_filter": false,
+          "has_engram": false
+        },
+        {
+          "layer": 3,
+          "compress_ratio": 2,
+          "kv_source": 2,
+          "index_source": 2,
+          "uses_candidate_filter": false,
+          "has_engram": false
+        },
+        {
+          "layer": 4,
+          "compress_ratio": 2,
+          "kv_source": 2,
+          "index_source": 2,
+          "uses_candidate_filter": false,
+          "has_engram": false
+        },
+        {
+          "layer": 5,
+          "compress_ratio": 2,
+          "kv_source": 2,
+          "index_source": 2,
+          "uses_candidate_filter": false,
+          "has_engram": false
+        },
+        {
+          "layer": 6,
+          "compress_ratio": 2,
+          "kv_source": 2,
+          "index_source": 2,
+          "uses_candidate_filter": false,
+          "has_engram": false
+        },
+        {
+          "layer": 7,
+          "compress_ratio": 2,
+          "kv_source": 2,
+          "index_source": 2,
+          "uses_candidate_filter": false,
+          "has_engram": false
+        },
+        {
+          "layer": 8,
+          "compress_ratio": 2,
+          "kv_source": 8,
+          "index_source": 8,
+          "uses_candidate_filter": false,
+          "has_engram": false
+        },
+        {
+          "layer": 9,
+          "compress_ratio": 2,
+          "kv_source": 8,
+          "index_source": 8,
+          "uses_candidate_filter": false,
+          "has_engram": false
+        },
+        {
+          "layer": 10,
+          "compress_ratio": 2,
+          "kv_source": 8,
+          "index_source": 8,
+          "uses_candidate_filter": false,
+          "has_engram": false
+        },
+        {
+          "layer": 11,
+          "compress_ratio": 2,
+          "kv_source": 8,
+          "index_source": 8,
+          "uses_candidate_filter": false,
+          "has_engram": false
+        },
+        {
+          "layer": 12,
+          "compress_ratio": 2,
+          "kv_source": 8,
+          "index_source": 8,
+          "uses_candidate_filter": false,
+          "has_engram": false
+        },
+        {
+          "layer": 13,
+          "compress_ratio": 2,
+          "kv_source": 8,
+          "index_source": 8,
+          "uses_candidate_filter": false,
+          "has_engram": false
+        },
+        {
+          "layer": 14,
+          "compress_ratio": 2,
+          "kv_source": 14,
+          "index_source": 14,
+          "uses_candidate_filter": false,
+          "has_engram": true
+        },
+        {
+          "layer": 15,
+          "compress_ratio": 2,
+          "kv_source": 14,
+          "index_source": 14,
+          "uses_candidate_filter": false,
+          "has_engram": false
+        },
+        {
+          "layer": 16,
+          "compress_ratio": 2,
+          "kv_source": 14,
+          "index_source": 14,
+          "uses_candidate_filter": false,
+          "has_engram": false
+        },
+        {
+          "layer": 17,
+          "compress_ratio": 2,
+          "kv_source": 14,
+          "index_source": 14,
+          "uses_candidate_filter": false,
+          "has_engram": false
+        },
+        {
+          "layer": 18,
+          "compress_ratio": 2,
+          "kv_source": 14,
+          "index_source": 14,
+          "uses_candidate_filter": false,
+          "has_engram": false
+        },
+        {
+          "layer": 19,
+          "compress_ratio": 2,
+          "kv_source": 14,
+          "index_source": 14,
+          "uses_candidate_filter": false,
+          "has_engram": false
+        },
+        {
+          "layer": 20,
+          "compress_ratio": 1,
+          "kv_source": 20,
+          "index_source": 20,
+          "uses_candidate_filter": false,
+          "has_engram": false
+        },
+        {
+          "layer": 21,
+          "compress_ratio": 1,
+          "kv_source": 20,
+          "index_source": 20,
+          "uses_candidate_filter": false,
+          "has_engram": false
+        },
+        {
+          "layer": 22,
+          "compress_ratio": 1,
+          "kv_source": 20,
+          "index_source": 20,
+          "uses_candidate_filter": false,
+          "has_engram": false
+        },
+        {
+          "layer": 23,
+          "compress_ratio": 1,
+          "kv_source": 20,
+          "index_source": 20,
+          "uses_candidate_filter": false,
+          "has_engram": false
+        },
+        {
+          "layer": 24,
+          "compress_ratio": 1,
+          "kv_source": 20,
+          "index_source": 24,
+          "uses_candidate_filter": true,
+          "has_engram": false
+        },
+        {
+          "layer": 25,
+          "compress_ratio": 1,
+          "kv_source": 20,
+          "index_source": 24,
+          "uses_candidate_filter": true,
+          "has_engram": false
+        },
+        {
+          "layer": 26,
+          "compress_ratio": 1,
+          "kv_source": 20,
+          "index_source": 24,
+          "uses_candidate_filter": true,
+          "has_engram": false
+        },
+        {
+          "layer": 27,
+          "compress_ratio": 1,
+          "kv_source": 20,
+          "index_source": 24,
+          "uses_candidate_filter": true,
+          "has_engram": false
+        },
+        {
+          "layer": 28,
+          "compress_ratio": 1,
+          "kv_source": 20,
+          "index_source": 28,
+          "uses_candidate_filter": true,
+          "has_engram": false
+        },
+        {
+          "layer": 29,
+          "compress_ratio": 1,
+          "kv_source": 20,
+          "index_source": 28,
+          "uses_candidate_filter": true,
+          "has_engram": false
+        },
+        {
+          "layer": 30,
+          "compress_ratio": 1,
+          "kv_source": 20,
+          "index_source": 28,
+          "uses_candidate_filter": true,
+          "has_engram": false
+        },
+        {
+          "layer": 31,
+          "compress_ratio": 1,
+          "kv_source": 20,
+          "index_source": 28,
+          "uses_candidate_filter": true,
+          "has_engram": false
+        },
+        {
+          "layer": 32,
+          "compress_ratio": 1,
+          "kv_source": 20,
+          "index_source": 32,
+          "uses_candidate_filter": true,
+          "has_engram": false
+        },
+        {
+          "layer": 33,
+          "compress_ratio": 1,
+          "kv_source": 20,
+          "index_source": 32,
+          "uses_candidate_filter": true,
+          "has_engram": false
+        },
+        {
+          "layer": 34,
+          "compress_ratio": 1,
+          "kv_source": 20,
+          "index_source": 32,
+          "uses_candidate_filter": true,
+          "has_engram": false
+        },
+        {
+          "layer": 35,
+          "compress_ratio": 1,
+          "kv_source": 20,
+          "index_source": 32,
+          "uses_candidate_filter": true,
+          "has_engram": false
+        },
+        {
+          "layer": 36,
+          "compress_ratio": 1,
+          "kv_source": 20,
+          "index_source": 36,
+          "uses_candidate_filter": true,
+          "has_engram": false
+        },
+        {
+          "layer": 37,
+          "compress_ratio": 1,
+          "kv_source": 20,
+          "index_source": 36,
+          "uses_candidate_filter": true,
+          "has_engram": false
+        },
+        {
+          "layer": 38,
+          "compress_ratio": 1,
+          "kv_source": 20,
+          "index_source": 36,
+          "uses_candidate_filter": true,
+          "has_engram": false
+        },
+        {
+          "layer": 39,
+          "compress_ratio": 1,
+          "kv_source": 20,
+          "index_source": 36,
+          "uses_candidate_filter": true,
+          "has_engram": false
+        }
+      ],
+      "sources": [
+        {
+          "source": "deployed_model.py",
+          "symbol": "build_layer_plan"
+        },
+        {
+          "source": "config",
+          "json_pointer": "/text_config"
+        }
+      ]
+    },
+    {
+      "name": "topology.backbone_compress_counts",
+      "value": {
+        "0": 2,
+        "2": 18,
+        "1": 20
+      },
+      "sources": [
+        {
+          "source": "deployed_model.py",
+          "symbol": "build_layer_plan"
+        }
+      ]
+    },
+    {
+      "name": "topology.extra_compress_entries",
+      "value": [
+        0,
+        0,
+        0
+      ],
+      "sources": [
+        {
+          "source": "config",
+          "json_pointer": "/text_config/compress_ratios"
+        },
+        {
+          "source": "deployed_model.py",
+          "symbol": "build_layer_plan"
+        }
+      ]
+    },
+    {
+      "name": "implementation.decoder_flow",
+      "value": [
+        "mHC pre",
+        "RMSNorm",
+        "attention",
+        "mHC post",
+        "mHC pre",
+        "RMSNorm",
+        "MoE",
+        "mHC post"
+      ],
+      "sources": [
+        {
+          "source": "deployed_model.py",
+          "symbol": "DeepseekV41DecoderLayer.forward"
+        }
+      ]
+    },
+    {
+      "name": "implementation.engram_injection",
+      "value": "before selected decoder layers, into HC residual streams",
+      "sources": [
+        {
+          "source": "deployed_model.py",
+          "symbol": "DeepseekV41Model.forward"
+        }
+      ]
+    },
+    {
+      "name": "implementation.vision_normalization",
+      "value": {
+        "type": "RMSNorm",
+        "eps": 1e-06
+      },
+      "sources": [
+        {
+          "source": "baseline_vision.py",
+          "symbol": "DeepseekV41VisionBlock; DeepseekV41ViT"
+        }
+      ]
+    },
+    {
+      "name": "implementation.aligner",
+      "value": {
+        "spatial_merge": [
+          3,
+          3
+        ],
+        "input_dim": 9216,
+        "output_dim": 5120,
+        "activation": "GELU",
+        "linear_layers": 2
+      },
+      "sources": [
+        {
+          "source": "baseline_vision.py",
+          "symbol": "DeepseekV41Aligner"
+        }
+      ]
+    },
+    {
+      "name": "implementation.dspark",
+      "value": {
+        "serial_draft_layers": 3,
+        "runtime_layer_ids": [
+          40,
+          41,
+          42
+        ],
+        "checkpoint_prefixes": [
+          "mtp.0",
+          "mtp.1",
+          "mtp.2"
+        ]
+      },
+      "sources": [
+        {
+          "source": "baseline_dspark.py",
+          "symbol": "DeepseekV41DSparkModel.__init__"
+        }
+      ]
+    },
+    {
+      "name": "implementation.packed_cache",
+      "value": {
+        "hardware": "Ascend 950DT / A5 packed-cache capability",
+        "swa": "FP8 values + BF16 scales",
+        "long_context_kv": "FP4 values + BF16 scales"
+      },
+      "sources": [
+        {
+          "source": "baseline_cache_config.py",
+          "symbol": "make_swa_cache_spec; make_mla_cache_spec"
+        }
+      ]
+    }
+  ],
+  "runtime_scope": {
+    "full_model": {
+      "layers": 40,
+      "routed_experts": 384,
+      "engram": "enabled",
+      "vision": "enabled",
+      "tp": 1,
+      "pcp": 8,
+      "dp": 2,
+      "ep": 16,
+      "tested_context_limits": [
+        40960,
+        73728
+      ]
+    },
+    "reduced_rl_model": {
+      "layers": 40,
+      "routed_experts": 32,
+      "engram": "disabled"
+    },
+    "long_context_record": {
+      "scope": "E32 / Engram off",
+      "input_tokens": 1000000,
+      "configured_max_model_len": 1048576
+    },
+    "speculative_decoding": {
+      "enabled_in_archived_services": false,
+      "verified_in_this_delivery": false,
+      "speculative_token_count": null
+    },
+    "new_npu_execution": false,
+    "evidence": [
+      "DSV41模型开箱交付件.md",
+      "full/cann930_20261119_precision/run/config_audit.json",
+      "reduced/cann930_20261120/long_context/REPORT.md"
+    ]
+  },
+  "conflicts_and_limits": [
+    {
+      "topic": "40 backbone layers vs 43 compression entries",
+      "resolution": "build_layer_plan slices the first 40; extra entries are [0,0,0]. DSpark separately constructs runtime layers 40..42 from mtp.0..2."
+    },
+    {
+      "topic": "logical vs physical dimensions",
+      "resolution": "Diagram dimensions are logical; no TP/EP/PP shard size is implied. N denotes the current flattened token count."
+    },
+    {
+      "topic": "BF16 weights vs physical KV",
+      "resolution": "The packed-cache hardware path uses mixed FP8/FP4 values and BF16 scales; CLI dtype does not describe all physical cache bytes."
+    },
+    {
+      "topic": "full model vs E32 validation",
+      "resolution": "Full E384 and reduced E32 evidence are kept separate; E32 retains 40 layers and disables Engram."
+    },
+    {
+      "topic": "MTP structure vs runtime",
+      "resolution": "Three checkpoint draft layers exist; no speculative-decoding validation is claimed."
+    },
+    {
+      "topic": "early hash routing layer count",
+      "value": null,
+      "reason": "Not explicitly declared in archived config; not inferred from model name. Generic MoE path is shown without claiming an extra hash-only layer split."
+    },
+    {
+      "topic": "deployment/source identity",
+      "resolution": "Backbone and multimodal wrapper use hash-verified archived deployment source. Vision, draft and cache internals use the pinned public baseline, distinguished from live deployment attestations."
+    }
+  ]
+}
