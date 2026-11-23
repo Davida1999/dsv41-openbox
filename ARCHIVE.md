@@ -1,41 +1,27 @@
-# 归档清单与证据边界
+# 归档清单与证据范围
 
-更新日期：2026-11-20。当前正式交付采用CANN930口径，入口为[模型开箱交付件](DSV41模型开箱交付件.md)。原始运行快照不覆盖，当前报告只引用相应环境的证据。
+[开箱结果概览](README.md)汇总当前 CANN930 验证结论，[交付报告](DSV41模型开箱交付件.md)记录受测配置、复现入口和验收边界。各验证目录保存支撑结论的脚本、结果和运行快照。
 
-| 目录 | 当前交付内容 |
-|---|---|
-| model | 模型配置、索引、结构分析、反量化脚本与完成日志；不含权重和tokenizer资产 |
-| environment | CANN930版本、容器与运行元数据 |
-| full/cann930_basic | 从保存的GPQA预测提取的请求示例、实际输出、单curl复现脚本；重建请求与原始记录明确区分 |
-| full/cann930_20261117 | 三场景12轮性能、首次完整198题GPQA、预检、脚本与原始日志 |
-| full/cann930_20261119_precision | 后续三次GPQA、594条预测、评分、配置、实际脚本及释放证据 |
-| full/gpqa_four_runs | 四次精度总表、官方参考出处、逐题配对CSV、T/McNemar统计与重算脚本 |
-| reduced/cann930_20261117/sleep_level2 | 修复补丁、五轮双接口输出、逐卡显存及服务/客户端日志 |
-| reduced/cann930_20261117/weight_update | OOM与IPC修复、全量A→B→A、回收复验、逐端计数与冷热缓存差异记录 |
-| reduced/cann930_20261118/routing_replay | 历史专家数组、双请求失败、候选补丁及CPU回归；当前实机验收见20261120专项 |
+| 目录 | 内容 |
+| --- | --- |
+| [model/](model/) | 模型配置、权重索引、当前结构图及源码依据、BF16 反量化与独立抽样核验 |
+| [environment/](environment/) | CANN930 软件、容器和运行环境 |
+| [full/cann930_basic/](full/cann930_basic/) | 基于保存预测重建的请求、实测输出及 curl 示例 |
+| [full/cann930_20261117/](full/cann930_20261117/) | 三场景 12 轮性能、首次完整 GPQA 和 8 题预检 |
+| [full/cann930_20261119_precision/](full/cann930_20261119_precision/) | 后续三轮 GPQA 的配置、预测、评分和复核脚本 |
+| [full/gpqa_four_runs/](full/gpqa_four_runs/) | 四轮 GPQA 统计、官方参考和逐题配对分析 |
+| [reduced/cann930_20261117/](reduced/cann930_20261117/) | Sleep level-2、HCCL 与 NPU IPC 权重更新及回收复验 |
+| [reduced/cann930_20261120/](reduced/cann930_20261120/) | 专家返回、缓存重放和 1M 输入的最终验收与关键诊断 |
 
-其他既有实验原始目录保留追溯，不纳入本次CANN930验收。正式精度范围为GPQA Diamond。不能从完整模型基础推理推断未执行的RL/并行专项通过，也不能把单卡经验评分解释为全系统理论峰值达标。
+Git 历史保留旧结构图、早期性能基线及 profiling、旧功能归档和后续已复验的路由排查。当前目录中的诊断记录用于解释正式验收报告涉及的失败或修复。
 
-## 保存在服务器的资产
+## 服务器资产
 
-- 完整模型：`/mnt/share/c00954197/model/deepseek-V4.1-Flash-1017-bf16`。
-- 无软链接Slim-E32实体副本：`/mnt/share/c00954197/model/deepseek-V4.1-Flash-1017-bf16-Slim-E32`。
-- 镜像仅记录版本/ID及环境；尚未导出镜像二进制。
+完整权重、tokenizer 和镜像二进制由服务器保存。仓库记录配置、索引、版本和运行证据。
 
-`manifest.sha256`以仓库根目录为基准，`validation.json`记录离线交付检查。预测与遥测JSONL采用gzip无损归档。运行快照保留实测时路径；当前执行入口使用整理后的模型目录。
+- 完整模型位于 `/mnt/share/c00954197/model/deepseek-V4.1-Flash-1017-bf16`。
+- Slim-E32 实体副本位于 `/mnt/share/c00954197/model/deepseek-V4.1-Flash-1017-bf16-Slim-E32`。
 
-本仓库不包含认证凭据或模型权重；第三方模型/代码沿用各自授权。原始评分、失败记录及未解析答案均保留。四次精度统计不产生新的NPU结果，官方对照的配置差异与统计限制在报告中披露。
+## 完整性核对
 
-## 2026-11-20新增
-
-- `reduced/cann930_20261120/routing_replay`：Eager与两种编译设置下的图模式验收、完整专家NPY、原始响应、关键失败现场、源码快照、补丁及标准库离线核验。仅最终验收和最小诊断入仓，其余原始实验保留服务器。
-- `reduced/cann930_20261120/long_context`：真实100万token请求、43 token自然结束输出、三处检索、async/chunked prefill及资源释放记录。
-- `model/dequant_validation_20261120`：独立标量参考、34张量/4624值抽样统计及坐标；原始权重数值CSV留在服务器，不上传权重值。
-
-源码中实验性的PP修改已撤回；TP>1/DCP/SP/PP按当前支持范围排除。所有旧失败日志保留原意，不反向改写为成功。
-
-## 2026-11-21结构图补充
-
-- `model/architecture/`：正式完整模型结构图PNG、可编辑SVG、83项配置/实现事实及文件哈希、结构审计和可重跑渲染脚本。
-- `model/architecture/source/`：固定公开vLLM-Ascend基线的视觉、DSpark与cache源码原文副本，保留SPDX声明；主干与图文wrapper复用既有运行源码快照。
-- 本次为静态结构审计和图示补充，未加载权重、未执行模型源码、未新增NPU运行。正式报告和README链接同一套图示；原始日志、预测和评分保留。
+在仓库根目录运行 `shasum -a 256 -c manifest.sha256`。 [验证记录](validation.json)收录已保存实测结果的离线核验及结构图校验。预测和遥测采用 gzip 无损归档，原始快照保留实测时的路径。

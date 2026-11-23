@@ -63,10 +63,10 @@
   ],
   "errors": [],
   "artifacts_sha256": {
-    "README.md": "d4811031ab253088b86e1f0e90a6cdca4ff9eb124d0e14b3a7dc0bbdab019417",
+    "README.md": "1fc3a659330ffd9e3adee354dd51ea7499e992319cf9619e159a3b4c5b195a26",
     "attention-detail.png": "67a94a5d1360f5348be4abe42d306fb704ce67600e76910f4d66f2f104f7575d",
     "attention-detail.svg": "c4bdf3e61539d78166775f5ae8d7c60754ef2c3bfdb30a510a99b647c3799d55",
-    "audit.md": "da8fa377d76371785769c089adfa0596da972a72e12e253d999dd8e61049e945",
+    "audit.md": "a67a61b901a57c1afc9bd15b92b5efed14f0a9d571261fe90a82202fc37b6d08",
     "decoder-detail.png": "62c0d5da51512c7810952a3ef5161f7c85ce3786e97992c4f3f6375c332aa116",
     "decoder-detail.svg": "0288d7f4403a2022c72ec1a1c40bf987709a9f1dd594509873f3ad81a673376b",
     "engram-detail.png": "710696bab2a0f9f9e597f8559e3ecf55b06b7fffafe0f018d14f3b812defc728",

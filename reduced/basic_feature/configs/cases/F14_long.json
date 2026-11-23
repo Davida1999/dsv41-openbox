@@ -1,7 +1,0 @@
-{
-  "max_model_len": 1048576,
-  "max_num_batched_tokens": 2048,
-  "max_num_seqs": 1,
-  "chunked_prefill": true,
-  "probe_output_tokens": 32
-}

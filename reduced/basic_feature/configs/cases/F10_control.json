@@ -1,5 +1,0 @@
-{
-  "max_model_len": 16512,
-  "max_num_batched_tokens": 16512,
-  "input_tokens": 16384
-}

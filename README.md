@@ -1,18 +1,51 @@
-# DSV41 Flash 模型开箱交付
+# DeepSeek V4.1 Flash 开箱结果概览
 
-更新日期：2026-11-21（补充结构图；实机结论沿用原归档）。[正式交付报告](DSV41模型开箱交付件.md)按模板组织，统一CANN930环境。完整384专家＋Engram用于性能与GPQA；32专家、Engram关闭用于本轮RL与1M专项。
+本仓库汇总 DeepSeek-V4.1-Flash-1017 BF16 在 **Ascend 950DT / CANN 9.3.0** 上的开箱结果。完整模型启用 384 个路由专家、视觉和 Engram，在双机 16 卡上验证基础推理、性能和 GPQA 精度。缩减模型使用 32 个路由专家并关闭 Engram，在单机 8 卡上验证 RL 相关功能和 1M 输入。
 
-| 模块 | 当前结论 | 交付入口 |
-|---|---|---|
-| 模型结构图 | 详细执行总图＋8张细节图；展开投影、RoPE、索引筛选、专家内部与残差回路 | [PNG](model/architecture/model-architecture.png) · [SVG与依据](model/architecture/README.md) |
-| 基础推理与支持范围 | TP1/PCP8/DP2/EP16及图、async、chunked prefill组合通过；TP>1/DCP/SP/PP排除本轮 | [正式报告](DSV41模型开箱交付件.md) |
-| Sleep level-2 | 五轮、80次恢复后请求严格一致；最大单卡稳态增量40 MiB | [Sleep报告](reduced/cann930_20261117/sleep_level2/REPORT.md) |
-| HCCL / NPU IPC | 全量A→B→A、OOM及IPC回收已闭环 | [实机报告](reduced/cann930_20261117/weight_update/runs/retest_20261118_01/REPORT.md) |
-| 专家返回 / 缓存replay | 新实机验收通过；最终图模式153请求、全日志0 ERROR/Traceback、冷热和sleep/wake严格一致 | [路由报告](reduced/cann930_20261120/routing_replay/REPORT.md) |
-| 1M长序列 | 100万token输入、148.02秒、自然输出43 token、检索3/3；async与chunked prefill实测完成 | [1M报告](reduced/cann930_20261120/long_context/REPORT.md) |
-| GPQA Diamond | 四次完整198题；当前三轮平均90.235690%，官方参考方法差异及T检验已记录 | [精度与统计](full/gpqa_four_runs/REPORT.md) |
-| 反量化补证 | 独立抽样34张量、4624值逐位一致 | [核验报告](model/dequant_validation_20261120/REPORT.md) |
+## 性能
 
-完整模型CANN930三场景各四轮性能已完成；主场景0.8硬件分析仍需双机资源。[环境](environment/cann930_environment_20261117.md) · [本轮总览](reduced/cann930_20261120/README.md) · [归档清单](ARCHIVE.md)
+完整 BF16 模型使用 TP1 / PCP8 / DP2 / EP16。每个场景运行 4 轮，每轮 64 请求、并发 64。下表为四轮均值和累计请求成功数。TTFT 为首 token 延迟，TPOT 为首 token 后的平均每 token 耗时。
 
-在仓库根目录运行`shasum -a 256 -c manifest.sha256`核对完整性。
+| 场景 | 成功请求 | 输出吞吐（token/s） | TTFT（s） | TPOT（ms） |
+| --- | ---: | ---: | ---: | ---: |
+| 图文 4K → 32K | 256/256 | 2,230.531 | 11.305 | 28.326 |
+| 纯文本 2K → 6K | 256/256 | 2,212.914 | 2.339 | 28.520 |
+| 图文 1K → 2K | 256/256 | 1,844.228 | 7.337 | 30.961 |
+
+图文请求各含一张宽 1080 × 高 1920 的图片。轮次间复用前缀缓存。主场景的 0.8× 硬件性能目标尚未验收。[逐轮结果、TTFT 与 TPOT](full/cann930_20261117/REPORT.md) · [原始结果](full/cann930_20261117/performance_results/) · [启动与压测脚本](full/cann930_20261117/scripts/)
+
+## 精度
+
+完整 BF16 模型在 GPQA Diamond 同一组 198 题上完成四轮评测。准确率按最终回答提取选项计算，无法提取时计错。
+
+| 轮次 | 输出预算（token） | 答对 / 题数 | 准确率 |
+| --- | ---: | ---: | ---: |
+| 11 月 17 日 | 32,768 | 164/198 | 82.828283% |
+| 11 月 19 日第 1 轮 | 65,536 | 180/198 | 90.909091% |
+| 11 月 19 日第 2 轮 | 65,536 | 178/198 | 89.898990% |
+| 11 月 19 日第 3 轮 | 65,536 | 178/198 | 89.898990% |
+| **11 月 19 日同配置三轮平均** | **65,536** | **536/594 次作答** | **90.235690%** |
+
+11 月 17 日使用独立的采样和思考配置。与官方参考 93.4% 的评测方法存在差异，精度对齐尚未验收。[四轮统计与评分方法](full/gpqa_four_runs/REPORT.md) · [逐题预测与复核入口](full/cann930_20261119_precision/REPORT.md)
+
+## 功能验证
+
+| 项目 | 受测模型 | 开箱结果 | 证据 |
+| --- | --- | --- | --- |
+| 基础推理与并行 | 完整 BF16 | TP1 / PCP8 / DP2 / EP16 下验证图模式、异步调度和分块预填充 | [交付报告](DSV41模型开箱交付件.md#基本功能验证) · [请求示例](full/cann930_basic/) |
+| Sleep level-2 | 缩减 BF16 | 5 轮 80 次恢复后请求严格一致，最大单卡稳态显存增量 40 MiB | [Sleep 报告](reduced/cann930_20261117/sleep_level2/REPORT.md) |
+| 权重更新、HCCL 与 NPU IPC | 缩减 BF16 | 完成全量 A→B→A、OOM 修复与 IPC 回收复验 | [权重更新报告](reduced/cann930_20261117/weight_update/REPORT.md) |
+| 专家返回和缓存重放 | 缩减 BF16 | 最终图模式通过 153 请求，冷热缓存及恢复后的输出、路由与 logprob 严格一致 | [路由报告](reduced/cann930_20261120/routing_replay/REPORT.md) |
+| 1M 长上下文 | 缩减 BF16 | 1,000,000 token 输入，148.02 秒，输出 43 token 后自然停止，检索 3/3 | [长上下文报告](reduced/cann930_20261120/long_context/REPORT.md) |
+
+TP>1、DCP、SP 和 PP 在本轮验收范围之外。各项通过结论适用于表中模型和报告列明的运行配置。
+
+## 仓库导航
+
+| 要查阅的内容 | 入口 |
+| --- | --- |
+| 完整开箱报告、服务启动和复现命令 | [开箱交付报告](DSV41模型开箱交付件.md) |
+| 最新模型总图、8 张细节图和结构依据 | [模型结构图](model/architecture/README.md) |
+| 模型配置、权重索引、BF16 转换和 4,624 个抽样值核验 | [模型资产说明](model/模型结构分析.md) · [反量化核验](model/dequant_validation_20261120/REPORT.md) |
+| CANN、容器和源码版本 | [运行环境](environment/cann930_environment_20261117.md) |
+| 目录清单、证据范围和哈希校验 | [归档说明](ARCHIVE.md) · [验证记录](validation.json) |

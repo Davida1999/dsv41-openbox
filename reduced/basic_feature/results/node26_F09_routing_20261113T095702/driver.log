@@ -1,8 +1,0 @@
-Traceback (most recent call last):
-  File "/mnt/share/c00954197/workspace/dsv41-kx/basic_feature/scripts/execute_case.py", line 12, in <module>
-    run(['bash',str(root/'scripts/run_case.sh'),case,str(out)],'validation')
-  File "/mnt/share/c00954197/workspace/dsv41-kx/basic_feature/scripts/execute_case.py", line 9, in run
-    subprocess.run(args,stdout=log,stderr=subprocess.STDOUT,check=True)
-  File "/usr/local/python3.12.16/lib/python3.12/subprocess.py", line 571, in run
-    raise CalledProcessError(retcode, process.args,
-subprocess.CalledProcessError: Command '['bash', '/mnt/share/c00954197/workspace/dsv41-kx/basic_feature/scripts/run_case.sh', 'F09_routing', '/mnt/share/c00954197/workspace/dsv41-kx/basic_feature/results/node26_F09_routing_20261113T095702']' returned non-zero exit status 1.

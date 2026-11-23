@@ -1,7 +1,0 @@
-HTTP/1.1 200 OK
-date: Mon, 02 Nov 2026 06:08:20 GMT
-server: uvicorn
-content-length: 1015
-content-type: application/json
-vary: Origin
-

@@ -1,6 +1,6 @@
 # DeepSeek V4.1 Flash 详细结构与执行流程
 
-2026-11-21 修订。根据本仓 Flash-1017 完整反量化 BF16 配置、权重索引、归档实现与固定版本公开源码，重画为逐步计算图。
+根据本仓 Flash-1017 完整反量化 BF16 配置、权重索引、归档实现与固定版本公开源码，重画为逐步计算图。
 
 [总图 PNG](model-architecture.png) · [可编辑总图 SVG](model-architecture.svg) · [参数依据](facts.json) · [审计说明](audit.md)
 
@@ -37,8 +37,6 @@ MTP 的三个权重层是 mtp.0..2，运行编号 40..42，独立于 40 层主�
 
 配置与索引见上一级目录；每个来源的 SHA256、源码符号和固定提交 URL 见 facts.json。主干、图文 wrapper 使用原有 E32 运行归档；完整尺寸采用完整资产配置。视觉、cache、DSpark、Attention backend、Compressor、Indexer、Engram 内部使用 vLLM-Ascend 固定提交 28e9e97ba254b076a88275e8a275556cb9a11664，原文在 source/，保留 Apache-2.0 SPDX 声明。读取源码不执行模型、不加载完整权重。
 
-布局参考用户提供的 Kimi K3 图；HY4 成品原图下载超时，未将未完整取得的图片用作视觉核对依据。结构、参数和连接均重新从本模型核对。
-
 ## 重绘
 
 SVG 使用 Python 3.9+ 标准库生成，并可先验证原始资料的全部哈希：
@@ -53,7 +51,7 @@ PNG 使用现有 Node 环境中的 @resvg/resvg-js 2.6.2 与系统中文字体�
 node model/architecture/render_png.cjs model/architecture
 ```
 
-若渲染器安装在其他目录，设置 DSV41_RESVG_MODULE 为模块绝对路径。脚本不会安装包或字体。可编辑 SVG 中的节点 title/data-source 保存源码符号提示。上一版概览图、脚本与说明保存在 previous-overview/。
+若渲染器安装在其他目录，设置 DSV41_RESVG_MODULE 为模块绝对路径。脚本不会安装包或字体。可编辑 SVG 中的节点 title/data-source 保存源码符号提示。
 
 ## 验证范围
 

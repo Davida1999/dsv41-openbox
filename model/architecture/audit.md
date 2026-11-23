@@ -38,19 +38,11 @@
 
 ## 图示检查
 
-- 中央按从上到下的数据流阅读；左侧视觉和 Engram 连回主干，右侧展开 Attention、MoE 与可选 MTP。
-- 逻辑维度和运行并行拓扑分开；共享专家不计入 routed Top-6，MTP 层不计入 40 层主干。
-- 上一版 PNG 实际渲染为 2600×2540；检查中文字体、文字边界和箭头连接，保留可编辑 SVG 与可重跑脚本。
-- README、正式交付件及模型分析链接同一套图示和参数依据；原始运行日志与评分不改写。
-
-## 详细计算图修订（2026-11-21）
-
-- 总图替换为 3920×4740，新增 8 张可单独打开的 PNG/SVG 细节图；前版保存在 previous-overview/。
+- 总图为 3920×4740，8 张细节图均提供 PNG 和可编辑 SVG。
+- 共享专家独立于 routed Top-6，MTP 层独立于 40 层主干，图中尺寸为逻辑维度。
 - 按固定提交补读 Attention backend、Compressor、Indexer、Engram gate 与 compressor reference kernel；已保存原文副本与 SHA256。没有使用相邻 checkout 中不同哈希的 attention backend。
 - 视觉 block 的两次 RMSNorm/残差、QKV 分叉及 2D RoPE，MoE 的 gate/up/SiLU/乘法/down、路由加权与 shared 分支均画为显式节点。
 - C2 按每通道在 2-token 组内 softmax 加权；跨 chunk 的 ring state 在源码保留，图中不展开其地址操作。C1 不缩短长度。
 - Indexer K 从 source latent 在长程 RoPE 前投影；Top-K 是 cache 位置。L20 候选为块 ID，后续 index source 在候选中重选；不能将候选维度当最终 attention heads 或 token 数。
 - mHC pre 接收前一子层 pre_mix，post 回写四路 residual，再传下一个 pre。矩阵公式用于逻辑索引说明；真实融合 kernel 参数顺序仍以 hc_pre/hc_post 代码为准。
 - Engram 图画无旋转 gate；可选 Quarot basis 恢复和数值稳定项见 engram/common.py。图像 token mask、value 广播与原 residual 旁路均显式连接。
-- 首轮渲染发现 marker orientation 与少数字体字符问题，修订为受支持的 auto marker 与普通公式字符后重新导出。
-- HY4 图片多次下载超时，未完整取得；Kimi K3 使用此前本地保存的参考图检查布局。引用示例只用于布局，不提供本模型事实。
