@@ -1,0 +1,72 @@
+{
+  "panels": {
+    "vision": {
+      "dimensions": [
+        1080,
+        1320
+      ],
+      "nodes": 11,
+      "texts": 23
+    },
+    "engram": {
+      "dimensions": [
+        1080,
+        1100
+      ],
+      "nodes": 8,
+      "texts": 23
+    },
+    "mhc": {
+      "dimensions": [
+        1080,
+        1040
+      ],
+      "nodes": 7,
+      "texts": 23
+    },
+    "decoder": {
+      "dimensions": [
+        1100,
+        3580
+      ],
+      "nodes": 17,
+      "texts": 39
+    },
+    "attention": {
+      "dimensions": [
+        1440,
+        2110
+      ],
+      "nodes": 21,
+      "texts": 56
+    },
+    "moe": {
+      "dimensions": [
+        1440,
+        1410
+      ],
+      "nodes": 11,
+      "texts": 29
+    },
+    "layer-sharing": {
+      "dimensions": [
+        2220,
+        650
+      ],
+      "nodes": 0,
+      "texts": 63
+    },
+    "mtp": {
+      "dimensions": [
+        1480,
+        650
+      ],
+      "nodes": 7,
+      "texts": 19
+    }
+  },
+  "master_size": [
+    3920,
+    4740
+  ]
+}

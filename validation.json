@@ -227,6 +227,101 @@
       "README.md": "097764ac240678ad79861c7981b3821518041f8481fe018f554fb746567ff7d0",
       "audit.md": "2980e393850e88e7a7f4850531b0d38811d6f7acda51a83705a10b271843a2fc"
     },
-    "errors": []
+    "errors": [],
+    "superseded_by": "architecture_detailed_delivery_20261121",
+    "previous_artifact_directory": "model/architecture/previous-overview"
+  },
+  "architecture_detailed_delivery_20261121": {
+    "validation_type": "offline_source_audit_and_detailed_diagram_render",
+    "new_npu_execution": false,
+    "diagram_revision": "2026-11-21-detailed-execution-v2",
+    "source_identities_verified": 14,
+    "fact_count": 89,
+    "panels": 8,
+    "logical_compute_nodes": 82,
+    "png_dimensions": {
+      "mhc-detail.png": [
+        1080,
+        1040
+      ],
+      "model-architecture-preview.png": [
+        1568,
+        1896
+      ],
+      "moe-detail.png": [
+        1440,
+        1410
+      ],
+      "layer-sharing-detail.png": [
+        2220,
+        650
+      ],
+      "decoder-detail.png": [
+        1100,
+        3580
+      ],
+      "attention-detail.png": [
+        1440,
+        2110
+      ],
+      "mtp-detail.png": [
+        1480,
+        650
+      ],
+      "engram-detail.png": [
+        1080,
+        1100
+      ],
+      "vision-detail.png": [
+        1080,
+        1320
+      ],
+      "model-architecture.png": [
+        3920,
+        4740
+      ]
+    },
+    "svg_xml_valid": true,
+    "png_crc_and_decode_valid": true,
+    "source_and_config_hashes_valid": true,
+    "visual_review": [
+      "overall composition",
+      "attention",
+      "moe",
+      "vision",
+      "engram",
+      "mhc",
+      "mtp",
+      "layer-sharing"
+    ],
+    "errors": [],
+    "artifacts_sha256": {
+      "README.md": "d4811031ab253088b86e1f0e90a6cdca4ff9eb124d0e14b3a7dc0bbdab019417",
+      "attention-detail.png": "67a94a5d1360f5348be4abe42d306fb704ce67600e76910f4d66f2f104f7575d",
+      "attention-detail.svg": "c4bdf3e61539d78166775f5ae8d7c60754ef2c3bfdb30a510a99b647c3799d55",
+      "audit.md": "da8fa377d76371785769c089adfa0596da972a72e12e253d999dd8e61049e945",
+      "decoder-detail.png": "62c0d5da51512c7810952a3ef5161f7c85ce3786e97992c4f3f6375c332aa116",
+      "decoder-detail.svg": "0288d7f4403a2022c72ec1a1c40bf987709a9f1dd594509873f3ad81a673376b",
+      "engram-detail.png": "710696bab2a0f9f9e597f8559e3ecf55b06b7fffafe0f018d14f3b812defc728",
+      "engram-detail.svg": "b6002e8123cbf5d175727b176ad9ac95c082e27fb61e0471397ca00f246dd227",
+      "facts.json": "d0e7705a779879970fb5c0c3d74033b778f2c454b585fbadbe1b189862b52b05",
+      "layer-sharing-detail.png": "d7d6be0e3bf843a2dfd98ffd9b7db1e4051cbc4b4171a68bde6d414172dab758",
+      "layer-sharing-detail.svg": "5397cd8e0ba594383de312df9813b05f91c24e52e869eca962f20b64daa768d2",
+      "layout-inventory.json": "cd714e9c18e6507e1f63228544475f820e0b3db422bad34c5ceddbfa448285f6",
+      "mhc-detail.png": "feb1dc954ce96924f8189c1c02acdcca1583bcf2bbc5b264b5bf48d8502bb2c9",
+      "mhc-detail.svg": "192cbdfc1cd6e0c3947cf93e4b6013b19c34b02907c21ccd5d4e94451c9718b8",
+      "model-architecture-preview.png": "008add21e90911953ae4d11565b92ff5a55a577515e74a9e58dd7f9a6ff94a63",
+      "model-architecture.png": "86e2b32075ea8ecea54acb4f466439cc2cc131141f9203dd863a943fc292ed78",
+      "model-architecture.svg": "17e536ecda0b7b0a72277a531295cf4e9455688613d68d577e5f4ff72f16dc79",
+      "moe-detail.png": "cf054a6fe5cb977f2e6fa8b7068d5de630a92c70e0c7cf306b43e8ed6c14d4f6",
+      "moe-detail.svg": "08e10b2760a43cec32b1babb1f2d44b2bdca0d8ba449f1772c1430232905da07",
+      "mtp-detail.png": "f3e013e137f90178c9789b929335c5c000039ca15c9b3d8ff83f1ddeef1ecbba",
+      "mtp-detail.svg": "aea4126a3a998c680a37d25ad19557db5e5585c6bed0a4cc1fe6bab838198180",
+      "package.json": "ff517c5a9203ef9862bae181b7b2e71655dce0e68144f1ff499a9c3a40ac7d78",
+      "render_architecture.py": "afc566fb2ae0bb4f48684ca7b533cbea0c56656a171ba430e7500869b4912ba0",
+      "render_png.cjs": "6a3518347c81f9c39dfa8c6bb16d2d109d9fa79ac8268463163cdd97575370b0",
+      "vision-detail.png": "a581f8e4b8091eb957b6f00b57801ea8ba119a5bcfec2642cf633bb0f91e86f0",
+      "vision-detail.svg": "cbaeea7d6d44d46d5e69795f0f7c8758b3dd21b90fb12729d65a0d1ba1c2f75d"
+    }
   }
 }

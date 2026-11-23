@@ -55,6 +55,54 @@
       "commit": "28e9e97ba254b076a88275e8a275556cb9a11664",
       "url": "https://github.com/vllm-project/vllm-ascend/blob/28e9e97ba254b076a88275e8a275556cb9a11664/vllm_ascend/models/deepseek_v41/cache_config.py",
       "scope": "pinned public baseline source; no live deployment attestation for this file"
+    },
+    "baseline_attention/dsa_v41.py": {
+      "path": "model/architecture/source/attention__dsa_v41.py.txt",
+      "sha256": "f4ae34b3783a087c0297a33fe544a28086eef83ddc498e33b9de3bb243c378e2",
+      "repository": "https://github.com/vllm-project/vllm-ascend",
+      "commit": "28e9e97ba254b076a88275e8a275556cb9a11664",
+      "url": "https://github.com/vllm-project/vllm-ascend/blob/28e9e97ba254b076a88275e8a275556cb9a11664/vllm_ascend/attention/dsa_v41.py",
+      "scope": "Pinned public baseline, statically read; not a new live-deployment attestation"
+    },
+    "baseline_models/deepseek_v41/compressor.py": {
+      "path": "model/architecture/source/models__deepseek_v41__compressor.py.txt",
+      "sha256": "31516e5ba234e34fa01e73e864fbc88bd6473d4a5274a1d43da8a79bab3cf494",
+      "repository": "https://github.com/vllm-project/vllm-ascend",
+      "commit": "28e9e97ba254b076a88275e8a275556cb9a11664",
+      "url": "https://github.com/vllm-project/vllm-ascend/blob/28e9e97ba254b076a88275e8a275556cb9a11664/vllm_ascend/models/deepseek_v41/compressor.py",
+      "scope": "Pinned public baseline, statically read; not a new live-deployment attestation"
+    },
+    "baseline_models/deepseek_v41/engram/common.py": {
+      "path": "model/architecture/source/models__deepseek_v41__engram__common.py.txt",
+      "sha256": "63a53396e3f7e4c99c6ebf6f05c18488772b60ff305b2d36a69db7d40e27ee7e",
+      "repository": "https://github.com/vllm-project/vllm-ascend",
+      "commit": "28e9e97ba254b076a88275e8a275556cb9a11664",
+      "url": "https://github.com/vllm-project/vllm-ascend/blob/28e9e97ba254b076a88275e8a275556cb9a11664/vllm_ascend/models/deepseek_v41/engram/common.py",
+      "scope": "Pinned public baseline, statically read; not a new live-deployment attestation"
+    },
+    "baseline_models/deepseek_v41/engram/layer.py": {
+      "path": "model/architecture/source/models__deepseek_v41__engram__layer.py.txt",
+      "sha256": "dc9457c88aa3c90133115bc608447e037b0693f8db71bb8da37f1ead44021f80",
+      "repository": "https://github.com/vllm-project/vllm-ascend",
+      "commit": "28e9e97ba254b076a88275e8a275556cb9a11664",
+      "url": "https://github.com/vllm-project/vllm-ascend/blob/28e9e97ba254b076a88275e8a275556cb9a11664/vllm_ascend/models/deepseek_v41/engram/layer.py",
+      "scope": "Pinned public baseline, statically read; not a new live-deployment attestation"
+    },
+    "baseline_models/deepseek_v41/indexer.py": {
+      "path": "model/architecture/source/models__deepseek_v41__indexer.py.txt",
+      "sha256": "45ec4290a41c25497d3cadfdb40c7466b5a40ae467a76200d82d4fa34b15fa02",
+      "repository": "https://github.com/vllm-project/vllm-ascend",
+      "commit": "28e9e97ba254b076a88275e8a275556cb9a11664",
+      "url": "https://github.com/vllm-project/vllm-ascend/blob/28e9e97ba254b076a88275e8a275556cb9a11664/vllm_ascend/models/deepseek_v41/indexer.py",
+      "scope": "Pinned public baseline, statically read; not a new live-deployment attestation"
+    },
+    "baseline_ops/triton/compressor/compressor_triton.py": {
+      "path": "model/architecture/source/ops__triton__compressor__compressor_triton.py.txt",
+      "sha256": "1c26f996fa91bcd3ae497e1ae33e88a2e0bf38c2e734f8af85baee06492a87ee",
+      "repository": "https://github.com/vllm-project/vllm-ascend",
+      "commit": "28e9e97ba254b076a88275e8a275556cb9a11664",
+      "url": "https://github.com/vllm-project/vllm-ascend/blob/28e9e97ba254b076a88275e8a275556cb9a11664/vllm_ascend/ops/triton/compressor/compressor_triton.py",
+      "scope": "Pinned public baseline, statically read; not a new live-deployment attestation"
     }
   },
   "facts": [
@@ -1454,6 +1502,77 @@
           "symbol": "make_swa_cache_spec; make_mla_cache_spec"
         }
       ]
+    },
+    {
+      "name": "attention.projection_flow",
+      "value": [
+        "wq_a 5120→1280",
+        "q_norm",
+        "wq_b 1280→64×512",
+        "partial RoPE last64",
+        "SparseFlashMLA",
+        "wo_a groups8:4096→1024",
+        "wo_b 8192→5120"
+      ],
+      "sources": [
+        {
+          "source": "baseline_attention/dsa_v41.py",
+          "symbol": "AscendDSAV41Impl._project_q; _project_kv; _forward_attention; _project_output"
+        }
+      ]
+    },
+    {
+      "name": "attention.compressor_c2",
+      "value": "FP32 Wkv and Wgate each 5120→512; per-channel softmax over each 2-token group; weighted sum; RMSNorm; cross-chunk ring state",
+      "sources": [
+        {
+          "source": "baseline_models/deepseek_v41/compressor.py",
+          "symbol": "DeepseekV41Compressor.pool_projected"
+        }
+      ]
+    },
+    {
+      "name": "attention.index_key",
+      "value": "source pre-RoPE latent 512→128; RMSNorm; last64 partial RoPE; write source-owned K",
+      "sources": [
+        {
+          "source": "baseline_models/deepseek_v41/indexer.py",
+          "symbol": "DeepseekV41Indexer.update_keys"
+        }
+      ]
+    },
+    {
+      "name": "engram.lookup_width",
+      "value": 6144,
+      "sources": [
+        {
+          "source": "baseline_models/deepseek_v41/engram/layer.py",
+          "symbol": "AscendEngram.__init__"
+        }
+      ]
+    },
+    {
+      "name": "engram.projected_key_value_widths",
+      "value": [
+        20480,
+        5120
+      ],
+      "sources": [
+        {
+          "source": "baseline_models/deepseek_v41/engram/layer.py",
+          "symbol": "AscendEngram.forward"
+        }
+      ]
+    },
+    {
+      "name": "engram.gating",
+      "value": "RMS-normalized weighted dot /sqrt(5120); signed sqrt; sigmoid; token mask; H + gate×V broadcast to4 streams",
+      "sources": [
+        {
+          "source": "baseline_models/deepseek_v41/engram/common.py",
+          "symbol": "engram_gate"
+        }
+      ]
     }
   ],
   "runtime_scope": {
@@ -1523,5 +1642,6 @@
       "topic": "deployment/source identity",
       "resolution": "Backbone and multimodal wrapper use hash-verified archived deployment source. Vision, draft and cache internals use the pinned public baseline, distinguished from live deployment attestations."
     }
-  ]
+  ],
+  "diagram_revision": "2026-11-21-detailed-execution-v2"
 }
