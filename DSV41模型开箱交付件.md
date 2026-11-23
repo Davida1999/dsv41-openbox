@@ -2,6 +2,8 @@
 
 结果和目录入口见[开箱结果概览](README.md)。本报告依据截至2026-11-20的实测归档。验证环境为 **CANN930（CANN 9.3.0）**。完整模型为 DeepSeek-V4.1-Flash-1017 BF16、40层、384路由专家、Engram和视觉模块开启；RL专项使用40层、32路由专家、Engram关闭的缩减模型。两种模型的结论分别记录。
 
+框架和运行问题的根因、关键补丁代码及实测证据见[开箱问题与修复](开箱问题与修复.md)。
+
 ## 模型结构分析
 
 [模型结构图](model/architecture/README.md)提供执行总图和8张细节图，覆盖40层主干、视觉、Attention、MoE、Engram、mHC、逐层共享和独立MTP。[模型资产说明](model/模型结构分析.md)列出配置、权重索引和KV格式。MoE每层384个路由专家，每 token 选 Top-6，另有1个共享专家。结构依据与静态核对见[结构审计](model/architecture/audit.md)。
